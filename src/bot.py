@@ -42,6 +42,7 @@ state_machine_nodes = {
 	'Push_notification': '4',
 }
 
+
 def start(bot, update):
 	global state_machine_nodes
 	chat_id = update.message.chat_id		
@@ -81,7 +82,6 @@ def start_authentication(bot, update):
 	else:
 		update.message.reply_text('Ya te identificaste con tu cuenta del Racó, %s.'%(USER_NAME))
 	return MESSAGE_INCOME
-
 
 
 def authenticate(bot, update):
@@ -127,9 +127,9 @@ def ask(bot, update):
 #########################
 def state_machine(bot, update):
 	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
 	current_state = db_module.get_chat(chat_id)['current_state']
-	print(update.message.text)
-	print ("current state is = %s"%current_state)
+	print ("current state for %s is = %s"%USER_NAME,current_state)
 	if current_state == '0':
 		print("state , waiting a question")
 		return ask(bot, update)

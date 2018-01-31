@@ -8,10 +8,6 @@ import API_module
 def retrieve_data(intent, entities, chat_id):
 	intention = intent['name']
 
-	print (intent)
-	print(entities)
-
-
 	if intention =='ask_teacher_mail':
 		return "not ready yet"
 	elif intention == 'ask_teacher_desk':
