@@ -1,0 +1,71 @@
+{
+  "469557458": {
+    "name": "V\u00edctor",
+    "access_token": "a6h4CduMfUkxR1cG2L0Th4PlRZweTU",
+    "refresh_token": "Zu4O9VaXmi2APf4WiQjJqlK8MOmieS",
+    "current_state": 4,
+    "expire_time_ini": {
+      "day": 28,
+      "month": 1,
+      "year": 2018,
+      "hour": 11,
+      "minute": 8,
+      "second": 47
+    },
+    "expire_time_end": {
+      "day": 28,
+      "month": 1,
+      "year": 2018,
+      "hour": 21,
+      "minute": 8,
+      "second": 47
+    },
+    "logged": true
+  },
+  "312420157": {
+    "name": "Joel",
+    "access_token": "L5haS4FHRKqsTaxySo65utMsPnwE8S",
+    "refresh_token": "tb0whes7CYpZo601u22HVWr7LNhe05",
+    "current_state": 1,
+    "expire_time_ini": {
+      "day": 28,
+      "month": 1,
+      "year": 2018,
+      "hour": 17,
+      "minute": 35,
+      "second": 29
+    },
+    "expire_time_end": {
+      "day": 29,
+      "month": 1,
+      "year": 2018,
+      "hour": 3,
+      "minute": 35,
+      "second": 29
+    },
+    "logged": true
+  },
+  "443306157": {
+    "name": "Daniel",
+    "access_token": "hEeGMNoQH9qFj9eH2astNajg51hBS8",
+    "refresh_token": "dldvokYJsyP9rSo92DCcTRkNj8YXAD",
+    "current_state": 1,
+    "expire_time_ini": {
+      "day": 29,
+      "month": 1,
+      "year": 2018,
+      "hour": 14,
+      "minute": 54,
+      "second": 6
+    },
+    "expire_time_end": {
+      "day": 30,
+      "month": 1,
+      "year": 2018,
+      "hour": 0,
+      "minute": 54,
+      "second": 6
+    },
+    "logged": true
+  }
+}

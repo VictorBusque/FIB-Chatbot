@@ -1,0 +1,7 @@
+Visual c++ 2015 + windows 10 sdk
+pip rasa_nlu
+pip python-telegram-bot
+pip pypandoc (+download pandoc)
+tensorflow pip-like
+pip rasa_core
+python -m spacy download en 
