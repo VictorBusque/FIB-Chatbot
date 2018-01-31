@@ -1,70 +1,47 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "access_token": "TrItdm8jH8NNxPB7BfUuYGIQMOzA5a",
-    "refresh_token": "xGSEsmKOAAHaVrH8TDuSaGsvXBZxTz",
-    "current_state": 1,
+    "access_token": "nkyQm34bSMiHGbMEB5Zo0azJ7Tg1R2",
+    "refresh_token": "pkjLzl9mcibjYUVhpeZm8pyATNS6jl",
+    "current_state": "0",
     "expire_time_ini": {
       "day": 31,
       "month": 1,
       "year": 2018,
-      "hour": 18,
-      "minute": 26,
-      "second": 54
+      "hour": 19,
+      "minute": 44,
+      "second": 39
     },
     "expire_time_end": {
       "day": 1,
       "month": 2,
       "year": 2018,
-      "hour": 4,
-      "minute": 26,
-      "second": 54
+      "hour": 5,
+      "minute": 44,
+      "second": 39
     },
     "logged": true
   },
   "312420157": {
     "name": "Joel",
-    "access_token": "L5haS4FHRKqsTaxySo65utMsPnwE8S",
-    "refresh_token": "tb0whes7CYpZo601u22HVWr7LNhe05",
-    "current_state": 1,
+    "access_token": "rqFQx14wQqsradcdJfRlbhxrV6Ul7e",
+    "refresh_token": "3VXn0AQlIM2hVlXa9ARlNGizpJZPUK",
+    "current_state": "0",
     "expire_time_ini": {
-      "day": 28,
+      "day": 31,
       "month": 1,
       "year": 2018,
-      "hour": 17,
-      "minute": 35,
+      "hour": 21,
+      "minute": 30,
       "second": 29
     },
     "expire_time_end": {
-      "day": 29,
-      "month": 1,
+      "day": 1,
+      "month": 2,
       "year": 2018,
-      "hour": 3,
-      "minute": 35,
+      "hour": 7,
+      "minute": 30,
       "second": 29
-    },
-    "logged": true
-  },
-  "443306157": {
-    "name": "Daniel",
-    "access_token": "hEeGMNoQH9qFj9eH2astNajg51hBS8",
-    "refresh_token": "dldvokYJsyP9rSo92DCcTRkNj8YXAD",
-    "current_state": 1,
-    "expire_time_ini": {
-      "day": 29,
-      "month": 1,
-      "year": 2018,
-      "hour": 14,
-      "minute": 54,
-      "second": 6
-    },
-    "expire_time_end": {
-      "day": 30,
-      "month": 1,
-      "year": 2018,
-      "hour": 0,
-      "minute": 54,
-      "second": 6
     },
     "logged": true
   }

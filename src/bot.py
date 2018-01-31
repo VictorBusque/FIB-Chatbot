@@ -16,59 +16,76 @@ BOT_NAME = "Test_bot"
 BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 
 
-LOG_OPTION, WAITING_URL, WAITING_QUESTION = range(3)
+MESSAGE_INCOME, LOGIN = range(2)
 LOGGED_IN = False
 
+'''
 reply_keyboard = [['Sí','No']]
 markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+'''
 
-
-state_machine = {
-	'started': 0,
-	'waiting_question': 1,
-	'waiting_component': 2,
-	'login': 3,
-	'waiting_url': 4,
-	'notifying': 5
+##### STATE MACHINE #####
+# 0 - Message Handler
+### 0.0 - Waiting Question
+### 0.1 - Processing Answer
+### 0.2 - Missing information (entities)
+# 1 - Authorise (via /login)
+# 2 - Waiting for autentification
+# 3 - Erase user information (via /logout)
+# 4 - Push Notification (via push or /update)
+#########################
+state_machine_nodes = {
+	'MessageHandler': '0',
+	'Authorise': '1',
+	'Wait_authorisation': '2',
+	'Erase_user': '3',
+	'Push_notification': '4',
 }
 
 
 def start(bot, update):
-	chat_id = update.message.chat_id
+	global state_machine_nodes
+	chat_id = update.message.chat_id		
 	user_name = update.message.from_user.first_name
-	data = {'name': user_name,
-			'access_token': None,
-			'refresh_token': None,
-			'current_state': state_machine['started'],
-			'expire_time_ini': None,
-			'expire_time_end': None,
-			'logged': False}
-	db_module.update_chat(chat_id, data, not db_module.user_has_data(chat_id))
+	if db_module.user_has_data(chat_id):
+		update.message.reply_text('Hola %s!'%user_name)
+	else:
 
-	update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, BOT_NAME))
-	update.message.reply_text('Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
-	update.message.reply_text('Ahora dime, quieres autentificarte para que pueda ser más útil?', reply_markup=markup)
-	return LOG_OPTION
+		data = {'name': user_name,
+				'access_token': None,
+				'refresh_token': None,
+				'current_state': state_machine_nodes['MessageHandler'],
+				'expire_time_ini': None,
+				'expire_time_end': None,
+				'logged': False}
+		db_module.update_chat(chat_id, data, compulsory = not db_module.user_has_data(chat_id))
+		update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, BOT_NAME))
+		update.message.reply_text('Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
+		update.message.reply_text('Si quieres autentificarte para que pueda ayudarte aún más, usa el comando "/login"!')#, reply_markup=markup)
+	return MESSAGE_INCOME
 
 
 def done(bot, update):
 	return ConversationHandler.END
 
 
-def custom_choice(bot, update):
+def start_authentication(bot, update):
+	global state_machine_nodes
+	print("Starting authentication")
 	chat_id = update.message.chat_id
 	USER_NAME = db_module.get_chat(chat_id)['name']
-	text = update.message.text
-	if text == "Sí":
+	logged = db_module.get_chat(chat_id)['logged']
+	if (not logged):
 		update.message.reply_text('Muy bien %s, autentifícate en la siguiente url: %s.'%(USER_NAME, API_module.get_autho_full_page()))
 		update.message.reply_text('Una vez te hayas autentificado, mándame por mensaje la url a la que te llevó.')
-		db_module.update_info(chat_id, 'current_state', state_machine['waiting_url'], overwrite = True)
-		return WAITING_URL
-	elif text == "No":
-		update.message.reply_text('De acuerdo %s, podrás autentificarte cuando quieras usando el comando "/login" '%(USER_NAME))
+		db_module.update_info(chat_id, 'current_state', state_machine_nodes['Wait_authorisation'], overwrite = True)
+	else:
+		update.message.reply_text('Ya te identificaste con tu cuenta del Racó, %s.'%(USER_NAME))
+	return MESSAGE_INCOME
 
 
 def authenticate(bot, update):
+	global state_machine_nodes
 	chat_id = update.message.chat_id
 	USER_NAME = db_module.get_chat(chat_id)['name']
 	text = update.message.text
@@ -78,15 +95,15 @@ def authenticate(bot, update):
 	callback = API_module.process_oauth(AUTH_CODE, chat_id)
 	if callback:
 		update.message.reply_text('Gracias %s, ya podemos empezar!'%USER_NAME)
-		db_module.update_info(chat_id, 'current_state', state_machine['waiting_question'], overwrite = True)
-		return WAITING_QUESTION
+		db_module.update_info(chat_id, 'current_state', state_machine_nodes['MessageHandler'], overwrite = True)
 	else:
 		update.message.reply_text('Hubo un error! Mándame la URL de nuevo por favor.')
-		db_module.update_info(chat_id, 'current_state', state_machine['waiting_url'], overwrite = True)
-		return WAITING_URL
+		db_module.update_info(chat_id, 'current_state', state_machine_nodes['Wait_authorisation'], overwrite = True)
+	return MESSAGE_INCOME
 
 
 def ask(bot, update):
+	chat_id = update.message.chat_id
 	query = update.message.text
 	intent = NLU_module.get_intent(query)
 	entities = NLU_module.get_entities(query)
@@ -94,13 +111,36 @@ def ask(bot, update):
 	for entity in entities:
 		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
 	update.message.reply_text('Mis resultados son: ')
-	update.message.reply_text(feature_module.retrieve_data(intent, entities))
-	return WAITING_QUESTION
+	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
+	return MESSAGE_INCOME
+
+
+##### STATE MACHINE #####
+# 0 - Message Handler
+### 0.0 - Waiting Question
+### 0.1 - Processing Answer
+### 0.2 - Missing information (entities)
+# 1 - Authorise (via /login)
+# 2 - Waiting for autentification
+# 3 - Erase user information (via /logout)
+# 4 - Push Notification (via push or /update)
+#########################
+def state_machine(bot, update):
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	current_state = db_module.get_chat(chat_id)['current_state']
+	print ("current state for %s is = %s"%USER_NAME,current_state)
+	if current_state == '0':
+		print("state , waiting a question")
+		return ask(bot, update)
+	elif current_state == '2':
+		print("state 2, authenticating")
+		return authenticate(bot, update)
 
 
 def main():
 	db_module.load_data()
-	#NLU_module.create_interpreter(False)
+	NLU_module.create_interpreter(False)
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 	updater = Updater(BOT_TOKEN)
@@ -108,17 +148,13 @@ def main():
 	dp = updater.dispatcher
 
 	conv_handler = ConversationHandler(
-		entry_points=[CommandHandler('start', start)],
-		states={					
-			LOG_OPTION: [RegexHandler('^(Sí|No)$', custom_choice)],
-			WAITING_URL: [MessageHandler(filters = Filters.text, callback = authenticate)],
-			WAITING_QUESTION: [MessageHandler(filters = Filters.text, callback = ask)]
-			#TYPING_USERNAME
-			#TYPING_PASSWORD
-			#ASKING
-			#ANSWERING
+		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication)],
+		states = {
+			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
+			LOGIN: [CommandHandler('login', callback = start_authentication)]
 		},
-		fallbacks=[RegexHandler('^Done$', done, pass_user_data=True)]
+		fallbacks=[RegexHandler('^Done$', done)],
+		allow_reentry = True #So users can use /login
 	)
 
 	dp.add_handler(conv_handler)

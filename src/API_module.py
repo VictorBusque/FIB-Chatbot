@@ -109,14 +109,19 @@ def refresh_token(chat_id):
 	else:
 		return False
 
+
 #query: {'places-matricula': { 'field': 'assig', 'value': 'APC' } }
-def get_main(query, public = True):
+def get_main(query, chat_id = '', public = True):
 	params = {}
 	headers = {"client_id": CLIENT_ID,
 			"Accept": "application/json",
 			"Accept-Language": LANGUAGE['Spanish']
 	}
+	print("Mi tipo de consulta es %s"%str(public))
 	if not public:
+		OAUTH_TOKEN = db_module.get_chat(chat_id)['access_token']
+		user_name = db_module.get_chat(chat_id)['name']
+		print ("Estoy haciendo una consulta en la API privada, con token de %s"%user_name)
 		headers['Authorization'] = 'Bearer %s'%OAUTH_TOKEN
 	response = requests.get(URL_BASE, headers = headers, params = params)
 	if response.status_code == 200:

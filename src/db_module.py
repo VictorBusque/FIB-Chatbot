@@ -73,6 +73,7 @@ def update_info(chat_id, field, value, overwrite = False):
 	if overwrite:
 		dump_data()
 
+
 def dump_data():
 	global chat_status
 	print(chat_status)
