@@ -11,7 +11,7 @@ interpreter = ""
 
 def create_interpreter(trained = True):
 	global interpreter
-	training_data = load_data('../Data/Dataset.json')
+	training_data = load_data('./Data/Dataset.json')
 	print("Data Loaded")
 	trainer = Trainer(RasaNLUConfig("./config_spacy.json"))
 	print("Trainer launched")

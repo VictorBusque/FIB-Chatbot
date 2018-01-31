@@ -48,7 +48,7 @@ def user_has_data(chat_id):
 def load_data():
 	global chat_status
 	try:
-		with open('../Data/chat_status.json', 'r') as fp:
+		with open('./Data/chat_status.json', 'r') as fp:
 			chat_status = json.load(fp)
 		print(chat_status)
 		print("----------------")
@@ -77,8 +77,8 @@ def dump_data():
 	global chat_status
 	print(chat_status)
 	print("----------------")
-	os.remove('../Data/chat_status.json')
-	with open('../Data/chat_status.json', 'w') as fp:
+	os.remove('./Data/chat_status.json')
+	with open('./Data/chat_status.json', 'w') as fp:
 		json.dump(chat_status, fp, indent = 2)
 
 
