@@ -13,14 +13,14 @@ def create_interpreter(trained = True):
 	global interpreter
 	training_data = load_data('./Data/Dataset.json')
 	print("Data Loaded")
-	trainer = Trainer(RasaNLUConfig("./config_spacy.json"))
+	trainer = Trainer(RasaNLUConfig("./src/config_spacy.json"))
 	print("Trainer launched")
 	if not trained:
 		trainer.train(training_data)
 		print("Training done")
-	model_directory = trainer.persist('../projects/default/')  # Returns the directory the model is stored in
+	model_directory = trainer.persist('./projects/default/')  # Returns the directory the model is stored in
 	# where `model_directory points to the folder the model is persisted in
-	interpreter = Interpreter.load(model_directory, RasaNLUConfig("./config_spacy.json"))
+	interpreter = Interpreter.load(model_directory, RasaNLUConfig("./src/config_spacy.json"))
 	print("Everything is OK")
 
 

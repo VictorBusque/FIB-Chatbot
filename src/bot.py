@@ -19,8 +19,10 @@ BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 MESSAGE_INCOME, LOGIN = range(2)
 LOGGED_IN = False
 
+'''
 reply_keyboard = [['Sí','No']]
 markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+'''
 
 ##### STATE MACHINE #####
 # 0 - Message Handler
@@ -45,7 +47,7 @@ def start(bot, update):
 	chat_id = update.message.chat_id		
 	user_name = update.message.from_user.first_name
 	if db_module.user_has_data(chat_id):
-		update.message.reply_text('Ya nos conocemos %s, ¿Recuerdas?'%user_name)
+		update.message.reply_text('Hola %s!'%user_name)
 	else:
 
 		data = {'name': user_name,
@@ -101,6 +103,7 @@ def authenticate(bot, update):
 
 
 def ask(bot, update):
+	chat_id = update.message.chat_id
 	query = update.message.text
 	intent = NLU_module.get_intent(query)
 	entities = NLU_module.get_entities(query)
@@ -108,7 +111,7 @@ def ask(bot, update):
 	for entity in entities:
 		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
 	update.message.reply_text('Mis resultados son: ')
-	update.message.reply_text(feature_module.retrieve_data(intent, entities))
+	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	return MESSAGE_INCOME
 
 
@@ -137,7 +140,7 @@ def state_machine(bot, update):
 
 def main():
 	db_module.load_data()
-	#NLU_module.create_interpreter(False)
+	NLU_module.create_interpreter(False)
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 	updater = Updater(BOT_TOKEN)
