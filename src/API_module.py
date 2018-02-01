@@ -159,6 +159,8 @@ def get_main(query, chat_id = '', public = True):
 	}
 	print("Mi tipo de consulta es %s"%str(public))
 	if not public:
+		if token_is_deprecated(chat_id):
+			refresh_token(chat_id)
 		OAUTH_TOKEN = db_module.get_chat(chat_id)['access_token']
 		user_name = db_module.get_chat(chat_id)['name']
 		print ("Estoy haciendo una consulta en la API privada, con token de %s"%user_name)

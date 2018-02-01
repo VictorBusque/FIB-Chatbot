@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import os
-from telegram import ReplyKeyboardMarkup
+from telegram import (ReplyKeyboardMarkup, ChatAction)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
 						  ConversationHandler)
-
+import urllib
+import requests
 import logging
 import API_module
 import NLU_module
@@ -42,6 +43,15 @@ state_machine_nodes = {
 	'Push_notification': '4',
 }
 
+
+def send_chat_action(chat_id, action):
+	print("Sending action %s"%action)
+	params = {
+		'chat_id': chat_id,
+		'action': action
+	}
+	base_url = 'https://api.telegram.org/bot%s/sendChatAction'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
+	response = requests.get(base_url, params = params)
 
 def start(bot, update):
 	global state_machine_nodes
@@ -111,6 +121,7 @@ def ask(bot, update):
 	for entity in entities:
 		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
 	update.message.reply_text('Mis resultados son: ')
+	send_chat_action(chat_id, 'typing')
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	return MESSAGE_INCOME
 
