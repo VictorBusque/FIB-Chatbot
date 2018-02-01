@@ -11,7 +11,7 @@ from time import sleep
 import db_module
 
 
-CLIENT_ID = 'QEcwkDLH8yO9x9g4vpSxIcS6FhUUJGRSZ71rQEoZ'
+CLIENT_ID = 'aQEcwkDLH8yO9x9g4vpSxIcS6FhUUJGRSZ71rQEoZa'
 CLIENT_SECRET = 'TXlgFLpju2usHzhWi1vqmpQqsgdz1MYausyhfCHj6VvzdAorE5ZRdvxvElPt3jibxACvi59F7YtyYVylNqdtnoTGuDM3BYgeBPmYjCqaymOmme3R4bdq1JCdRAILZkTb'
 REDIRECT_URI = 'https://localhost:5001' 
 
