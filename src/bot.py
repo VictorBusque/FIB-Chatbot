@@ -16,7 +16,7 @@ BOT_NAME = "Test_bot"
 BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 
 
-MESSAGE_INCOME, LOGIN = range(2)
+MESSAGE_INCOME= range(1)
 LOGGED_IN = False
 
 '''
