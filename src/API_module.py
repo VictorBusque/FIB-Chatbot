@@ -71,6 +71,7 @@ def process_oauth(code, chat_id):
 		db_module.update_info(chat_id, 'logged', True, overwrite = True)
 		print("Authorization correct, token expires %s"%expire_time_end)
 		schedule_refreshment(chat_id)
+		print("Thread for refreshment defined")
 		return True
 	else:
 		return False
