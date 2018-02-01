@@ -129,7 +129,7 @@ def state_machine(bot, update):
 	chat_id = update.message.chat_id
 	USER_NAME = db_module.get_chat(chat_id)['name']
 	current_state = db_module.get_chat(chat_id)['current_state']
-	print ("current state for %s is = %s"%USER_NAME,current_state)
+	print("está en la state machine, con estado %s"%current_state)
 	if current_state == '0':
 		print("state , waiting a question")
 		return ask(bot, update)
@@ -150,8 +150,7 @@ def main():
 	conv_handler = ConversationHandler(
 		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication)],
 		states = {
-			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
-			LOGIN: [CommandHandler('login', callback = start_authentication)]
+			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)]
 		},
 		fallbacks=[RegexHandler('^Done$', done)],
 		allow_reentry = True #So users can use /login

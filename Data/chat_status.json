@@ -1,46 +1,23 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "access_token": "nkyQm34bSMiHGbMEB5Zo0azJ7Tg1R2",
-    "refresh_token": "pkjLzl9mcibjYUVhpeZm8pyATNS6jl",
+    "access_token": "A3h1BHKYpbaE9u80rDnTXDhr8psx8T",
+    "refresh_token": "yewn52dmec7tstZhaE5TyNnwJAH7u2",
     "current_state": "0",
     "expire_time_ini": {
-      "day": 31,
-      "month": 1,
-      "year": 2018,
-      "hour": 19,
-      "minute": 44,
-      "second": 39
-    },
-    "expire_time_end": {
       "day": 1,
       "month": 2,
       "year": 2018,
-      "hour": 5,
-      "minute": 44,
-      "second": 39
-    },
-    "logged": true
-  },
-  "312420157": {
-    "name": "Joel",
-    "access_token": "rqFQx14wQqsradcdJfRlbhxrV6Ul7e",
-    "refresh_token": "3VXn0AQlIM2hVlXa9ARlNGizpJZPUK",
-    "current_state": "0",
-    "expire_time_ini": {
-      "day": 31,
-      "month": 1,
-      "year": 2018,
-      "hour": 21,
-      "minute": 30,
+      "hour": 10,
+      "minute": 38,
       "second": 29
     },
     "expire_time_end": {
       "day": 1,
       "month": 2,
       "year": 2018,
-      "hour": 7,
-      "minute": 30,
+      "hour": 20,
+      "minute": 38,
       "second": 29
     },
     "logged": true
