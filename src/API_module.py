@@ -6,6 +6,8 @@ import requests.auth
 import urllib
 import json
 import datetime
+from threading import Thread
+from time import sleep
 import db_module
 
 
@@ -21,10 +23,13 @@ TOKEN_PAGE = 'https://api.fib.upc.edu/v2/o/token'
 LANGUAGE = {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
 
 
+threads = []
+
+
 def get_autho_full_page():
 	global CLIENT_ID, AUTHORIZATION_PAGE
 	params = {"client_id": CLIENT_ID,
-		   	  "redirect_uri": REDIRECT_URI,
+			  "redirect_uri": REDIRECT_URI,
 			  "response_type": "code",
 			  "scope": "read"}
 	return AUTHORIZATION_PAGE + '?' + urllib.parse.urlencode(params)
@@ -36,7 +41,7 @@ def process_oauth(code, chat_id):
 	print("Authorizing user")
 	payload = {"grant_type": "authorization_code",
 			"code": code,
-	   	  	"redirect_uri": REDIRECT_URI,
+			"redirect_uri": REDIRECT_URI,
 			"client_id": CLIENT_ID,
 			"client_secret": CLIENT_SECRET
 	}
@@ -65,9 +70,22 @@ def process_oauth(code, chat_id):
 		db_module.update_info(chat_id, 'expire_time_end' , expire_time_end)
 		db_module.update_info(chat_id, 'logged', True, overwrite = True)
 		print("Authorization correct, token expires %s"%expire_time_end)
+		schedule_refreshment(chat_id)
 		return True
 	else:
 		return False
+
+
+def token_is_deprecated(chat_id):
+	expire_time_end = db_module.get_chat(chat_id)['expire_time_end']
+	expire_time_end = datetime.datetime(expire_time_end['year'], 
+										expire_time_end['month'], 
+										expire_time_end['day'], 
+										expire_time_end['hour'],
+										expire_time_end['minute'],
+										expire_time_end['second'])
+	actual_time = datetime.datetime.now()
+	return expire_time_end < actual_time
 
 
 def refresh_token(chat_id):
@@ -105,10 +123,31 @@ def refresh_token(chat_id):
 		db_module.update_info(chat_id, 'expire_time_end' , expire_time_end, overwrite = True)
 
 		print("Authorization correct, token expires %s"%expire_time_end)
+		schedule_refreshment(chat_id)
 		return True
 	else:
 		return False
 
+
+def thread_func(seconds, chat_id): 	
+	sleep(seconds)
+	refresh_token(chat_id)
+
+
+def schedule_refreshment(chat_id):
+	expire_time_end = db_module.get_chat(chat_id)['expire_time_end']
+	expire_time_end = datetime.datetime(expire_time_end['year'], 
+										expire_time_end['month'], 
+										expire_time_end['day'], 
+										expire_time_end['hour'],
+										expire_time_end['minute'],
+										expire_time_end['second'])
+	actual_time = datetime.datetime.now()
+	delay = (expire_time_end-actual_time).total_seconds()
+	print("delay is %s"%str(delay))
+	thread = Thread(target = thread_func, args = [delay, chat_id])
+	thread.start()
+	threads.append(thread)
 
 #query: {'places-matricula': { 'field': 'assig', 'value': 'APC' } }
 def get_main(query, chat_id = '', public = True):
