@@ -13,8 +13,8 @@ import NLU_module
 import feature_module
 import db_module
 
-BOT_NAME = "Test_bot"
-BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
+BOT_NAME = "BOT_NAME"
+BOT_TOKEN = '<API_KEY>'
 
 
 MESSAGE_INCOME= range(1)
