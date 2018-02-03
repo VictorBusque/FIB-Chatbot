@@ -11,9 +11,9 @@ from time import sleep
 import db_module
 
 
-CLIENT_ID = 'aQEcwkDLH8yO9x9g4vpSxIcS6FhUUJGRSZ71rQEoZa'
+CLIENT_ID = 'QEcwkDLH8yO9x9g4vpSxIcS6FhUUJGRSZ71rQEoZ'
 CLIENT_SECRET = 'TXlgFLpju2usHzhWi1vqmpQqsgdz1MYausyhfCHj6VvzdAorE5ZRdvxvElPt3jibxACvi59F7YtyYVylNqdtnoTGuDM3BYgeBPmYjCqaymOmme3R4bdq1JCdRAILZkTb'
-REDIRECT_URI = 'https://localhost:5001' 
+REDIRECT_URI = 'https://localhost:5001'
 
 URL_BASE = 'https://api.fib.upc.edu/v2/'
 
@@ -70,8 +70,8 @@ def process_oauth(code, chat_id):
 		db_module.update_info(chat_id, 'expire_time_end' , expire_time_end)
 		db_module.update_info(chat_id, 'logged', True, overwrite = True)
 		print("Authorization correct, token expires %s"%expire_time_end)
-		schedule_refreshment(chat_id)
-		print("Thread for refreshment defined")
+		#schedule_refreshment(chat_id)
+		#print("Thread for refreshment defined")
 		return True
 	else:
 		return False
@@ -79,9 +79,9 @@ def process_oauth(code, chat_id):
 
 def token_is_deprecated(chat_id):
 	expire_time_end = db_module.get_chat(chat_id)['expire_time_end']
-	expire_time_end = datetime.datetime(expire_time_end['year'], 
-										expire_time_end['month'], 
-										expire_time_end['day'], 
+	expire_time_end = datetime.datetime(expire_time_end['year'],
+										expire_time_end['month'],
+										expire_time_end['day'],
 										expire_time_end['hour'],
 										expire_time_end['minute'],
 										expire_time_end['second'])
@@ -124,22 +124,22 @@ def refresh_token(chat_id):
 		db_module.update_info(chat_id, 'expire_time_end' , expire_time_end, overwrite = True)
 
 		print("Authorization correct, token expires %s"%expire_time_end)
-		schedule_refreshment(chat_id)
+		#schedule_refreshment(chat_id)
 		return True
 	else:
 		return False
 
 
-def thread_func(seconds, chat_id): 	
+def thread_func(seconds, chat_id):
 	sleep(seconds)
 	refresh_token(chat_id)
 
 
 def schedule_refreshment(chat_id):
 	expire_time_end = db_module.get_chat(chat_id)['expire_time_end']
-	expire_time_end = datetime.datetime(expire_time_end['year'], 
-										expire_time_end['month'], 
-										expire_time_end['day'], 
+	expire_time_end = datetime.datetime(expire_time_end['year'],
+										expire_time_end['month'],
+										expire_time_end['day'],
 										expire_time_end['hour'],
 										expire_time_end['minute'],
 										expire_time_end['second'])

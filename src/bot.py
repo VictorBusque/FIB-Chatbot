@@ -14,7 +14,7 @@ import feature_module
 import db_module
 
 BOT_NAME = "BOT_NAME"
-BOT_TOKEN = '<API_KEY>'
+BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 
 
 MESSAGE_INCOME= range(1)
@@ -55,7 +55,7 @@ def send_chat_action(chat_id, action):
 
 def start(bot, update):
 	global state_machine_nodes
-	chat_id = update.message.chat_id		
+	chat_id = update.message.chat_id
 	user_name = update.message.from_user.first_name
 	if db_module.user_has_data(chat_id):
 		update.message.reply_text('Hola %s!'%user_name)
@@ -151,7 +151,7 @@ def state_machine(bot, update):
 
 def main():
 	db_module.load_data()
-	NLU_module.create_interpreter(False)
+	NLU_module.create_interpreter(True)
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 	updater = Updater(BOT_TOKEN)
