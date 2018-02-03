@@ -1,57 +1,25 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "access_token": "U3BeQB2UmBuchskikgCEm3MnBOGt2H",
-    "refresh_token": "kM6uQ8SChbhJKkBGIE3ILZ5qR7NmTP",
+    "access_token": "6oitr8RZUDykTAw3rkbqvO4yYGNOAu",
+    "refresh_token": "XnR6y53vrZDvpF3mTsjWSNBLaixw5c",
     "current_state": "0",
     "expire_time_ini": {
       "day": 3,
-      "month": 2,
-      "year": 2018,
-      "hour": 11,
-      "minute": 3,
-      "second": 11
-    },
-    "expire_time_end": {
-      "day": 3,
-      "month": 2,
-      "year": 2018,
-      "hour": 21,
-      "minute": 3,
-      "second": 11
-    },
-    "logged": true
-  },
-  "312420157": {
-    "name": "Joel",
-    "access_token": "zJbl2JXo8wdPuoEGZCYXhDBdTQH5RR",
-    "refresh_token": "OZD6rFY72br8ED5TCO3qQxo6aiEhJk",
-    "current_state": "0",
-    "expire_time_ini": {
-      "day": 1,
       "month": 2,
       "year": 2018,
       "hour": 14,
-      "minute": 28,
-      "second": 56
+      "minute": 25,
+      "second": 28
     },
     "expire_time_end": {
-      "day": 2,
+      "day": 4,
       "month": 2,
       "year": 2018,
       "hour": 0,
-      "minute": 28,
-      "second": 56
+      "minute": 25,
+      "second": 28
     },
     "logged": true
-  },
-  "496541396": {
-    "name": "Jordi",
-    "access_token": null,
-    "refresh_token": null,
-    "current_state": "2",
-    "expire_time_ini": null,
-    "expire_time_end": null,
-    "logged": false
   }
 }

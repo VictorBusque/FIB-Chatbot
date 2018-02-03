@@ -8,6 +8,8 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
 import urllib
 import requests
 import logging
+import re
+
 import API_module
 import NLU_module
 import feature_module
@@ -95,9 +97,13 @@ def authenticate(bot, update):
 	global state_machine_nodes
 	chat_id = update.message.chat_id
 	USER_NAME = db_module.get_chat(chat_id)['name']
-	text = update.message.text
-	print(text)
-	AUTH_CODE = text.split('=')[1]
+	url = update.message.text
+	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', url)
+	if not urls:
+		db_module.update_info(chat_id, 'current_state', state_machine_nodes['MessageHandler'], overwrite = True)
+		return ask(bot, update)
+	print(url)
+	AUTH_CODE = url.split('=')[1]
 	print(AUTH_CODE)
 	callback = API_module.process_oauth(AUTH_CODE, chat_id)
 	if callback:
