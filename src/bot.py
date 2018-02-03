@@ -59,14 +59,14 @@ def start(bot, update):
 	if db_module.user_has_data(chat_id):
 		update.message.reply_text('Hola %s!'%user_name)
 	else:
-
 		data = {'name': user_name,
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': state_machine_nodes['MessageHandler'],
 				'expire_time_ini': None,
 				'expire_time_end': None,
-				'logged': False}
+				'logged': False,
+				'notifications': False}
 		db_module.update_chat(chat_id, data, compulsory = not db_module.user_has_data(chat_id))
 		update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, BOT_NAME))
 		update.message.reply_text('Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
@@ -113,6 +113,49 @@ def authenticate(bot, update):
 		update.message.reply_text('Hubo un error! Mándame la URL de nuevo por favor.')
 		db_module.update_info(chat_id, 'current_state', state_machine_nodes['Wait_authorisation'], overwrite = True)
 	return MESSAGE_INCOME
+
+
+def logout(bot, update):
+	print("Logging out")
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	if db_module.get_chat(chat_id)['logged']:
+		data = {'name': USER_NAME,
+				'access_token': None,
+				'refresh_token': None,
+				'current_state': state_machine_nodes['MessageHandler'],
+				'expire_time_ini': None,
+				'expire_time_end': None,
+				'logged': False,
+				'notifications': False}
+		db_module.update_chat(chat_id, data)
+		update.message.reply_text('Hecho %s. Podrás volver a identificarte cuando quieras usando el comando /login.'%USER_NAME)
+	else:
+		update.message.reply_text('No te has identificado en el Racó, así que no puedes cerrar sesión %s'%USER_NAME)
+
+
+def updates_on(bot, update):
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	if db_module.get_chat(chat_id)['logged'] and not db_module.get_chat(chat_id)['notifications']:
+		db_module.update_info(chat_id, 'notifications' , True, overwrite = True)
+		update.message.reply_text('Hecho! A partir de ahora ya recibirás notificaciones con tus avisos!')
+	elif db_module.get_chat(chat_id)['logged'] and db_module.get_chat(chat_id)['notifications']:
+		update.message.reply_text('Pero si ya las tenías activadas!')
+	else:
+		update.message.reply_text('Para recibir notificaciones debes haberte identificado con tu usuario del Racó (usando /login).')
+
+
+def updates_off(bot, update):
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	if db_module.get_chat(chat_id)['logged'] and db_module.get_chat(chat_id)['notifications']:
+		db_module.update_info(chat_id, 'notifications' , False, overwrite = True)
+		update.message.reply_text('Hecho! A partir de ahora dejarás de recibir notificaciones con tus avisos!')
+	elif not db_module.get_chat(chat_id)['logged']:
+		update.message.reply_text('¡Vaya! Ni siquiera te identificaste con tu usuario del Racó. No podía mandarte nada de todas formas.')
+	elif db_module.get_chat(chat_id)['notifications']:
+		update.message.reply_text('No tenías activadas las notificaciones para los avisos de todas formas.')
 
 
 def ask(bot, update):
@@ -162,7 +205,9 @@ def main():
 	dp = updater.dispatcher
 
 	conv_handler = ConversationHandler(
-		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication)],
+		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
+					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
+					CommandHandler('updates_off', updates_off)],
 		states = {
 			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)]
 		},

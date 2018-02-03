@@ -14,7 +14,8 @@ user_status = { chat_id: {
 					'current_state': state,
 					'expire_time_ini': None/eti,
 					'expire_time_end': None/ete,
-					'logged': true/false
+					'logged': true/false,
+					'notifications': true/false
 					}
 				}
 '''

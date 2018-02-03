@@ -15,20 +15,20 @@ def retrieve_data(intent, entities, chat_id):
 		return "not ready yet"
 	elif intention == 'ask_free_spots':
 		print ("Estoy mirando free spots")
-		subject = entities[0]['value']
+		subject = entities[0]['value'].upper()
 		print(subject)
 		query = {'places-matricula': { 'field': 'assig', 'value': subject } }
 		return API_module.get_main(query, public = True)
 	elif intention == 'ask_subject_schedule':
 		print("Preguntaste por tu horario")
-		subject = entities[0]['value']
+		subject = entities[0]['value'].upper()
 		print("subject = %s"%subject)
 		query = {'horari': {'field': 'codi_assig' , 'value': subject}}
 		print(query)
 		return API_module.get_main(query, chat_id, False)
 	elif intention == 'ask_subject_classroom':
 		print("Preguntaste por alguna clase")
-		subject = entities[0]['value']
+		subject = entities[0]['value'].upper()
 		print("subject = %s"%subject)
 		query = {'horari': {'field': 'codi_assig' , 'value': subject}}
 		print(query)
