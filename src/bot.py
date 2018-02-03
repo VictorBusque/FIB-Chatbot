@@ -120,7 +120,7 @@ def ask(bot, update):
 	query = update.message.text
 	intent = NLU_module.get_intent(query)
 	entities = NLU_module.get_entities(query)
-	update.message.reply_text('Tu intención es: '+intent['name'])
+	update.message.reply_text('Estoy '+str(intent['confidence']*100)+' porciento seguro de que tu intención es: '+intent['name'])
 	for entity in entities:
 		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
 	update.message.reply_text('Mis resultados son: ')
