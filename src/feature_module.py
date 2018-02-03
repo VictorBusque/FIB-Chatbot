@@ -7,7 +7,8 @@ import API_module
 
 def retrieve_data(intent, entities, chat_id):
 	intention = intent['name']
-
+	if intention == 'non_query':
+		return "Y si me preguntas algo de la FIB campeón máquina fiera mastodonte tifón."
 	if intention =='ask_teacher_mail':
 		return "not ready yet"
 	elif intention == 'ask_teacher_desk':
@@ -28,9 +29,8 @@ def retrieve_data(intent, entities, chat_id):
 	elif intention == 'ask_subject_classroom':
 		print("Preguntaste por alguna clase")
 		subject = entities[0]['value']
-		print("subject = %s"%subject)		
+		print("subject = %s"%subject)
 		query = {'horari': {'field': 'codi_assig' , 'value': subject}}
 		print(query)
 		return API_module.get_main(query, chat_id, False)
 	return "not ready yet"
-

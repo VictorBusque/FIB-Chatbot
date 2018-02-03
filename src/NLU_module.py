@@ -10,9 +10,9 @@ from rasa_nlu.model import Metadata, Interpreter
 interpreter = ""
 
 
-def create_interpreter(trained = True):
+def create_interpreter(train = False):
 	global interpreter
-	if not trained:
+	if train:
 		training_data = load_data('./Data/Dataset.json')
 		print("Data Loaded")
 		trainer = Trainer(RasaNLUConfig("./src/config_spacy.json"))

@@ -154,7 +154,7 @@ def state_machine(bot, update):
 
 def main():
 	db_module.load_data()
-	NLU_module.create_interpreter(True)
+	NLU_module.create_interpreter(False)
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 	updater = Updater(BOT_TOKEN)
