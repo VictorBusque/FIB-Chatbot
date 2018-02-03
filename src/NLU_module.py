@@ -12,9 +12,9 @@ interpreter = ""
 
 def create_interpreter(trained = True):
 	global interpreter
-	training_data = load_data('./Data/Dataset.json')
-	print("Data Loaded")
 	if not trained:
+		training_data = load_data('./Data/Dataset.json')
+		print("Data Loaded")
 		trainer = Trainer(RasaNLUConfig("./src/config_spacy.json"))
 		print("Trainer launched")
 		trainer.train(training_data)
@@ -24,8 +24,7 @@ def create_interpreter(trained = True):
 		interpreter = Interpreter.load(model_directory, RasaNLUConfig("./src/config_spacy.json"))
 	else:
 		interpreter = Interpreter.load("./projects/default/default/model_20180201-142832", RasaNLUConfig("./src/config_spacy.json"))
-		
-	print("Everything is OK")
+	print("NLU model loaded")
 
 
 def get_intent(query):

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from telegram import (ReplyKeyboardMarkup, ChatAction)
+from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
 						  ConversationHandler)
 import urllib
@@ -20,10 +20,6 @@ BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 MESSAGE_INCOME= range(1)
 LOGGED_IN = False
 
-'''
-reply_keyboard = [['Sí','No']]
-markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-'''
 
 ##### STATE MACHINE #####
 # 0 - Message Handler
@@ -52,6 +48,7 @@ def send_chat_action(chat_id, action):
 	}
 	base_url = 'https://api.telegram.org/bot%s/sendChatAction'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
 	response = requests.get(base_url, params = params)
+
 
 def start(bot, update):
 	global state_machine_nodes

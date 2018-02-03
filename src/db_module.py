@@ -4,19 +4,18 @@
 
 import json
 import os
-from pprint import pprint
 
 
 '''
 user_status = { chat_id: {
-					'name': username, 
-					'access_token': None/at, 
-					'refresh_token': None/rt, 
-					'current_state': state, 
-					'expire_time_ini': None/eti, 
+					'name': username,
+					'access_token': None/at,
+					'refresh_token': None/rt,
+					'current_state': state,
+					'expire_time_ini': None/eti,
 					'expire_time_end': None/ete,
 					'logged': true/false
-					}  
+					}
 				}
 '''
 
@@ -24,16 +23,16 @@ chat_status = {}
 
 '''
 class chat:
-	def __init__(self, chat_id, name, access_token = None, refresh_token = None, 
+	def __init__(self, chat_id, name, access_token = None, refresh_token = None,
 		current_state = None, expire_time_ini = None, expire_time_end = None, logged = None):
 
 		self.chat_id = str(chat_id)
 		self.data = {
-					'name': name, 
-					'access_token': access_token, 
-					'refresh_token': refresh_token, 
-					'current_state': current_state, 
-					'expire_time_ini': expire_time_ini, 
+					'name': name,
+					'access_token': access_token,
+					'refresh_token': refresh_token,
+					'current_state': current_state,
+					'expire_time_ini': expire_time_ini,
 					'expire_time_end': expire_time_end,
 					'logged': logged
 		}

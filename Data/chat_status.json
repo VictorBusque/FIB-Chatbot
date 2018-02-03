@@ -44,5 +44,14 @@
       "second": 56
     },
     "logged": true
+  },
+  "496541396": {
+    "name": "Jordi",
+    "access_token": null,
+    "refresh_token": null,
+    "current_state": "2",
+    "expire_time_ini": null,
+    "expire_time_end": null,
+    "logged": false
   }
 }
