@@ -12,6 +12,7 @@ import re
 
 import API_module
 import NLU_module
+import NLG_module
 import feature_module
 import db_module
 
@@ -19,9 +20,7 @@ BOT_NAME = "BOT_NAME"
 BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
 
 
-MESSAGE_INCOME= range(1)
-LOGGED_IN = False
-
+MESSAGE_INCOME, TRAINING, CORR_INCORR, GET_CORRECT = range(4)
 
 ##### STATE MACHINE #####
 # 0 - Message Handler
@@ -42,6 +41,9 @@ state_machine_nodes = {
 }
 
 
+reply_keyboard = [['Sí','No']]
+markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+
 def send_chat_action(chat_id, action):
 	print("Sending action %s"%action)
 	params = {
@@ -50,6 +52,17 @@ def send_chat_action(chat_id, action):
 	}
 	base_url = 'https://api.telegram.org/bot%s/sendChatAction'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
 	response = requests.get(base_url, params = params)
+
+
+def send_message(chat_id, message, markup = False):
+	print("Sending message %s to %s"%(message, db_module.get_chat(chat_id)['name']) )
+	params = {
+		'chat_id': chat_id,
+		'text': message
+	}
+	base_url = 'https://api.telegram.org/bot%s/sendMessage'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
+	response = requests.get(base_url, params = params)
+
 
 
 def start(bot, update):
@@ -66,7 +79,8 @@ def start(bot, update):
 				'expire_time_ini': None,
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False}
+				'notifications': False,
+				'training': False}
 		db_module.update_chat(chat_id, data, compulsory = not db_module.user_has_data(chat_id))
 		update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, BOT_NAME))
 		update.message.reply_text('Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
@@ -158,9 +172,33 @@ def updates_off(bot, update):
 		update.message.reply_text('No tenías activadas las notificaciones para los avisos de todas formas.')
 
 
+def training_on(bot, update):
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	if not db_module.get_chat(chat_id)['training']:
+		db_module.update_info(chat_id, 'training' , True, overwrite = True)
+		update.message.reply_text('Hecho! modo de entrenamiento activado!')
+		update.message.reply_text('Mándame algún mensaje')
+	else:
+		update.message.reply_text('Modo de entrenamiento está ya activo.')
+		return TRAINING
+
+
+def training_off(bot, update):
+	chat_id = update.message.chat_id
+	USER_NAME = db_module.get_chat(chat_id)['name']
+	if db_module.get_chat(chat_id)['training']:
+		db_module.update_info(chat_id, 'training' , False, overwrite = True)
+		update.message.reply_text('Hecho! modo de entrenamiento desactivado!')
+	else:
+		update.message.reply_text('Modo de entrenamiento está ya inactivo.')
+	return MESSAGE_INCOME
+
+
 def ask(bot, update):
 	chat_id = update.message.chat_id
 	query = update.message.text
+	'''
 	intent = NLU_module.get_intent(query)
 	entities = NLU_module.get_entities(query)
 	update.message.reply_text('Estoy '+str(intent['confidence']*100)+' porciento seguro de que tu intención es: '+intent['name'])
@@ -169,8 +207,43 @@ def ask(bot, update):
 	update.message.reply_text('Mis resultados son: ')
 	send_chat_action(chat_id, 'typing')
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
+	'''
+	update.message.reply_text(NLG_module.get_response(query, debug = False))
 	return MESSAGE_INCOME
 
+
+
+def train_machine(bot, update):
+	chat_id = update.message.chat_id
+	message = update.message.text
+	print("Hola, estoy en train_machine")
+	print(message)
+	update.message.reply_text("Procesando el mensaje...", reply_markup = markup)
+	NLG_module.process_answer_training(chat_id, message)
+	return CORR_INCORR
+
+
+def feedback_info(bot, update):
+	chat_id = update.message.chat_id
+	message = update.message.text
+	if message == "Sí":
+		NLG_module.give_feedback(chat_id, correct = True)
+		return TRAINING
+	elif message == "No":
+		update.message.reply_text("¿Qué respuesta habría sido coherente entonces?")
+		return GET_CORRECT
+	else:
+		update.message.reply_text("¿Fué coherente la última respuesta?", reply_markup = markup)
+		return CORR_INCORR
+
+
+def def_knowledge(bot, update):
+	chat_id = update.message.chat_id
+	message = update.message.text
+	NLG_module.give_feedback(chat_id, correct = False, correct_statement = message)
+	update.message.reply_text('Corregido! Muchas gracias!')
+	update.message.reply_text('Mándame algún mensaje')
+	return TRAINING
 
 ##### STATE MACHINE #####
 # 0 - Message Handler
@@ -184,6 +257,12 @@ def ask(bot, update):
 #########################
 def state_machine(bot, update):
 	chat_id = update.message.chat_id
+	message = update.message.text
+
+	if (db_module.get_chat(chat_id)['training']):
+		return train_machine(bot, update)
+
+	print (message)
 	USER_NAME = db_module.get_chat(chat_id)['name']
 	current_state = db_module.get_chat(chat_id)['current_state']
 	print("está en la state machine, con estado %s"%current_state)
@@ -198,6 +277,7 @@ def state_machine(bot, update):
 def main():
 	db_module.load_data()
 	NLU_module.create_interpreter(False)
+	NLG_module.load_bot()
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 	updater = Updater(BOT_TOKEN)
@@ -207,9 +287,13 @@ def main():
 	conv_handler = ConversationHandler(
 		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
-					CommandHandler('updates_off', updates_off)],
+					CommandHandler('updates_off', updates_off), CommandHandler('train_on', training_on),
+					CommandHandler('train_off', training_off)],
 		states = {
-			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)]
+			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
+			TRAINING: [MessageHandler(filters = Filters.text, callback = train_machine)],
+			CORR_INCORR: [RegexHandler('^(Sí|No)$', callback = feedback_info)],
+			GET_CORRECT: [MessageHandler(filters = Filters.text, callback = def_knowledge)],
 		},
 		fallbacks=[RegexHandler('^Done$', done)],
 		allow_reentry = True #So users can use /login

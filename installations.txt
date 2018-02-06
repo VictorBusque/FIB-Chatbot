@@ -5,3 +5,4 @@ pip pypandoc (+download pandoc)
 tensorflow pip-like
 pip rasa_core
 python -m spacy download en 
+pip install chatterbot

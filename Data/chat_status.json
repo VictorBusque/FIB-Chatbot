@@ -1,26 +1,24 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "access_token": "yqvgUw93gZEQCQUVKgMfWji0oR9iIM",
-    "refresh_token": "Ni5v99DxyD1AYGIVk8Uqgl18qHJD3C",
+    "access_token": null,
+    "refresh_token": null,
     "current_state": "0",
-    "expire_time_ini": {
-      "day": 3,
-      "month": 2,
-      "year": 2018,
-      "hour": 21,
-      "minute": 5,
-      "second": 3
-    },
-    "expire_time_end": {
-      "day": 4,
-      "month": 2,
-      "year": 2018,
-      "hour": 7,
-      "minute": 5,
-      "second": 3
-    },
-    "logged": true,
-    "notifications": false
+    "expire_time_ini": null,
+    "expire_time_end": null,
+    "logged": false,
+    "notifications": false,
+    "training": false
+  },
+  "312420157": {
+    "name": "Joel",
+    "access_token": null,
+    "refresh_token": null,
+    "current_state": "0",
+    "expire_time_ini": null,
+    "expire_time_end": null,
+    "logged": false,
+    "notifications": false,
+    "training": false
   }
 }
