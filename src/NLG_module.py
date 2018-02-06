@@ -1,29 +1,19 @@
 from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
 
 import bot
 
-from pprint import pprint
-
-# Uncomment the following line to enable verbose logging
-# import logging
-# logging.basicConfig(level=logging.INFO)
 
 # Create a new instance of a ChatBot
 chatbot = ChatBot(
     "Fibot",
-    storage_adapter="chatterbot.storage.SQLStorageAdapter",
-    input_adapter="chatterbot.input.TerminalAdapter",
-    output_adapter="chatterbot.output.TerminalAdapter"
+    storage_adapter="chatterbot.storage.SQLStorageAdapter"
 )
-#bot.set_trainer(ChatterBotCorpusTrainer)
-
-#bot.train("chatterbot.corpus.spanish")
 
 
 train_queue = {}
 CONVERSATION_ID = 0
+
 
 def load_bot():
 	global CONVERSATION_ID, chatbot
@@ -59,7 +49,6 @@ def process_answer_training(chat_id, message):
 
 def get_response(message, debug = False):
 	global CONVERSATION_ID, chatbot
-	print("Im in it to win it")
 	input_statement = Statement(message)
 	_, response = chatbot.generate_response(input_statement, CONVERSATION_ID)
 	print(response)

@@ -1,11 +1,9 @@
 from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig
-from rasa_nlu.model import Trainer
-from rasa_nlu.model import Metadata
+from rasa_nlu.model import (Trainer, Metadata, Interpreter)
 import spacy
 import json
 import os.path
-from rasa_nlu.model import Metadata, Interpreter
 
 interpreter = ""
 
