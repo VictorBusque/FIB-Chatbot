@@ -32,7 +32,7 @@ class Fibot(object):
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
-		self.bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
+		self.bot_token = os.getenv('FibotTOKEN')
 		self.chats = Chats()
 		self.api_raco = API_raco()
 		self.nlu = NLU_unit()
