@@ -1,23 +1,19 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "access_token": null,
-    "refresh_token": null,
+    "access_token": "K88lDKWbnFclHoawzrhUIZfdoj4oLo",
+    "refresh_token": "pAMI8H7cmqInYwpcYa4lJXmnehiBiU",
     "current_state": "0",
     "expire_time_ini": null,
-    "expire_time_end": null,
-    "logged": false,
-    "notifications": false,
-    "training": false
-  },
-  "312420157": {
-    "name": "Joel",
-    "access_token": null,
-    "refresh_token": null,
-    "current_state": "0",
-    "expire_time_ini": null,
-    "expire_time_end": null,
-    "logged": false,
+    "expire_time_end": {
+      "day": 8,
+      "month": 2,
+      "year": 2018,
+      "hour": 5,
+      "minute": 9,
+      "second": 59
+    },
+    "logged": true,
     "notifications": false,
     "training": false
   }
