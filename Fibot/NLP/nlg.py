@@ -2,6 +2,8 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
 
+from telegram import ChatAction
+
 import os
 import requests
 
@@ -43,8 +45,9 @@ class NLG_unit(object):
 			correct_statement = Statement(correct_statement)
 			self.chatterbot_bot.learn_response(correct_statement, message)
 			self.chatterbot_bot.storage.add_to_conversation(self.conversation_id, message, correct_statement)
+			self.send_message(chat_id, "Aprendido!. Mándame más si quieres, o desactívame usando /train_off")
 		else:
-			return
+			self.send_message(chat_id, "Bien. Mándame más si quieres, o desactívame usando /train_off")
 
 	"""
 		Parameters:
@@ -56,6 +59,7 @@ class NLG_unit(object):
 	"""
 	def process_answer_training(self, chat_id, message):
 		print("Query de %s con mensaje %s"%(chat_id, message))
+		self.send_chat_action(chat_id)
 		input_statement = Statement(message)
 		statement, response = self.chatterbot_bot.generate_response(input_statement, self.conversation_id)
 		self.send_message(chat_id,'Es "{}" una respuesta coherente a "{}"? (Sí/No)'.format(response, message))
@@ -79,7 +83,6 @@ class NLG_unit(object):
 		else:
 			return str(response)
 
-
 	"""
 		Parameters:
 			chat_id (:obj:`str`): chat_id of the person to process the answer for
@@ -91,6 +94,22 @@ class NLG_unit(object):
 		params = {
 			'chat_id': chat_id,
 			'text': message
+		}
+		bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
+		base_url = 'https://api.telegram.org/bot%s/sendMessage'%bot_token
+		response = requests.get(base_url, params = params)
+
+	"""
+		Parameters:
+			chat_id (:obj:`str`): chat_id of the person to process the answer for
+			action (:obj:`str`): action to send of the messages
+
+		This function allows nlg class to send messages for the training duties
+	"""
+	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
+		params = {
+			'chat_id': chat_id,
+			'action': action
 		}
 		bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
 		base_url = 'https://api.telegram.org/bot%s/sendChatAction'%bot_token

@@ -36,7 +36,6 @@ class Chats(object):
 		try:
 			with open('./Data/chat_status.json', 'r') as fp:
 				self.chats = json.load(fp)
-			print(self.chats)
 			print("----------------")
 		except:
 			print("There is no db file")
@@ -68,7 +67,6 @@ class Chats(object):
 		if compulsory:
 			self.chats[str(chat_id)] = data
 			self.dump_data()
-			print(self.chats)
 
 	"""
 		Parameters:
@@ -84,13 +82,13 @@ class Chats(object):
 		self.chats[str(chat_id)][field] = value
 		if overwrite:
 			self.dump_data()
-			print(self.chats)
 
 	"""
 		This function updates persistence with the contents of the dict chats.
 	"""
 	def dump_data(self):
 		print("Dumping data <--------------")
+		print(self.chats)
 		os.remove('./Data/chat_status.json')
 		with open('./Data/chat_status.json', 'w') as fp:
 			json.dump(self.chats, fp, indent = 2)
@@ -104,7 +102,6 @@ class Chats(object):
 			dict: if there is.
 	"""
 	def get_chat(self, chat_id):
-		print(self.chats)
 		if self.user_has_data(chat_id):
 			return self.chats[str(chat_id)]
 		else:

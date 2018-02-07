@@ -292,7 +292,7 @@ def train_machine(bot, update):
 	chat_id = update.message.chat_id
 	message = update.message.text
 	update.message.reply_text("Procesando el mensaje...", reply_markup = markup)
-	Fibot.nlg().process_answer_training(chat_id, message)
+	Fibot.nlg.process_answer_training(chat_id, message)
 	return CORR_INCORR
 
 
@@ -301,7 +301,7 @@ def feedback_info(bot, update):
 	chat_id = update.message.chat_id
 	message = update.message.text
 	if message == "Sí":
-		Fibot.nlg().give_feedback(chat_id, correct = True)
+		Fibot.nlg.give_feedback(chat_id, correct = True)
 		return TRAINING
 	elif message == "No":
 		update.message.reply_text("¿Qué respuesta habría sido coherente entonces?")
@@ -315,7 +315,7 @@ def def_knowledge(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	Fibot.nlg().give_feedback(chat_id, correct = False, correct_statement = message)
+	Fibot.nlg.give_feedback(chat_id, correct = False, correct_statement = message)
 	update.message.reply_text('Corregido! Muchas gracias!')
 	update.message.reply_text('Mándame algún mensaje')
 	return TRAINING
