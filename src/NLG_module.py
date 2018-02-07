@@ -13,7 +13,9 @@ from pprint import pprint
 # Create a new instance of a ChatBot
 chatbot = ChatBot(
     "Fibot",
-    storage_adapter="chatterbot.storage.SQLStorageAdapter"
+    storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    input_adapter="chatterbot.input.TerminalAdapter",
+    output_adapter="chatterbot.output.TerminalAdapter"
 )
 #bot.set_trainer(ChatterBotCorpusTrainer)
 
@@ -57,8 +59,10 @@ def process_answer_training(chat_id, message):
 
 def get_response(message, debug = False):
 	global CONVERSATION_ID, chatbot
+	print("Im in it to win it")
 	input_statement = Statement(message)
 	_, response = chatbot.generate_response(input_statement, CONVERSATION_ID)
+	print(response)
 	if debug:
 		return "%s, confidence = %d"%(response['text'], response['confidence'])
 	else:
