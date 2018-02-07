@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from telegram import ReplyKeyboardMarkup
+from telegram import ReplyKeyboardMarkup, ChatAction
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
 						  ConversationHandler)
 import urllib
@@ -10,13 +10,13 @@ import requests
 import logging
 import re
 
-from Fibot.chats import Chat
+from Fibot.chats import Chats
 from Fibot.api_raco import API_raco
 from Fibot.NLP.nlu import NLU_unit
-from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
+from Fibot.NLP.nlg import NLG_unit
 
 
-class Fibot():
+class Fibot(object):
 
 	""" This object contains information and methods to manage the BOT_NAME
 
@@ -28,16 +28,22 @@ class Fibot():
 		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets querys
 		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+		state_machine(:obj:`dict`): Object that simplifies the state machine management
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
 		self.bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
-		self.chats = Chat()
+		self.chats = Chats()
 		self.api_raco = API_raco()
 		self.nlu = NLU_unit()
 		self.nlg = NLG_unit()
-		self.query_answer = Query_answer_unit()
-
+		self.state_machine = {
+			'MessageHandler': '0',
+			'Authorise': '1',
+			'Wait_authorisation': '2',
+			'Erase_user': '3',
+			'Push_notification': '4',
+		}
 
 	"""
 		Loads the following components:
@@ -50,18 +56,39 @@ class Fibot():
 		self.nlu.load()
 		self.nlg.load()
 
+	"""
+		Sends a message to the chat with chat_id with content text
+	"""
+	def send_message(self, chat_id, text):
+		params = {
+			'chat_id': chat_id,
+			'text': text
+		}
+		base_url = 'https://api.telegram.org/bot%s/sendMessage'%self.bot_token
+		response = requests.get(base_url, params = params)
 
 	"""
-		Returns information of the chat depending on parameter:
-			chat_id equal to -1 returns a list of all the chat_status
-			unexisting chat_id returns None
-			otherwise returns the information of the chat with chat_id equal to the parameter
+		Sends an action to a chat (using ChatAction helper)
 	"""
-	def get_chat(self, chat_id = -1):
-		if chat_id == -1:
-			return chats.get_all()
-		else:
-			return chats.get(chat_id)
+	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
+		params = {
+			'chat_id': chat_id,
+			'action': action
+		}
+		base_url = 'https://api.telegram.org/bot%s/sendChatAction'%self.bot_token
+		response = requests.get(base_url, params = params)
+
+	"""
+		Returns the bot's name
+	"""
+	def name(self):
+		return self.name
+
+	"""
+		Returns the bot's token
+	"""
+	def bot_token(self):
+		return self.bot_token
 
 	"""
 		Returns the object chats
@@ -69,72 +96,62 @@ class Fibot():
 	def chats(self):
 		return self.chats
 
+	"""
+		Returns the object api_raco
+	"""
+	def api_raco(self):
+		return self.api_raco
+
+	"""
+		Returns the object nlu
+	"""
+	def nlu(self):
+		return self.nlu
+
+	"""
+		Returns the object nlg
+	"""
+	def nlg(self):
+		return self.nlg
+
+	"""
+		Returns the object query_answer
+	"""
+	def query_answer(self):
+		return self.query_answer
+
+	"""
+		Returns the object state_machine
+	"""
+	def state_machine(self):
+		return self.state_machine
+
 
 MESSAGE_INCOME, TRAINING, CORR_INCORR, GET_CORRECT = range(4)
-
-##### STATE MACHINE #####
-# 0 - Message Handler
-### 0.0 - Waiting Question
-### 0.1 - Processing Answer
-### 0.2 - Missing information (entities)
-# 1 - Authorise (via /login)
-# 2 - Waiting for autentification
-# 3 - Erase user information (via /logout)
-# 4 - Push Notification (via push or /update)
-#########################
-state_machine_nodes = {
-	'MessageHandler': '0',
-	'Authorise': '1',
-	'Wait_authorisation': '2',
-	'Erase_user': '3',
-	'Push_notification': '4',
-}
-
-
 reply_keyboard = [['Sí','No']]
 markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
-
-def send_chat_action(chat_id, action):
-	print("Sending action %s"%action)
-	params = {
-		'chat_id': chat_id,
-		'action': action
-	}
-	base_url = 'https://api.telegram.org/bot%s/sendChatAction'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
-	response = requests.get(base_url, params = params)
-
-
-def send_message(chat_id, message, markup = False):
-	print("Sending message %s to %s"%(message, db_module.get_chat(chat_id)['name']) )
-	params = {
-		'chat_id': chat_id,
-		'text': message
-	}
-	base_url = 'https://api.telegram.org/bot%s/sendMessage'%BOT_TOKEN#?'%BOT_TOKEN+ urllib.parse.urlencode(params)
-	response = requests.get(base_url, params = params)
-
-
+Fibot = Fibot()
 
 def start(bot, update):
-	global state_machine_nodes
+	global Fibot
 	chat_id = update.message.chat_id
-	user_name = update.message.from_user.first_name
-	if db_module.user_has_data(chat_id):
-		update.message.reply_text('Hola %s!'%user_name)
+	if Fibot.chats.user_has_data(chat_id):
+		update.message.reply_text('Hola %s!'%Fibot.chats.get_chat(chat_id)['name'])
 	else:
+		user_name = update.message.from_user.first_name
 		data = {'name': user_name,
 				'access_token': None,
 				'refresh_token': None,
-				'current_state': state_machine_nodes['MessageHandler'],
+				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_ini': None,
 				'expire_time_end': None,
 				'logged': False,
 				'notifications': False,
 				'training': False}
-		db_module.update_chat(chat_id, data, compulsory = not db_module.user_has_data(chat_id))
-		update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, BOT_NAME))
+		Fibot.chats.update_chat(chat_id, data, compulsory = True)
+		update.message.reply_text('Hola %s, bienvenido a %s'%(user_name, Fibot.name))
 		update.message.reply_text('Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
-		update.message.reply_text('Si quieres autentificarte para que pueda ayudarte aún más, usa el comando "/login"!')#, reply_markup=markup)
+		update.message.reply_text('Si quieres autentificarte para que pueda ayudarte aún más, usa el comando "/login"!')
 	return MESSAGE_INCOME
 
 
@@ -143,90 +160,96 @@ def done(bot, update):
 
 
 def start_authentication(bot, update):
-	global state_machine_nodes
+	global Fibot
 	print("Starting authentication")
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	logged = db_module.get_chat(chat_id)['logged']
+	user_name = Fibot.chats.get_chat(chat_id)['name']
+	print(user_name)
+	logged = Fibot.chats.get_chat(chat_id)['logged']
+	print(logged)
 	if (not logged):
-		update.message.reply_text('Muy bien %s, autentifícate en la siguiente url: %s.'%(USER_NAME, API_module.get_autho_full_page()))
+		update.message.reply_text('Muy bien %s, autentifícate en la siguiente url: %s.'%(user_name, Fibot.api_raco.get_autho_full_page()))
 		update.message.reply_text('Una vez te hayas autentificado, mándame por mensaje la url a la que te llevó.')
-		db_module.update_info(chat_id, 'current_state', state_machine_nodes['Wait_authorisation'], overwrite = True)
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 	else:
-		update.message.reply_text('Ya te identificaste con tu cuenta del Racó, %s.'%(USER_NAME))
+		update.message.reply_text('Ya te identificaste con tu cuenta del Racó, %s.'%(user_name))
 	return MESSAGE_INCOME
 
 
 def authenticate(bot, update):
-	global state_machine_nodes
+	global Fibot
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
+	user_name = Fibot.chats.get_chat(chat_id)['name']
 	url = update.message.text
 	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', url)
 	if not urls:
-		db_module.update_info(chat_id, 'current_state', state_machine_nodes['MessageHandler'], overwrite = True)
-		return ask(bot, update)
-	print(url)
-	AUTH_CODE = url.split('=')[1]
-	print(AUTH_CODE)
-	callback = API_module.process_oauth(AUTH_CODE, chat_id)
-	if callback:
-		update.message.reply_text('Gracias %s, ya podemos empezar!'%USER_NAME)
-		db_module.update_info(chat_id, 'current_state', state_machine_nodes['MessageHandler'], overwrite = True)
+		update.message.reply_text('Por favor, mándame por mensaje la URL a la que te llevó.')
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
+		return MESSAGE_INCOME
+	auth_code = url.split('=')[1]
+	callback = Fibot.api_raco.authenticate(auth_code)
+	if isinstance(callback, dict):
+		Fibot.chats.update_info(chat_id, 'access_token', callback['access_token'])
+		Fibot.chats.update_info(chat_id, 'refresh_token', callback['refresh_token'])
+		Fibot.chats.update_info(chat_id, 'expire_time_end', callback['expire_time_end'])
+		Fibot.chats.update_info(chat_id, 'logged', callback['logged'], overwrite = True)
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['MessageHandler'], overwrite = True)
+		update.message.reply_text('Gracias %s, ya podemos empezar!'%user_name)
 	else:
 		update.message.reply_text('Hubo un error! Mándame la URL de nuevo por favor.')
-		db_module.update_info(chat_id, 'current_state', state_machine_nodes['Wait_authorisation'], overwrite = True)
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine_nodes['Wait_authorisation'], overwrite = True)
 	return MESSAGE_INCOME
 
 
 def logout(bot, update):
+	global Fibot
 	print("Logging out")
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	if db_module.get_chat(chat_id)['logged']:
+	user_name = Fibot.chats.get_chat(chat_id)['name']
+	if Fibot.chats.get_chat(chat_id)['logged']:
 		data = {'name': USER_NAME,
 				'access_token': None,
 				'refresh_token': None,
-				'current_state': state_machine_nodes['MessageHandler'],
+				'current_state': Fibot.state_machine()['MessageHandler'],
 				'expire_time_ini': None,
 				'expire_time_end': None,
 				'logged': False,
 				'notifications': False}
-		db_module.update_chat(chat_id, data)
-		update.message.reply_text('Hecho %s. Podrás volver a identificarte cuando quieras usando el comando /login.'%USER_NAME)
+		Fibot.chats.update_chat(chat_id, data)
+		update.message.reply_text('Hecho %s. Podrás volver a identificarte cuando quieras usando el comando /login.'%user_name)
 	else:
-		update.message.reply_text('No te has identificado en el Racó, así que no puedes cerrar sesión %s'%USER_NAME)
+		update.message.reply_text('No te has identificado en el Racó, así que no puedes cerrar sesión %s'%user_name)
 
 
 def updates_on(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	if db_module.get_chat(chat_id)['logged'] and not db_module.get_chat(chat_id)['notifications']:
-		db_module.update_info(chat_id, 'notifications' , True, overwrite = True)
+	if Fibot.chats.get_chat(chat_id)['logged'] and not Fibot.chats.get_chat(chat_id)['notifications']:
+		Fibot.chats.update_info(chat_id, 'notifications' , True, overwrite = True)
 		update.message.reply_text('Hecho! A partir de ahora ya recibirás notificaciones con tus avisos!')
-	elif db_module.get_chat(chat_id)['logged'] and db_module.get_chat(chat_id)['notifications']:
+	elif Fibot.chats.get_chat(chat_id)['logged'] and Fibot.chats.get_chat(chat_id)['notifications']:
 		update.message.reply_text('Pero si ya las tenías activadas!')
 	else:
 		update.message.reply_text('Para recibir notificaciones debes haberte identificado con tu usuario del Racó (usando /login).')
 
 
 def updates_off(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	if db_module.get_chat(chat_id)['logged'] and db_module.get_chat(chat_id)['notifications']:
-		db_module.update_info(chat_id, 'notifications' , False, overwrite = True)
+	if Fibot.chats.get_chat(chat_id)['logged'] and Fibot.chats().get_chat(chat_id)['notifications']:
+		Fibot.chats.update_info(chat_id, 'notifications' , False, overwrite = True)
 		update.message.reply_text('Hecho! A partir de ahora dejarás de recibir notificaciones con tus avisos!')
-	elif not db_module.get_chat(chat_id)['logged']:
+	elif not Fibot.chats.get_chat(chat_id)['logged']:
 		update.message.reply_text('¡Vaya! Ni siquiera te identificaste con tu usuario del Racó. No podía mandarte nada de todas formas.')
-	elif db_module.get_chat(chat_id)['notifications']:
+	elif Fibot.chats.get_chat(chat_id)['notifications']:
 		update.message.reply_text('No tenías activadas las notificaciones para los avisos de todas formas.')
 
 
 def training_on(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	if not db_module.get_chat(chat_id)['training']:
-		db_module.update_info(chat_id, 'training' , True, overwrite = True)
+	if not Fibot.chats.get_chat(chat_id)['training']:
+		Fibot.chats.update_info(chat_id, 'training' , True, overwrite = True)
 		update.message.reply_text('Hecho! modo de entrenamiento activado!')
 		update.message.reply_text('Mándame algún mensaje')
 	else:
@@ -235,10 +258,10 @@ def training_on(bot, update):
 
 
 def training_off(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	if db_module.get_chat(chat_id)['training']:
-		db_module.update_info(chat_id, 'training' , False, overwrite = True)
+	if Fibot.chats.get_chat(chat_id)['training']:
+		Fibot.chats.update_info(chat_id, 'training' , False, overwrite = True)
 		update.message.reply_text('Hecho! modo de entrenamiento desactivado!')
 	else:
 		update.message.reply_text('Modo de entrenamiento está ya inactivo.')
@@ -246,6 +269,7 @@ def training_off(bot, update):
 
 
 def ask(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
 	query = update.message.text
 	'''
@@ -258,26 +282,26 @@ def ask(bot, update):
 	send_chat_action(chat_id, 'typing')
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	'''
-	update.message.reply_text(NLG_module.get_response(query, debug = False))
+	update.message.reply_text(Fibot.nlg.get_response(query, debug = False))
 	return MESSAGE_INCOME
 
 
 
 def train_machine(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	print("Hola, estoy en train_machine")
-	print(message)
 	update.message.reply_text("Procesando el mensaje...", reply_markup = markup)
-	NLG_module.process_answer_training(chat_id, message)
+	Fibot.nlg().process_answer_training(chat_id, message)
 	return CORR_INCORR
 
 
 def feedback_info(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
 	if message == "Sí":
-		NLG_module.give_feedback(chat_id, correct = True)
+		Fibot.nlg().give_feedback(chat_id, correct = True)
 		return TRAINING
 	elif message == "No":
 		update.message.reply_text("¿Qué respuesta habría sido coherente entonces?")
@@ -288,9 +312,10 @@ def feedback_info(bot, update):
 
 
 def def_knowledge(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	NLG_module.give_feedback(chat_id, correct = False, correct_statement = message)
+	Fibot.nlg().give_feedback(chat_id, correct = False, correct_statement = message)
 	update.message.reply_text('Corregido! Muchas gracias!')
 	update.message.reply_text('Mándame algún mensaje')
 	return TRAINING
@@ -306,31 +331,31 @@ def def_knowledge(bot, update):
 # 4 - Push Notification (via push or /update)
 #########################
 def state_machine(bot, update):
+	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
 
-	if (db_module.get_chat(chat_id)['training']):
+	if (Fibot.chats.get_chat(chat_id)['training']):
 		return train_machine(bot, update)
 
 	print (message)
-	USER_NAME = db_module.get_chat(chat_id)['name']
-	current_state = db_module.get_chat(chat_id)['current_state']
-	print("está en la state machine, con estado %s"%current_state)
-	if current_state == '0':
+	current_state = Fibot.chats.get_chat(chat_id)['current_state']
+	if current_state == Fibot.state_machine['MessageHandler']:
 		print("state , waiting a question")
 		return ask(bot, update)
-	elif current_state == '2':
+	elif current_state == Fibot.state_machine['Wait_authorisation']:
 		print("state 2, authenticating")
 		return authenticate(bot, update)
 
 
 def main():
-	db_module.load_data()
-	NLU_module.create_interpreter(False)
-	NLG_module.load_bot()
+	global Fibot
+	#Fibot = Fibot()
+	Fibot.load_components()
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
-	updater = Updater(BOT_TOKEN)
+
+	updater = Updater(Fibot.bot_token)
 
 	dp = updater.dispatcher
 
