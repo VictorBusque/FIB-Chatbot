@@ -10,14 +10,64 @@ import requests
 import logging
 import re
 
-import API_module
-import NLU_module
-import NLG_module
-import feature_module
-import db_module
+from Fibot.chats import Chat
+from Fibot.api_raco import API_raco
+from Fibot.NLP.nlu import NLU_unit
+from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
 
-BOT_NAME = "BOT_NAME"
-BOT_TOKEN = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'
+
+class Fibot():
+
+	""" This object contains information and methods to manage the BOT_NAME
+
+	Attributes:
+		name(:obj:`str`): Unique identifier for the bot
+		bot_token(:obj:`str`): Token to access the bot
+		chats(:class:`Fibot.Chat`): Object that represents the chats
+		api_raco(:class:`Fibot.API_raco`): Object that interacts with Raco's api
+		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets querys
+		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
+		query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+	"""
+	def __init__(self, name = 'Fibot'):
+		self.name = name
+		self.bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
+		self.chats = Chat()
+		self.api_raco = API_raco()
+		self.nlu = NLU_unit()
+		self.nlg = NLG_unit()
+		self.query_answer = Query_answer_unit()
+
+
+	"""
+		Loads the following components:
+			chats: Loads the chats information from persistence
+			nlu: Loads the trained model
+			nlg: Loads the trained model
+	"""
+	def load_components(self):
+		self.chats.load()
+		self.nlu.load()
+		self.nlg.load()
+
+
+	"""
+		Returns information of the chat depending on parameter:
+			chat_id equal to -1 returns a list of all the chat_status
+			unexisting chat_id returns None
+			otherwise returns the information of the chat with chat_id equal to the parameter
+	"""
+	def get_chat(self, chat_id = -1):
+		if chat_id == -1:
+			return chats.get_all()
+		else:
+			return chats.get(chat_id)
+
+	"""
+		Returns the object chats
+	"""
+	def chats(self):
+		return self.chats
 
 
 MESSAGE_INCOME, TRAINING, CORR_INCORR, GET_CORRECT = range(4)
