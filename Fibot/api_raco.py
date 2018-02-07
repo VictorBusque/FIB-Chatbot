@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import requests
-import requests.auth
+import os
 import urllib
 import json
 import datetime
@@ -23,8 +23,8 @@ class API_raco(object):
 			language(:obj:`dict`): allows to find information in 3 different languages
 	"""
 	def __init__(self):
-		self.client_id = 'QEcwkDLH8yO9x9g4vpSxIcS6FhUUJGRSZ71rQEoZ'#os.getenv('client_id')
-		self.client_secret = 'TXlgFLpju2usHzhWi1vqmpQqsgdz1MYausyhfCHj6VvzdAorE5ZRdvxvElPt3jibxACvi59F7YtyYVylNqdtnoTGuDM3BYgeBPmYjCqaymOmme3R4bdq1JCdRAILZkTb'#os.getenv('client_secret')
+		self.client_id = os.getenv('client_id')
+		self.client_secret = os.getenv('client_secret')
 		self.base_url = 'https://api.fib.upc.edu/v2/'
 		self.redirect_uri = 'https://localhost:5001'
 		self.authorisation_url = 'https://api.fib.upc.edu/v2/o/authorize'
