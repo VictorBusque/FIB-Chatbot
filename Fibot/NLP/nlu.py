@@ -1,9 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+#-- General imports --#
+import json
+import os.path
+
+#-- 3rd party imports --#
 from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Trainer, Metadata, Interpreter
 import spacy
-import json
-import os.path
+
 
 class NLU_unit(object):
 

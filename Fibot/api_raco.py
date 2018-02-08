@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
+#-- General imports --#
 import requests
 import os
 import urllib
 import json
 import datetime
-from threading import Thread
-from time import sleep
+#from threading import Thread
+#from time import sleep
+
 
 class API_raco(object):
 

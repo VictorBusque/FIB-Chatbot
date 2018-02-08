@@ -1,11 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+#-- General imports --#
+import os
+import requests
+
+#-- 3rd party imports --#
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
-
 from telegram import ChatAction
 
-import os
-import requests
 
 class NLG_unit(object):
 
