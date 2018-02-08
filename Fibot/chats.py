@@ -37,7 +37,6 @@ class Chats(object):
 		try:
 			with open('./Data/chat_status.json', 'r') as fp:
 				self.chats = json.load(fp)
-			print("----------------")
 		except:
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
@@ -59,15 +58,21 @@ class Chats(object):
 		Parameters:
 			chat_id (:obj:`int`): chat_id of the chat
 			data (:obj:`dict`): dict with new data for user with chat_id
-			compulsory (:obj:`dict`): boolean value indicating if function has to replace information
+			compulsory (:obj:`bool`): boolean value indicating if function has to replace information
+			full_data (:obj:`bool`): boolean value indicating if data contains the whole data or just a part
 
 		This function changes the whole internal state of the chat_id depending on the compulsory parameter
 		and dumps into persistence
 	"""
-	def update_chat(self, chat_id, data, compulsory = True):
+	def update_chat(self, chat_id, data, compulsory = True, full_data = True):
 		if compulsory:
-			self.chats[str(chat_id)] = data
-			self.dump_data()
+			if full_data:
+				self.chats[str(chat_id)] = data
+				self.dump_data()
+			else:
+				for field in data.keys():
+					self.chats[str(chat_id)][field] = data[field]
+				self.dump_data()
 
 	"""
 		Parameters:

@@ -41,7 +41,6 @@ def start(bot, update):
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': Fibot.state_machine['MessageHandler'],
-				'expire_time_ini': None,
 				'expire_time_end': None,
 				'logged': False,
 				'notifications': False,
@@ -96,11 +95,7 @@ def authenticate(bot, update):
 	auth_code = url.split('=')[1]
 	callback = Fibot.api_raco.authenticate(auth_code)
 	if isinstance(callback, dict):
-		Fibot.chats.update_info(chat_id, 'access_token', callback['access_token'])
-		Fibot.chats.update_info(chat_id, 'refresh_token', callback['refresh_token'])
-		Fibot.chats.update_info(chat_id, 'expire_time_end', callback['expire_time_end'])
-		Fibot.chats.update_info(chat_id, 'logged', callback['logged'], overwrite = True)
-		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['MessageHandler'], overwrite = True)
+		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 		Fibot.send_message(chat_id, 'Gracias %s, ya podemos empezar!'%user_name)
 	else:
 		Fibot.send_message(chat_id, 'Hubo un error! Mándame la URL de nuevo por favor.')
@@ -121,7 +116,6 @@ def logout(bot, update):
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': Fibot.state_machine()['MessageHandler'],
-				'expire_time_ini': None,
 				'expire_time_end': None,
 				'logged': False,
 				'notifications': False}
