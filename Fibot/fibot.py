@@ -59,8 +59,11 @@ class Fibot(object):
 	"""
 	def load_components(self):
 		self.chats.load()
+		print("Chats loaded")
 		self.nlu.load()
+		print("NLU model loaded")
 		self.nlg.load()
+		print("NLG model loaded")
 		with open('./Data/messages.json', 'r') as fp:
 			self.messages = json.load(fp)
 
@@ -80,9 +83,7 @@ class Fibot(object):
 	"""
 	def send_message(self, chat_id, text, typing = False, reply_to = None):
 		if typing: self.send_chat_action(chat_id)
-		print("Message before = %s"%text)
-		message = self.translator.translate(text , self.chats.get_chat(chat_id)['language'])
-		print("Message after = %s"%message)
+		message = self.translator.translate(text , to = self.chats.get_chat(chat_id)['language'])
 		params = {
 			'chat_id': chat_id,
 			'text': message

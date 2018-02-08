@@ -43,7 +43,6 @@ class NLU_unit(object):
 			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./Fibot/config_spacy.json"))
 		else:
 			self.interpreter = Interpreter.load("./projects/default/default/model_20180201-142832", RasaNLUConfig("./Fibot/config_spacy.json"))
-		print("NLU model loaded")
 
 	"""
 		Parameters:

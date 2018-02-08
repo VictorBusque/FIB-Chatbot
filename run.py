@@ -98,6 +98,7 @@ def authenticate(bot, update):
 	if isinstance(callback, dict):
 		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 		Fibot.send_preset_message(chat_id, "login_done", user_name)
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['MessageHandler'], overwrite = True)
 	else:
 		Fibot.send_preset_message(chat_id, "url_error")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine_nodes['Wait_authorisation'], overwrite = True)

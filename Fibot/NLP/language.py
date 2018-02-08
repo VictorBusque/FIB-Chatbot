@@ -27,11 +27,12 @@ class Translator(object):
         This function translates the text to the language selected.
         It is optional to include the language in which the text was written.
     """
-    def translate(self, text, to, from_lang = None):
-        if from_lang:
-            return str(TextBlob(text).translate(from_lang = self.languages[from_lang], to = self.languages[to]))
-        else:
-            return str(TextBlob(text).translate(to = self.languages[to]))
+    def translate(self, text, to):
+        try:
+            response = str(TextBlob(text).translate(to = self.languages[to]))
+            return response
+        except:
+            return text
 
     """
         Parameters:
