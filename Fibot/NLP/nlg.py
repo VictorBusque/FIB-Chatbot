@@ -101,7 +101,7 @@ class NLG_unit(object):
 			'chat_id': chat_id,
 			'text': message
 		}
-		bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
+		bot_token = os.getenv('FibotTOKEN')
 		base_url = 'https://api.telegram.org/bot%s/sendMessage'%bot_token
 		response = requests.get(base_url, params = params)
 
@@ -117,6 +117,6 @@ class NLG_unit(object):
 			'chat_id': chat_id,
 			'action': action
 		}
-		bot_token = '464845676:AAG4XGgjfUC_pkuAcJHRDYebQvuTZgx4jUo'#os.getenv('FibotTOKEN')
+		bot_token = os.getenv('FibotTOKEN')
 		base_url = 'https://api.telegram.org/bot%s/sendChatAction'%bot_token
 		response = requests.get(base_url, params = params)
