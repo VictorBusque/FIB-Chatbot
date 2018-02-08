@@ -5,6 +5,7 @@
 #-- General imports --#
 import os
 import requests
+import json
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -14,7 +15,7 @@ from Fibot.chats import Chats
 from Fibot.api_raco import API_raco
 from Fibot.NLP.nlu import NLU_unit
 from Fibot.NLP.nlg import NLG_unit
-
+from Fibot.NLP.language import Translator
 
 class Fibot(object):
 
@@ -29,6 +30,8 @@ class Fibot(object):
 		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets querys
 		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
+		messages(:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine(:obj:`dict`): Object that simplifies the state machine management
 	"""
 	def __init__(self, name = 'Fibot'):
@@ -38,6 +41,8 @@ class Fibot(object):
 		self.api_raco = API_raco()
 		self.nlu = NLU_unit()
 		self.nlg = NLG_unit()
+		self.translator = Translator()
+		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
 			'Authorise': '1',
@@ -56,6 +61,8 @@ class Fibot(object):
 		self.chats.load()
 		self.nlu.load()
 		self.nlg.load()
+		with open('./Data/messages.json', 'r') as fp:
+			self.messages = json.load(fp)
 
 	"""
 		Sends an action to a chat (using ChatAction helper)
@@ -73,13 +80,33 @@ class Fibot(object):
 	"""
 	def send_message(self, chat_id, text, typing = False, reply_to = None):
 		if typing: self.send_chat_action(chat_id)
+		print("Message before = %s"%text)
+		message = self.translator.translate(text , self.chats.get_chat(chat_id)['language'])
+		print("Message after = %s"%message)
 		params = {
 			'chat_id': chat_id,
-			'text': text
+			'text': message
 		}
-		if reply_to != None: params['reply_to_message_id'] = reply_to
+		if reply_to: params['reply_to_message_id'] = reply_to
 		base_url = 'https://api.telegram.org/bot%s/sendMessage'%self.bot_token
 		response = requests.get(base_url, params = params)
+
+	"""
+		Parameters:
+			chat_id (:obj:`str`): chat_id of the user to send the message to
+			preset (:obj:`str`): the preset of the message to send
+			param (:obj:`str` or None): the parameter of the messages
+
+		This function sends a preset message to the user with user id.
+		See /Data/messages.json to see the preset messages.
+	"""
+	def send_preset_message(self, chat_id, preset, param = None):
+		print("sending %s"%preset)
+		if param:
+			message = self.messages[preset].format(param)
+		else:
+			message = self.messages[preset]
+		self.send_message(chat_id, message, typing=True)
 
 	"""
 		Returns the bot's name

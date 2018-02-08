@@ -18,6 +18,7 @@ class Chats(object):
 		{
 		chat_id: {
 			'name': (:obj:`str`) the name of the user with chat_id key),
+			'language': (:obj:`str`) the name of the language ['Spanish', 'Catalan', 'English']
 			'access_token': (:obj:`str` or None) the access_token of the user with chat_id key,
 			'refresh_token': (:obj:`str` or None) the refresh_token of the user with chat_id key,
 			'current_state': (:obj:`str`) the state (in the Fibot state definition) the user with chat_id key is on,
