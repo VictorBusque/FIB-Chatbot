@@ -3,9 +3,8 @@
 
 
 #-- General imports --#
-
-#-- 3rd party imports --#
-from textblob import TextBlob
+import re
+import requests
 
 
 class Translator(object):
@@ -16,6 +15,7 @@ class Translator(object):
             languages (:obj:`dict`): helper to indicate different languages
     """
     def __init__(self):
+        self.base_url = "http://translate.google.com/m?hl={}&sl=es&q={}"
         self.languages =  {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
 
     """
@@ -28,17 +28,10 @@ class Translator(object):
         It is optional to include the language in which the text was written.
     """
     def translate(self, text, to):
-        try:
-            response = str(TextBlob(text).translate(to = self.languages[to]))
-            return response
-        except:
-            return text
-
-    """
-        Parameters:
-            text (:obj:`str`): text to guess the language of
-
-        This function returns the language in which a text is written
-    """
-    def detect_language(self, text):
-        return TextBlob(text).detect_language()
+        response = requests.get(self.base_url.format(self.languages[to], text))
+        if response.status_code == 200:
+            html_code = str(response.content)
+            start = 'class="t0">(.*?)<'
+            end = '</div>'
+            results = re.findall('%s(.*)%s' % (start, end), html_code)
+            return results[0][0]
