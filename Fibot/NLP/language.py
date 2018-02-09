@@ -14,7 +14,7 @@ class Translator(object):
             languages (:obj:`dict`): helper to indicate different languages
     """
     def __init__(self):
-        self.base_url = "http://translate.google.com/m?hl={}&sl=es&q={}"
+        self.base_url = "http://translate.google.com/m"
         self.languages =  {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
 
     """
@@ -26,8 +26,13 @@ class Translator(object):
         This function translates the text to the language selected.
         It is optional to include the language in which the text was written.
     """
-    def translate(self, text, to):
-        response = requests.get(self.base_url.format(self.languages[to], text))
+    def translate(self, text, to, _from = 'Spanish'):
+        params = {
+            'sl': self.languages[_from],
+            'hl': self.languages[to],
+            'q': text
+        }
+        response = requests.get(self.base_url, params = params)
         if response.status_code == 200:
             html_code = response.content.decode('ISO-8859-1')
 

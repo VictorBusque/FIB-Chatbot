@@ -15,6 +15,17 @@
     },
     "logged": true,
     "notifications": false,
-    "training": true
+    "training": false
+  },
+  "312420157": {
+    "name": "Joel",
+    "language": "English",
+    "access_token": null,
+    "refresh_token": null,
+    "current_state": "0",
+    "expire_time_end": null,
+    "logged": false,
+    "notifications": false,
+    "training": false
   }
 }
