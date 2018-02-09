@@ -1,20 +1,20 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "language": "Catalan",
-    "access_token": "0MtYm60ngWSocJyws70b4p73AUvojD",
-    "refresh_token": "y2x2tmwa559EkigZMdBmJJVF0MX4tG",
+    "language": "English",
+    "access_token": "3zr8MQ5gGQFT15mivOil8Kmgnsue88",
+    "refresh_token": "d9AhOAuScKkzbGlrQdRu3wQNT2ESgl",
     "current_state": "0",
     "expire_time_end": {
       "day": 9,
       "month": 2,
       "year": 2018,
-      "hour": 8,
-      "minute": 6,
-      "second": 11
+      "hour": 21,
+      "minute": 37,
+      "second": 50
     },
     "logged": true,
     "notifications": false,
-    "training": false
+    "training": true
   }
 }

@@ -6,6 +6,7 @@
 import os
 import requests
 import json
+import re
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -83,7 +84,12 @@ class Fibot(object):
 	"""
 	def send_message(self, chat_id, text, typing = False, reply_to = None):
 		if typing: self.send_chat_action(chat_id)
+		print("Message before = {}".format(text))
+		urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
+		if urls: text = text.replace(urls[0],"{}")
 		message = self.translator.translate(text , to = self.chats.get_chat(chat_id)['language'])
+		if urls: message = message.format(urls[0])
+		print("Message after = {}".format(message))
 		params = {
 			'chat_id': chat_id,
 			'text': message

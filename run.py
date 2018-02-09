@@ -110,17 +110,18 @@ def authenticate(bot, update):
 """
 def logout(bot, update):
 	global Fibot
-	print("Logging out")
 	chat_id = update.message.chat_id
 	user_name = Fibot.chats.get_chat(chat_id)['name']
 	if Fibot.chats.get_chat(chat_id)['logged']:
-		data = {'name': USER_NAME,
+		data = {'name': user_name,
+				'language': Fibot.chats.get_chat(chat_id)['language'],
 				'access_token': None,
 				'refresh_token': None,
-				'current_state': Fibot.state_machine()['MessageHandler'],
+				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False}
+				'notifications': False,
+				'training': False}
 		Fibot.chats.update_chat(chat_id, data)
 		Fibot.send_preset_message(chat_id, "logout_done", user_name)
 	else:
@@ -206,7 +207,6 @@ def ask(bot, update):
 	'''
 	Fibot.send_message(chat_id, Fibot.nlg.get_response(query, debug = False), typing = True, reply_to = message_id)
 	return MESSAGE_INCOME
-
 
 
 """

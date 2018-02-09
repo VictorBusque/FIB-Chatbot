@@ -6,7 +6,6 @@
 import re
 import requests
 
-
 class Translator(object):
 
     """Helper class that enables the bot to speak several languages
@@ -30,8 +29,9 @@ class Translator(object):
     def translate(self, text, to):
         response = requests.get(self.base_url.format(self.languages[to], text))
         if response.status_code == 200:
-            html_code = str(response.content)
+            html_code = response.content.decode('ISO-8859-1')
+
             start = 'class="t0">(.*?)<'
             end = '</div>'
-            results = re.findall('%s(.*)%s' % (start, end), html_code)
+            results = re.findall('%s(.*)%s' % (start, end), str(html_code))
             return results[0][0]
