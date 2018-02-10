@@ -85,11 +85,12 @@ class Fibot(object):
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
 		if typing: self.send_chat_action(chat_id)
-		urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-		if urls: message = message.replace(urls[0],"{}")
-		if self.chats.get_chat(chat_id)['language'] != 'English':
-			message = self.translator.translate(message , to = self.chats.get_chat(chat_id)['language'])
-		if urls: message = message.format(urls[0])
+		user_language = self.chats.get_chat(chat_id)['language']
+		if user_language != 'English':
+			urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
+			if urls: message = message.replace(urls[0],"{}")
+			message = self.translator.translate(message , to = user_language)
+			if urls: message = message.format(urls[0])
 		params = {
 			'chat_id': chat_id,
 			'text': message
@@ -108,7 +109,7 @@ class Fibot(object):
 		See /Data/messages.json to see the preset messages.
 	"""
 	def send_preset_message(self, chat_id, preset, param = None):
-		print("sending %s"%preset)
+		print("sending {}".format(preset))
 		if param:
 			message = self.messages[preset].format(param)
 		else:
@@ -120,8 +121,11 @@ class Fibot(object):
 		Parameters:
 			chat_id (:obj:`str`): chat_id of the user that sent the messages
 			message (:obj:`str`): text the user sent
+
+		This function receives a message from a user and decides which mechanism is responsible
+		for responding the message.
 	"""
-	def process_income_message(self, chat_id, message, debug=False):
+	def process_income_message(self, chat_id, message, message_id = None, debug = False):
 		print("Processing income message...")
 		if debug: #Translation in the future should be before this
 			pprint(self.nlu.get_intent(message))
@@ -130,10 +134,12 @@ class Fibot(object):
 			for entity in self.nlu.get_entities(message):
 				self.send_message(chat_id, "One entity is: {}: {}".format(entity['entity'], entity['value']))
 
-		if self.chats.get_chat(chat_id)['language'] != 'English':
-			message = self.translator.translate(message , to = 'English', _from = self.chats.get_chat(chat_id)['language'])
+		user_language = self.chats.get_chat(chat_id)['language']
+		if user_language != 'English':
+			message = self.translator.translate(message , to = 'English', _from = user_language)
 		response = self.nlg.get_response(message)
-		self.send_message(chat_id, response, typing=True)
+		if message_id: self.send_message(chat_id, response, typing=True, reply_to = message_id)
+		else: self.send_message(chat_id, response, typing=True)
 
 
 	"""

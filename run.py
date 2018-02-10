@@ -206,7 +206,7 @@ def ask(bot, update):
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	'''
 	#Fibot.send_message(chat_id, Fibot.nlg.get_response(text, debug = False), typing = True, reply_to = message_id)
-	Fibot.process_income_message(chat_id, text)
+	Fibot.process_income_message(chat_id, text, message_id = message_id)
 	return MESSAGE_INCOME
 
 
