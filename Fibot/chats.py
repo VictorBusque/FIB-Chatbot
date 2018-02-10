@@ -24,7 +24,8 @@ class Chats(object):
 			'current_state': (:obj:`str`) the state (in the Fibot state definition) the user with chat_id key is on,
 			'expire_time_end': (:obj:`dict`) time when the access_token expires,
 			'logged': (:obj:`bool`) specifies if the user with chat_id key is logged or not,
-			'notifications': (:obj:`bool`) specifies if the user with chat_id key is in training mode
+			'training': (:obj:`bool`) specifies if the user with chat_id key is in training mode,
+			'notifications': (:obj:`bool`) specifies if the user with chat_id has notifications active currently
 			}
 		}
 	"""

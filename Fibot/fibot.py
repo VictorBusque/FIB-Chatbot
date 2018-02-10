@@ -7,6 +7,7 @@ import os
 import requests
 import json
 import re
+from pprint import pprint
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -76,26 +77,25 @@ class Fibot(object):
 			'chat_id': chat_id,
 			'action': action
 		}
-		base_url = 'https://api.telegram.org/bot%s/sendChatAction'%self.bot_token
+		base_url = 'https://api.telegram.org/bot{}/sendChatAction'.format(self.bot_token)
 		response = requests.get(base_url, params = params)
 
 	"""
 		Sends a message to the chat with chat_id with content text
 	"""
-	def send_message(self, chat_id, text, typing = False, reply_to = None):
+	def send_message(self, chat_id, message, typing = False, reply_to = None):
 		if typing: self.send_chat_action(chat_id)
-		print("Message before = {}".format(text))
-		urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
-		if urls: text = text.replace(urls[0],"{}")
-		message = self.translator.translate(text , to = self.chats.get_chat(chat_id)['language'])
+		urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
+		if urls: message = message.replace(urls[0],"{}")
+		if self.chats.get_chat(chat_id)['language'] != 'English':
+			message = self.translator.translate(message , to = self.chats.get_chat(chat_id)['language'])
 		if urls: message = message.format(urls[0])
-		print("Message after = {}".format(message))
 		params = {
 			'chat_id': chat_id,
 			'text': message
 		}
 		if reply_to: params['reply_to_message_id'] = reply_to
-		base_url = 'https://api.telegram.org/bot%s/sendMessage'%self.bot_token
+		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
 		response = requests.get(base_url, params = params)
 
 	"""
@@ -113,7 +113,28 @@ class Fibot(object):
 			message = self.messages[preset].format(param)
 		else:
 			message = self.messages[preset]
+		message = self.translator.translate(message, to = 'English', _from = 'Spanish')
 		self.send_message(chat_id, message, typing=True)
+
+	"""
+		Parameters:
+			chat_id (:obj:`str`): chat_id of the user that sent the messages
+			message (:obj:`str`): text the user sent
+	"""
+	def process_income_message(self, chat_id, message, debug=False):
+		print("Processing income message...")
+		if debug: #Translation in the future should be before this
+			pprint(self.nlu.get_intent(message))
+			pprint(self.nlu.get_entities(message))
+			self.send_message(chat_id, "The intent is: {}".format(self.nlu.get_intent(message)['name']))
+			for entity in self.nlu.get_entities(message):
+				self.send_message(chat_id, "One entity is: {}: {}".format(entity['entity'], entity['value']))
+
+		if self.chats.get_chat(chat_id)['language'] != 'English':
+			message = self.translator.translate(message , to = 'English', _from = self.chats.get_chat(chat_id)['language'])
+		response = self.nlg.get_response(message)
+		self.send_message(chat_id, response, typing=True)
+
 
 	"""
 		Returns the bot's name
@@ -150,12 +171,6 @@ class Fibot(object):
 	"""
 	def nlg(self):
 		return self.nlg
-
-	"""
-		Returns the object query_answer
-	"""
-	def query_answer(self):
-		return self.query_answer
 
 	"""
 		Returns the object state_machine

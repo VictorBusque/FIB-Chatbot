@@ -193,7 +193,7 @@ def training_off(bot, update):
 def ask(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
-	query = update.message.text
+	text = update.message.text
 	message_id = update.message.message_id
 	'''
 	intent = NLU_module.get_intent(query)
@@ -205,7 +205,8 @@ def ask(bot, update):
 	send_chat_action(chat_id, 'typing')
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	'''
-	Fibot.send_message(chat_id, Fibot.nlg.get_response(query, debug = False), typing = True, reply_to = message_id)
+	#Fibot.send_message(chat_id, Fibot.nlg.get_response(text, debug = False), typing = True, reply_to = message_id)
+	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 
 

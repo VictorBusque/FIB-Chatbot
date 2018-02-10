@@ -26,7 +26,9 @@ class Translator(object):
         This function translates the text to the language selected.
         It is optional to include the language in which the text was written.
     """
-    def translate(self, text, to, _from = 'Spanish'):
+    def translate(self, text, to, _from = 'English'):
+        if to == _from: return text
+        print("Translating: \t\t '{}' \t{} \t -> \t{}".format(text, _from, to))
         params = {
             'sl': self.languages[_from],
             'hl': self.languages[to],
@@ -35,8 +37,8 @@ class Translator(object):
         response = requests.get(self.base_url, params = params)
         if response.status_code == 200:
             html_code = response.content.decode('ISO-8859-1')
-
             start = 'class="t0">(.*?)<'
             end = '</div>'
             results = re.findall('%s(.*)%s' % (start, end), str(html_code))
+            print("{}  ->  {}".format(text, results[0][0]))
             return results[0][0]
