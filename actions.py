@@ -12,7 +12,7 @@ from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
 
 #-- Local imports --#
-#from Fibot.api_raco import API_raco
+from Fibot.api_raco import API_raco
 
 
 class teacher_db:
@@ -29,7 +29,7 @@ class action_show_teacher_mail(Action):
         return 'action_show_teacher_mail'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("looking for the teachers mails")
+        print(self.name())
         teacher_name = tracker.get_slot("teacher_name")
         teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
@@ -37,7 +37,9 @@ class action_show_teacher_mail(Action):
             'teacher_name': teacher_name,
             'teacher_surname': teacher_surname
         })
-        dispatcher.utter_message({}.format(mail))
+        print(mail)
+        dispatcher.utter_message("{}".format(mail))
+        return []
 
 
 class action_show_teacher_desk(Action):
@@ -46,7 +48,7 @@ class action_show_teacher_desk(Action):
         return 'action_show_teacher_desk'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("looking for the teachers desks")
+        print(self.name())
         teacher_name = tracker.get_slot("teacher_name")
         teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
@@ -54,7 +56,9 @@ class action_show_teacher_desk(Action):
             'teacher_name': teacher_name,
             'teacher_surname': teacher_surname
         })
-        dispatcher.utter_message({}.format(desk))
+        print(desk)
+        dispatcher.utter_message("{}".format(desk))
+        return []
 
 
 class action_show_subject_free_spots(Action):
@@ -63,16 +67,18 @@ class action_show_subject_free_spots(Action):
         return 'action_show_subject_free_spots'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("looking for free spots")
+        print(self.name())
         subject_acro = tracker.get_slot("subject_acronym")
         subject_name = tracker.get_slot("subject_name")
-        #raco_api = API_raco()
-        #query = {'places-matricula': { 'field': 'assig', 'value': subject_acro } }
-        #response = raco_api.get_main(query, public=True)
-        #lliures = response['places_lliures']
-        #totals = response['places_totals']
-        dispatcher.utter_message("{}/{}".format(22, 22))
 
+        raco_api = API_raco()
+        query = {'places-matricula': { 'field': 'assig', 'value': subject_acro } }
+        response = raco_api.get_main(query, public=True)
+        lliures = response['places_lliures']
+        totals = response['places_totals']
+
+        dispatcher.utter_message("{}/{}".format(lliures, totals))
+        return []
 
 class priv_raco_api:
     def search_classroom(self, info):
@@ -87,15 +93,14 @@ class action_show_subject_classroom(Action):
         return 'action_show_subject_classroom'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("looking for clasroom")
+        print(self.name())
+        print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
-        subject_name = tracker.get_slot("subject_name")
-        #raco_api = API_raco()
-        #query = {'horari': {'field': 'codi_assig' , 'value': subject}}
-        #response = raco_api.get_main(query, chat_id, public = False)
-        priv_raco_api = priv_raco_api()
-        response = priv_raco_api.search_classroom(subject_acro)
+        raco_api = API_raco()
+        query = {'horari': {'field': 'codi_assig' , 'value': subject_acro}}
+        response = raco_api.get_main(query, chat_id, public = False)
         dispatcher.utter_message("{}".format(response))
+        return []
 
 
 class action_show_subject_schedule(Action):
@@ -103,12 +108,11 @@ class action_show_subject_schedule(Action):
         return 'action_show_subject_schedule'
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("looking for clasroom")
+        print(self.name())
+        print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
-        subject_name = tracker.get_slot("subject_name")
-        #raco_api = API_raco()
-        #query = {'horari': {'field': 'codi_assig' , 'value': subject}}
-        #response = raco_api.get_main(query, chat_id, public = False)
-        priv_raco_api = priv_raco_api()
-        response = priv_raco_api.search_schedule(subject_acro)
+        raco_api = API_raco()
+        query = {'horari': {'field': 'codi_assig' , 'value': subject_acro}}
+        response = raco_api.get_main(query, chat_id, public = False)
         dispatcher.utter_message("{}".format(response))
+        return []

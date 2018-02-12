@@ -138,8 +138,7 @@ class Query_answer_unit(object):
 		domain_path(:obj:`str`): String indicating where the domain yml file is
 		agent(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages
 	"""
-	def __init__(self, api_raco):
-		self.api_raco = api_raco
+	def __init__(self):
 		self.nlu_interpreter = RasaNLUInterpreter("./models/projects/default/default/model_20180201-142832")
 		self.training_data_file = './Fibot/NLP/core/stories.md'
 		self.model_path = './models/dialogue'
@@ -149,10 +148,13 @@ class Query_answer_unit(object):
 							  interpreter=self.nlu_interpreter)
 
 	"""
-		This function loads the model into the agent
+		Parameters:
+			train(:obj:`bool`): Specifies if the agent has to be trained
+		This function loads the model into the agent, and trains if necessary
 	"""
-	def load(self):
+	def load(self, train=False):
 		self.agent = Agent.load(self.model_path)
+		if train: self.train()
 
 	"""
 		Parameters:
@@ -164,13 +166,13 @@ class Query_answer_unit(object):
 
 		This function trains the agent and saves the model in the dialog's model path
 	"""
-	def train(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=10, validation_split=0.2):
+	def train(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
 		self.agent.train(self.training_data_file,
-			augmentation_factor,
-			max_history,
-			epochs,
-			batch_size,
-			validation_split
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
 		)
 		self.agent.persist(self.model_path)
 

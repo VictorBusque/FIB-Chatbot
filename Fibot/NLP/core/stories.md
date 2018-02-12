@@ -14,6 +14,6 @@
 * ask_subject_classroom
   - action_show_subject_classroom
 
-## serach_subject_schedule
+## search_subject_schedule
 * ask_subject_schedule
   - action_show_subject_schedule
