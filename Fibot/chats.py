@@ -5,7 +5,7 @@
 #-- General imports --#
 import json
 import os
-
+from pprint import pprint
 
 class Chats(object):
 
@@ -43,7 +43,7 @@ class Chats(object):
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
 				json.dump({}, fp, indent = 2)
-		print(self.chats)
+		pprint(self.chats)
 
 	"""
 		Parameters:

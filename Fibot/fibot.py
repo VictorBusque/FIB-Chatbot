@@ -16,7 +16,7 @@ from telegram import ChatAction
 from Fibot.chats import Chats
 from Fibot.api_raco import API_raco
 from Fibot.NLP.nlu import NLU_unit
-from Fibot.NLP.nlg import NLG_unit
+from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
 from Fibot.NLP.language import Translator
 
 class Fibot(object):
@@ -43,6 +43,7 @@ class Fibot(object):
 		self.api_raco = API_raco()
 		self.nlu = NLU_unit()
 		self.nlg = NLG_unit()
+		self.qa = Query_answer_unit(self.api_raco)
 		self.translator = Translator()
 		self.messages = {}
 		self.state_machine = {
@@ -66,8 +67,11 @@ class Fibot(object):
 		print("NLU model loaded")
 		self.nlg.load()
 		print("NLG model loaded")
+		self.qa.load(train=False)
+		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:
 			self.messages = json.load(fp)
+		print("Preset messages loaded")
 
 	"""
 		Sends an action to a chat (using ChatAction helper)
@@ -114,7 +118,6 @@ class Fibot(object):
 			message = self.messages[preset].format(param)
 		else:
 			message = self.messages[preset]
-		message = self.translator.translate(message, to = 'English', _from = 'Spanish')
 		self.send_message(chat_id, message, typing=True)
 
 	"""
@@ -140,46 +143,3 @@ class Fibot(object):
 		response = self.nlg.get_response(message)
 		if message_id: self.send_message(chat_id, response, typing=True, reply_to = message_id)
 		else: self.send_message(chat_id, response, typing=True)
-
-
-	"""
-		Returns the bot's name
-	"""
-	def name(self):
-		return self.name
-
-	"""
-		Returns the bot's token
-	"""
-	def bot_token(self):
-		return self.bot_token
-
-	"""
-		Returns the object chats
-	"""
-	def chats(self):
-		return self.chats
-
-	"""
-		Returns the object api_raco
-	"""
-	def api_raco(self):
-		return self.api_raco
-
-	"""
-		Returns the object nlu
-	"""
-	def nlu(self):
-		return self.nlu
-
-	"""
-		Returns the object nlg
-	"""
-	def nlg(self):
-		return self.nlg
-
-	"""
-		Returns the object state_machine
-	"""
-	def state_machine(self):
-		return self.state_machine

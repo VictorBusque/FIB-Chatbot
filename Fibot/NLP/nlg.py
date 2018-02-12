@@ -15,7 +15,7 @@ from telegram import ChatAction
 
 class NLG_unit(object):
 
-	""" This object contains tools to answer in natural language any message
+	""" This object contains tools to answer in natural language any message non-Fib related
 
 	Attributes:
 		chatterbot_bot(:class:`chatterbot.ChatBot`): chatterbot bot to process the non-fib-Related questions
@@ -110,7 +110,7 @@ class NLG_unit(object):
 			chat_id (:obj:`str`): chat_id of the person to process the answer for
 			action (:obj:`str`): action to send of the messages
 
-		This function allows nlg class to send messages for the training duties
+		This function allows nlg class to send chat_action for the training duties
 	"""
 	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
 		params = {
@@ -120,3 +120,41 @@ class NLG_unit(object):
 		bot_token = os.getenv('FibotTOKEN')
 		base_url = 'https://api.telegram.org/bot%s/sendChatAction'%bot_token
 		response = requests.get(base_url, params = params)
+
+
+class Query_answer_unit(object):
+
+	""" This object contains tools to answer in natural language any message Fib related
+
+	Attributes:
+		api_raco(:class:`Fibot.API_raco`): Copy of Fibot's Raco's API unit to query for stuff
+		model(:class:``): Model that will be capable of responding to FIB queries
+	"""
+	def __init__(self, api_raco):
+		self.api_raco = api_raco
+		self.model = None
+
+	"""
+		Parameters:
+			train (:obj:`bool`): Specifies if the model has to be trained or not
+
+		This function updates the model attribute with:
+			The model located on the model's folder if train is False
+			Trains the model and uses the trained as the model
+	"""
+	def load(self, train = False):
+		if train:
+			return
+		else:
+			return
+
+	"""
+		Parameters:
+			train (:obj:`bool`): Specifies if the model has to be trained or not
+
+		This function updates the model attribute with:
+			The model located on the model's folder if train is False
+			Trains the model and uses the trained as the model
+	"""
+	def get_response(self, intent, entities):
+		return
