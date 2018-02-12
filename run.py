@@ -34,10 +34,11 @@ def start(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
 	if Fibot.chats.user_has_data(chat_id):
-		Fibot.send_message(chat_id, 'Hola %s!'%Fibot.chats.get_chat(chat_id)['name'])
+		Fibot.send_preset_message(chat_id, "start_known", Fibot.chats.get_chat(chat_id)['name'])
 	else:
 		user_name = update.message.from_user.first_name
 		data = {'name': user_name,
+				'language': 'Spanish',
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': Fibot.state_machine['MessageHandler'],
@@ -46,9 +47,9 @@ def start(bot, update):
 				'notifications': False,
 				'training': False}
 		Fibot.chats.update_chat(chat_id, data, compulsory = True)
-		Fibot.send_message(chat_id, 'Hola %s, bienvenido a %s'%(user_name, Fibot.name))
-		Fibot.send_message(chat_id, 'Soy un prototipo de asistente para tí y tus estudios en la FIB, para que puedas centrarte en lo que importa, y no tengas que preocuparte por lo demás.')
-		Fibot.send_message(chat_id, 'Si quieres autentificarte para que pueda ayudarte aún más, usa el comando "/login"!')
+		Fibot.send_preset_message(chat_id, "start_unknown_1", user_name)
+		Fibot.send_preset_message(chat_id, "start_unknown_2")
+		Fibot.send_preset_message(chat_id, "start_unknown_3")
 	return MESSAGE_INCOME
 
 
@@ -71,11 +72,11 @@ def start_authentication(bot, update):
 	logged = Fibot.chats.get_chat(chat_id)['logged']
 	print(logged)
 	if (not logged):
-		Fibot.send_message(chat_id, 'Muy bien %s, autentifícate en la siguiente url: %s.'%(user_name, Fibot.api_raco.get_autho_full_page()))
-		Fibot.send_message(chat_id, 'Una vez te hayas autentificado, mándame por mensaje la url a la que te llevó.')
+		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.api_raco.get_autho_full_page())
+		Fibot.send_preset_message(chat_id, "inform_oauth_procedure")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 	else:
-		Fibot.send_message(chat_id,'Ya te identificaste con tu cuenta del Racó, %s.'%(user_name))
+		Fibot.send_preset_message(chat_id, "already_login", user_name)
 	return MESSAGE_INCOME
 
 
@@ -89,16 +90,17 @@ def authenticate(bot, update):
 	url = update.message.text
 	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', url)
 	if not urls:
-		Fibot.send_message(chat_id, 'Por favor, mándame por mensaje la URL a la que te llevó.')
+		Fibot.send_preset_message(chat_id, "request_oauth_url")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 		return MESSAGE_INCOME
 	auth_code = url.split('=')[1]
 	callback = Fibot.api_raco.authenticate(auth_code)
 	if isinstance(callback, dict):
 		Fibot.chats.update_chat(chat_id, callback, full_data = False)
-		Fibot.send_message(chat_id, 'Gracias %s, ya podemos empezar!'%user_name)
+		Fibot.send_preset_message(chat_id, "login_done", user_name)
+		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['MessageHandler'], overwrite = True)
 	else:
-		Fibot.send_message(chat_id, 'Hubo un error! Mándame la URL de nuevo por favor.')
+		Fibot.send_preset_message(chat_id, "url_error")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine_nodes['Wait_authorisation'], overwrite = True)
 	return MESSAGE_INCOME
 
@@ -108,21 +110,22 @@ def authenticate(bot, update):
 """
 def logout(bot, update):
 	global Fibot
-	print("Logging out")
 	chat_id = update.message.chat_id
 	user_name = Fibot.chats.get_chat(chat_id)['name']
 	if Fibot.chats.get_chat(chat_id)['logged']:
-		data = {'name': USER_NAME,
+		data = {'name': user_name,
+				'language': Fibot.chats.get_chat(chat_id)['language'],
 				'access_token': None,
 				'refresh_token': None,
-				'current_state': Fibot.state_machine()['MessageHandler'],
+				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False}
+				'notifications': False,
+				'training': False}
 		Fibot.chats.update_chat(chat_id, data)
-		Fibot.send_message(chat_id, 'Hecho %s. Podrás volver a identificarte cuando quieras usando el comando /login.'%user_name)
+		Fibot.send_preset_message(chat_id, "logout_done", user_name)
 	else:
-		Fibot.send_message(chat_id, 'No te has identificado en el Racó, así que no puedes cerrar sesión %s'%user_name)
+		Fibot.send_preset_message(chat_id, "logout_failed", user_name)
 
 
 """
@@ -133,11 +136,11 @@ def updates_on(bot, update):
 	chat_id = update.message.chat_id
 	if Fibot.chats.get_chat(chat_id)['logged'] and not Fibot.chats.get_chat(chat_id)['notifications']:
 		Fibot.chats.update_info(chat_id, 'notifications' , True, overwrite = True)
-		Fibot.send_message(chat_id, 'Hecho! A partir de ahora ya recibirás notificaciones con tus avisos!')
+		Fibot.send_preset_message(chat_id, "notif_active")
 	elif Fibot.chats.get_chat(chat_id)['logged'] and Fibot.chats.get_chat(chat_id)['notifications']:
-		Fibot.send_message(chat_id, 'Pero si ya las tenías activadas!')
+		Fibot.send_preset_message(chat_id, "notif_already_active")
 	else:
-		Fibot.send_message(chat_id, 'Para recibir notificaciones debes haberte identificado con tu usuario del Racó (usando /login).')
+		Fibot.send_preset_message(chat_id, "notif_active_failed")
 
 
 """
@@ -148,11 +151,11 @@ def updates_off(bot, update):
 	chat_id = update.message.chat_id
 	if Fibot.chats.get_chat(chat_id)['logged'] and Fibot.chats.get_chat(chat_id)['notifications']:
 		Fibot.chats.update_info(chat_id, 'notifications' , False, overwrite = True)
-		Fibot.send_message(chat_id, 'Hecho! A partir de ahora dejarás de recibir notificaciones con tus avisos!')
+		Fibot.send_preset_message(chat_id, "notif_inactive")
 	elif not Fibot.chats.get_chat(chat_id)['logged']:
-		Fibot.send_message(chat_id, '¡Vaya! Ni siquiera te identificaste con tu usuario del Racó. No podía mandarte nada de todas formas.')
+		Fibot.send_preset_message(chat_id, "notif_already_inactive")
 	elif Fibot.chats.get_chat(chat_id)['notifications']:
-		Fibot.send_message(chat_id, 'No tenías activadas las notificaciones para los avisos de todas formas.')
+		Fibot.send_preset_message(chat_id, "notif_inactive_failed")
 
 
 """
@@ -163,10 +166,10 @@ def training_on(bot, update):
 	chat_id = update.message.chat_id
 	if not Fibot.chats.get_chat(chat_id)['training']:
 		Fibot.chats.update_info(chat_id, 'training' , True, overwrite = True)
-		Fibot.send_message(chat_id, 'Hecho! modo de entrenamiento activado!')
-		Fibot.send_message(chat_id, 'Mándame algún mensaje')
+		Fibot.send_preset_message(chat_id, "training_active")
+		Fibot.send_preset_message(chat_id, "send_me_message")
 	else:
-		Fibot.send_message(chat_id, 'Modo de entrenamiento está ya activo.')
+		Fibot.send_preset_message(chat_id, "training_already_active")
 		return TRAINING
 
 
@@ -178,9 +181,9 @@ def training_off(bot, update):
 	chat_id = update.message.chat_id
 	if Fibot.chats.get_chat(chat_id)['training']:
 		Fibot.chats.update_info(chat_id, 'training' , False, overwrite = True)
-		Fibot.send_message(chat_id, 'Hecho! modo de entrenamiento desactivado!')
+		Fibot.send_preset_message(chat_id, "training_inactive")
 	else:
-		Fibot.send_message(chat_id, 'Modo de entrenamiento está ya inactivo.')
+		Fibot.send_preset_message(chat_id, "training_already_inactive")
 	return MESSAGE_INCOME
 
 
@@ -190,7 +193,7 @@ def training_off(bot, update):
 def ask(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
-	query = update.message.text
+	text = update.message.text
 	message_id = update.message.message_id
 	'''
 	intent = NLU_module.get_intent(query)
@@ -202,9 +205,9 @@ def ask(bot, update):
 	send_chat_action(chat_id, 'typing')
 	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
 	'''
-	Fibot.send_message(chat_id, Fibot.nlg.get_response(query, debug = False), typing = True, reply_to = message_id)
+	#Fibot.send_message(chat_id, Fibot.nlg.get_response(text, debug = False), typing = True, reply_to = message_id)
+	Fibot.process_income_message(chat_id, text, message_id = message_id)
 	return MESSAGE_INCOME
-
 
 
 """
@@ -230,7 +233,7 @@ def feedback_info(bot, update):
 		Fibot.nlg.give_feedback(chat_id, correct = True)
 		return TRAINING
 	elif message == "No":
-		Fibot.send_message(chat_id,"¿Qué respuesta habría sido coherente entonces?")
+		Fibot.send_preset_message(chat_id, "request_good_answer")
 		return GET_CORRECT
 	else:
 		update.message.reply_text("¿Fué coherente la última respuesta?", reply_markup = markup)
@@ -245,8 +248,8 @@ def def_knowledge(bot, update):
 	chat_id = update.message.chat_id
 	message = update.message.text
 	Fibot.nlg.give_feedback(chat_id, correct = False, correct_statement = message)
-	Fibot.send_message(chat_id, 'Corregido! Muchas gracias!')
-	Fibot.send_message(chat_id, 'Mándame algún mensaje')
+	Fibot.send_preset_message(chat_id, "corrected_message")
+	Fibot.send_preset_message(chat_id, "send_me_message")
 	return TRAINING
 
 
