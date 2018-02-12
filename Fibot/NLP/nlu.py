@@ -35,15 +35,15 @@ class NLU_unit(object):
 			training_data = load_data('./Data/Dataset.json')
 			print("Data Loaded")
 			trainer = Trainer(RasaNLUConfig("./config/config_spacy.json"))
-			print("Trainer launched")
+			print("NLU Trainer launched")
 			trainer.train(training_data)
-			print("Training done")
-			model_directory = trainer.persist('./models/default/')  # Returns the directory the model is stored in
+			print("NLU Training done")
+			model_directory = trainer.persist('models/nlu', fixed_model_name = 'current')  # Returns the directory the model is stored in
 			# where `model_directory points to the folder the model is persisted in
 			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./config/config_spacy.json"))
 		else:
-			self.interpreter = Interpreter.load("./models/projects/default/default/model_20180201-142832", RasaNLUConfig("./config/config_spacy.json"))
-
+			self.interpreter = Interpreter.load("./models/nlu/default/current", RasaNLUConfig("./config/config_spacy.json"))
+		print("NLU loaded")
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages
@@ -64,17 +64,3 @@ class NLU_unit(object):
 	def get_entities(self, query):
 		parsed = self.interpreter.parse(query)
 		return parsed['entities']
-
-
-
-"""
-if __name__ == '__main__':
-	create_interpreter()
-
-	query = input("Introduce query")
-	intent = get_intent(query)
-	entities = get_entities(query)
-	print("For query: "+query)
-	print("The intent is: " + str(intent))
-	print("The entities are: " + str(entities))
-"""

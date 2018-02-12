@@ -30,6 +30,7 @@ class action_show_teacher_mail(Action):
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
+        print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
         teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
@@ -49,6 +50,7 @@ class action_show_teacher_desk(Action):
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
+        print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
         teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
@@ -68,15 +70,17 @@ class action_show_subject_free_spots(Action):
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
+        print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
-        subject_name = tracker.get_slot("subject_name")
+        #subject_name = tracker.get_slot("subject_name")
 
         raco_api = API_raco()
+        print("Jeloudah")
         query = {'places-matricula': { 'field': 'assig', 'value': subject_acro } }
         response = raco_api.get_main(query, public=True)
         lliures = response['places_lliures']
         totals = response['places_totals']
-
+        print("about to return")
         dispatcher.utter_message("{}/{}".format(lliures, totals))
         return []
 

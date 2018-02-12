@@ -41,9 +41,8 @@ class Fibot(object):
 		self.bot_token = os.getenv('FibotTOKEN')
 		self.chats = Chats()
 		self.api_raco = API_raco()
-		self.nlu = NLU_unit()
 		self.nlg = NLG_unit()
-		self.qa = Query_answer_unit(self.api_raco)
+		self.qa = Query_answer_unit()
 		self.translator = Translator()
 		self.messages = {}
 		self.state_machine = {
@@ -63,8 +62,6 @@ class Fibot(object):
 	def load_components(self):
 		self.chats.load()
 		print("Chats loaded")
-		self.nlu.load()
-		print("NLU model loaded")
 		self.nlg.load()
 		print("NLG model loaded")
 		self.qa.load(train=False)
@@ -130,13 +127,6 @@ class Fibot(object):
 	"""
 	def process_income_message(self, chat_id, message, message_id = None, debug = False):
 		print("Processing income message...")
-		if debug: #Translation in the future should be before this
-			pprint(self.nlu.get_intent(message))
-			pprint(self.nlu.get_entities(message))
-			self.send_message(chat_id, "The intent is: {}".format(self.nlu.get_intent(message)['name']))
-			for entity in self.nlu.get_entities(message):
-				self.send_message(chat_id, "One entity is: {}: {}".format(entity['entity'], entity['value']))
-
 		user_language = self.chats.get_chat(chat_id)['language']
 		if user_language != 'English':
 			message = self.translator.translate(message , to = 'English', _from = user_language)

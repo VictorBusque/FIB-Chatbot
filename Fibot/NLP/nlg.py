@@ -10,6 +10,7 @@ import requests
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
+from Fibot.NLP.nlu import NLU_unit
 from rasa_core.agent import Agent
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.policies.keras_policy import KerasPolicy
@@ -139,13 +140,12 @@ class Query_answer_unit(object):
 		agent(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages
 	"""
 	def __init__(self):
-		self.nlu_interpreter = RasaNLUInterpreter("./models/projects/default/default/model_20180201-142832")
+		self.nlu = NLU_unit()
 		self.training_data_file = './Fibot/NLP/core/stories.md'
-		self.model_path = './models/dialogue'
 		self.domain_path = './Fibot/NLP/core/domain.yml'
+		self.model_path = './models/dialogue'
 		self.agent =  Agent(self.domain_path,
-			                  policies=[MemoizationPolicy(), KerasPolicy()],
-							  interpreter=self.nlu_interpreter)
+			                  policies=[MemoizationPolicy(), KerasPolicy()])
 
 	"""
 		Parameters:
@@ -153,7 +153,9 @@ class Query_answer_unit(object):
 		This function loads the model into the agent, and trains if necessary
 	"""
 	def load(self, train=False):
-		self.agent = Agent.load(self.model_path)
+		self.nlu.load(train)
+		self.agent.load(self.model_path,
+				interpreter = self.nlu.interpreter)
 		if train: self.train()
 
 	"""

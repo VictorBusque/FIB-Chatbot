@@ -4,6 +4,7 @@ intents:
   - ask_free_spots
   - ask_subject_classroom
   - ask_subject_schedule
+  - inform
 
 
 entities:
@@ -20,8 +21,24 @@ slots:
   subject_acronym:
     type: text
 
+templates:
+  utter_ask_teacher_name:
+    - "Can you tell me the teacher's name?"
+    - "Please, tell me the teacher's name!"
+
+  utter_ask_teacher_surname:
+    - "Can you tell me the teacher's surname?"
+    - "Please, tell me the teacher's surname!"
+
+  utter_ask_subject_acronym:
+    - "Can you tell me the teacher's surname?"
+    - "Please, tell me the subject's acronym!"
+
 
 actions:
+  - utter_ask_teacher_surname
+  - utter_ask_teacher_name
+  - utter_ask_subject_acronym
   - actions.action_show_teacher_mail
   - actions.action_show_teacher_desk
   - actions.action_show_subject_free_spots
