@@ -1,0 +1,29 @@
+intents:
+  - ask_teacher_mail
+  - ask_teacher_desk
+  - ask_free_spots
+  - ask_subject_classroom
+  - ask_subject_schedule
+
+
+entities:
+  - teacher_name
+  - teacher_surnames
+  - subject_acronym
+
+
+slots:
+  teacher_name:
+    type: text
+  teacher_surname:
+    type: text
+  subject_acronym:
+    type: text
+
+
+actions:
+  - actions.action_show_teacher_mail
+  - actions.action_show_teacher_desk
+  - actions.action_show_subject_free_spots
+  - actions.action_show_subject_classroom
+  - actions.action_show_subject_schedule

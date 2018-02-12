@@ -34,15 +34,15 @@ class NLU_unit(object):
 		if train:
 			training_data = load_data('./Data/Dataset.json')
 			print("Data Loaded")
-			trainer = Trainer(RasaNLUConfig("./Fibot/config_spacy.json"))
+			trainer = Trainer(RasaNLUConfig("./config/config_spacy.json"))
 			print("Trainer launched")
 			trainer.train(training_data)
 			print("Training done")
-			model_directory = trainer.persist('./projects/default/')  # Returns the directory the model is stored in
+			model_directory = trainer.persist('./models/default/')  # Returns the directory the model is stored in
 			# where `model_directory points to the folder the model is persisted in
-			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./Fibot/config_spacy.json"))
+			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./config/config_spacy.json"))
 		else:
-			self.interpreter = Interpreter.load("./projects/default/default/model_20180201-142832", RasaNLUConfig("./Fibot/config_spacy.json"))
+			self.interpreter = Interpreter.load("./models/projects/default/default/model_20180201-142832", RasaNLUConfig("./config/config_spacy.json"))
 
 	"""
 		Parameters:
