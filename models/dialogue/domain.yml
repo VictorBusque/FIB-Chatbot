@@ -1,13 +1,4 @@
 action_factory: null
-action_names:
-- utter_ask_teacher_surname
-- utter_ask_teacher_name
-- utter_ask_subject_acronym
-- action_show_teacher_mail
-- action_show_teacher_desk
-- action_show_subject_free_spots
-- action_show_subject_classroom
-- action_show_subject_schedule
 actions:
 - utter_ask_teacher_surname
 - utter_ask_teacher_name
@@ -32,14 +23,11 @@ intents:
 - inform
 slots:
   subject_acronym:
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   teacher_name:
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   teacher_surname:
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
 templates:
   utter_ask_subject_acronym:
   - text: Can you tell me the teacher's surname?

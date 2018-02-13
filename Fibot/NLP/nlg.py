@@ -13,7 +13,7 @@ from chatterbot.conversation import Statement
 from rasa_core.agent import Agent
 from rasa_core.policies.keras_policy import KerasPolicy
 from rasa_core.policies.memoization import MemoizationPolicy
-from rasa_core.channels.console import ConsoleInputChannel
+from rasa_core.channels import UserMessage
 from telegram import ChatAction
 
 #-- local imports --#
@@ -153,12 +153,11 @@ class Query_answer_unit(object):
 			train(:obj:`bool`): Specifies if the agent has to be trained
 		This function loads the model into the agent, and trains if necessary
 	"""
-	def load(self, train=False, train_manual = False):
+	def load(self, train=False):
 		self.nlu.load(train)
 		self.agent = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter)
 		if train: self.train()
-		if train_manual: return self.train_manual()
 
 	"""
 		Parameters:
@@ -180,16 +179,6 @@ class Query_answer_unit(object):
 		)
 		self.agent.persist(self.model_path)
 
-	""" To manually define new stories"""
-	def train_manual(self):
-		#self.agent.handle_channel(ConsoleInputChannel())
-		self.agent.train_online(self.training_data_file,
-		               input_channel=ConsoleInputChannel(),
-		               max_history=2,
-		               batch_size=50,
-		               epochs=200,
-		               max_training_samples=300)
-
 	"""
 		Parameters:
 			message(:obj:`str`): the incoming message from some user
@@ -197,5 +186,5 @@ class Query_answer_unit(object):
 		This function returns the response from the agent using the actions
 		defined in Fibot/NLP/core/actions.py
 	"""
-	def get_response(self, message):
+	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID):
 		return self.agent.handle_message(message)

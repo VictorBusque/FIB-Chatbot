@@ -32,6 +32,9 @@ class action_show_teacher_mail(Action):
     def name(self):
         return 'action_show_teacher_mail'
 
+    def resets_topic(self):
+        return True
+
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
@@ -52,6 +55,9 @@ class action_show_teacher_desk(Action):
     def name(self):
         return 'action_show_teacher_desk'
 
+    def resets_topic(self):
+        return True
+
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
@@ -71,6 +77,9 @@ class action_show_subject_free_spots(Action):
 
     def name(self):
         return 'action_show_subject_free_spots'
+
+    def resets_topic(self):
+        return True
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
@@ -103,6 +112,9 @@ class action_show_subject_classroom(Action):
     def name(self):
         return 'action_show_subject_classroom'
 
+    def resets_topic(self):
+        return True
+
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
@@ -117,6 +129,9 @@ class action_show_subject_classroom(Action):
 class action_show_subject_schedule(Action):
     def name(self):
         return 'action_show_subject_schedule'
+
+    def resets_topic(self):
+        return True
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())

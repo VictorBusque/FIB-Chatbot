@@ -8,7 +8,7 @@ import requests
 import json
 import re
 from pprint import pprint
-
+from time import time
 #-- 3rd party imports --#
 from telegram import ChatAction
 
@@ -77,30 +77,45 @@ class Fibot(object):
 			'action': action
 		}
 		base_url = 'https://api.telegram.org/bot{}/sendChatAction'.format(self.bot_token)
+		print("Before doing the request")
 		response = requests.get(base_url, params = params)
+		print("After the request")
+
 
 	"""
 		Sends a message to the chat with chat_id with content text
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
+		print("In send message function, starting counter")
+		ini = time()
+		"""
 		if isinstance(message, list):
 			for item in message:
 				self.send_message(chat_id, item, typing, reply_to)
+
 		else:
-			if typing: self.send_chat_action(chat_id)
-			user_language = self.chats.get_chat(chat_id)['language']
-			if user_language != 'English':
-				urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-				if urls: message = message.replace(urls[0],"{}")
-				message = self.translator.translate(message , to = user_language)
-				if urls: message = message.format(urls[0])
-			params = {
-				'chat_id': chat_id,
-				'text': message
-			}
-			if reply_to: params['reply_to_message_id'] = reply_to
-			base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-			response = requests.get(base_url, params = params)
+		"""
+		if typing: self.send_chat_action(chat_id)
+		print("chat action sent in {}".format( (time()-ini) ))
+		user_language = self.chats.get_chat(chat_id)['language']
+		if user_language != 'English':
+
+			urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
+			if urls: message = message.replace(urls[0],"{}")
+			message = self.translator.translate(message , to = user_language)
+			if urls: message = message.format(urls[0])
+
+		params = {
+			'chat_id': chat_id,
+			'text': message
+		}
+		if reply_to: params['reply_to_message_id'] = reply_to
+		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
+		print("Before doing the request")
+		response = requests.get(base_url, params = params)
+		print("After the request")
+		print("message sent in {}".format( (time()-ini) ))
+
 
 	"""
 		Parameters:
@@ -134,6 +149,10 @@ class Fibot(object):
 		if user_language != 'English':
 			message = self.translator.translate(message , to = 'English', _from = user_language)
 		"""
-		response = self.qa.get_response(message)
-		if message_id: self.send_message(chat_id, response, typing=True, reply_to = message_id)
+		ini = time()
+		response = self.qa.get_response(message, sender_id = chat_id)
+		print("Getting response time is {}".format( (time()-ini) ))
+		print(response)
+		if message_id:
+			self.send_message(chat_id, response, typing=True, reply_to = message_id)
 		else: self.send_message(chat_id, response, typing=True)
