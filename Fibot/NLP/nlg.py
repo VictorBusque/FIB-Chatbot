@@ -10,12 +10,14 @@ import requests
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
-from Fibot.NLP.nlu import NLU_unit
 from rasa_core.agent import Agent
-from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.policies.keras_policy import KerasPolicy
 from rasa_core.policies.memoization import MemoizationPolicy
+from rasa_core.channels.console import ConsoleInputChannel
 from telegram import ChatAction
+
+#-- local imports --#
+from Fibot.NLP.nlu import NLU_unit
 
 
 class NLG_unit(object):
@@ -132,8 +134,7 @@ class Query_answer_unit(object):
 	""" This object contains tools to answer in natural language any message Fib related
 
 	Attributes:
-		api_raco(:class:`Fibot.API_raco`): Copy of Fibot's Raco's API unit to query for stuff
-		nlu_interpreter(:class:`rasa_core.interpreter.RasaNLUInterpreter`): Rasa NLU Interpreter for the messages incoming
+		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets queries
 		training_data_file(:obj:`str`): String indicating the path to the stories markdown file
 		model_path(:obj:`str`): String indicating where the dialog model is
 		domain_path(:obj:`str`): String indicating where the domain yml file is
@@ -152,11 +153,12 @@ class Query_answer_unit(object):
 			train(:obj:`bool`): Specifies if the agent has to be trained
 		This function loads the model into the agent, and trains if necessary
 	"""
-	def load(self, train=False):
+	def load(self, train=False, train_manual = False):
 		self.nlu.load(train)
-		self.agent.load(self.model_path,
+		self.agent = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter)
 		if train: self.train()
+		if train_manual: return self.train_manual()
 
 	"""
 		Parameters:
@@ -177,6 +179,16 @@ class Query_answer_unit(object):
 			validation_split=validation_split
 		)
 		self.agent.persist(self.model_path)
+
+	""" To manually define new stories"""
+	def train_manual(self):
+		#self.agent.handle_channel(ConsoleInputChannel())
+		self.agent.train_online(self.training_data_file,
+		               input_channel=ConsoleInputChannel(),
+		               max_history=2,
+		               batch_size=50,
+		               epochs=200,
+		               max_training_samples=300)
 
 	"""
 		Parameters:

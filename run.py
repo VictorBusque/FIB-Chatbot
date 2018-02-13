@@ -195,18 +195,7 @@ def ask(bot, update):
 	chat_id = update.message.chat_id
 	text = update.message.text
 	message_id = update.message.message_id
-	'''
-	intent = NLU_module.get_intent(query)
-	entities = NLU_module.get_entities(query)
-	update.message.reply_text('Estoy '+str(intent['confidence']*100)+' porciento seguro de que tu intención es: '+intent['name'])
-	for entity in entities:
-		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
-	update.message.reply_text('Mis resultados son: ')
-	send_chat_action(chat_id, 'typing')
-	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
-	'''
-	#Fibot.send_message(chat_id, Fibot.nlg.get_response(text, debug = False), typing = True, reply_to = message_id)
-	Fibot.process_income_message(chat_id, text, message_id = message_id)
+	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 
 

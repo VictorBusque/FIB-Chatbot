@@ -22,7 +22,11 @@ class teacher_db:
     def search_desk(self, info):
         return 'Omega, 204'
 
-
+"""
+    Could be improved by checking the slots given
+    or by doing the query search to the db and see if there
+    are several matches.
+"""
 class action_show_teacher_mail(Action):
 
     def name(self):
@@ -73,15 +77,18 @@ class action_show_subject_free_spots(Action):
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
         #subject_name = tracker.get_slot("subject_name")
-
         raco_api = API_raco()
-        print("Jeloudah")
-        query = {'places-matricula': { 'field': 'assig', 'value': subject_acro } }
-        response = raco_api.get_main(query, public=True)
-        lliures = response['places_lliures']
-        totals = response['places_totals']
-        print("about to return")
-        dispatcher.utter_message("{}/{}".format(lliures, totals))
+        query = {'places-matricula': { 'field': 'assig', 'value': subject_acro }}
+        print(query)
+        response = raco_api.get_main(query)
+        free = []
+        total = []
+        for item in list(response):
+            dispatcher.utter_message("There are {}/{} free spots in {}, group {}.".format(
+                            item['places_lliures'],
+                            item['places_totals'],
+                            subject_acro,
+                            item['grup']))
         return []
 
 class priv_raco_api:

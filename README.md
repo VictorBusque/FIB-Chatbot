@@ -1,7 +1,7 @@
 # Fibot
 Fibot is a telegram bot that is able to help FIB students through conversations. You can try him online by going to https://telegram.me/TestTFGbot.
 
-<img align="center" src="/images_demo/conversation_demo.png" width="350">
+<img align="center" src="/images_demo/conversation_demo.png" width="500">
 
 ## Libraries
 It is written using:

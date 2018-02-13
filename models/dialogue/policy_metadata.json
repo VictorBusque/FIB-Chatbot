@@ -1,5 +1,14 @@
 {
-  "rasa_core": "0.7.9",
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "teacher_name",
+        "subject_acronym",
+        "teacher_surname"
+      ]
+    }
+  },
+  "rasa_core": "0.8.1",
   "max_history": 2,
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [

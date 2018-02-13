@@ -15,7 +15,6 @@ from telegram import ChatAction
 #-- Local imports --#
 from Fibot.chats import Chats
 from Fibot.api_raco import API_raco
-from Fibot.NLP.nlu import NLU_unit
 from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
 from Fibot.NLP.language import Translator
 
@@ -29,7 +28,6 @@ class Fibot(object):
 		bot_token(:obj:`str`): Token to access the bot
 		chats(:class:`Fibot.Chat`): Object that represents the chats
 		api_raco(:class:`Fibot.API_raco`): Object that interacts with Raco's api
-		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets querys
 		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
 		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
@@ -85,20 +83,24 @@ class Fibot(object):
 		Sends a message to the chat with chat_id with content text
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
-		if typing: self.send_chat_action(chat_id)
-		user_language = self.chats.get_chat(chat_id)['language']
-		if user_language != 'English':
-			urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-			if urls: message = message.replace(urls[0],"{}")
-			message = self.translator.translate(message , to = user_language)
-			if urls: message = message.format(urls[0])
-		params = {
-			'chat_id': chat_id,
-			'text': message
-		}
-		if reply_to: params['reply_to_message_id'] = reply_to
-		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-		response = requests.get(base_url, params = params)
+		if isinstance(message, list):
+			for item in message:
+				self.send_message(chat_id, item, typing, reply_to)
+		else:
+			if typing: self.send_chat_action(chat_id)
+			user_language = self.chats.get_chat(chat_id)['language']
+			if user_language != 'English':
+				urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
+				if urls: message = message.replace(urls[0],"{}")
+				message = self.translator.translate(message , to = user_language)
+				if urls: message = message.format(urls[0])
+			params = {
+				'chat_id': chat_id,
+				'text': message
+			}
+			if reply_to: params['reply_to_message_id'] = reply_to
+			base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
+			response = requests.get(base_url, params = params)
 
 	"""
 		Parameters:
@@ -127,9 +129,11 @@ class Fibot(object):
 	"""
 	def process_income_message(self, chat_id, message, message_id = None, debug = False):
 		print("Processing income message...")
+		"""
 		user_language = self.chats.get_chat(chat_id)['language']
 		if user_language != 'English':
 			message = self.translator.translate(message , to = 'English', _from = user_language)
-		response = self.nlg.get_response(message)
+		"""
+		response = self.qa.get_response(message)
 		if message_id: self.send_message(chat_id, response, typing=True, reply_to = message_id)
 		else: self.send_message(chat_id, response, typing=True)

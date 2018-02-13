@@ -7,9 +7,10 @@ import json
 import os.path
 
 #-- 3rd party imports --#
+from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig
-from rasa_nlu.model import Trainer, Metadata, Interpreter
+from rasa_nlu.model import Trainer, Metadata
 import spacy
 
 
@@ -39,11 +40,9 @@ class NLU_unit(object):
 			trainer.train(training_data)
 			print("NLU Training done")
 			model_directory = trainer.persist('models/nlu', fixed_model_name = 'current')  # Returns the directory the model is stored in
-			# where `model_directory points to the folder the model is persisted in
-			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./config/config_spacy.json"))
-		else:
-			self.interpreter = Interpreter.load("./models/nlu/default/current", RasaNLUConfig("./config/config_spacy.json"))
+		self.interpreter = RasaNLUInterpreter("./models/nlu/default/current")
 		print("NLU loaded")
+
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages

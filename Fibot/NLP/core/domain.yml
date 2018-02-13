@@ -20,6 +20,9 @@ slots:
     type: text
   subject_acronym:
     type: text
+  matches:
+    type: unfeaturized
+
 
 templates:
   utter_ask_teacher_name:

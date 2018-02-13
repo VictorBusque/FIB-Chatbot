@@ -167,17 +167,19 @@ class API_raco(object):
 			None: if the query or the request goes wrong
 			dict: result of the query
 	"""
-	def get_objects(url, query, headers, params = {}):
+	def get_objects(self, url, query, headers, params = {}):
 		response = requests.get(url, headers = headers, params = params)
 		if response.status_code == 200:
+			result = []
 			field_name = query['field']
 			field_value = query['value']
 			response_json = response.json().get('results')
 			for items in response_json:
 				if items[field_name] == field_value:
-					yield items
+					result.append(items)
+			return result
 		else:
-			yield None
+			return None
 
 
 
