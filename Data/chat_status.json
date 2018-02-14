@@ -1,7 +1,7 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "language": "Catalan",
+    "language": "Spanish",
     "access_token": "FMTEhyG78917SL7eDexzl1BxcrxDvg",
     "refresh_token": "PVlaqlrQnKXxzM8pa92hSbYe6hZP6V",
     "current_state": "0",
@@ -14,7 +14,7 @@
       "second": 38
     },
     "logged": true,
-    "notifications": false,
+    "notifications": true,
     "training": false
   },
   "312420157": {
