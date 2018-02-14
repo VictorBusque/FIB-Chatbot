@@ -9,14 +9,11 @@ intents:
 
 entities:
   - teacher_name
-  - teacher_surnames
   - subject_acronym
 
 
 slots:
   teacher_name:
-    type: text
-  teacher_surname:
     type: text
   subject_acronym:
     type: text
@@ -29,17 +26,12 @@ templates:
     - "Can you tell me the teacher's name?"
     - "Please, tell me the teacher's name!"
 
-  utter_ask_teacher_surname:
-    - "Can you tell me the teacher's surname?"
-    - "Please, tell me the teacher's surname!"
-
   utter_ask_subject_acronym:
-    - "Can you tell me the teacher's surname?"
+    - "Can you tell me the subject's acronym?"
     - "Please, tell me the subject's acronym!"
 
 
 actions:
-  - utter_ask_teacher_surname
   - utter_ask_teacher_name
   - utter_ask_subject_acronym
   - actions.action_show_teacher_mail

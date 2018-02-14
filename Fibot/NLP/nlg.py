@@ -14,6 +14,7 @@ from rasa_core.agent import Agent
 from rasa_core.policies.keras_policy import KerasPolicy
 from rasa_core.policies.memoization import MemoizationPolicy
 from rasa_core.channels import UserMessage
+from rasa_core.channels.console import ConsoleInputChannel
 from telegram import ChatAction
 
 #-- local imports --#
@@ -155,9 +156,10 @@ class Query_answer_unit(object):
 	"""
 	def load(self, train=False):
 		self.nlu.load(train)
+		if train: self.train()
 		self.agent = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter)
-		if train: self.train()
+
 
 	"""
 		Parameters:
@@ -178,6 +180,19 @@ class Query_answer_unit(object):
 			validation_split=validation_split
 		)
 		self.agent.persist(self.model_path)
+
+	"""
+
+	"""
+	def train_manual(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
+		self.agent.train_online(self.training_data_file,
+			input_channel = ConsoleInputChannel(),
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
+		)
 
 	"""
 		Parameters:

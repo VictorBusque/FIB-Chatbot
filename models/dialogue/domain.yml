@@ -1,6 +1,5 @@
 action_factory: null
 actions:
-- utter_ask_teacher_surname
 - utter_ask_teacher_name
 - utter_ask_subject_acronym
 - actions.action_show_teacher_mail
@@ -12,7 +11,6 @@ config:
   store_entities_as_slots: true
 entities:
 - teacher_name
-- teacher_surnames
 - subject_acronym
 intents:
 - ask_teacher_mail
@@ -22,20 +20,17 @@ intents:
 - ask_subject_schedule
 - inform
 slots:
+  matches:
+    type: unfeaturized
   subject_acronym:
     type: text
   teacher_name:
     type: text
-  teacher_surname:
-    type: text
 templates:
   utter_ask_subject_acronym:
-  - text: Can you tell me the teacher's surname?
+  - text: Can you tell me the subject's acronym?
   - text: Please, tell me the subject's acronym!
   utter_ask_teacher_name:
   - text: Can you tell me the teacher's name?
   - text: Please, tell me the teacher's name!
-  utter_ask_teacher_surname:
-  - text: Can you tell me the teacher's surname?
-  - text: Please, tell me the teacher's surname!
 topics: []

@@ -45,8 +45,8 @@
         "BILOU_flag": true,
         "version": 1
     },
-    "entity_synonyms": "entity_synonyms.json",
+    "entity_synonyms": null,
     "intent_classifier_sklearn": "intent_classifier.pkl",
-    "trained_at": "20180213-152146",
+    "trained_at": "20180214-175429",
     "rasa_nlu_version": "0.10.6"
 }

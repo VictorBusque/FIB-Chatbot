@@ -121,6 +121,59 @@ class API_raco(object):
 		else:
 			return None
 
+
+	"""
+		Parameters:
+			acronym(:obj:`str` or None): Acronym for the subject if any
+			name(:obj:`str` or None): Name of the subject if any
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			True if funcion with acronym or name parameters exist,
+			False otherwise
+	"""
+	def subject_exists(self, acronym = None, name = None, language = 'English'):
+		url = 'https://api.fib.upc.edu/v2/assignatures/'
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		if acronym: query = {'field': 'id', 'value': acronym}
+		elif name: query = {'field': 'nom', 'value': name}
+		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			field_name = query['field']
+			field_value = query['value']
+			response_json = response.json().get('results')
+			for items in response_json:
+				if items[field_name] == field_value: return True
+			return False
+
+	"""
+		Parameters
+			acronym(:obj:`str` or None): Acronym for the subject
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			(:obj:`str`): Name of the subject with acronym as the parameter (if it exists)
+			(None): otherwise
+	"""
+	def get_subject_name(self, acronym, language = 'English'):
+		url = 'https://api.fib.upc.edu/v2/assignatures/'
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		query = {'field': 'id', 'value': acronym}
+		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			field_name = query['field']
+			field_value = query['value']
+			response_json = response.json().get('results')
+			for items in response_json:
+				if items[field_name] == field_value: return items['nom']
+			return None
+
 	"""
 		Parameters:
 			query(:obj:`dict`): json format of the query (p.e. {'places-matricula': { 'field': 'assig', 'value': 'APC' } } )

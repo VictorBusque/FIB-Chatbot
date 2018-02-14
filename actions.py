@@ -84,7 +84,7 @@ class action_show_subject_free_spots(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym")
+        subject_acro = tracker.get_slot("subject_acronym").upper()
         #subject_name = tracker.get_slot("subject_name")
         raco_api = API_raco()
         query = {'places-matricula': { 'field': 'assig', 'value': subject_acro }}
