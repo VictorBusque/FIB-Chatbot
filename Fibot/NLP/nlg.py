@@ -202,4 +202,4 @@ class Query_answer_unit(object):
 		defined in Fibot/NLP/core/actions.py
 	"""
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID):
-		return self.agent.handle_message(message)
+		return self.agent.handle_message(message, sender_id=sender_id)

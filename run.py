@@ -72,7 +72,7 @@ def start_authentication(bot, update):
 	logged = Fibot.chats.get_chat(chat_id)['logged']
 	print(logged)
 	if (not logged):
-		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.api_raco.get_autho_full_page())
+		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.oauth.get_autho_full_page())
 		Fibot.send_preset_message(chat_id, "inform_oauth_procedure")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 	else:
@@ -94,7 +94,7 @@ def authenticate(bot, update):
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 		return MESSAGE_INCOME
 	auth_code = url.split('=')[1]
-	callback = Fibot.api_raco.authenticate(auth_code)
+	callback = Fibot.oauth.authenticate(auth_code)
 	if isinstance(callback, dict):
 		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 		Fibot.send_preset_message(chat_id, "login_done", user_name)

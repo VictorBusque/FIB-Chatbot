@@ -14,7 +14,7 @@ from telegram import ChatAction
 
 #-- Local imports --#
 from Fibot.chats import Chats
-from Fibot.api_raco import API_raco
+from Fibot.api.oauth import Oauth
 from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
 from Fibot.NLP.language import Translator
 
@@ -27,7 +27,7 @@ class Fibot(object):
 		name(:obj:`str`): Unique identifier for the bot
 		bot_token(:obj:`str`): Token to access the bot
 		chats(:class:`Fibot.Chat`): Object that represents the chats
-		api_raco(:class:`Fibot.API_raco`): Object that interacts with Raco's api
+		oauth(:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
 		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
@@ -38,7 +38,7 @@ class Fibot(object):
 		self.name = name
 		self.bot_token = os.getenv('FibotTOKEN')
 		self.chats = Chats()
-		self.api_raco = API_raco()
+		self.oauth = Oauth()
 		self.nlg = NLG_unit()
 		self.qa = Query_answer_unit()
 		self.translator = Translator()
