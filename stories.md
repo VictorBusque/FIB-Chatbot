@@ -2176,3 +2176,453 @@
 ## Generated Story -609616063966958418
     - action_show_teacher_desk
     - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1059119890186913039
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 2081655096125969768
+    - slot{"subject_acronym": "VJ"}
+    - slot{"subject_acronym": "VJ"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 232992637468006878
+    - slot{"subject_acronym": "CAIM"}
+    - slot{"subject_acronym": "CAIM"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 6417573927277923905
+    - action_show_teacher_mail
+    - export
+## Generated Story -545890074161169981
+    - action_show_subject_schedule
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1059119890186913039
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 2081655096125969768
+    - slot{"subject_acronym": "VJ"}
+    - slot{"subject_acronym": "VJ"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 232992637468006878
+    - slot{"subject_acronym": "CAIM"}
+    - slot{"subject_acronym": "CAIM"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 6417573927277923905
+    - action_show_teacher_mail
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -545890074161169981
+    - action_show_subject_schedule
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 3980809094286884838
+    - slot{"subject_acronym": "XC"}
+    - slot{"subject_acronym": "XC"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -4820397002857912843
+    - slot{"teacher_name": "Jesus Alonso"}
+    - slot{"teacher_name": "Jesus Alonso"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story 60901922219074558
+    - slot{"teacher_name": "toni chica"}
+    - slot{"teacher_name": "toni chica"}
+    - action_show_teacher_desk
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -5123541346399041590
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_schedule
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story -770743119329164708
+    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story 4216539132921853232
+    - slot{"teacher_name": "Javier bejar"}
+    - slot{"teacher_name": "Javier bejar"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1059119890186913039
+    - slot{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 2081655096125969768
+    - slot{"subject_acronym": "VJ"}
+    - slot{"subject_acronym": "VJ"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 7918636223589721543
+    - slot{"subject_acronym": "M2"}
+    - slot{"subject_acronym": "M2"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 232992637468006878
+    - slot{"subject_acronym": "CAIM"}
+    - slot{"subject_acronym": "CAIM"}
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -545890074161169981
+    - action_show_subject_schedule
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export
+## Generated Story 6417573927277923905
+    - action_show_teacher_mail
+    - export
+## Generated Story -1642346973055705177
+    - action_show_teacher_desk
+    - export
+## Generated Story 5495743097896127115
+    - action_show_subject_free_spots
+    - export

@@ -3,7 +3,7 @@ actions:
 - utter_ask_teacher_name
 - utter_ask_subject_acronym
 - actions.action_show_teacher_mail
-- actions.action_show_teacher_desk
+- actions.action_show_teacher_office
 - actions.action_show_subject_free_spots
 - actions.action_show_subject_classroom
 - actions.action_show_subject_schedule
@@ -14,7 +14,7 @@ entities:
 - subject_acronym
 intents:
 - ask_teacher_mail
-- ask_teacher_desk
+- ask_teacher_office
 - ask_free_spots
 - ask_subject_classroom
 - ask_subject_schedule

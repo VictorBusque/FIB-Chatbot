@@ -38,7 +38,7 @@ def start(bot, update):
 	else:
 		user_name = update.message.from_user.first_name
 		data = {'name': user_name,
-				'language': 'Spanish',
+				'language': 'English',
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': Fibot.state_machine['MessageHandler'],

@@ -1,7 +1,7 @@
 {
   "features": [
     "intent_ask_teacher_mail",
-    "intent_ask_teacher_desk",
+    "intent_ask_teacher_office",
     "intent_ask_free_spots",
     "intent_ask_subject_classroom",
     "intent_ask_subject_schedule",

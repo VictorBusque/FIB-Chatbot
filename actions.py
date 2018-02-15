@@ -53,7 +53,7 @@ class action_show_teacher_mail(Action):
         return []
 
 
-class action_show_teacher_desk(Action):
+class action_show_teacher_office(Action):
 
     def name(self):
         return 'action_show_teacher_desk'

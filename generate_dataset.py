@@ -41,12 +41,16 @@ class Data_generator(object):
 	def get_random_element(self):
 		entity = self.i_g.get_random().lower().rstrip()
 		sentence = self.s_g.get_random()
-		offset_ini = len(sentence)
+		offset_ini = 0
+		for char in sentence:
+			if char != "{":
+				offset_ini += 1
+			else: break
 		offset_fi = offset_ini + len(entity)
 		if self.type == 'teacher': entity_type = 'teacher_name'
 		if self.type == 'subject': entity_type = 'subject_acronym'
 		return {
-			"text": "{}{}".format(sentence, entity),
+			"text": sentence.format(entity),
 			"intent": self.intent,
 			"entities": [
 				{
@@ -61,15 +65,15 @@ class Data_generator(object):
 
 def main(amount = 250):
 
-	intros_teacher_mail = ['cual es el correo de ', 'correo de ']
-	intros_teacher_desk = ['cual es el despacho de ', 'despacho de ', 'dime el despacho de ']
+	intros_teacher_mail = ["{}'s mail", "what is {}'s mail"]
+	intros_teacher_desk = ["what's {}'s office'", "{}'s office"]
 
 
-	intros_subject_free_spots = ['plazas libres de ', 'cuantas plazas quedan de ', 'plazas de ']
-	intros_subject_schedule = ['horario de ', 'cual es el horario de ', 'a que hora tengo ']
-	intros_subject_clasroom = ['en que clase hay ', 'en que clase tengo ', 'donde tengo ']
-	intros_inform_teacher = ['el profesor es ', 'el profe es ', '']
-	intros_inform_subject = ['la asignatura es ', '']
+	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}', 'spots left in {}']
+	intros_subject_schedule = ['schedule of {}', "what's {}'s schedule'", 'when do i have {}']
+	intros_subject_clasroom = ['in which class do i have {} ', "{}'s classroom'", 'where do i have {}']
+	intros_inform_teacher = ['the teacher is {}', '{}']
+	intros_inform_subject = ['the subject is ', '{}']
 
 	regex_features = []
 	entity_synonyms = []
@@ -87,7 +91,7 @@ def main(amount = 250):
 	intro_inform_subject_gen = Item_generator(data = intros_inform_subject)
 
 	teacher_mail_gen = Data_generator(teacher_gen, intro_mail_gen, type_="teacher", intent="ask_teacher_mail")
-	teacher_desk_gen = Data_generator(teacher_gen, intro_desk_gen, type_="teacher", intent="ask_teacher_desk")
+	teacher_desk_gen = Data_generator(teacher_gen, intro_desk_gen, type_="teacher", intent="ask_teacher_office")
 	subject_spots_gen = Data_generator(subject_gen, intro_spots_gen, type_="subject", intent="ask_free_spots")
 	subject_schedule_gen = Data_generator(subject_gen, intro_schedule_gen, type_="subject", intent="ask_subject_schedule")
 	subject_classroom_gen = Data_generator(subject_gen, intro_classroom_gen, type_="subject", intent="ask_subject_classroom")
