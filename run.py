@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 #-- General imports --#
-import os
-import urllib
-import requests
 import re
 
 #-- 3rd party imports --#
@@ -195,6 +192,10 @@ def ask(bot, update):
 	chat_id = update.message.chat_id
 	text = update.message.text
 	message_id = update.message.message_id
+	if Fibot.chats.token_has_expired(chat_id):
+		r_t = Fibot.chats.get_chat(chat_id)['refresh_token']
+		callback = Fibot.oauth.refresh_token(r_t)
+		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 

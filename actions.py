@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 
 #-- General imports --#
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 #-- 3rd party imports --#
 from rasa_core.actions.action import Action
@@ -110,8 +106,7 @@ class action_show_subject_classroom(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         c = Chats()
-        c.load()
-        access_token = c.get_chat(chat_id)['access_token']
+        access_token = c.get_chat_lite(chat_id)['access_token']
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
             raco_api = API_raco()
@@ -136,8 +131,8 @@ class action_show_subject_schedule(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         c = Chats()
-        c.load()
-        access_token = c.get_chat(chat_id)['access_token']
+        c = Chats()
+        access_token = c.get_chat_lite(chat_id)['access_token']
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
             raco_api = API_raco()

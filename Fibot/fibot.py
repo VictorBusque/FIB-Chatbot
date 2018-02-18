@@ -3,7 +3,7 @@
 
 
 #-- General imports --#
-import os
+from os import getenv
 import requests
 import json
 import re
@@ -36,7 +36,7 @@ class Fibot(object):
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
-		self.bot_token = os.getenv('FibotTOKEN')
+		self.bot_token = getenv('FibotTOKEN')
 		self.chats = Chats()
 		self.oauth = Oauth()
 		self.nlg = NLG_unit()

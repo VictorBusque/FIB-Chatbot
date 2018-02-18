@@ -4,7 +4,7 @@
 
 #-- General imports --#
 import requests
-import os
+from os import getenv
 import urllib
 import json
 import datetime
@@ -25,8 +25,8 @@ class Oauth(object):
 			token_url(:obj:`str`): the url where we can request the tokens
 	"""
 	def __init__(self):
-		self.client_id = os.getenv('client_id')
-		self.client_secret = os.getenv('client_secret')
+		self.client_id = getenv('client_id')
+		self.client_secret = getenv('client_secret')
 		self.base_url = 'https://api.fib.upc.edu/v2/'
 		self.redirect_uri = 'https://localhost:5001'
 		self.authorisation_url = 'https://api.fib.upc.edu/v2/o/authorize'

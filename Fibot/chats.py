@@ -5,6 +5,7 @@
 #-- General imports --#
 import json
 import os
+from datetime import datetime
 from pprint import pprint
 
 class Chats(object):
@@ -31,6 +32,13 @@ class Chats(object):
 	"""
 	def __init__(self):
 		self.chats = {}
+
+	"""
+		Returns the data from persistence of user with chat_id
+	"""
+	def get_chat_lite(self, chat_id):
+		with open('./Data/chat_status.json', 'r') as fp:
+			return json.load(fp)[str(chat_id)]
 
 	"""
 		Loads the data from persistence (if any)
@@ -114,3 +122,24 @@ class Chats(object):
 			return self.chats[str(chat_id)]
 		else:
 			return None
+
+	"""
+		Parameters:
+			chat_id(:obj:`str`): chat_id of the chat
+
+		This function returns:
+			True: if the access_token from user with chat_id has expired
+			False: otherwise
+	"""
+	def token_has_expired(self, chat_id):
+		expiration_time = self.chats[str(chat_id)]['expire_time_end']
+		now = datetime.now()
+		expiration_time = datetime(
+			expiration_time['year'],
+			expiration_time['month'],
+			expiration_time['day'],
+			expiration_time['hour'],
+			expiration_time['minute'],
+			expiration_time['second']
+		)
+		return now > expiration_time
