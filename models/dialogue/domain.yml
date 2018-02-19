@@ -1,4 +1,12 @@
 action_factory: null
+action_names:
+- utter_ask_teacher_name
+- utter_ask_subject_acronym
+- action_show_teacher_mail
+- action_show_teacher_office
+- action_show_subject_free_spots
+- action_show_subject_classroom
+- action_show_subject_schedule
 actions:
 - utter_ask_teacher_name
 - utter_ask_subject_acronym
@@ -21,11 +29,14 @@ intents:
 - inform
 slots:
   matches:
-    type: unfeaturized
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
   subject_acronym:
-    type: text
+    initial_value: null
+    type: rasa_core.slots.TextSlot
   teacher_name:
-    type: text
+    initial_value: null
+    type: rasa_core.slots.TextSlot
 templates:
   utter_ask_subject_acronym:
   - text: Can you tell me the subject's acronym?

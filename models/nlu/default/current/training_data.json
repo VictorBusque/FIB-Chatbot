@@ -331,11 +331,11 @@
           {
             "start": 0,
             "end": 20,
-            "value": "nuria castell ari\u00e3\u00b1o",
+            "value": "nuria castell ariã±o",
             "entity": "teacher_name"
           }
         ],
-        "text": "nuria castell ari\u00e3\u00b1o's mail"
+        "text": "nuria castell ariã±o's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -355,11 +355,11 @@
           {
             "start": 0,
             "end": 30,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "francisco josã© mugica alvarez",
             "entity": "teacher_name"
           }
         ],
-        "text": "francisco jos\u00e3\u00a9 mugica alvarez's mail"
+        "text": "francisco josã© mugica alvarez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -595,11 +595,11 @@
           {
             "start": 8,
             "end": 28,
-            "value": "nuria castell ari\u00e3\u00b1o",
+            "value": "nuria castell ariã±o",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is nuria castell ari\u00e3\u00b1o's mail"
+        "text": "what is nuria castell ariã±o's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -631,11 +631,11 @@
           {
             "start": 8,
             "end": 29,
-            "value": "ren\u00e3\u00a9 alquezar mancho",
+            "value": "renã© alquezar mancho",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is ren\u00e3\u00a9 alquezar mancho's mail"
+        "text": "what is renã© alquezar mancho's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -811,11 +811,11 @@
           {
             "start": 0,
             "end": 33,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "maria josefina sierra santiba\u00e3\u00b1ez's mail"
+        "text": "maria josefina sierra santibaã±ez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -907,11 +907,11 @@
           {
             "start": 8,
             "end": 29,
-            "value": "ren\u00e3\u00a9 alquezar mancho",
+            "value": "renã© alquezar mancho",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is ren\u00e3\u00a9 alquezar mancho's mail"
+        "text": "what is renã© alquezar mancho's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -919,11 +919,11 @@
           {
             "start": 0,
             "end": 28,
-            "value": "luis antonio belanche mu\u00e3\u00b1oz",
+            "value": "luis antonio belanche muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "luis antonio belanche mu\u00e3\u00b1oz's mail"
+        "text": "luis antonio belanche muã±oz's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -1051,11 +1051,11 @@
           {
             "start": 8,
             "end": 38,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "francisco josã© mugica alvarez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is francisco jos\u00e3\u00a9 mugica alvarez's mail"
+        "text": "what is francisco josã© mugica alvarez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -1339,11 +1339,11 @@
           {
             "start": 0,
             "end": 33,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "maria josefina sierra santiba\u00e3\u00b1ez's mail"
+        "text": "maria josefina sierra santibaã±ez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -1615,11 +1615,11 @@
           {
             "start": 8,
             "end": 27,
-            "value": "mario martin mu\u00e3\u00b1oz",
+            "value": "mario martin muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is mario martin mu\u00e3\u00b1oz's mail"
+        "text": "what is mario martin muã±oz's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -1795,11 +1795,11 @@
           {
             "start": 0,
             "end": 33,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "maria josefina sierra santiba\u00e3\u00b1ez's mail"
+        "text": "maria josefina sierra santibaã±ez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -1963,11 +1963,11 @@
           {
             "start": 0,
             "end": 22,
-            "value": "josep vilaplana past\u00e3\u00b3",
+            "value": "josep vilaplana pastã³",
             "entity": "teacher_name"
           }
         ],
-        "text": "josep vilaplana past\u00e3\u00b3's mail"
+        "text": "josep vilaplana pastã³'s mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2035,11 +2035,11 @@
           {
             "start": 8,
             "end": 41,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is maria josefina sierra santiba\u00e3\u00b1ez's mail"
+        "text": "what is maria josefina sierra santibaã±ez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2059,11 +2059,11 @@
           {
             "start": 8,
             "end": 36,
-            "value": "luis antonio belanche mu\u00e3\u00b1oz",
+            "value": "luis antonio belanche muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is luis antonio belanche mu\u00e3\u00b1oz's mail"
+        "text": "what is luis antonio belanche muã±oz's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2083,11 +2083,11 @@
           {
             "start": 0,
             "end": 20,
-            "value": "nuria castell ari\u00e3\u00b1o",
+            "value": "nuria castell ariã±o",
             "entity": "teacher_name"
           }
         ],
-        "text": "nuria castell ari\u00e3\u00b1o's mail"
+        "text": "nuria castell ariã±o's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2239,11 +2239,11 @@
           {
             "start": 8,
             "end": 28,
-            "value": "nuria castell ari\u00e3\u00b1o",
+            "value": "nuria castell ariã±o",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is nuria castell ari\u00e3\u00b1o's mail"
+        "text": "what is nuria castell ariã±o's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2299,11 +2299,11 @@
           {
             "start": 0,
             "end": 19,
-            "value": "eva moncl\u00e3\u00bas lahoya",
+            "value": "eva monclãºs lahoya",
             "entity": "teacher_name"
           }
         ],
-        "text": "eva moncl\u00e3\u00bas lahoya's mail"
+        "text": "eva monclãºs lahoya's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2515,11 +2515,11 @@
           {
             "start": 8,
             "end": 27,
-            "value": "eva moncl\u00e3\u00bas lahoya",
+            "value": "eva monclãºs lahoya",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is eva moncl\u00e3\u00bas lahoya's mail"
+        "text": "what is eva monclãºs lahoya's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2947,11 +2947,11 @@
           {
             "start": 8,
             "end": 29,
-            "value": "ren\u00e3\u00a9 alquezar mancho",
+            "value": "renã© alquezar mancho",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is ren\u00e3\u00a9 alquezar mancho's mail"
+        "text": "what is renã© alquezar mancho's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -2983,11 +2983,11 @@
           {
             "start": 8,
             "end": 38,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "francisco josã© mugica alvarez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what is francisco jos\u00e3\u00a9 mugica alvarez's mail"
+        "text": "what is francisco josã© mugica alvarez's mail"
       },
       {
         "intent": "ask_teacher_mail",
@@ -3055,11 +3055,11 @@
           {
             "start": 0,
             "end": 19,
-            "value": "mario martin mu\u00e3\u00b1oz",
+            "value": "mario martin muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "mario martin mu\u00e3\u00b1oz's office"
+        "text": "mario martin muã±oz's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -3187,11 +3187,11 @@
           {
             "start": 7,
             "end": 40,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's maria josefina sierra santiba\u00e3\u00b1ez's office'"
+        "text": "what's maria josefina sierra santibaã±ez's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -3247,11 +3247,11 @@
           {
             "start": 7,
             "end": 37,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "francisco josã© mugica alvarez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's francisco jos\u00e3\u00a9 mugica alvarez's office'"
+        "text": "what's francisco josã© mugica alvarez's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -3307,11 +3307,11 @@
           {
             "start": 0,
             "end": 19,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "otger rogl\u00e3\u00a0 pujalt's office"
+        "text": "otger roglã  pujalt's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -3367,11 +3367,11 @@
           {
             "start": 7,
             "end": 40,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's maria josefina sierra santiba\u00e3\u00b1ez's office'"
+        "text": "what's maria josefina sierra santibaã±ez's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -3391,11 +3391,11 @@
           {
             "start": 7,
             "end": 26,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's otger rogl\u00e3\u00a0 pujalt's office'"
+        "text": "what's otger roglã  pujalt's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -3775,11 +3775,11 @@
           {
             "start": 7,
             "end": 26,
-            "value": "mario martin mu\u00e3\u00b1oz",
+            "value": "mario martin muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's mario martin mu\u00e3\u00b1oz's office'"
+        "text": "what's mario martin muã±oz's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -3967,11 +3967,11 @@
           {
             "start": 0,
             "end": 21,
-            "value": "ren\u00e3\u00a9 alquezar mancho",
+            "value": "renã© alquezar mancho",
             "entity": "teacher_name"
           }
         ],
-        "text": "ren\u00e3\u00a9 alquezar mancho's office"
+        "text": "renã© alquezar mancho's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -4063,11 +4063,11 @@
           {
             "start": 0,
             "end": 19,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "otger rogl\u00e3\u00a0 pujalt's office"
+        "text": "otger roglã  pujalt's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -4195,11 +4195,11 @@
           {
             "start": 7,
             "end": 35,
-            "value": "luis antonio belanche mu\u00e3\u00b1oz",
+            "value": "luis antonio belanche muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's luis antonio belanche mu\u00e3\u00b1oz's office'"
+        "text": "what's luis antonio belanche muã±oz's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -4363,11 +4363,11 @@
           {
             "start": 0,
             "end": 21,
-            "value": "ren\u00e3\u00a9 alquezar mancho",
+            "value": "renã© alquezar mancho",
             "entity": "teacher_name"
           }
         ],
-        "text": "ren\u00e3\u00a9 alquezar mancho's office"
+        "text": "renã© alquezar mancho's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -4891,11 +4891,11 @@
           {
             "start": 7,
             "end": 26,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's otger rogl\u00e3\u00a0 pujalt's office'"
+        "text": "what's otger roglã  pujalt's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -5023,11 +5023,11 @@
           {
             "start": 0,
             "end": 30,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "francisco josã© mugica alvarez",
             "entity": "teacher_name"
           }
         ],
-        "text": "francisco jos\u00e3\u00a9 mugica alvarez's office"
+        "text": "francisco josã© mugica alvarez's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -5335,11 +5335,11 @@
           {
             "start": 0,
             "end": 33,
-            "value": "maria josefina sierra santiba\u00e3\u00b1ez",
+            "value": "maria josefina sierra santibaã±ez",
             "entity": "teacher_name"
           }
         ],
-        "text": "maria josefina sierra santiba\u00e3\u00b1ez's office"
+        "text": "maria josefina sierra santibaã±ez's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -5347,11 +5347,11 @@
           {
             "start": 7,
             "end": 26,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "what's otger rogl\u00e3\u00a0 pujalt's office'"
+        "text": "what's otger roglã  pujalt's office'"
       },
       {
         "intent": "ask_teacher_office",
@@ -5659,11 +5659,11 @@
           {
             "start": 0,
             "end": 19,
-            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "value": "otger roglã  pujalt",
             "entity": "teacher_name"
           }
         ],
-        "text": "otger rogl\u00e3\u00a0 pujalt's office"
+        "text": "otger roglã  pujalt's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -5791,11 +5791,11 @@
           {
             "start": 0,
             "end": 28,
-            "value": "luis antonio belanche mu\u00e3\u00b1oz",
+            "value": "luis antonio belanche muã±oz",
             "entity": "teacher_name"
           }
         ],
-        "text": "luis antonio belanche mu\u00e3\u00b1oz's office"
+        "text": "luis antonio belanche muã±oz's office"
       },
       {
         "intent": "ask_teacher_office",
@@ -5983,11 +5983,11 @@
           {
             "start": 0,
             "end": 22,
-            "value": "josep vilaplana past\u00e3\u00b3",
+            "value": "josep vilaplana pastã³",
             "entity": "teacher_name"
           }
         ],
-        "text": "josep vilaplana past\u00e3\u00b3's office"
+        "text": "josep vilaplana pastã³'s office"
       },
       {
         "intent": "ask_teacher_office",

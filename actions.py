@@ -52,7 +52,7 @@ class action_show_teacher_mail(Action):
 class action_show_teacher_office(Action):
 
     def name(self):
-        return 'action_show_teacher_desk'
+        return 'action_show_teacher_office'
 
     def resets_topic(self):
         return True
