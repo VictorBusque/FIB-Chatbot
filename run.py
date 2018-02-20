@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 #-- General imports --#
-import os
-import urllib
-import requests
 import re
 
 #-- 3rd party imports --#
@@ -38,7 +35,7 @@ def start(bot, update):
 	else:
 		user_name = update.message.from_user.first_name
 		data = {'name': user_name,
-				'language': 'Spanish',
+				'language': 'English',
 				'access_token': None,
 				'refresh_token': None,
 				'current_state': Fibot.state_machine['MessageHandler'],
@@ -72,7 +69,7 @@ def start_authentication(bot, update):
 	logged = Fibot.chats.get_chat(chat_id)['logged']
 	print(logged)
 	if (not logged):
-		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.api_raco.get_autho_full_page())
+		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.oauth.get_autho_full_page())
 		Fibot.send_preset_message(chat_id, "inform_oauth_procedure")
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 	else:
@@ -94,7 +91,7 @@ def authenticate(bot, update):
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['Wait_authorisation'], overwrite = True)
 		return MESSAGE_INCOME
 	auth_code = url.split('=')[1]
-	callback = Fibot.api_raco.authenticate(auth_code)
+	callback = Fibot.oauth.authenticate(auth_code)
 	if isinstance(callback, dict):
 		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 		Fibot.send_preset_message(chat_id, "login_done", user_name)
@@ -195,18 +192,14 @@ def ask(bot, update):
 	chat_id = update.message.chat_id
 	text = update.message.text
 	message_id = update.message.message_id
-	'''
-	intent = NLU_module.get_intent(query)
-	entities = NLU_module.get_entities(query)
-	update.message.reply_text('Estoy '+str(intent['confidence']*100)+' porciento seguro de que tu intención es: '+intent['name'])
-	for entity in entities:
-		update.message.reply_text('Y también me diste el '+entity['entity'] +', que es ' + entity['value'])
-	update.message.reply_text('Mis resultados son: ')
-	send_chat_action(chat_id, 'typing')
-	update.message.reply_text(feature_module.retrieve_data(intent, entities, chat_id = chat_id))
-	'''
-	#Fibot.send_message(chat_id, Fibot.nlg.get_response(text, debug = False), typing = True, reply_to = message_id)
-	Fibot.process_income_message(chat_id, text, message_id = message_id)
+	if Fibot.chats.token_has_expired(chat_id):
+		print("This token has expired!!")
+		r_t = Fibot.chats.get_chat(chat_id)['refresh_token']
+		print("This is the rt {}".format(r_t))
+		callback = Fibot.oauth.refresh_token(r_t)
+		print("This is the callback:\n{}".format(callback))
+		Fibot.chats.update_chat(chat_id, callback, full_data = False)
+	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 
 

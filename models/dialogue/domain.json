@@ -1,0 +1,23 @@
+{
+  "features": [
+    "intent_ask_teacher_mail",
+    "intent_ask_teacher_office",
+    "intent_ask_free_spots",
+    "intent_ask_subject_classroom",
+    "intent_ask_subject_schedule",
+    "intent_inform",
+    "entity_teacher_name",
+    "entity_subject_acronym",
+    "slot_subject_acronym_0",
+    "slot_teacher_name_0",
+    "prev_action_listen",
+    "prev_action_restart",
+    "prev_utter_ask_teacher_name",
+    "prev_utter_ask_subject_acronym",
+    "prev_action_show_teacher_mail",
+    "prev_action_show_teacher_office",
+    "prev_action_show_subject_free_spots",
+    "prev_action_show_subject_classroom",
+    "prev_action_show_subject_schedule"
+  ]
+}

@@ -3,19 +3,18 @@
 
 
 #-- General imports --#
-import os
+from os import getenv
 import requests
 import json
 import re
 from pprint import pprint
-
+from time import time
 #-- 3rd party imports --#
 from telegram import ChatAction
 
 #-- Local imports --#
 from Fibot.chats import Chats
-from Fibot.api_raco import API_raco
-from Fibot.NLP.nlu import NLU_unit
+from Fibot.api.oauth import Oauth
 from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
 from Fibot.NLP.language import Translator
 
@@ -28,8 +27,7 @@ class Fibot(object):
 		name(:obj:`str`): Unique identifier for the bot
 		bot_token(:obj:`str`): Token to access the bot
 		chats(:class:`Fibot.Chat`): Object that represents the chats
-		api_raco(:class:`Fibot.API_raco`): Object that interacts with Raco's api
-		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets querys
+		oauth(:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
 		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
@@ -38,12 +36,11 @@ class Fibot(object):
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
-		self.bot_token = os.getenv('FibotTOKEN')
+		self.bot_token = getenv('FibotTOKEN')
 		self.chats = Chats()
-		self.api_raco = API_raco()
-		self.nlu = NLU_unit()
+		self.oauth = Oauth()
 		self.nlg = NLG_unit()
-		self.qa = Query_answer_unit(self.api_raco)
+		self.qa = Query_answer_unit()
 		self.translator = Translator()
 		self.messages = {}
 		self.state_machine = {
@@ -63,8 +60,6 @@ class Fibot(object):
 	def load_components(self):
 		self.chats.load()
 		print("Chats loaded")
-		self.nlu.load()
-		print("NLU model loaded")
 		self.nlg.load()
 		print("NLG model loaded")
 		self.qa.load(train=False)
@@ -88,20 +83,29 @@ class Fibot(object):
 		Sends a message to the chat with chat_id with content text
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
-		if typing: self.send_chat_action(chat_id)
-		user_language = self.chats.get_chat(chat_id)['language']
-		if user_language != 'English':
-			urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-			if urls: message = message.replace(urls[0],"{}")
-			message = self.translator.translate(message , to = user_language)
-			if urls: message = message.format(urls[0])
-		params = {
-			'chat_id': chat_id,
-			'text': message
-		}
-		if reply_to: params['reply_to_message_id'] = reply_to
-		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-		response = requests.get(base_url, params = params)
+		ini = time()
+		if isinstance(message, list):
+			for item in message:
+				self.send_message(chat_id, item, typing, reply_to)
+		else:
+			if typing: self.send_chat_action(chat_id)
+			print("chat action sent in {}".format( (time()-ini) ))
+			user_language = self.chats.get_chat(chat_id)['language']
+			if user_language != 'English':
+				urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
+				if urls: message = message.replace(urls[0],"{}")
+				message = self.translator.translate(message , to = user_language)
+				if urls: message = message.format(urls[0])
+
+			params = {
+				'chat_id': chat_id,
+				'text': message
+			}
+			if reply_to: params['reply_to_message_id'] = reply_to
+			base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
+			response = requests.get(base_url, params = params)
+			print("message sent in {}".format( (time()-ini) ))
+
 
 	"""
 		Parameters:
@@ -130,16 +134,15 @@ class Fibot(object):
 	"""
 	def process_income_message(self, chat_id, message, message_id = None, debug = False):
 		print("Processing income message...")
-		if debug: #Translation in the future should be before this
-			pprint(self.nlu.get_intent(message))
-			pprint(self.nlu.get_entities(message))
-			self.send_message(chat_id, "The intent is: {}".format(self.nlu.get_intent(message)['name']))
-			for entity in self.nlu.get_entities(message):
-				self.send_message(chat_id, "One entity is: {}: {}".format(entity['entity'], entity['value']))
-
+		"""
 		user_language = self.chats.get_chat(chat_id)['language']
 		if user_language != 'English':
 			message = self.translator.translate(message , to = 'English', _from = user_language)
-		response = self.nlg.get_response(message)
-		if message_id: self.send_message(chat_id, response, typing=True, reply_to = message_id)
+		"""
+		ini = time()
+		response = self.qa.get_response(message, sender_id = chat_id)
+		print("Getting response time is {}".format( (time()-ini) ))
+		print(response)
+		if message_id:
+			self.send_message(chat_id, response, typing=True, reply_to = message_id)
 		else: self.send_message(chat_id, response, typing=True)

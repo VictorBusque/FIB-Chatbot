@@ -1,0 +1,41 @@
+intents:
+  - ask_teacher_mail
+  - ask_teacher_office
+  - ask_free_spots
+  - ask_subject_classroom
+  - ask_subject_schedule
+  - inform
+
+
+entities:
+  - teacher_name
+  - subject_acronym
+
+
+slots:
+  teacher_name:
+    type: text
+  subject_acronym:
+    type: text
+  matches:
+    type: unfeaturized
+
+
+templates:
+  utter_ask_teacher_name:
+    - "Can you tell me the teacher's name?"
+    - "Please, tell me the teacher's name!"
+
+  utter_ask_subject_acronym:
+    - "Can you tell me the subject's acronym?"
+    - "Please, tell me the subject's acronym!"
+
+
+actions:
+  - utter_ask_teacher_name
+  - utter_ask_subject_acronym
+  - actions.action_show_teacher_mail
+  - actions.action_show_teacher_office
+  - actions.action_show_subject_free_spots
+  - actions.action_show_subject_classroom
+  - actions.action_show_subject_schedule

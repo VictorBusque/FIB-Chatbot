@@ -10,7 +10,15 @@ import requests
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
+from rasa_core.agent import Agent
+from rasa_core.policies.keras_policy import KerasPolicy
+from rasa_core.policies.memoization import MemoizationPolicy
+from rasa_core.channels import UserMessage
+from rasa_core.channels.console import ConsoleInputChannel
 from telegram import ChatAction
+
+#-- local imports --#
+from Fibot.NLP.nlu import NLU_unit
 
 
 class NLG_unit(object):
@@ -127,34 +135,71 @@ class Query_answer_unit(object):
 	""" This object contains tools to answer in natural language any message Fib related
 
 	Attributes:
-		api_raco(:class:`Fibot.API_raco`): Copy of Fibot's Raco's API unit to query for stuff
-		model(:class:``): Model that will be capable of responding to FIB queries
+		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets queries
+		training_data_file(:obj:`str`): String indicating the path to the stories markdown file
+		model_path(:obj:`str`): String indicating where the dialog model is
+		domain_path(:obj:`str`): String indicating where the domain yml file is
+		agent(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages
 	"""
-	def __init__(self, api_raco):
-		self.api_raco = api_raco
-		self.model = None
+	def __init__(self):
+		self.nlu = NLU_unit()
+		self.training_data_file = './Fibot/NLP/core/stories.md'
+		self.domain_path = './Fibot/NLP/core/domain.yml'
+		self.model_path = './models/dialogue'
+		self.agent =  Agent(self.domain_path,
+			                  policies=[MemoizationPolicy(), KerasPolicy()])
 
 	"""
 		Parameters:
-			train (:obj:`bool`): Specifies if the model has to be trained or not
-
-		This function updates the model attribute with:
-			The model located on the model's folder if train is False
-			Trains the model and uses the trained as the model
+			train(:obj:`bool`): Specifies if the agent has to be trained
+		This function loads the model into the agent, and trains if necessary
 	"""
-	def load(self, train = False):
-		if train:
-			return
-		else:
-			return
+	def load(self, train=False):
+		self.nlu.load(train)
+		if train: self.train()
+		self.agent = Agent.load(self.model_path,
+				interpreter = self.nlu.interpreter)
+
 
 	"""
 		Parameters:
-			train (:obj:`bool`): Specifies if the model has to be trained or not
+			augmentation_factor(:obj:`int`): augmentation factor for the training
+			max_history(:obj:`int`): max_history factor for the training
+			epochs(:obj:`int`): epochs (steps) for the training
+			batch_size(:obj:`int`): batch_size for the training
+			validation_split(:obj:`int`): validation_split factor for the error calculation
 
-		This function updates the model attribute with:
-			The model located on the model's folder if train is False
-			Trains the model and uses the trained as the model
+		This function trains the agent and saves the model in the dialog's model path
 	"""
-	def get_response(self, intent, entities):
-		return
+	def train(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
+		self.agent.train(self.training_data_file,
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
+		)
+		self.agent.persist(self.model_path)
+
+	"""
+
+	"""
+	def train_manual(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
+		self.agent.train_online(self.training_data_file,
+			input_channel = ConsoleInputChannel(),
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
+		)
+
+	"""
+		Parameters:
+			message(:obj:`str`): the incoming message from some user
+
+		This function returns the response from the agent using the actions
+		defined in Fibot/NLP/core/actions.py
+	"""
+	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID):
+		return self.agent.handle_message(message, sender_id=sender_id)

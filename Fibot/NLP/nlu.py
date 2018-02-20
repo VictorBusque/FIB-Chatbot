@@ -7,6 +7,7 @@ import json
 import os.path
 
 #-- 3rd party imports --#
+from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Trainer, Metadata, Interpreter
@@ -34,16 +35,14 @@ class NLU_unit(object):
 		if train:
 			training_data = load_data('./Data/Dataset.json')
 			print("Data Loaded")
-			trainer = Trainer(RasaNLUConfig("./Fibot/config_spacy.json"))
-			print("Trainer launched")
+			trainer = Trainer(RasaNLUConfig("./config/config_spacy.json"))
+			print("NLU Trainer launched")
 			trainer.train(training_data)
-			print("Training done")
-			model_directory = trainer.persist('./projects/default/')  # Returns the directory the model is stored in
+			print("NLU Training done")
+			model_directory = trainer.persist('models/nlu', fixed_model_name = 'current')  # Returns the directory the model is stored in
 			# where `model_directory points to the folder the model is persisted in
-			self.interpreter = Interpreter.load(model_directory, RasaNLUConfig("./Fibot/config_spacy.json"))
-		else:
-			self.interpreter = Interpreter.load("./projects/default/default/model_20180201-142832", RasaNLUConfig("./Fibot/config_spacy.json"))
-
+		self.interpreter = RasaNLUInterpreter("./models/nlu/default/current")
+		print("NLU loaded")
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages
@@ -64,17 +63,3 @@ class NLU_unit(object):
 	def get_entities(self, query):
 		parsed = self.interpreter.parse(query)
 		return parsed['entities']
-
-
-
-"""
-if __name__ == '__main__':
-	create_interpreter()
-
-	query = input("Introduce query")
-	intent = get_intent(query)
-	entities = get_entities(query)
-	print("For query: "+query)
-	print("The intent is: " + str(intent))
-	print("The entities are: " + str(entities))
-"""

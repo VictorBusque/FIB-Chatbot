@@ -1,5 +1,0 @@
-{
-  "pipeline": "spacy_sklearn",
-  "path" : "./projects",
-  "data" : "./Data/Dataset.json"
-}
