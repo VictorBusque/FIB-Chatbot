@@ -8,6 +8,7 @@ import os
 from datetime import datetime
 from pprint import pprint
 
+
 class Chats(object):
 
 	""" This object contains the necessary information of the chats
@@ -133,6 +134,7 @@ class Chats(object):
 	"""
 	def token_has_expired(self, chat_id):
 		expiration_time = self.chats[str(chat_id)]['expire_time_end']
+		if not expiration_time: return True
 		now = datetime.now()
 		expiration_time = datetime(
 			expiration_time['year'],

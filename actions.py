@@ -38,11 +38,9 @@ class action_show_teacher_mail(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
         mail = teacherdb.search_mail({
-            'teacher_name': teacher_name,
-            'teacher_surname': teacher_surname
+            'teacher_name': teacher_name
         })
         print(mail)
         dispatcher.utter_message("{}".format(mail))
@@ -61,11 +59,9 @@ class action_show_teacher_office(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teacher_surname = tracker.get_slot("teacher_surname")
         teacherdb = teacher_db()
         desk = teacherdb.search_desk({
-            'teacher_name': teacher_name,
-            'teacher_surname': teacher_surname
+            'teacher_name': teacher_name
         })
         print(desk)
         dispatcher.utter_message("{}".format(desk))
@@ -107,6 +103,7 @@ class action_show_subject_classroom(Action):
         chat_id = tracker.sender_id
         c = Chats()
         access_token = c.get_chat_lite(chat_id)['access_token']
+        if not access_token: dispatcher.utter_message("{}".format("You have not logged in with your Racó account. I cannot see your information"))
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
             raco_api = API_raco()
@@ -133,6 +130,7 @@ class action_show_subject_schedule(Action):
         c = Chats()
         c = Chats()
         access_token = c.get_chat_lite(chat_id)['access_token']
+        if not access_token: dispatcher.utter_message("{}".format("You have not logged in with your Racó account. I cannot see your information"))
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
             raco_api = API_raco()

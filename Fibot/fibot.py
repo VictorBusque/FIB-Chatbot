@@ -9,6 +9,7 @@ import json
 import re
 from pprint import pprint
 from time import time
+
 #-- 3rd party imports --#
 from telegram import ChatAction
 
@@ -134,11 +135,9 @@ class Fibot(object):
 	"""
 	def process_income_message(self, chat_id, message, message_id = None, debug = False):
 		print("Processing income message...")
-		"""
 		user_language = self.chats.get_chat(chat_id)['language']
 		if user_language != 'English':
 			message = self.translator.translate(message , to = 'English', _from = user_language)
-		"""
 		ini = time()
 		response = self.qa.get_response(message, sender_id = chat_id)
 		print("Getting response time is {}".format( (time()-ini) ))
