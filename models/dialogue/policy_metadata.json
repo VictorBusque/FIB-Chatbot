@@ -5,6 +5,12 @@
         "teacher_name",
         "subject_acronym"
       ]
+    },
+    "action_show_subject_free_spots": {
+      "slots": []
+    },
+    "action_show_teacher_mail": {
+      "slots": []
     }
   },
   "rasa_core": "0.8.2",

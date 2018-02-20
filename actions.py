@@ -103,7 +103,7 @@ class action_show_subject_classroom(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym")
+        subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
         c = Chats()
         access_token = c.get_chat_lite(chat_id)['access_token']
@@ -128,7 +128,7 @@ class action_show_subject_schedule(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym")
+        subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
         c = Chats()
         c = Chats()

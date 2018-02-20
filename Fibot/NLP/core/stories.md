@@ -43,3 +43,24 @@
 ## Generated Story 1816361712580961853
 * ask_free_spots{"subject_acronym": "ac"}
    - action_show_subject_free_spots
+
+## Generated Story -7830643515955771568
+* ask_teacher_mail{"teacher_name": "jordi turmo"}
+    - slot{"teacher_name": "jordi turmo"}
+    - action_show_teacher_mail
+    - export
+
+## Generated Story 1773597325570318402
+* ask_free_spots{"subject_acronym": "there"}
+    - slot{"subject_acronym": "there"}
+    - utter_ask_subject_acronym
+* inform{"subject_acronym": "wse"}
+    - slot{"subject_acronym": "wse"}
+    - action_show_subject_free_spots
+    - export
+    
+## Generated Story -9139943478910206366
+* ask_free_spots{"subject_acronym": "vc"}
+    - slot{"subject_acronym": "vc"}
+    - action_show_subject_free_spots
+    - export

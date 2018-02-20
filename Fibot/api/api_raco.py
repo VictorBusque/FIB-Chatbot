@@ -106,6 +106,7 @@ class API_raco(object):
 				response_json = response.json().get('privat')
 			for key in query.keys():
 				query_url = response_json.get(key, [])
+				print(query_url )
 				if query_url:
 					return self.get_objects(query_url, query[key], headers)
 				else:

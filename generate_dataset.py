@@ -65,13 +65,16 @@ class Data_generator(object):
 
 def main(amount = 250):
 
-	intros_teacher_mail = ["{}'s mail", "what is {}'s mail"]
-	intros_teacher_desk = ["what's {}'s office'", "{}'s office"]
+	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?"]
+	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office"]
 
 
-	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}', 'spots left in {}']
-	intros_subject_schedule = ['schedule of {}', "what's {}'s schedule'", 'when do i have {}']
-	intros_subject_clasroom = ['in which class do i have {} ', "{}'s classroom'", 'where do i have {}']
+	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}?',
+			'how many free spots are in {}', 'spots left in {}']
+	intros_subject_schedule = ['schedule of {}', "what's {}'s schedule?",
+			"what's {}'s schedule", 'when do i have {}']
+	intros_subject_clasroom = ['in which class do i have {}?',
+			'in which class do i have {}', "{}'s classroom", 'where do i have {}']
 	intros_inform_teacher = ['the teacher is {}', '{}']
 	intros_inform_subject = ['the subject is ', '{}']
 
