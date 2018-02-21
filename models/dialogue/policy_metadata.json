@@ -2,8 +2,8 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "teacher_name",
-        "subject_acronym"
+        "subject_acronym",
+        "teacher_name"
       ]
     },
     "action_show_subject_free_spots": {

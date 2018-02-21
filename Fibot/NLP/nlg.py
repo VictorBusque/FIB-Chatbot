@@ -5,6 +5,7 @@
 #-- General imports --#
 import os
 import requests
+from pprint import pprint
 
 #-- 3rd party imports --#
 from chatterbot import ChatBot
@@ -160,7 +161,6 @@ class Query_answer_unit(object):
 		self.agent = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter)
 
-
 	"""
 		Parameters:
 			augmentation_factor(:obj:`int`): augmentation factor for the training
@@ -201,5 +201,10 @@ class Query_answer_unit(object):
 		This function returns the response from the agent using the actions
 		defined in Fibot/NLP/core/actions.py
 	"""
-	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID):
+	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, debug=True):
+		if debug:
+			print("Interpreter understood the following intent:")
+			pprint(self.nlu.get_intent(message))
+			print("And the following entities:")
+			pprint(self.nlu.get_entities(message))
 		return self.agent.handle_message(message, sender_id=sender_id)
