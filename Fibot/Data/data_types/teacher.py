@@ -10,23 +10,28 @@ class Teacher(object):
                 {
                     "name": "Javier Bejar Alonso"
                     "mail": "bejar@cs.upc.edu",
-                    "office": "Building Omega Office 204"
+                    "office": "Building Omega Office 204",
+                    "department": "cs"
                 }
     """
     def __init__(self, data):
         self.name = data['name']
         self.mail = data['mail']
+        self.department = data['department']
         if data['office']: self.office = data['office']
         else: self.office = None
 
     def get_mail(self):
         return "{}'s mail is {}".format(
-            self.name,
+            self.name.title(),
             self.mail
         )
 
     def get_office(self):
         return "{}'s office is {}".format(
-            self.name,
-            self.office
+            self.name.title(),
+            self.office.title()
         )
+
+    def __repr__(self):
+        return "{} is a teacher from {}'s department".format(self.name.title(), self.department)

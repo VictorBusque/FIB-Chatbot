@@ -8,10 +8,21 @@ from itertools import combinations
 #-- 3rd party imports --#
 from nltk import edit_distance
 
-
+#-- Local imports --#
+from Fibot.Data.data_types.teacher import Teacher
 
 class Teachers(object):
 
+    """This class allows the bot to interact with the teachers information
+    as scraped by the scrap_teachers.py script.
+
+    So it allows to find matches from teachers names as inputed by users to real
+    teachers in the database (see Data/teachers folder)
+
+    Attributes:
+        departments(:obj:`list`): List of the current departments in the database
+        data(:obj:`dict`): Dictionary that maps departments to a dictionary of teachers and info
+    """
     def __init__(self):
         with open('./Data/urls_upc.json', 'r') as fp:
         	self.departments = json.load(fp).keys()
@@ -21,22 +32,45 @@ class Teachers(object):
             	self.data[department] = json.load(fp)
         print("Loaded teachers data for departments {}".format(self.departments))
 
+    """
+        Parameters:
+            teacher_name(:obj:`str`): String of the user's input to find matches of
 
-    def get_closer_teacher(self, teacher_name, num_matches = 1):
+        This function returns:
+            (:class:`Fibot.Data.data_types.teacher`): The instance of the teacher that
+            best matches the user query based on the edit distance measure.
+    """
+    def get_closer_teacher(self, teacher_name):
         teacher_name = teacher_name.lower()
-        min_values = (None, float("inf"))
-        ret_list = {}
+        lower_dist = float("inf")
+        match_department, match_teacher = None, None
         for department in self.departments:
             for teacher in self.data[department].keys():
                 teacher = teacher.lower()
                 curr_dist = self.distance(teacher_name, teacher)
-                if curr_dist < min_values[1]:
-                    if len(ret_list.keys()) >= num_matches: ret_list.pop(min_values[0])
-                    ret_list[teacher] = curr_dist
-                    min_values = self.get_min_values(ret_list)
-        return list(ret_list.items())
+                if curr_dist < lower_dist:
+                    match_department = department
+                    match_teacher = teacher
+                    lower_dist = curr_dist
+        match = self.data[match_department][match_teacher]
+        match['name'] = match_teacher
+        match['department'] = match_department
+        match = Teacher(match)
+        return match
 
+    """
+        Parameters:
+            word1(:obj:`str`): word to compare
+            word2(:obj:`str`): other word to be compared to
 
+        This function computes the edit distance between any possible combination of the word2
+        order taking as many words as words in word1.
+        And returns the minimum distance found:
+
+        Example:
+            distance("Javier Bejar", "Javier Bejar Alonso") = 0
+            distance("Roberto Nieuwenhuis", "Robert Lukas Mario Nieuwenhuis") = 1
+    """
     def distance(self, word1, word2):
         word2_split = word2.split(' ')
         len1 = len(word1.split(' '))
@@ -48,10 +82,12 @@ class Teachers(object):
             min_dist = min(min_dist, edit_distance(word1, word))
         return min_dist
 
-
+    """
+        Helper in order to find list of matches (not used atm)
+    """
     def get_min_values(self, dict_ret):
         min_values = (None, -(float("inf")))
-        for item, value in dict_ret.items():
+        for name, value in dict_ret.items():
             if value > min_values[1]:
-                min_values = (item, value)
+                min_values = (name, value)
         return min_values
