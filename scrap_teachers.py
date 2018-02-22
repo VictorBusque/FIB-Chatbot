@@ -93,7 +93,8 @@ class Directory(object):
 
     def get_name(self, content):
         name = re.findall('%s(.*)%s' % (self.start_name, self.end_name), str(content))[0]
-        name = str(name.replace('\\n','').replace('\\t','').split('<b>')[-1])
+        name = str(name.replace('\\n','').replace('\\t','').replace('  ', ' ').split('<b>')[-1])
+        if name[-1] == ' ': name = name[:-1]
         return name.lower()
 
     def dump_data(self):
@@ -112,7 +113,7 @@ if __name__ == "__main__":
         directory = Directory(directory)
         directory.scrap_directory()
     else:
-        directories = ['fib','essi','cs','ac']
+        directories = ['essi','cs','ac']
         for directory in directories:
             directory = Directory(directory)
             directory.scrap_directory()
