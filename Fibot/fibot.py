@@ -25,15 +25,15 @@ class Fibot(object):
 		its users.
 
 	Attributes:
-		name(:obj:`str`): Unique identifier for the bot
-		bot_token(:obj:`str`): Token to access the bot
-		chats(:class:`Fibot.Chat`): Object that represents the chats
-		oauth(:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
-		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
-		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
-		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
-		messages(:obj:`dict`): Object that contains the Fibot configuration messages
-		state_machine(:obj:`dict`): Object that simplifies the state machine management
+		name (:obj:`str`): Unique identifier for the bot
+		bot_token (:obj:`str`): Token to access the bot
+		chats (:class:`Fibot.Chat`): Object that represents the chats
+		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
+		nlg (:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
+		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+		translator (:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
+		messages (:obj:`dict`): Object that contains the Fibot configuration messages
+		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
@@ -70,7 +70,11 @@ class Fibot(object):
 		print("Preset messages loaded")
 
 	"""
-		Sends an action to a chat (using ChatAction helper)
+		Parameters:
+			chat_id (:obj:`int`): chat id of the user to send the message to
+			action (:obj:`str`): defines the action to send the user (default is typing)
+
+		This function sends an action to the chat with chat_id (using ChatAction helper)
 	"""
 	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
 		params = {
@@ -81,7 +85,15 @@ class Fibot(object):
 		response = requests.get(base_url, params = params)
 
 	"""
-		Sends a message to the chat with chat_id with content text
+		Parameters:
+			chat_id (:obj:`int`): chat id of the user to send the message to
+			message (:obj:`str`): content of the message to be sent
+			typing (:obj:`bool`): value that defines whether to send typing action or not
+			reply_to (:obj:`int` or None): If defined, it is the message_id of the message
+				that will be replied to, else no message will be replied.
+
+		This function sends a message to the chat with chat_id with content text,
+		and depending on the rest of the parameters i might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
 		ini = time()
@@ -129,11 +141,13 @@ class Fibot(object):
 		Parameters:
 			chat_id (:obj:`str`): chat_id of the user that sent the messages
 			message (:obj:`str`): text the user sent
+			message_id (:obj:`int`): message_id of the message to reply to
+
 
 		This function receives a message from a user and decides which mechanism is responsible
 		for responding the message.
 	"""
-	def process_income_message(self, chat_id, message, message_id = None, debug = False):
+	def process_income_message(self, chat_id, message, message_id = None):
 		print("Processing income message...")
 		user_language = self.chats.get_chat(chat_id)['language']
 		if user_language != 'English':

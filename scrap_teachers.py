@@ -10,6 +10,21 @@ import os
 
 class Directory(object):
 
+    """This class contains all the necessary procedures to scrap http://directori.upc.edu
+
+    Attributes:
+        type(:obj:`str`): string like 'cs','ac','essi' corresponding to UPC's FIB departments
+        teacher_url(:obj:`str`): url that can easily be formatted to access teacher's pages
+        url(:obj:`str`): url of the root site for the department (contains IDs for all teachers of the department)
+        data(:obj:`dict`): dictonary with the following format that contains the information about the teachers
+            {
+                name: {
+                    'mail': value,
+                    'office': value
+                }
+            }
+            where value can either be None or (:obj:`str`)
+    """
     def __init__(self, key):
         self.type = key
         print("Scraper defined for {}'s department".format(self.type))
@@ -30,6 +45,12 @@ class Directory(object):
         self.start_office = '</a><br />'
         self.end_office = '<br/>C. JORDI GIRONA, 1-3<br/>'
 
+
+    """
+        This function scraps the directory saving the ids of each teacher, and uses
+        the teacher url formatted with each id to get the information parsing the html
+        file using regular expressions.
+    """
     def scrap_directory(self):
         print("scraping {} ...".format(self.url))
         response = requests.get(self.url)
@@ -58,6 +79,10 @@ class Directory(object):
         print("Scraping done succesfully!")
         print("Scraped {} teachers.".format(len(ids)))
 
+
+    """
+        Helper function that parses html page to extract each teacher id
+    """
     def get_ids(self, content):
         ids = []
         for i in str(content).split(self.start_id):
@@ -68,6 +93,9 @@ class Directory(object):
                     pass
         return ids
 
+    """
+        Helper function that parses html page to extract a mail from a teachers page
+    """
     def get_mail(self, content):
         try:
             mail = str(re.findall('%s(.*)%s' % (self.start_mail, self.end_mail), str(content))[0])
@@ -79,6 +107,9 @@ class Directory(object):
             print("Teacher without mail...")
             return None
 
+    """
+        Helper function that parses html page to extract a office from a teachers page
+    """
     def get_office(self, content):
         content = str(content).replace('\\n','').replace('\\t','')
         try:
@@ -91,12 +122,19 @@ class Directory(object):
             print ("Teacher without office...")
             return None
 
+    """
+        Helper function that parses html page to extract the name from a teachers page
+    """
     def get_name(self, content):
         name = re.findall('%s(.*)%s' % (self.start_name, self.end_name), str(content))[0]
         name = str(name.replace('\\n','').replace('\\t','').replace('  ', ' ').split('<b>')[-1])
         if name[-1] == ' ': name = name[:-1]
         return name.lower()
 
+    """
+        Helper function that stores the results into persistence
+        files can be found at Data/teachers/*.json
+    """
     def dump_data(self):
         print("Dumping data into persistence...")
         try:

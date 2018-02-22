@@ -35,7 +35,10 @@ class Chats(object):
 		self.chats = {}
 
 	"""
-		Returns the data from persistence of user with chat_id
+		Parameter:
+			chat_id (:obj:`int`): chat_id of the person to get the info of.
+
+		This function returns the data from persistence of user with chat_id
 	"""
 	def get_chat_lite(self, chat_id):
 		with open('./Data/chat_status.json', 'r') as fp:
@@ -112,7 +115,7 @@ class Chats(object):
 
 	"""
 		Parameters:
-			chat_id(:obj:`str`): chat_id of the chat
+			chat_id (:obj:`str`): chat_id of the chat
 
 		This function returns:
 			None: if there is no chat information of the chat_id
@@ -126,7 +129,7 @@ class Chats(object):
 
 	"""
 		Parameters:
-			chat_id(:obj:`str`): chat_id of the chat
+			chat_id (:obj:`str`): chat_id of the chat
 
 		This function returns:
 			True: if the access_token from user with chat_id has expired

@@ -13,7 +13,7 @@ from Fibot.api.api_raco import API_raco
 from Fibot.chats import Chats
 from Fibot.Data.data_types.lecture import Lecture
 from Fibot.Data.data_types.subject_spots import Subject_spots
-from Fibot.Data.data_types.teacher import Teacher
+from Fibot.Data.teachers import Teachers
 
 
 class teacher_db:
@@ -40,12 +40,10 @@ class action_show_teacher_mail(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teacherdb = teacher_db()
-        mail = teacherdb.search_mail({
-            'teacher_name': teacher_name
-        })
-        print(mail)
-        dispatcher.utter_message("{}".format(mail))
+        teachers = Teachers()
+        teacher = teachers.get_closer_teacher(teacher_name)
+        print(teacher.get_mail())
+        dispatcher.utter_message("{}".format(teacher.get_mail()))
         return []
 
 
@@ -61,12 +59,10 @@ class action_show_teacher_office(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teacherdb = teacher_db()
-        desk = teacherdb.search_desk({
-            'teacher_name': teacher_name
-        })
-        print(desk)
-        dispatcher.utter_message("{}".format(desk))
+        teachers = Teachers()
+        teacher = teachers.get_closer_teacher(teacher_name)
+        print(teacher.get_mail())
+        dispatcher.utter_message("{}".format(teacher.get_mail()))
         return []
 
 

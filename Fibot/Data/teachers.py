@@ -34,7 +34,7 @@ class Teachers(object):
 
     """
         Parameters:
-            teacher_name(:obj:`str`): String of the user's input to find matches of
+            teacher_name (:obj:`str`): String of the user's input to find matches of
 
         This function returns:
             (:class:`Fibot.Data.data_types.teacher`): The instance of the teacher that
@@ -60,8 +60,8 @@ class Teachers(object):
 
     """
         Parameters:
-            word1(:obj:`str`): word to compare
-            word2(:obj:`str`): other word to be compared to
+            word1 (:obj:`str`): word to compare
+            word2 (:obj:`str`): other word to be compared to
 
         This function computes the edit distance between any possible combination of the word2
         order taking as many words as words in word1.

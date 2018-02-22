@@ -152,7 +152,7 @@ class Query_answer_unit(object):
 
 	"""
 		Parameters:
-			train(:obj:`bool`): Specifies if the agent has to be trained
+			train (:obj:`bool`): Specifies if the agent has to be trained
 		This function loads the model into the agent, and trains if necessary
 	"""
 	def load(self, train=False):
@@ -163,11 +163,11 @@ class Query_answer_unit(object):
 
 	"""
 		Parameters:
-			augmentation_factor(:obj:`int`): augmentation factor for the training
-			max_history(:obj:`int`): max_history factor for the training
-			epochs(:obj:`int`): epochs (steps) for the training
-			batch_size(:obj:`int`): batch_size for the training
-			validation_split(:obj:`int`): validation_split factor for the error calculation
+			augmentation_factor (:obj:`int`): augmentation factor for the training
+			max_history (:obj:`int`): max_history factor for the training
+			epochs (:obj:`int`): epochs (steps) for the training
+			batch_size (:obj:`int`): batch_size for the training
+			validation_split (:obj:`int`): validation_split factor for the error calculation
 
 		This function trains the agent and saves the model in the dialog's model path
 	"""
@@ -196,7 +196,7 @@ class Query_answer_unit(object):
 
 	"""
 		Parameters:
-			message(:obj:`str`): the incoming message from some user
+			message (:obj:`str`): the incoming message from some user
 
 		This function returns the response from the agent using the actions
 		defined in Fibot/NLP/core/actions.py
