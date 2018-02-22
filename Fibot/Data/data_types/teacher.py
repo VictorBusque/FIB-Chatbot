@@ -8,17 +8,16 @@ class Teacher(object):
         Parameters:
             data(:obj:`dict`): Information of a teacher. Example:
                 {
-                    "name": "Javier",
-                    "last_name": ["Bejar", "Alonso"],
+                    "name": "Javier Bejar Alonso"
                     "mail": "bejar@cs.upc.edu",
-                    "office": "Omega, 204"
+                    "office": "Building Omega Office 204"
                 }
     """
     def __init__(self, data):
         self.name = data['name']
-        self.last_name = ['last_name']
         self.mail = data['mail']
-        self.office = data['office']
+        if data['office']: self.office = data['office']
+        else: self.office = None
 
     def get_mail(self):
         return "{}'s mail is {}".format(
@@ -29,5 +28,5 @@ class Teacher(object):
     def get_office(self):
         return "{}'s office is {}".format(
             self.name,
-            self.mail
+            self.office
         )

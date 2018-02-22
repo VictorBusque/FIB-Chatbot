@@ -94,7 +94,7 @@ class Directory(object):
     def get_name(self, content):
         name = re.findall('%s(.*)%s' % (self.start_name, self.end_name), str(content))[0]
         name = str(name.replace('\\n','').replace('\\t','').split('<b>')[-1])
-        return name
+        return name.lower()
 
     def dump_data(self):
         print("Dumping data into persistence...")

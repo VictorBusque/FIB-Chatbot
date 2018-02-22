@@ -9,9 +9,11 @@ from rasa_core.events import SlotSet
 
 #-- Local imports --#
 from Fibot.api.api_raco import API_raco
+#from Fibot.Data.teachers import Teachers
 from Fibot.chats import Chats
-from Fibot.api.data_types.lecture import Lecture
-from Fibot.api.data_types.subject_spots import Subject_spots
+from Fibot.Data.data_types.lecture import Lecture
+from Fibot.Data.data_types.subject_spots import Subject_spots
+from Fibot.Data.data_types.teacher import Teacher
 
 
 class teacher_db:
