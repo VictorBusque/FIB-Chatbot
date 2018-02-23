@@ -12,7 +12,8 @@
     "office": "Building Omega Office S211"
   },
   "david ameller": {
-    "mail": "dameller@essi.upc.edu"
+    "mail": "dameller@essi.upc.edu",
+    "office": null
   },
   "claudia patricia ayala martinez": {
     "mail": "cayala@essi.upc.edu",
@@ -23,13 +24,14 @@
     "office": "Biblioteca Gabriel Ferrat\\Xc9 Floor 1 Office S211"
   },
   "guillem bonet arnaiz": {
-    "mail": "guillem.bonet@upc.edu"
+    "mail": "guillem.bonet@upc.edu",
+    "office": null
   },
   "xavier burgues illa": {
     "mail": "diafebus@essi.upc.edu",
     "office": "Building Omega Office 116"
   },
-  "maria jose casa\\xf1 guerrero": {
+  "maria jose casa\u00f1 guerrero": {
     "mail": "mjcasany@essi.upc.edu",
     "office": "Building Omega Office 119"
   },
@@ -41,7 +43,7 @@
     "mail": "javier.escudero@upc.edu",
     "office": "Building B6 "
   },
-  "montserrat esta\\xf1ol lamarca": {
+  "montserrat esta\u00f1ol lamarca": {
     "mail": "montserrat.estanyol@upc.edu",
     "office": "Building Omega "
   },
@@ -70,17 +72,20 @@
     "office": "Building B6 "
   },
   "lidia lopez cuesta": {
-    "mail": "llopez@essi.upc.edu"
+    "mail": "llopez@essi.upc.edu",
+    "office": null
   },
   "marti manzano aguilar": {
-    "mail": "marti.manzano@upc.edu"
+    "mail": "marti.manzano@upc.edu",
+    "office": null
   },
   "carme martin escofet": {
     "mail": "martin@essi.upc.edu",
     "office": "Building Omega Office 119"
   },
   "oriol martinez torres": {
-    "mail": "oriol.martinez.torres@upc.edu"
+    "mail": "oriol.martinez.torres@upc.edu",
+    "office": null
   },
   "enric mayol sarroca": {
     "mail": "mayol@essi.upc.edu",
@@ -91,7 +96,8 @@
     "office": "Building Omega "
   },
   "joaquim motger de la encarnacion": {
-    "mail": "jmotger@essi.upc.edu"
+    "mail": "jmotger@essi.upc.edu",
+    "office": null
   },
   "rana faisal munir": {
     "mail": "rana.faisal.munir@upc.edu",
@@ -110,14 +116,16 @@
     "office": "Building Omega 1 13"
   },
   "marc oriol hilari": {
-    "mail": "marc.oriol@upc.edu"
+    "mail": "marc.oriol@upc.edu",
+    "office": null
   },
   "xavier oriol hilari": {
     "mail": "xavier.oriol@upc.edu",
     "office": "Building Omega  "
   },
   "cristina palomares bonache": {
-    "mail": "cristina.palomares@upc.edu"
+    "mail": "cristina.palomares@upc.edu",
+    "office": null
   },
   "joan antoni pastor collado": {
     "mail": "pastor@essi.upc.edu",

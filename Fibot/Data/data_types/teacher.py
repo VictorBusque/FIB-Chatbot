@@ -18,9 +18,8 @@ class Teacher(object):
         self.name = data['name']
         self.mail = data['mail']
         self.department = data['department']
-        if data['office']: self.office = data['office']
-        else: self.office = None
-
+        self.office = data['office']
+        
     """
         Returns a string formatted text which explains the mail for the teacher
     """

@@ -98,8 +98,8 @@ class Data_generator(object):
 
 def main(amount = 250):
 
-	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?"]
-	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office"]
+	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}"]
+	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}"]
 
 
 	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}?',

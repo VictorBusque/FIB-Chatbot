@@ -40,7 +40,7 @@ class Teachers(object):
             (:class:`Fibot.Data.data_types.teacher`): The instance of the teacher that
             best matches the user query based on the edit distance measure.
     """
-    def get_closer_teacher(self, teacher_name):
+    def get_closer_teacher(self, teacher_name, debug=True):
         teacher_name = teacher_name.lower()
         lower_dist = float("inf")
         match_department, match_teacher = None, None
@@ -49,14 +49,13 @@ class Teachers(object):
                 teacher = teacher.lower()
                 curr_dist = self.distance(teacher_name, teacher)
                 if curr_dist < lower_dist:
-                    match_department = department
-                    match_teacher = teacher
+                    match_department, match_teacher = department, teacher
                     lower_dist = curr_dist
         match = self.data[match_department][match_teacher]
         match['name'] = match_teacher
         match['department'] = match_department
-        match = Teacher(match)
-        return match
+        if debug: print("{} is the distance.".format(lower_dist))
+        return Teacher(match)
 
     """
         Parameters:

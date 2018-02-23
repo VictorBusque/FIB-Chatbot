@@ -3,6 +3,7 @@
 
 #-- General imports --#
 from __future__ import division
+from codecs import decode
 import requests
 import re
 import json
@@ -45,7 +46,6 @@ class Directory(object):
         self.start_office = '</a><br />'
         self.end_office = '<br/>C. JORDI GIRONA, 1-3<br/>'
 
-
     """
         This function scraps the directory saving the ids of each teacher, and uses
         the teacher url formatted with each id to get the information parsing the html
@@ -72,13 +72,13 @@ class Directory(object):
                 }
             else:
                 self.data[name] = {
-                    'mail': mail
+                    'mail': mail,
+                    'office': None
                 }
             current +=1
         self.dump_data()
         print("Scraping done succesfully!")
         print("Scraped {} teachers.".format(len(ids)))
-
 
     """
         Helper function that parses html page to extract each teacher id
@@ -128,6 +128,7 @@ class Directory(object):
     def get_name(self, content):
         name = re.findall('%s(.*)%s' % (self.start_name, self.end_name), str(content))[0]
         name = str(name.replace('\\n','').replace('\\t','').replace('  ', ' ').split('<b>')[-1])
+        name = decode(name, 'unicode_escape')
         if name[-1] == ' ': name = name[:-1]
         return name.lower()
 

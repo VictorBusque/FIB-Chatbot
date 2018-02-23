@@ -4,7 +4,8 @@
     "office": "Building D6 Floor 0 Office 002"
   },
   "miguel angel aguila lorente": {
-    "mail": "maguila@ac.upc.edu"
+    "mail": "maguila@ac.upc.edu",
+    "office": null
   },
   "lluc alvarez marti": {
     "mail": "lluc.alvarez@upc.edu",
@@ -19,14 +20,16 @@
     "office": "Building D6 Floor 1 Office 116"
   },
   "adria armejach sanosa": {
-    "mail": "adria.armejach@upc.edu"
+    "mail": "adria.armejach@upc.edu",
+    "office": null
   },
-  "jose maria arnau monta\\xf1es": {
+  "jose maria arnau monta\u00f1es": {
     "mail": "jarnau@ac.upc.edu",
     "office": "Building C6 Floor 1 Office 115"
   },
   "adrian asensio garcia": {
-    "mail": "adrian.asensio@upc.edu"
+    "mail": "adrian.asensio@upc.edu",
+    "office": null
   },
   "eduard ayguade parra": {
     "mail": "eduard@ac.upc.edu",
@@ -49,7 +52,8 @@
     "office": "Building D6 Desaptx 204"
   },
   "cristina barrado muxi": {
-    "mail": "cristina.barrado@upc.edu"
+    "mail": "cristina.barrado@upc.edu",
+    "office": null
   },
   "khulan batbayar": {
     "mail": "khulan.batbayar@upc.edu",
@@ -64,7 +68,8 @@
     "office": "Building C6 Office 219"
   },
   "kira blanc fite": {
-    "mail": "kira.blanc@upc.edu"
+    "mail": "kira.blanc@upc.edu",
+    "office": null
   },
   "pau bofill soliguer": {
     "mail": "pau@ac.upc.edu",
@@ -83,14 +88,16 @@
     "office": "Building D6 Office 118"
   },
   "sergi cabre longas": {
-    "mail": "scabre@ac.upc.edu"
+    "mail": "scabre@ac.upc.edu",
+    "office": null
   },
   "ramon canal corretger": {
     "mail": "rcanal@ac.upc.edu",
     "office": "Building C6 Office 107"
   },
   "pablo canto rodrigo": {
-    "mail": "pcanto@ac.upc.edu"
+    "mail": "pcanto@ac.upc.edu",
+    "office": null
   },
   "joan capdevila pujol": {
     "mail": "jc@ac.upc.edu",
@@ -108,15 +115,17 @@
     "mail": "josem.cela@ac.upc.edu",
     "office": "Building D6 Office:  208"
   },
-  "lloren\\xe7 cerd\\xe0 alabern": {
+  "lloren\u00e7 cerd\u00e0 alabern": {
     "mail": "llorenc@ac.upc.edu",
     "office": "Building C6 Office: 213"
   },
   "albert cerezo llavero": {
-    "mail": "albert.cerezo@upc.edu"
+    "mail": "albert.cerezo@upc.edu",
+    "office": null
   },
   "maria jesus compains borobia": {
-    "mail": "mjesus.compains@upc.edu"
+    "mail": "mjesus.compains@upc.edu",
+    "office": null
   },
   "julita corbalan gonzalez": {
     "mail": "juli@ac.upc.edu",
@@ -131,18 +140,20 @@
     "office": "Building C6 Office 117"
   },
   "adrian cristal kestelman": {
-    "mail": "adrian.cristal@bsc.es"
+    "mail": "adrian.cristal@bsc.es",
+    "office": null
   },
   "juan carlos cruellas ibarz": {
     "mail": "cruellas@ac.upc.edu",
     "office": "Building D6 Office 206"
   },
-  "josep-lloren\\xe7 cruz diaz": {
+  "josep-lloren\u00e7 cruz diaz": {
     "mail": "cruz@ac.upc.edu",
     "office": "Building C6 Office 207"
   },
   "raul cuadrado santolaria": {
-    "mail": "cuadrado@ac.upc.edu"
+    "mail": "cuadrado@ac.upc.edu",
+    "office": null
   },
   "jose roberto de almeida amazonas": {
     "mail": "jose.roberto.amazonas@upc.edu",
@@ -157,19 +168,24 @@
     "office": "Building D6 Office: D6-209"
   },
   "ariel duarte lopez": {
-    "mail": "aduarte@ac.upc.edu"
+    "mail": "aduarte@ac.upc.edu",
+    "office": null
   },
   "francesc escale claveras": {
-    "mail": "fescale@ac.upc.edu"
+    "mail": "fescale@ac.upc.edu",
+    "office": null
   },
   "joan escobar casanova": {
-    "mail": "joane@ac.upc.edu"
+    "mail": "joane@ac.upc.edu",
+    "office": null
   },
   "roger espasa sans": {
-    "mail": "roger.espasa@upc.edu"
+    "mail": "roger.espasa@upc.edu",
+    "office": null
   },
   "miguel angel fas millan": {
-    "mail": "mfas@ac.upc.edu"
+    "mail": "mfas@ac.upc.edu",
+    "office": null
   },
   "montserrat fernandez barta": {
     "mail": "montsef@ac.upc.edu",
@@ -180,7 +196,8 @@
     "office": "Building C6 Office:  219"
   },
   "pau ferrer cid": {
-    "mail": null
+    "mail": null,
+    "office": null
   },
   "jordi fornes de juan": {
     "mail": "jfornes@ac.upc.edu",
@@ -191,16 +208,20 @@
     "office": "Building C6 Office: E206"
   },
   "meritxell freixa rodriguez": {
-    "mail": "freixa@ac.upc.edu"
+    "mail": "freixa@ac.upc.edu",
+    "office": null
   },
   "fabrizio gagliardi": {
-    "mail": "fabrizio.gagliardi@upc.edu"
+    "mail": "fabrizio.gagliardi@upc.edu",
+    "office": null
   },
   "antonia gallardo gomez": {
-    "mail": "agallard@ac.upc.edu"
+    "mail": "agallard@ac.upc.edu",
+    "office": null
   },
-  "jordi garcia almi\\xf1ana": {
-    "mail": "jordig@ac.upc.edu"
+  "jordi garcia almi\u00f1ana": {
+    "mail": "jordig@ac.upc.edu",
+    "office": null
   },
   "jorge garcia vidal": {
     "mail": "jorge@ac.upc.edu",
@@ -211,7 +232,8 @@
     "office": "Building C6 Office 110"
   },
   "bernando gomez garcia de la acebal": {
-    "mail": "bernat.gomez@upc.edu"
+    "mail": "bernat.gomez@upc.edu",
+    "office": null
   },
   "antonio maria gonzalez colas": {
     "mail": "antonio@ac.upc.edu",
@@ -226,7 +248,8 @@
     "office": "Building D6 Office 212"
   },
   "joan guisado gamez": {
-    "mail": "joan@ac.upc.edu"
+    "mail": "joan@ac.upc.edu",
+    "office": null
   },
   "jordi guitart fernandez": {
     "mail": "jguitart@ac.upc.edu",
@@ -245,7 +268,8 @@
     "office": "Building D6 Office 218"
   },
   "alberto hornos vidal": {
-    "mail": "alberto.hornos@upc.edu"
+    "mail": "alberto.hornos@upc.edu",
+    "office": null
   },
   "jose luis izquierdo zaragoza": {
     "mail": "jose.luis.izquierdo@upc.edu",
@@ -272,13 +296,16 @@
     "office": "Building C6 Office 101"
   },
   "alejandro jurnet bolarin": {
-    "mail": "alejandro.jurnet@upc.edu"
+    "mail": "alejandro.jurnet@upc.edu",
+    "office": null
   },
   "sarang kahvazadeh": {
-    "mail": "skahvaza@ac.upc.edu"
+    "mail": "skahvaza@ac.upc.edu",
+    "office": null
   },
   "burcu kolbay": {
-    "mail": "burcu.kolbay@upc.edu"
+    "mail": "burcu.kolbay@upc.edu",
+    "office": null
   },
   "jesus jose labarta mancho": {
     "mail": "jesus.labarta@ac.upc.edu",
@@ -292,7 +319,7 @@
     "mail": "larri@ac.upc.edu",
     "office": "Building C6 Office 113"
   },
-  "jose m. llaberia gri\\xf1o": {
+  "jose m. llaberia gri\u00f1o": {
     "mail": "llaberia@ac.upc.edu",
     "office": "Building D6 Office:  202"
   },
@@ -309,43 +336,50 @@
     "office": "Building C6 Office 218"
   },
   "albert lopez bresco": {
-    "mail": "alopez@ac.upc.edu"
+    "mail": "alopez@ac.upc.edu",
+    "office": null
   },
   "juan lopez rubio": {
-    "mail": "juan.lopez-rubio@upc.edu"
+    "mail": "juan.lopez-rubio@upc.edu",
+    "office": null
   },
   "joao miguel louro neto": {
     "mail": "jlneto@ac.upc.edu",
     "office": "Building C6 "
   },
   "fuencisla lozoya garcia": {
-    "mail": "flozoya@ac.upc.edu"
+    "mail": "flozoya@ac.upc.edu",
+    "office": null
   },
   "mario macias lloret": {
     "mail": "mario@ac.upc.edu",
     "office": "Building D6 "
   },
   "eva marin tordera": {
-    "mail": "eva@ac.upc.edu"
+    "mail": "eva@ac.upc.edu",
+    "office": null
   },
   "maria cristina marinescu": {
-    "mail": "maria.cristina.marinescu@upc.edu"
+    "mail": "maria.cristina.marinescu@upc.edu",
+    "office": null
   },
   "xavier martorell bofill": {
     "mail": "xavim@ac.upc.edu",
     "office": "Building C6 Office: 121"
   },
   "xavier masip bruin": {
-    "mail": "xmasip@ac.upc.edu"
+    "mail": "xmasip@ac.upc.edu",
+    "office": null
   },
   "manel medina llinas": {
     "mail": "medina@ac.upc.edu",
     "office": "Building D6 Office:  207"
   },
   "roc meseguer pallares": {
-    "mail": "meseguer@ac.upc.edu"
+    "mail": "meseguer@ac.upc.edu",
+    "office": null
   },
-  "albert mestres sugra\\xf1es": {
+  "albert mestres sugra\u00f1es": {
     "mail": "amestres@ac.upc.edu",
     "office": "Building D6 Floor 0 Office 008"
   },
@@ -354,14 +388,16 @@
     "office": "Building C6 Office 122"
   },
   "suzana milutinovic": {
-    "mail": "suzana.milutinovic@upc.edu"
+    "mail": "suzana.milutinovic@upc.edu",
+    "office": null
   },
   "teresa monreal arnal": {
     "mail": "teresa@ac.upc.edu",
     "office": "Building D6 Office 213"
   },
   "jose victor mora antolino": {
-    "mail": "victor@ac.upc.edu"
+    "mail": "victor@ac.upc.edu",
+    "office": null
   },
   "enric morancho llena": {
     "mail": "enricm@ac.upc.edu",
@@ -375,14 +411,17 @@
     "mail": "jmorillo@ac.upc.edu",
     "office": "Building D6 108"
   },
-  "alejandro mu\\xf1oz rabal": {
-    "mail": "alejandro.munoz.rabal@upc.edu"
+  "alejandro mu\u00f1oz rabal": {
+    "mail": "alejandro.munoz.rabal@upc.edu",
+    "office": null
   },
   "alex muntada duran": {
-    "mail": "alex.muntada@upc.edu"
+    "mail": "alex.muntada@upc.edu",
+    "office": null
   },
   "joana munuera salido": {
-    "mail": "munuera@ac.upc.edu"
+    "mail": "munuera@ac.upc.edu",
+    "office": null
   },
   "juan j. navarro guerrero": {
     "mail": "juanjo@ac.upc.edu",
@@ -396,7 +435,7 @@
     "mail": "angel@ac.upc.edu",
     "office": "Building D6 Office:  214"
   },
-  "beatriz otero calvi\\xf1o": {
+  "beatriz otero calvi\u00f1o": {
     "mail": "botero@ac.upc.edu",
     "office": "Building C6 Office 204"
   },
@@ -413,9 +452,10 @@
     "office": "Building C6 Office: 116"
   },
   "enric pastor llorens": {
-    "mail": "enric@ac.upc.edu"
+    "mail": "enric@ac.upc.edu",
+    "office": null
   },
-  "antonio jose pe\\xf1a monferrer": {
+  "antonio jose pe\u00f1a monferrer": {
     "mail": "antonio.jose.pena@upc.edu",
     "office": "Building C6 219"
   },
@@ -424,26 +464,30 @@
     "office": "Building D6 Office 216"
   },
   "robert perez rubio": {
-    "mail": "robert.perez@upc.edu"
+    "mail": "robert.perez@upc.edu",
+    "office": null
   },
   "alba perez vela": {
     "mail": "apvela@ac.upc.edu",
     "office": "Building D4 Floor 2 Office 213"
   },
   "roger pueyo centelles": {
-    "mail": "roger.pueyo@upc.edu"
+    "mail": "roger.pueyo@upc.edu",
+    "office": null
   },
   "zeineb rejiba": {
-    "mail": "zeineb.rejiba@upc.edu"
+    "mail": "zeineb.rejiba@upc.edu",
+    "office": null
   },
-  "angelica reyes mu\\xf1oz": {
-    "mail": "m.angelica.reyes@upc.edu"
+  "angelica reyes mu\u00f1oz": {
+    "mail": "m.angelica.reyes@upc.edu",
+    "office": null
   },
   "marc riera villanueva": {
     "mail": "mriera@ac.upc.edu",
     "office": "Building D6 Floor 1 Office 116"
   },
-  "antonio rodriguez garcia": {
+  "antonio rodriguez i garcia": {
     "mail": "antonio.rodriguez.g@upc.edu",
     "office": "Building B6  "
   },
@@ -452,47 +496,56 @@
     "office": "Building C6 Office E202"
   },
   "antonia romero cuadros": {
-    "mail": "antonia.romero@upc.edu"
+    "mail": "antonia.romero@upc.edu",
+    "office": null
   },
   "pablo royo chic": {
-    "mail": "pablo.royo@upc.edu"
+    "mail": "pablo.royo@upc.edu",
+    "office": null
   },
   "maria dolores royo valles": {
-    "mail": "dolors.royo@upc.edu"
+    "mail": "dolors.royo@upc.edu",
+    "office": null
   },
   "marc ruiz ramirez": {
     "mail": "mruiz@ac.upc.edu",
     "office": "Building D6 Floor 1"
   },
   "esther salami san juan": {
-    "mail": "esther.salami@upc.edu"
+    "mail": "esther.salami@upc.edu",
+    "office": null
   },
   "isaac sanchez barrera": {
-    "mail": "isaac.sanchez.barrera@upc.edu"
+    "mail": "isaac.sanchez.barrera@upc.edu",
+    "office": null
   },
   "fermin sanchez carracedo": {
     "mail": "fermin@ac.upc.edu",
     "office": "Building D6 Office:  106"
   },
   "sergio sanchez lopez": {
-    "mail": "sergio@ac.upc.edu"
+    "mail": "sergio@ac.upc.edu",
+    "office": null
   },
   "german santos boada": {
     "mail": "german@ac.upc.edu",
     "office": "Building C6 Office 112"
   },
   "albert segura salvador": {
-    "mail": "asegura@ac.upc.edu"
+    "mail": "asegura@ac.upc.edu",
+    "office": null
   },
   "souvik sengupta": {
-    "mail": "souvik.sengupta@upc.edu"
+    "mail": "souvik.sengupta@upc.edu",
+    "office": null
   },
   "rene serral gracia": {
     "mail": "rserral@ac.upc.edu",
     "office": "Building D6 Office 111"
   },
   "xavier serrano gispert": {
-    "mail": "xserrano@ac.upc.edu"
+    "mail": "xserrano@ac.upc.edu",
+    "office": null
   },
   "mohammad behnam shariati": {
     "mail": "behnam.shariati@upc.edu",
@@ -519,16 +572,18 @@
     "office": "Building D6 Floor 1"
   },
   "xavier timoneda i comas": {
-    "mail": "xavier.timoneda@upc.edu"
+    "mail": "xavier.timoneda@upc.edu",
+    "office": null
   },
   "angel toribio gonzalez": {
     "mail": "angel.toribio@upc.edu",
     "office": "Building C6 "
   },
   "javier torralbo gil": {
-    "mail": "javier.torralbo@upc.edu"
+    "mail": "javier.torralbo@upc.edu",
+    "office": null
   },
-  "jordi torres vi\\xf1als": {
+  "jordi torres vi\u00f1als": {
     "mail": "torres@ac.upc.edu",
     "office": "Building C6 Office 217"
   },
@@ -549,7 +604,8 @@
     "office": "Building D6 Office:  201"
   },
   "miguel valero garcia": {
-    "mail": "miguel.valero@upc.edu"
+    "mail": "miguel.valero@upc.edu",
+    "office": null
   },
   "antoni xavier valverde amador": {
     "mail": "valverde@ac.upc.edu",
