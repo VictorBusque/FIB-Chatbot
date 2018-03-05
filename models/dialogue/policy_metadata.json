@@ -2,9 +2,12 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "subject_acronym",
-        "teacher_name"
+        "teacher_name",
+        "subject_acronym"
       ]
+    },
+    "action_show_teacher_mail": {
+      "slots": []
     }
   },
   "rasa_core": "0.8.2",

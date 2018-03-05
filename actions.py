@@ -62,7 +62,7 @@ class action_show_teacher_office(Action):
         teachers = Teachers()
         teacher = teachers.get_closer_teacher(teacher_name)
         print(teacher.get_mail())
-        dispatcher.utter_message("{}".format(teacher.get_mail()))
+        dispatcher.utter_message("{}".format(teacher.get_office()))
         return []
 
 
@@ -125,7 +125,6 @@ class action_show_subject_schedule(Action):
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
-        c = Chats()
         c = Chats()
         access_token = c.get_chat_lite(chat_id)['access_token']
         if not access_token: dispatcher.utter_message("{}".format("You have not logged in with your Racó account. I cannot see your information"))

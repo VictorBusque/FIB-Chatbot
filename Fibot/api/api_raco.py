@@ -80,6 +80,37 @@ class API_raco(object):
 				if items[field_name] == field_value: return items['nom']
 			return None
 
+	def get_subject_teachers(self, acronym = None, name = None, language = 'English'):
+		url = self.base_url+"{}".format("assignatures/")
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		if acronym: query = {'field': 'id', 'value': acronym}
+		elif name: query = {'field': 'nom', 'value': name}
+		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			result = []
+			url_guia = None
+			field_name = query['field']
+			field_value = query['value']
+			response_json = response.json().get('results')
+			for items in response_json:
+				if items[field_name] == field_value:
+					url_guia = items['guia']
+					return self.get_teachers(url_guia, language)
+			return False
+
+	def get_teachers(self, url_guia, language):
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		response = requests.get(url_guia, headers=headers)
+		if response.status_code == 200:
+			teachers = response.json().get('professors')
+			return teachers
+
 	"""
 		Parameters:
 			query(:obj:`dict`): json format of the query (p.e. {'places-matricula': { 'field': 'assig', 'value': 'APC' } } )

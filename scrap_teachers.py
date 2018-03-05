@@ -152,7 +152,7 @@ if __name__ == "__main__":
         directory = Directory(directory)
         directory.scrap_directory()
     else:
-        directories = ['essi','cs','ac']
+        directories = ['essi','cs','ac', 'esaii', 'fis', 'eio', 'mat']
         for directory in directories:
             directory = Directory(directory)
             directory.scrap_directory()

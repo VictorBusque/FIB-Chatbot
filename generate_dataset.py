@@ -98,16 +98,18 @@ class Data_generator(object):
 
 def main(amount = 250):
 
-	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}"]
-	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}"]
+	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}", "what's the mail of {}"]
+	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}", "what's the office of {}"]
 
 
 	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}?',
-			'how many free spots are in {}', 'spots left in {}']
+			'how many free spots are in {}', 'spots left in {}', "how many free spots are there in {}",
+			"free spots of {}", "{}'s free spots"]
 	intros_subject_schedule = ['schedule of {}', "what's {}'s schedule?",
-			"what's {}'s schedule", 'when do i have {}']
-	intros_subject_clasroom = ['in which class do i have {}?',
-			'in which class do i have {}', "{}'s classroom", 'where do i have {}']
+			"what's {}'s schedule", 'when do i have {}', "when do i do {}"]
+	intros_subject_clasroom = ['in which class do i have {}?', "where do i do {}",
+			'in which class do i have {}', "{}'s classroom", 'where do i have {}',
+			"classroom of {}", "class of {}"]
 	intros_inform_teacher = ['the teacher is {}', '{}']
 	intros_inform_subject = ['the subject is ', '{}']
 

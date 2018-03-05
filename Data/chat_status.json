@@ -2,40 +2,18 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "English",
-    "access_token": "KrwsMcL5IJp7sWawiQJkf0C11ZmcrH",
-    "refresh_token": "j3KF5eNMc2ootSoK0w3GTu6iNSVVwF",
+    "access_token": "0HHQHC9sCCTmQ0hG1vVb+5HDQLBDPD73jUIomcaCUGQ=",
+    "refresh_token": "k/qYfhVfLyQb0o7TPA8XEBo4W06hkrKfCmkFvEltfmo=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 24,
-      "month": 2,
+      "day": 5,
+      "month": 3,
       "year": 2018,
-      "hour": 5,
-      "minute": 14,
-      "second": 41
+      "hour": 22,
+      "minute": 45,
+      "second": 28
     },
     "logged": true,
-    "notifications": false,
-    "training": false
-  },
-  "312420157": {
-    "name": "Joel",
-    "language": "English",
-    "access_token": null,
-    "refresh_token": null,
-    "current_state": "0",
-    "expire_time_end": null,
-    "logged": false,
-    "notifications": false,
-    "training": false
-  },
-  "443306157": {
-    "name": "Daniel",
-    "language": "Spanish",
-    "access_token": null,
-    "refresh_token": null,
-    "current_state": "0",
-    "expire_time_end": null,
-    "logged": false,
     "notifications": false,
     "training": false
   }

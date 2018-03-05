@@ -7,6 +7,13 @@ import json
 import os
 from datetime import datetime
 from pprint import pprint
+from copy import deepcopy as copy
+import base64
+
+#-- 3rd Party imports --#
+from Crypto.Cipher import AES
+
+
 
 
 class Chats(object):
@@ -33,7 +40,7 @@ class Chats(object):
 	"""
 	def __init__(self):
 		self.chats = {}
-
+		self.encryption_key = '2222222222222222'#os.getenv('encryption_key')
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -42,7 +49,11 @@ class Chats(object):
 	"""
 	def get_chat_lite(self, chat_id):
 		with open('./Data/chat_status.json', 'r') as fp:
-			return json.load(fp)[str(chat_id)]
+			data = json.load(fp)[str(chat_id)]
+			if (data['access_token']):
+				data['access_token'] = self.decrypt_data(data['access_token'])
+				data['refresh_token'] = self.decrypt_data(data['refresh_token'])
+			return data
 
 	"""
 		Loads the data from persistence (if any)
@@ -51,6 +62,11 @@ class Chats(object):
 		try:
 			with open('./Data/chat_status.json', 'r') as fp:
 				self.chats = json.load(fp)
+				for item in self.chats.keys():
+					if (self.chats[item]['access_token']):
+						self.chats[item]['access_token'] = self.decrypt_data(self.chats[item]['access_token'])
+						self.chats[item]['refresh_token'] = self.decrypt_data(self.chats[item]['refresh_token'])
+
 		except:
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
@@ -111,7 +127,14 @@ class Chats(object):
 		print(self.chats)
 		os.remove('./Data/chat_status.json')
 		with open('./Data/chat_status.json', 'w') as fp:
-			json.dump(self.chats, fp, indent = 2)
+			cpy = copy(self.chats)
+			for item in cpy.keys():
+				if (cpy[item]['access_token']):
+					cpy[item]['access_token'] = self.encrypt_data(cpy[item]['access_token'])
+					cpy[item]['refresh_token'] = self.encrypt_data(cpy[item]['refresh_token'])
+			pprint(cpy)
+			pprint(self.chats)
+			json.dump(cpy, fp, indent = 2)
 
 	"""
 		Parameters:
@@ -148,3 +171,27 @@ class Chats(object):
 			expiration_time['second']
 		)
 		return now > expiration_time
+
+	"""
+		Parameters:
+			data(:obj:`str`): Data to be encrypted
+
+		This function returns an encrypted version of the data.
+	"""
+	def encrypt_data(self, data):
+		data = data.rjust(32)
+		cipher = AES.new(self.encryption_key,AES.MODE_ECB)
+		encoded = base64.b64encode(cipher.encrypt(data))
+		return encoded.decode('utf-8')
+
+	"""
+		Parameters:
+			data(:obj:`str`): Data to be decrypted
+
+		This function returns an decrypted version of the data.
+	"""
+	def decrypt_data(self, data):
+		data = data.encode('utf-8')
+		cipher = AES.new(self.encryption_key,AES.MODE_ECB)
+		decoded = cipher.decrypt(base64.b64decode(data))
+		return decoded.strip().decode('utf-8')

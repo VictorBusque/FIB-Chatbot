@@ -182,7 +182,14 @@ class Query_answer_unit(object):
 		self.agent.persist(self.model_path)
 
 	"""
+		Parameters:
+			augmentation_factor (:obj:`int`): augmentation factor for the training
+			max_history (:obj:`int`): max_history factor for the training
+			epochs (:obj:`int`): epochs (steps) for the training
+			batch_size (:obj:`int`): batch_size for the training
+			validation_split (:obj:`int`): validation_split factor for the error calculation
 
+		This function makes it possible to generate new stories manually.
 	"""
 	def train_manual(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
 		self.agent.train_online(self.training_data_file,
