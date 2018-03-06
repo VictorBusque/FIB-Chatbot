@@ -2,19 +2,18 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "English",
-    "access_token": "0HHQHC9sCCTmQ0hG1vVb+5HDQLBDPD73jUIomcaCUGQ=",
-    "refresh_token": "k/qYfhVfLyQb0o7TPA8XEBo4W06hkrKfCmkFvEltfmo=",
+    "access_token": "NY1hxaX0cUTwfahC3BoEYnnfZHfrvKHsiNLMq/sbLZ8=",
+    "refresh_token": "Ne8jNh7Ve3aEXt6Udc1LmByx9jzZDyIV85Y0b+utXq4=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 5,
+      "day": 6,
       "month": 3,
       "year": 2018,
-      "hour": 22,
-      "minute": 45,
-      "second": 28
+      "hour": 21,
+      "minute": 33,
+      "second": 31
     },
     "logged": true,
-    "notifications": false,
-    "training": false
+    "notifications": false
   }
 }

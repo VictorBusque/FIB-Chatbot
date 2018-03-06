@@ -16,8 +16,8 @@ from telegram import ChatAction
 #-- Local imports --#
 from Fibot.chats import Chats
 from Fibot.api.oauth import Oauth
-from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
-from Fibot.NLP.language import Translator
+from Fibot.NLP.nlg import Query_answer_unit
+
 
 class Fibot(object):
 
@@ -29,9 +29,7 @@ class Fibot(object):
 		bot_token (:obj:`str`): Token to access the bot
 		chats (:class:`Fibot.Chat`): Object that represents the chats
 		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
-		nlg (:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
 		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
-		translator (:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
 		messages (:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
@@ -40,9 +38,7 @@ class Fibot(object):
 		self.bot_token = getenv('FibotTOKEN')
 		self.chats = Chats()
 		self.oauth = Oauth()
-		self.nlg = NLG_unit()
 		self.qa = Query_answer_unit()
-		self.translator = Translator()
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
@@ -61,8 +57,6 @@ class Fibot(object):
 	def load_components(self):
 		self.chats.load()
 		print("Chats loaded")
-		self.nlg.load()
-		print("NLG model loaded")
 		self.qa.load(train=False)
 		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:
@@ -104,12 +98,6 @@ class Fibot(object):
 			if typing: self.send_chat_action(chat_id)
 			print("chat action sent in {}".format( (time()-ini) ))
 			user_language = self.chats.get_chat(chat_id)['language']
-			if user_language != 'English':
-				urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-				if urls: message = message.replace(urls[0],"{}")
-				message = self.translator.translate(message , to = user_language)
-				if urls: message = message.format(urls[0])
-
 			params = {
 				'chat_id': chat_id,
 				'text': message
@@ -150,8 +138,6 @@ class Fibot(object):
 	def process_income_message(self, chat_id, message, message_id = None):
 		print("Processing income message...")
 		user_language = self.chats.get_chat(chat_id)['language']
-		if user_language != 'English':
-			message = self.translator.translate(message , to = 'English', _from = user_language)
 		ini = time()
 		response = self.qa.get_response(message, sender_id = chat_id)
 		print("Getting response time is {}".format( (time()-ini) ))

@@ -5,7 +5,7 @@
 import re
 
 #-- 3rd party imports --#
-from telegram import ReplyKeyboardMarkup, ChatAction
+from telegram import ChatAction
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
 						  ConversationHandler)
 
@@ -14,11 +14,8 @@ from Fibot.fibot import Fibot
 
 
 # States of the ConversationHandler
-MESSAGE_INCOME, TRAINING, CORR_INCORR, GET_CORRECT = range(4)
+MESSAGE_INCOME, CORR_INCORR, GET_CORRECT = range(3)
 
-#Custom Keyboard for training models
-reply_keyboard = [['Sí','No']]
-markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
 
 #The main object of the bot, see Fibot/fibot.py to understand the implementation
 Fibot = Fibot()
@@ -41,8 +38,7 @@ def start(bot, update):
 				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False,
-				'training': False}
+				'notifications': False}
 		Fibot.chats.update_chat(chat_id, data, compulsory = True)
 		Fibot.send_preset_message(chat_id, "start_unknown_1", user_name)
 		Fibot.send_preset_message(chat_id, "start_unknown_2")
@@ -117,8 +113,7 @@ def logout(bot, update):
 				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False,
-				'training': False}
+				'notifications': False}
 		Fibot.chats.update_chat(chat_id, data)
 		Fibot.send_preset_message(chat_id, "logout_done", user_name)
 	else:
@@ -156,35 +151,6 @@ def updates_off(bot, update):
 
 
 """
-	Function that responds to the /train_on command
-"""
-def training_on(bot, update):
-	global Fibot
-	chat_id = update.message.chat_id
-	if not Fibot.chats.get_chat(chat_id)['training']:
-		Fibot.chats.update_info(chat_id, 'training' , True, overwrite = True)
-		Fibot.send_preset_message(chat_id, "training_active")
-		Fibot.send_preset_message(chat_id, "send_me_message")
-	else:
-		Fibot.send_preset_message(chat_id, "training_already_active")
-		return TRAINING
-
-
-"""
-	Function that responds to the /train_off command
-"""
-def training_off(bot, update):
-	global Fibot
-	chat_id = update.message.chat_id
-	if Fibot.chats.get_chat(chat_id)['training']:
-		Fibot.chats.update_info(chat_id, 'training' , False, overwrite = True)
-		Fibot.send_preset_message(chat_id, "training_inactive")
-	else:
-		Fibot.send_preset_message(chat_id, "training_already_inactive")
-	return MESSAGE_INCOME
-
-
-"""
 	Function that reads a regular message and decides which mechanism has to answer
 """
 def ask(bot, update):
@@ -201,50 +167,6 @@ def ask(bot, update):
 	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 
-
-"""
-	Function that responds to the training messages
-"""
-def train_machine(bot, update):
-	global Fibot
-	chat_id = update.message.chat_id
-	message = update.message.text
-	update.message.reply_text("Procesando el mensaje...", reply_markup = markup)
-	Fibot.nlg.process_answer_training(chat_id, message)
-	return CORR_INCORR
-
-
-"""
-	Function that does the feedback part of the training
-"""
-def feedback_info(bot, update):
-	global Fibot
-	chat_id = update.message.chat_id
-	message = update.message.text
-	if message == "Sí":
-		Fibot.nlg.give_feedback(chat_id, correct = True)
-		return TRAINING
-	elif message == "No":
-		Fibot.send_preset_message(chat_id, "request_good_answer")
-		return GET_CORRECT
-	else:
-		update.message.reply_text("¿Fué coherente la última respuesta?", reply_markup = markup)
-		return CORR_INCORR
-
-
-"""
-	Function that applies a new rule defined by the user
-"""
-def def_knowledge(bot, update):
-	global Fibot
-	chat_id = update.message.chat_id
-	message = update.message.text
-	Fibot.nlg.give_feedback(chat_id, correct = False, correct_statement = message)
-	Fibot.send_preset_message(chat_id, "corrected_message")
-	Fibot.send_preset_message(chat_id, "send_me_message")
-	return TRAINING
-
-
 """
 	Function that manages the state machine
 """
@@ -252,8 +174,6 @@ def state_machine(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	if (Fibot.chats.get_chat(chat_id)['training']):
-		return train_machine(bot, update)
 	print (message)
 	current_state = Fibot.chats.get_chat(chat_id)['current_state']
 	if current_state == Fibot.state_machine['MessageHandler']:
@@ -279,13 +199,9 @@ def main():
 	conv_handler = ConversationHandler(
 		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
-					CommandHandler('updates_off', updates_off), CommandHandler('train_on', training_on),
-					CommandHandler('train_off', training_off)],
+					CommandHandler('updates_off', updates_off)],
 		states = {
 			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
-			TRAINING: [MessageHandler(filters = Filters.text, callback = train_machine)],
-			CORR_INCORR: [RegexHandler('^(Sí|No)$', callback = feedback_info)],
-			GET_CORRECT: [MessageHandler(filters = Filters.text, callback = def_knowledge)],
 		},
 		fallbacks=[RegexHandler('^Done$', done)],
 		allow_reentry = True #So users can use /login
