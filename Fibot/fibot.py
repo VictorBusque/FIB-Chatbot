@@ -17,7 +17,8 @@ from telegram import ChatAction
 from Fibot.chats import Chats
 from Fibot.api.oauth import Oauth
 from Fibot.NLP.nlg import Query_answer_unit
-
+from Fibot.message_handler import Message_handler
+from Fibot.multithreading.threads import Notification_thread
 
 class Fibot(object):
 
@@ -30,6 +31,8 @@ class Fibot(object):
 		chats (:class:`Fibot.Chat`): Object that represents the chats
 		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+		message_handler(:class:`Fibot.message_handler.Message_handler`): Object that handles messages
+		notification_thread(:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
 		messages (:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
@@ -39,6 +42,8 @@ class Fibot(object):
 		self.chats = Chats()
 		self.oauth = Oauth()
 		self.qa = Query_answer_unit()
+		self.message_handler = None
+		self.notification_thread = None
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
@@ -51,11 +56,16 @@ class Fibot(object):
 	"""
 		Loads the following components:
 			chats: Loads the chats information from persistence
+			message_handler: Enables it to send messages to users
+			notification_thread: Starts its activation and defines the polling interval
 			nlu: Loads the trained model
 			nlg: Loads the trained model
 	"""
 	def load_components(self):
 		self.chats.load()
+		self.message_handler = Message_handler(self.chats)
+		self.notification_thread = Notification_thread(self.message_handler, 5)
+		self.notification_thread.run()
 		print("Chats loaded")
 		self.qa.load(train=False)
 		print("Query answering model loaded")
@@ -71,12 +81,7 @@ class Fibot(object):
 		This function sends an action to the chat with chat_id (using ChatAction helper)
 	"""
 	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
-		params = {
-			'chat_id': chat_id,
-			'action': action
-		}
-		base_url = 'https://api.telegram.org/bot{}/sendChatAction'.format(self.bot_token)
-		response = requests.get(base_url, params = params)
+		self.message_handler.send_chat_action(chat_id, message, typing, reply_to)
 
 	"""
 		Parameters:
@@ -90,22 +95,7 @@ class Fibot(object):
 		and depending on the rest of the parameters i might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
-		ini = time()
-		if isinstance(message, list):
-			for item in message:
-				self.send_message(chat_id, item, typing, reply_to)
-		else:
-			if typing: self.send_chat_action(chat_id)
-			print("chat action sent in {}".format( (time()-ini) ))
-			user_language = self.chats.get_chat(chat_id)['language']
-			params = {
-				'chat_id': chat_id,
-				'text': message
-			}
-			if reply_to: params['reply_to_message_id'] = reply_to
-			base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-			response = requests.get(base_url, params = params)
-			print("message sent in {}".format( (time()-ini) ))
+		self.message_handler.send_message(chat_id, message, typing, reply_to)
 
 
 	"""

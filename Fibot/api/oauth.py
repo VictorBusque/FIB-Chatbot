@@ -119,28 +119,3 @@ class Oauth(object):
 				'logged': True}
 		else:
 			return None
-
-
-"""
-threads = []
-
-
-def thread_func(seconds, chat_id):
-	sleep(seconds)
-	refresh_token(chat_id)
-
-def schedule_refreshment(chat_id):
-	expire_time_end = db_module.get_chat(chat_id)['expire_time_end']
-	expire_time_end = datetime.datetime(expire_time_end['year'],
-										expire_time_end['month'],
-										expire_time_end['day'],
-										expire_time_end['hour'],
-										expire_time_end['minute'],
-										expire_time_end['second'])
-	actual_time = datetime.datetime.now()
-	delay = (expire_time_end-actual_time).total_seconds()
-	print("delay is %s"%str(delay))
-	thread = Thread(target = thread_func, args = [delay, chat_id])
-	thread.start()
-	threads.append(thread)
-"""
