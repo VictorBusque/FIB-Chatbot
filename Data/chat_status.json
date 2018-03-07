@@ -14,7 +14,6 @@
       "second": 28
     },
     "logged": true,
-    "notifications": false,
-    "last_notif_polling": null
+    "notifications": true
   }
 }
