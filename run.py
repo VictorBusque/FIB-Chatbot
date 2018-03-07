@@ -3,6 +3,7 @@
 
 #-- General imports --#
 import re
+import datetime
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -38,7 +39,8 @@ def start(bot, update):
 				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False}
+				'notifications': False,
+				'last_notif_polling': None}
 		Fibot.chats.update_chat(chat_id, data, compulsory = True)
 		Fibot.send_preset_message(chat_id, "start_unknown_1", user_name)
 		Fibot.send_preset_message(chat_id, "start_unknown_2")
@@ -113,7 +115,8 @@ def logout(bot, update):
 				'current_state': Fibot.state_machine['MessageHandler'],
 				'expire_time_end': None,
 				'logged': False,
-				'notifications': False}
+				'notifications': False,
+				'last_notif_polling': None}
 		Fibot.chats.update_chat(chat_id, data)
 		Fibot.send_preset_message(chat_id, "logout_done", user_name)
 	else:

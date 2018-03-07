@@ -169,3 +169,17 @@ class API_raco(object):
 			return result
 		else:
 			return None
+
+
+	def get_avisos(self, access_token):
+		params = {}
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language['Spanish'],
+				"Authorization": 'Bearer {}'.format(access_token)
+		}
+		url = "https://api.fib.upc.edu/v2/jo/avisos/"
+		response = requests.get(url, headers = headers, params = params)
+		if response.status_code == 200:
+			response_json = response.json().get('results')
+			return response_json
