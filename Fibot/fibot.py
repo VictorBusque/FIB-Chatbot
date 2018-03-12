@@ -18,7 +18,7 @@ from Fibot.chats import Chats
 from Fibot.api.oauth import Oauth
 from Fibot.NLP.nlg import Query_answer_unit
 from Fibot.message_handler import Message_handler
-from Fibot.multithreading.threads import Notification_thread
+from Fibot.multithreading.threads import Notification_thread, Refresh_token_thread
 
 class Fibot(object):
 
@@ -32,7 +32,9 @@ class Fibot(object):
 		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
 		message_handler(:class:`Fibot.message_handler.Message_handler`): Object that handles messages
+		delay(:obj:`int`): Cantidad de segundos entre escaneos en los threads
 		notification_thread(:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
+		refresh_token_thread(:class:`Fibot.multithreading.threads.Refresh_token_thread`): Object that enables a thread to scan for tokens to refresh.
 		messages (:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
@@ -43,7 +45,9 @@ class Fibot(object):
 		self.oauth = Oauth()
 		self.qa = Query_answer_unit()
 		self.message_handler = None
+		self.delay = 60
 		self.notification_thread = None
+		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
@@ -63,10 +67,12 @@ class Fibot(object):
 	"""
 	def load_components(self):
 		self.chats.load()
-		self.message_handler = Message_handler(self.chats)
-		self.notification_thread = Notification_thread(self.message_handler, 5)
-		self.notification_thread.run()
 		print("Chats loaded")
+		self.message_handler = Message_handler(self.chats)
+		print("Message handler loaded")
+		self.notification_thread = Notification_thread(self.message_handler, self.delay)
+		self.notification_thread.run()
+		self.refresh_token_thread.run()
 		self.qa.load(train=False)
 		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:

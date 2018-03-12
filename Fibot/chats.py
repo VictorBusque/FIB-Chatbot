@@ -14,8 +14,6 @@ import base64
 from Crypto.Cipher import AES
 
 
-
-
 class Chats(object):
 
 	""" This object contains the necessary information of the chats
@@ -71,7 +69,6 @@ class Chats(object):
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
 				json.dump({}, fp, indent = 2)
-		pprint(self.chats)
 
 	"""
 		Parameters:
@@ -123,7 +120,7 @@ class Chats(object):
 		This function updates persistence with the contents of the dict chats.
 	"""
 	def dump_data(self):
-		print("Dumping data <--------------")
+		print("Dumping data")
 		print(self.chats)
 		os.remove('./Data/chat_status.json')
 		with open('./Data/chat_status.json', 'w') as fp:
@@ -132,8 +129,6 @@ class Chats(object):
 				if (cpy[item]['access_token']):
 					cpy[item]['access_token'] = self.encrypt_data(cpy[item]['access_token'])
 					cpy[item]['refresh_token'] = self.encrypt_data(cpy[item]['refresh_token'])
-			pprint(cpy)
-			pprint(self.chats)
 			json.dump(cpy, fp, indent = 2)
 
 	"""
@@ -171,6 +166,11 @@ class Chats(object):
 			expiration_time['second']
 		)
 		return now > expiration_time
+
+
+	def get_expired_chats(self):
+		for chat in self.chats.keys():
+			if self.token_has_expired(chat): yield chat
 
 	"""
 		Parameters:

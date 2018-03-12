@@ -8,8 +8,6 @@ from os import getenv
 import urllib
 import json
 import datetime
-#from threading import Thread
-#from time import sleep
 
 
 class Oauth(object):

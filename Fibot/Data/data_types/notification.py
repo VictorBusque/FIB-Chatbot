@@ -47,4 +47,4 @@ class Notification(object):
             val.append("It has {} attachments.".format(len(self.attachments)))
             for att_file in self.attachments:
                 val.append("Attachment with title {} can be found here: {}.".format(att_file['name'], att_file['url']))
-            return val
+        return val
