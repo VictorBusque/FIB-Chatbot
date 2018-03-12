@@ -5,6 +5,11 @@
 from Fibot.fibot import Fibot
 
 
+"""
+    Allows to decide the training type:
+        by hand: trains rapidly the model and allows the user to add new stories interactively
+        not by hand: trans both the nlu and dialog model and stores them in the model folder.
+"""
 def main(mode):
     fibot = Fibot()
     if mode == "train": fibot.qa.load(train=True)

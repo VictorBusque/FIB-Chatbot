@@ -43,6 +43,7 @@ class NLU_unit(object):
 			# where `model_directory points to the folder the model is persisted in
 		self.interpreter = RasaNLUInterpreter("./models/nlu/default/current")
 		print("NLU loaded")
+		
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages
@@ -52,7 +53,6 @@ class NLU_unit(object):
 	def get_intent(self, query):
 		parsed = self.interpreter.parse(query)
 		return parsed['intent']
-
 
 	"""
 		Parameters:

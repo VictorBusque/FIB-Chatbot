@@ -16,8 +16,9 @@ from telegram import ChatAction
 #-- Local imports --#
 from Fibot.chats import Chats
 from Fibot.api.oauth import Oauth
-from Fibot.NLP.nlg import NLG_unit, Query_answer_unit
-from Fibot.NLP.language import Translator
+from Fibot.NLP.nlg import Query_answer_unit
+from Fibot.message_handler import Message_handler
+from Fibot.multithreading.threads import Notification_thread, Refresh_token_thread
 
 class Fibot(object):
 
@@ -25,24 +26,28 @@ class Fibot(object):
 		its users.
 
 	Attributes:
-		name(:obj:`str`): Unique identifier for the bot
-		bot_token(:obj:`str`): Token to access the bot
-		chats(:class:`Fibot.Chat`): Object that represents the chats
-		oauth(:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
-		nlg(:class:`Fibot.NLP.nlg.NLG_unit`): Object that interacts with non FIB messages
-		~ query_answer(:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
-		translator(:class:`Fibot.NLP.language.Translator`): Object that eases the translation of the messages
-		messages(:obj:`dict`): Object that contains the Fibot configuration messages
-		state_machine(:obj:`dict`): Object that simplifies the state machine management
+		name (:obj:`str`): Unique identifier for the bot
+		bot_token (:obj:`str`): Token to access the bot
+		chats (:class:`Fibot.Chat`): Object that represents the chats
+		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
+		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
+		message_handler(:class:`Fibot.message_handler.Message_handler`): Object that handles messages
+		delay(:obj:`int`): Cantidad de segundos entre escaneos en los threads
+		notification_thread(:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
+		refresh_token_thread(:class:`Fibot.multithreading.threads.Refresh_token_thread`): Object that enables a thread to scan for tokens to refresh.
+		messages (:obj:`dict`): Object that contains the Fibot configuration messages
+		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
 	def __init__(self, name = 'Fibot'):
 		self.name = name
 		self.bot_token = getenv('FibotTOKEN')
 		self.chats = Chats()
 		self.oauth = Oauth()
-		self.nlg = NLG_unit()
 		self.qa = Query_answer_unit()
-		self.translator = Translator()
+		self.message_handler = None
+		self.delay = 60
+		self.notification_thread = None
+		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
@@ -55,14 +60,19 @@ class Fibot(object):
 	"""
 		Loads the following components:
 			chats: Loads the chats information from persistence
+			message_handler: Enables it to send messages to users
+			notification_thread: Starts its activation and defines the polling interval
 			nlu: Loads the trained model
 			nlg: Loads the trained model
 	"""
 	def load_components(self):
 		self.chats.load()
 		print("Chats loaded")
-		self.nlg.load()
-		print("NLG model loaded")
+		self.message_handler = Message_handler(self.chats)
+		print("Message handler loaded")
+		self.notification_thread = Notification_thread(self.message_handler, self.delay)
+		self.notification_thread.run()
+		self.refresh_token_thread.run()
 		self.qa.load(train=False)
 		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:
@@ -70,42 +80,28 @@ class Fibot(object):
 		print("Preset messages loaded")
 
 	"""
-		Sends an action to a chat (using ChatAction helper)
+		Parameters:
+			chat_id (:obj:`int`): chat id of the user to send the message to
+			action (:obj:`str`): defines the action to send the user (default is typing)
+
+		This function sends an action to the chat with chat_id (using ChatAction helper)
 	"""
 	def send_chat_action(self, chat_id, action = ChatAction.TYPING):
-		params = {
-			'chat_id': chat_id,
-			'action': action
-		}
-		base_url = 'https://api.telegram.org/bot{}/sendChatAction'.format(self.bot_token)
-		response = requests.get(base_url, params = params)
+		self.message_handler.send_chat_action(chat_id, message, typing, reply_to)
 
 	"""
-		Sends a message to the chat with chat_id with content text
+		Parameters:
+			chat_id (:obj:`int`): chat id of the user to send the message to
+			message (:obj:`str`): content of the message to be sent
+			typing (:obj:`bool`): value that defines whether to send typing action or not
+			reply_to (:obj:`int` or None): If defined, it is the message_id of the message
+				that will be replied to, else no message will be replied.
+
+		This function sends a message to the chat with chat_id with content text,
+		and depending on the rest of the parameters i might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None):
-		ini = time()
-		if isinstance(message, list):
-			for item in message:
-				self.send_message(chat_id, item, typing, reply_to)
-		else:
-			if typing: self.send_chat_action(chat_id)
-			print("chat action sent in {}".format( (time()-ini) ))
-			user_language = self.chats.get_chat(chat_id)['language']
-			if user_language != 'English':
-				urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message)
-				if urls: message = message.replace(urls[0],"{}")
-				message = self.translator.translate(message , to = user_language)
-				if urls: message = message.format(urls[0])
-
-			params = {
-				'chat_id': chat_id,
-				'text': message
-			}
-			if reply_to: params['reply_to_message_id'] = reply_to
-			base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-			response = requests.get(base_url, params = params)
-			print("message sent in {}".format( (time()-ini) ))
+		self.message_handler.send_message(chat_id, message, typing, reply_to)
 
 
 	"""
@@ -129,15 +125,15 @@ class Fibot(object):
 		Parameters:
 			chat_id (:obj:`str`): chat_id of the user that sent the messages
 			message (:obj:`str`): text the user sent
+			message_id (:obj:`int`): message_id of the message to reply to
+
 
 		This function receives a message from a user and decides which mechanism is responsible
 		for responding the message.
 	"""
-	def process_income_message(self, chat_id, message, message_id = None, debug = False):
+	def process_income_message(self, chat_id, message, message_id = None):
 		print("Processing income message...")
 		user_language = self.chats.get_chat(chat_id)['language']
-		if user_language != 'English':
-			message = self.translator.translate(message , to = 'English', _from = user_language)
 		ini = time()
 		response = self.qa.get_response(message, sender_id = chat_id)
 		print("Getting response time is {}".format( (time()-ini) ))

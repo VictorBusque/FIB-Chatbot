@@ -8,6 +8,17 @@ import random
 
 class Item_generator(object):
 
+	"""This class allows random generation of items (such as teachers)
+
+		Parameters:
+			data(:obj:`list` or :obj:`str`): list of items or path to get the file with
+				the data
+			num_items(:obj:`int`): limit of items that the generator can generate
+
+		Attributes:
+			num_items(:obj:`int`): limit of items that the generator can generate
+			items(:obj:`list`): list of the items that can be generated
+	"""
 	def __init__(self, data, num_items = 9999):
 		if isinstance(data, list):
 			d_size = len(data)
@@ -17,7 +28,9 @@ class Item_generator(object):
 			d_size = len(open(data,'r').readlines())
 			self.num_items = min(num_items, d_size)
 			self.items = open(data,'r').readlines()[:self.num_items]
-
+	"""
+		Returns a random element of the item list
+	"""
 	def get_random(self):
 		i_idx = random.randint(0, self.num_items-1)
 		return self.items[i_idx]
@@ -25,19 +38,39 @@ class Item_generator(object):
 
 class Data_generator(object):
 
+	"""This class allows random generation of data (for instance, questions)
+
+		Parameters:
+			i_g(:class:`Item_generator`): Item generator for the data (items)
+			s_g(:class:`Item_generator`): Item generator for the sentences (not items)
+			type_(:type:`str`): can either be 'teacher' or 'subject', defines the type of item used
+			intent(:type:`str`): defines the intent of the sentence to be generated
+
+		Attributes:
+			num_items(:obj:`int`): limit of items that the generator can generate
+			items(:obj:`list`): list of the items that can be generated
+	"""
 	def __init__(self, i_g, s_g, type_, intent):
 		self.i_g = i_g
 		self.s_g = s_g
 		self.type = type_
 		self.intent = intent
 
+	"""
+		Parameters:
+			num_examples(:obj:`int`): defines the amount of examples to be generated
+
+		This function returns a list (of size num_examples) of random generated examples
+	"""
 	def get_examples(self, num_examples):
 		examples = []
 		for i in range(num_examples):
 			examples.append(self.get_random_element())
 		return examples
 
-
+	"""
+		This function returns a random sentence generated with both generators
+	"""
 	def get_random_element(self):
 		entity = self.i_g.get_random().lower().rstrip()
 		sentence = self.s_g.get_random()
@@ -65,16 +98,18 @@ class Data_generator(object):
 
 def main(amount = 250):
 
-	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?"]
-	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office"]
+	intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}", "what's the mail of {}"]
+	intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}", "what's the office of {}"]
 
 
 	intros_subject_free_spots = ['free spots in {}', 'how many free spots are in {}?',
-			'how many free spots are in {}', 'spots left in {}']
+			'how many free spots are in {}', 'spots left in {}', "how many free spots are there in {}",
+			"free spots of {}", "{}'s free spots"]
 	intros_subject_schedule = ['schedule of {}', "what's {}'s schedule?",
-			"what's {}'s schedule", 'when do i have {}']
-	intros_subject_clasroom = ['in which class do i have {}?',
-			'in which class do i have {}', "{}'s classroom", 'where do i have {}']
+			"what's {}'s schedule", 'when do i have {}', "when do i do {}"]
+	intros_subject_clasroom = ['in which class do i have {}?', "where do i do {}",
+			'in which class do i have {}', "{}'s classroom", 'where do i have {}',
+			"classroom of {}", "class of {}"]
 	intros_inform_teacher = ['the teacher is {}', '{}']
 	intros_inform_subject = ['the subject is ', '{}']
 
