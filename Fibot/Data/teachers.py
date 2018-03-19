@@ -4,12 +4,54 @@
 #-- General imports --#
 import json
 from itertools import combinations
+import pandas as pd
+import unicodedata
 
 #-- 3rd party imports --#
 from nltk import edit_distance
 
 #-- Local imports --#
 from Fibot.Data.data_types.teacher import Teacher
+
+
+class Teacher_name_classifier(object):
+
+    def __init__(self, path_to_data = './Data/Names/'):
+        self.names_data = pd.read_csv(path_to_data+'{}.csv'.format('names'), delimiter=',', header = 0)[['Nombre']]
+        self.names_data = list(map(str.lower, self.names_data['Nombre'].values.tolist()))
+        self.process()
+
+    def process(self):
+        for idx, item in enumerate(self.names_data):
+            if '/' in item:
+                print(item)
+                name1, garbo = item.split('/')
+                print("{} - {}".format(name1, garbo))
+                name1 = name1.lower()
+                self.names_data[idx] = name1
+
+
+
+    def is_name(self, word):
+        word = word.lower()
+        for accent in accents:
+            word = word.replace(accent,'�')
+        print(word)
+        for name in self.names_data:
+            name = self.delete_accents(name)
+            print("{} - {}".format(word, name))
+            if edit_distance(word, name) == 0: return True
+        return False
+
+
+    def get_name(self, word):
+        return
+
+    def get_surname(self, word):
+        return
+
+    def delete_accents(self, word):
+        return ''.join((c for c in unicodedata.normalize('NFD', word) if unicodedata.category(c) != 'Mn'))
 
 class Teachers(object):
 

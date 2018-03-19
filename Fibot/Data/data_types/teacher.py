@@ -19,13 +19,13 @@ class Teacher(object):
         self.mail = data['mail']
         self.department = data['department']
         self.office = data['office']
-        
+
     """
         Returns a string formatted text which explains the mail for the teacher
     """
     def get_mail(self):
         return "{}'s mail is:\n {}".format(
-            self.name.title(),
+            self.name.split(' ')[0].title(),
             self.mail
         )
 
@@ -34,7 +34,7 @@ class Teacher(object):
     """
     def get_office(self):
         return "{}'s office is:\n {}".format(
-            self.name.title(),
+            self.name.split(' ')[0].title(),
             self.office.title()
         )
 
@@ -42,4 +42,4 @@ class Teacher(object):
         Returns a general description of the teacher
     """
     def __repr__(self):
-        return "{} is a teacher from {}'s department".format(self.name.title(), self.department)
+        return "{} is a teacher from {}'s department".format(self.name.split(' ')[0].title(), self.department)

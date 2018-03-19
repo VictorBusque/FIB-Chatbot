@@ -45,7 +45,6 @@ class Refresh_token_thread(object):
         This function defines the new timer and starts it (effectively allows the scanning)
     """
     def run(self):
-        print("Refresh_token thread activated, Scanning every {} seconds".format(self.delay))
         if self.polling:
             self.thread = Timer(self.delay, self.poll)
             self.thread.start()
@@ -54,13 +53,14 @@ class Refresh_token_thread(object):
         Does a scan over all users with expired tokens, and then returns to the activation function
     """
     def poll(self):
+        print("Refresh token thread: Refreshing tokens\n")
         self.update_chats()
         for chat in self.queue:
-            print("Refreshing token for {}".format(self.chats.get_chat(chat)['name']))
+            print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
             self.chats.update_chat(chat, callback, full_data = False)
-            print("Refreshed token successfully!")
+            print("Refresh token thread: Refreshed token successfully!\n")
         self.queue = []
         self.run()
 
@@ -99,13 +99,12 @@ class Notification_thread(object):
         self.delay = delay
         self.thread = None
         self.polling = True
-        self.last_check = None
+        self.last_check = datetime.datetime.now()
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
     """
     def run(self):
-        print("Notification thread activated! Scanning every {} seconds".format(self.delay))
         if self.polling:
             self.thread = Timer(self.delay, self.poll)
             self.thread.start()
@@ -114,12 +113,13 @@ class Notification_thread(object):
         Does a scan over all users, and then returns to the activation function
     """
     def poll(self):
-        print("Last check was done: {}".format(self.last_check))
+        print("Notification scanner thread: Last check was done: {}\n".format(self.last_check))
+        print("Notification scanner thread: Scanning for notifications\n")
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
-            print("Checking chat_id {}".format(student_id))
+            print("Notification scanner thread: Checking chat_id {}\n".format(student_id))
             if student['notifications']:
-                print("Scanning {}.".format(student['name']))
+                print("Notification scanner thread: Scanning {}.\n".format(student['name']))
                 access_token = student['access_token']
                 avisos = self.api.get_avisos(access_token)
                 avisos = self.filter(avisos)

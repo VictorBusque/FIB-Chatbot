@@ -29,6 +29,7 @@ class Notification(object):
     def __init__(self, data):
         self.titol = data['titol']
         self.subject = data['codi_assig']
+        self.is_from_subject = self.subject[0] != "#"
         self.text = data['text']
         self.attachments = []
         if 'adjunts' in data.keys():

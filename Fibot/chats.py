@@ -20,6 +20,7 @@ class Chats(object):
 
 	Attributes:
 		chats(:obj:`dict`): storage of the necessary information
+		encryption_key(:obj:`str`): Key for encrypting sensible data
 
 		the format is the following:
 		{
@@ -31,14 +32,13 @@ class Chats(object):
 			'current_state': (:obj:`str`) the state (in the Fibot state definition) the user with chat_id key is on,
 			'expire_time_end': (:obj:`dict`) time when the access_token expires,
 			'logged': (:obj:`bool`) specifies if the user with chat_id key is logged or not,
-			'training': (:obj:`bool`) specifies if the user with chat_id key is in training mode,
 			'notifications': (:obj:`bool`) specifies if the user with chat_id has notifications active currently
 			}
 		}
 	"""
 	def __init__(self):
 		self.chats = {}
-		self.encryption_key = '2222222222222222'#os.getenv('encryption_key')
+		self.encryption_key = os.getenv('encryption_key')
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
