@@ -78,7 +78,7 @@ class Query_answer_unit(object):
 		 	batch_size=batch_size,
 			validation_split=validation_split
 		)
-		self.agent_ca.persist(self.model_path_en)
+		self.agent_ca.persist(self.model_path_ca)
 
 		self.agent_es.train(self.training_data_file,
 			augmentation_factor=augmentation_factor,
@@ -126,14 +126,19 @@ class Query_answer_unit(object):
 		defined in Fibot/NLP/core/actions.py
 	"""
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
+		print(language)
 		if debug:
 			print("Interpreter understood the following intent:")
-			pprint(self.nlu.get_intent(message))
+			pprint(self.nlu.get_intent(message, language))
 			print("And the following entities:")
-			pprint(self.nlu.get_entities(message))
+			pprint(self.nlu.get_entities(message, language))
+			print('\n going to respond with the model {}'.format(language))
 		if language == 'ca':
+			print('Getting response in catalan')
 			return self.agent_ca.handle_message(message, sender_id=sender_id)
 		elif language == 'es':
+			print('Getting response in spanish')
 			return self.agent_es.handle_message(message, sender_id=sender_id)
 		else:
+			print('Getting response in english')
 			return self.agent_en.handle_message(message, sender_id=sender_id)

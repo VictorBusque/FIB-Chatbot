@@ -78,7 +78,7 @@ class NLU_unit(object):
 
 		This function returns the entities as predicted by the interpreter
 	"""
-	def get_entities(self, query):
+	def get_entities(self, query, lang):
 		parsed = None
 		if lang == 'ca':
 			parsed = self.interpreter_ca.parse(query)
