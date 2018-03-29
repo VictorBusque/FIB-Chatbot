@@ -22,7 +22,9 @@ class NLU_unit(object):
 		name(:class:`rasa_nlu.model.Interpreter`): Interpreter for the users FIB-related queries
 	"""
 	def __init__(self):
-		self.interpreter = None
+		self.interpreter_ca = None
+		self.interpreter_es = None
+		self.interpreter_en = None
 
 	"""
 		Parameters:
@@ -33,25 +35,41 @@ class NLU_unit(object):
 	"""
 	def load(self, train = False):
 		if train:
-			training_data = load_data('./Data/Dataset.json')
+			training_data_ca = load_data('./Data/Dataset_ca.json')
+			training_data_es = load_data('./Data/Dataset_es.json')
+			training_data_en = load_data('./Data/Dataset_en.json')
 			print("Data Loaded")
-			trainer = Trainer(RasaNLUConfig("./config/config_spacy.json"))
+			trainer_ca = Trainer(RasaNLUConfig("./config/config_spacy_ca.json"))
+			trainer_es = Trainer(RasaNLUConfig("./config/config_spacy_es.json"))
+			trainer_en = Trainer(RasaNLUConfig("./config/config_spacy_en.json"))
 			print("NLU Trainer launched")
-			trainer.train(training_data)
+			trainer_ca.train(training_data_ca)
+			trainer_es.train(training_data_es)
+			trainer_en.train(training_data_en)
 			print("NLU Training done")
-			model_directory = trainer.persist('models/nlu', fixed_model_name = 'current')  # Returns the directory the model is stored in
+			model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
+			model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
+			model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
 			# where `model_directory points to the folder the model is persisted in
-		self.interpreter = RasaNLUInterpreter("./models/nlu/default/current")
+		self.interpreter_ca = RasaNLUInterpreter("./models/nlu_ca/default/current")
+		self.interpreter_es = RasaNLUInterpreter("./models/nlu_es/default/current")
+		self.interpreter_en = RasaNLUInterpreter("./models/nlu_en/default/current")
 		print("NLU loaded")
-		
+
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages
 
 		This function returns the intent as predicted by the interpreter
 	"""
-	def get_intent(self, query):
-		parsed = self.interpreter.parse(query)
+	def get_intent(self, query, lang = 'es'):
+		parsed = None
+		if lang == 'ca':
+			parsed = self.interpreter_ca.parse(query)
+		elif lang == 'es':
+			parsed = self.interpreter_es.parse(query)
+		else:
+			parsed = self.interpreter_en.parse(query)
 		return parsed['intent']
 
 	"""
@@ -61,5 +79,11 @@ class NLU_unit(object):
 		This function returns the entities as predicted by the interpreter
 	"""
 	def get_entities(self, query):
-		parsed = self.interpreter.parse(query)
+		parsed = None
+		if lang == 'ca':
+			parsed = self.interpreter_ca.parse(query)
+		elif lang == 'es':
+			parsed = self.interpreter_es.parse(query)
+		else:
+			parsed = self.interpreter_en.parse(query)
 		return parsed['entities']

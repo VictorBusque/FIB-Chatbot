@@ -1,0 +1,20 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "teacher_name",
+        "subject_acronym"
+      ]
+    },
+    "action_show_teacher_mail": {
+      "slots": []
+    }
+  },
+  "rasa_core": "0.8.3",
+  "max_history": 2,
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ]
+}

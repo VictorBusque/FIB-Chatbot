@@ -10,7 +10,7 @@
       "slots": []
     }
   },
-  "rasa_core": "0.8.2",
+  "rasa_core": "0.8.3",
   "max_history": 2,
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [

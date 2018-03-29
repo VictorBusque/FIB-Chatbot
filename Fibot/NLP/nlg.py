@@ -34,9 +34,15 @@ class Query_answer_unit(object):
 		self.nlu = NLU_unit()
 		self.training_data_file = './Fibot/NLP/core/stories.md'
 		self.domain_path = './Fibot/NLP/core/domain.yml'
-		self.model_path = './models/dialogue'
-		self.agent =  Agent(self.domain_path,
+		self.model_path_ca = './models/dialogue_ca'
+		self.model_path_es = './models/dialogue_es'
+		self.model_path_en = './models/dialogue_en'
+		self.agent_ca =  Agent(self.domain_path,
 			                  policies=[MemoizationPolicy(), KerasPolicy()])
+		self.agent_es =  Agent(self.domain_path,
+							  policies=[MemoizationPolicy(), KerasPolicy()])
+		self.agent_en =  Agent(self.domain_path,
+							  policies=[MemoizationPolicy(), KerasPolicy()])
 
 	"""
 		Parameters:
@@ -44,10 +50,15 @@ class Query_answer_unit(object):
 		This function loads the model into the agent, and trains if necessary
 	"""
 	def load(self, train=False):
-		self.nlu.load(train)
+		#self.nlu.load(train)
+		self.nlu.load()
 		if train: self.train()
-		self.agent = Agent.load(self.model_path,
-				interpreter = self.nlu.interpreter)
+		self.agent_ca = Agent.load(self.model_path_en,
+				interpreter = self.nlu.interpreter_ca)
+		self.agent_es = Agent.load(self.model_path_es,
+				interpreter = self.nlu.interpreter_es)
+		self.agent_en = Agent.load(self.model_path_en,
+				interpreter = self.nlu.interpreter_en)
 
 	"""
 		Parameters:
@@ -60,14 +71,32 @@ class Query_answer_unit(object):
 		This function trains the agent and saves the model in the dialog's model path
 	"""
 	def train(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
-		self.agent.train(self.training_data_file,
+		self.agent_ca.train(self.training_data_file,
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,
 			epochs=epochs,
 		 	batch_size=batch_size,
 			validation_split=validation_split
 		)
-		self.agent.persist(self.model_path)
+		self.agent_ca.persist(self.model_path_en)
+
+		self.agent_es.train(self.training_data_file,
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
+		)
+		self.agent_es.persist(self.model_path_es)
+
+		self.agent_en.train(self.training_data_file,
+			augmentation_factor=augmentation_factor,
+			max_history=max_history,
+			epochs=epochs,
+		 	batch_size=batch_size,
+			validation_split=validation_split
+		)
+		self.agent_ca.persist(self.model_path_es)
 
 	"""
 		Parameters:
@@ -96,10 +125,15 @@ class Query_answer_unit(object):
 		This function returns the response from the agent using the actions
 		defined in Fibot/NLP/core/actions.py
 	"""
-	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, debug=True):
+	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		if debug:
 			print("Interpreter understood the following intent:")
 			pprint(self.nlu.get_intent(message))
 			print("And the following entities:")
 			pprint(self.nlu.get_entities(message))
-		return self.agent.handle_message(message, sender_id=sender_id)
+		if language == 'ca':
+			return self.agent_ca.handle_message(message, sender_id=sender_id)
+		elif language == 'es':
+			return self.agent_es.handle_message(message, sender_id=sender_id)
+		else:
+			return self.agent_en.handle_message(message, sender_id=sender_id)

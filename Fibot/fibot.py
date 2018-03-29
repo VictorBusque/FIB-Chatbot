@@ -135,7 +135,7 @@ class Fibot(object):
 		print("Processing income message...")
 		user_language = self.chats.get_chat(chat_id)['language']
 		ini = time()
-		response = self.qa.get_response(message, sender_id = chat_id)
+		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
 		print("Getting response time is {}".format( (time()-ini) ))
 		print(response)
 		if message_id:
