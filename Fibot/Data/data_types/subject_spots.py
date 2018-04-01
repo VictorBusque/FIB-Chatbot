@@ -19,6 +19,7 @@ class Subject_spots(object):
                     "tipus_assignatura": "APE",
                     "pla": "GRAU"
                 }, ... ]
+            language(:obj:`str`): Language in which the output has to be
     """
     def __init__(self, data, language):
         self.subject = data[0]['assig']

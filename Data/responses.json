@@ -60,5 +60,44 @@
     "en": [
       "{} from {} to {}, a {} class at classroom {}."
     ]
+  },
+  "ask_subject_teacher_mail": {
+    "ca": [
+      "El correu de {} és {}.",
+      "El mail de {} és {}."
+    ],
+    "es": [
+      "El correo de {} es {}.",
+      "El mail de {} es {}."
+    ],
+    "en": [
+      "{}'s mail is {}.",
+      "The email of {} is {}."
+    ]
+  },
+  "ask_subject_teacher_office": {
+    "ca": [
+      "El despatx de {} és {}.",
+      "La oficina de {} és {}."
+    ],
+    "es": [
+      "El despacho de {} es {}.",
+      "La oficina de {} es {}."
+    ],
+    "en": [
+      "{}'s office is {}.",
+      "The office of {} is {}."
+    ]
+  },
+  "ask_subject_teacher_name": {
+    "ca": [
+      "{}"
+    ],
+    "es": [
+      "{}"
+    ],
+    "en": [
+      "{}"
+    ]
   }
 }

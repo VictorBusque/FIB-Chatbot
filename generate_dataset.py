@@ -103,10 +103,13 @@ def main(amount = 250, language = 'es'):
 			'cuantos huecos hay en {}', 'plazas de {}', 'plazas en {}', "cuantas plazas libres hay en {}?",
 			"plazas en {}", "cuantas plazas hay en {}"]
 	intros_subject_schedule = ['horario de {}', "cual es el horario de {}?",
-			"cuando tengo {}?", 'cuando tengo{}', "cuando hago {}?", "cuando hago {}"]
+			"cuando tengo {}?", 'cuando tengo {}', "cuando hago {}?", "cuando hago {}"]
 	intros_subject_clasroom = ['en que clase hago {}?', "en que clase tengo {}",
 			'donde hago {}', "clase de {}", 'cual es la clase de {}?',
 			"aula de {}", "en que aula tengo {}"]
+	intros_subject_teacher_mail = ["correo del profesor de {}", "cual es el correo del profe de {}", "mail del profe de {}", "cual es el mail del profe de {}"]
+	intros_subject_teacher_office = ["despacho del profesor de {}", "cual es el despacho del profe de {}", "donde esta el despacho del profesor de {}"]
+	intros_subject_teacher_name = ["nombre del profesor de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}"]
 	if language == 'en':
 		intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}", "what's the mail of {}"]
 		intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}", "what's the office of {}"]
@@ -118,13 +121,23 @@ def main(amount = 250, language = 'es'):
 		intros_subject_clasroom = ['in which class do i have {}?', "where do i do {}",
 				'in which class do i have {}', "{}'s classroom", 'where do i have {}',
 				"classroom of {}", "class of {}"]
-		intros_inform_teacher = ['the teacher is {}', '{}']
-		intros_inform_subject = ['the subject is ', '{}']
-		#intros_inform_teacher = ['the teacher is {}', '{}']
-		#intros_inform_subject = ['the subject is ', '{}']
+		intros_subject_teacher_mail = ["{}'s teacher's mail ", "what's the mail of {}'s teacher", "{}'s teacher mail", "what is the mail of {} teacher"]
+		intros_subject_teacher_office = ["office of {}'s teacher'", "{}'s teacher office", "{} teacher office", "whats {} teacher office"]
+		intros_subject_teacher_name = ["nombre del profesor de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}"]
+
 	elif language == 'ca':
-		intros_teacher_mail = ["correu de {}", "quin es el correu de {}", "quin es el mail de {}?", "mail de {}", "quin és el mail de {}?"]
-		intros_teacher_desk = ["quin es el despatx de {}?", "quin és el despatx {}", "despatx de {}", "on esta el despatx de {}?", "on es el despatx de {}"]
+		intros_teacher_mail = ["correu de {}", "correu del {}", "correu de la {}",
+		"quin es el correu de {}", "quin es el correu del {}", "quin es el correu de la {}",
+		"quin es el correu de {}?", "quin es el correu del {}?", "quin es el correu de la {}?",
+		"quin es el mail de {}?", "quin es el mail del {}?", "quin es el mail de la {}?",
+		"quin es el mail de {}", "quin es el mail del {}", "quin es el mail de la {}",
+		"mail de {}", "mail del {}", "mail de la {}"]
+		intros_teacher_desk = ["quin es el despatx de {}?", "quin es el despatx del {}?", "quin es el despatx de la {}?",
+		"quin es el despatx de {}", "quin es el despatx del {}", "quin es el despatx de la {}",
+		"despatx de {}", "despatx del {}", "despatx de la {}",
+		"on esta el despatx de {}?","on esta el despatx del {}?", "on esta el despatx de la {}?",
+		"on esta el despatx de {}","on es el despatx del {}", "on es el despatx de la {}",
+		"on és el despatx de {}?","on es el despatx del {}?", "on és el despatx de la {}?"]
 		intros_subject_free_spots = ['places lliures en {}', 'places lliures de {}', 'quantes places lliures queden a {}?',
 				'quants espais hi ha a {}', 'places de {}', 'places a {}', "quantes places lliures hi ha a {}?",
 				"plazas en {}", "cuantas plazas hay en {}"]
@@ -133,8 +146,25 @@ def main(amount = 250, language = 'es'):
 		intros_subject_clasroom = ['a quina classe faig{}?', "a quina classe faig {}",
 				'on tinc {}', "aula de {}", 'quina és la classe de {}?',
 				"aula de {}", "a quina aula tinc {}?"]
-		#intros_inform_teacher = ['the teacher is {}', '{}']
-		#intros_inform_subject = ['the subject is ', '{}']
+		intros_subject_teacher_mail = ["correu del professor de {}", "correu de la professora de {}", "correu del profe de {}", "correu de la profe de {}",
+		"quin és el correu del profe de {}", "quin és el correu de la profe de {}?", "quin és el correu del profe de {}", "quin és el correu de la profe de {}",
+		"quin és el correu del professor de {}", "quin és el correu de la professora de {}",
+		"mail del profe de {}", "mail de la profe de {}", "mail del professor de {}", "mail de la professora de {}",
+		"quin es el mail del profe de {}", "quin es el mail de la profe de {}", "quin es el mail del profe de {}", "quin es el mail de la professora de {}?"]
+		intros_subject_teacher_office = ["despatx del professor de {}", "despatx de la professora de {}", "despatx del profe de {}", "despatx de la profe de {}",
+		"quin és el despatx del profe de {}", "quin és el despatx de la profe de {}",
+		"quin és el despatx del professor de {}", "quin és el despatx de la professora de {}",
+		"quin és el despatx del profe de {}?", "quin és el despatx de la profe de {}?",
+		"quin és el despatx del professor de {}?", "quin és el despatx de la professora de {}?",
+		"on és el despatx del profe de {}", "on és el despatx de la profe de {}",
+		"on és el despatx del professor de {}", "on és el despatx de la professora de {}",
+		"on és el despatx del profe de {}?", "on és el despatx de la profe de {}?",
+		"on és el despatx del professor de {}?", "on és el despatx de la professora de {}?"]
+		intros_subject_teacher_name = ["nom del profesor de {}", "nom de la professora de {}",
+		 "com es diu el profe de {}?",  "com es diu la  profe de {}?", "com es diu el professor de {}?", "com es diu la professora de {}?",
+		 "professor de {}", "professora de {}",
+		 "profe de {}"]
+
 
 	regex_features = []
 	entity_synonyms = []
@@ -148,6 +178,9 @@ def main(amount = 250, language = 'es'):
 	intro_spots_gen = Item_generator(data = intros_subject_free_spots)
 	intro_schedule_gen = Item_generator(data = intros_subject_schedule)
 	intro_classroom_gen = Item_generator(data = intros_subject_clasroom)
+	intro_subject_teacher_mail_gen = Item_generator(data = intros_subject_teacher_mail)
+	intro_subject_teacher_office_gen = Item_generator(data = intros_subject_teacher_office)
+	intro_subject_teacher_name_gen = Item_generator(data = intros_subject_teacher_name)
 	#intro_inform_teacher_gen = Item_generator(data = intros_inform_teacher)
 	#intro_inform_subject_gen = Item_generator(data = intros_inform_subject)
 
@@ -156,6 +189,9 @@ def main(amount = 250, language = 'es'):
 	subject_spots_gen = Data_generator(subject_gen, intro_spots_gen, type_="subject", intent="ask_free_spots")
 	subject_schedule_gen = Data_generator(subject_gen, intro_schedule_gen, type_="subject", intent="ask_subject_schedule")
 	subject_classroom_gen = Data_generator(subject_gen, intro_classroom_gen, type_="subject", intent="ask_subject_classroom")
+	subject_teacher_mail_gen = Data_generator(subject_gen, intro_subject_teacher_mail_gen, type_ ="subject", intent = "ask_subject_teacher_mail")
+	subject_teacher_office_gen = Data_generator(subject_gen, intro_subject_teacher_office_gen, type_ = "subject", intent = "ask_subject_teacher_office")
+	subject_teacher_name_gen = Data_generator(subject_gen, intro_subject_teacher_name_gen, type_="subject", intent = "ask_subject_teacher_name")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
 
@@ -164,6 +200,9 @@ def main(amount = 250, language = 'es'):
 	common_examples.extend( subject_spots_gen.get_examples(amount) )
 	common_examples.extend( subject_schedule_gen.get_examples(amount) )
 	common_examples.extend( subject_classroom_gen.get_examples(amount) )
+	common_examples.extend( subject_teacher_mail_gen.get_examples(amount) )
+	common_examples.extend( subject_teacher_office_gen.get_examples(amount) )
+	common_examples.extend( subject_teacher_name_gen.get_examples(amount) )
 	#common_examples.extend( inform_teacher_gen.get_examples(amount) )
 	#common_examples.extend( inform_subject_gen.get_examples(amount) )
 
@@ -182,9 +221,14 @@ def main(amount = 250, language = 'es'):
 
 
 if __name__ == "__main__":
-	language = input("Qué idioma quieres generar? (es/ca/en)")
-	if not (language == 'ca' or language == 'es' or language == 'en'):
+	language = input("Qué idioma quieres generar? (es/ca/en/all)\n")
+	if not (language == 'ca' or language == 'es' or language == 'en' or language == 'all'):
 		language = None
 	amount = input("How many examples for each type? ")
-	if amount: main(int(amount), language)
+	if amount:
+		if language == 'all':
+			main(int(amount), 'ca')
+			main(int(amount), 'es')
+			main(int(amount), 'en')
+		else:main(int(amount), language)
 	else: main(language)

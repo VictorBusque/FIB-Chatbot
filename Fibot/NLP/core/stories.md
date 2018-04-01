@@ -61,8 +61,18 @@
 * ask_free_spots{"subject_acronym": "vc"}
     - slot{"subject_acronym": "vc"}
     - action_show_subject_free_spots
+
 ## Generated Story -2920529410222033811
 * ask_teacher_mail{"teacher_name": "roberto niehhuehuis"}
     - slot{"teacher_name": "roberto niehhuehuis"}
     - action_show_teacher_mail
-    - export
+
+## Generated Story 1
+* ask_subject_teacher_mail{"subject_acronym": "prop"}
+    - slot{"subject_acronym": "prop"}
+    - action_show_subject_teachers_mails
+
+## Generated Story 2
+* ask_subject_teacher_mail{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_teachers_mails

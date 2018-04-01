@@ -698,3 +698,213 @@
 ## Generated Story -5228134864659833769
     - action_show_teacher_mail
     - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -5933316676819657712
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - slot{"teacher_name": "roberto niehhuehuis"}
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export
+## Generated Story -1484549046882393030
+    - action_show_teacher_mail
+    - export

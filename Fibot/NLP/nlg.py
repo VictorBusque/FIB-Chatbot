@@ -51,9 +51,9 @@ class Query_answer_unit(object):
 	"""
 	def load(self, train=False):
 		#self.nlu.load(train)
-		self.nlu.load()
+		self.nlu.load(train)
 		if train: self.train()
-		self.agent_ca = Agent.load(self.model_path_en,
+		self.agent_ca = Agent.load(self.model_path_ca,
 				interpreter = self.nlu.interpreter_ca)
 		self.agent_es = Agent.load(self.model_path_es,
 				interpreter = self.nlu.interpreter_es)
@@ -70,7 +70,7 @@ class Query_answer_unit(object):
 
 		This function trains the agent and saves the model in the dialog's model path
 	"""
-	def train(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
+	def train(self, augmentation_factor=150, max_history=5, epochs=500, batch_size=50, validation_split=0.3):
 		self.agent_ca.train(self.training_data_file,
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,
@@ -96,7 +96,7 @@ class Query_answer_unit(object):
 		 	batch_size=batch_size,
 			validation_split=validation_split
 		)
-		self.agent_ca.persist(self.model_path_es)
+		self.agent_en.persist(self.model_path_en)
 
 	"""
 		Parameters:
@@ -109,7 +109,7 @@ class Query_answer_unit(object):
 		This function makes it possible to generate new stories manually.
 	"""
 	def train_manual(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
-		self.agent.train_online(self.training_data_file,
+		self.agent_ca.train_online(self.training_data_file,
 			input_channel = ConsoleInputChannel(),
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,

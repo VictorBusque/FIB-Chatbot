@@ -17,6 +17,7 @@ class Teacher(object):
                     "office": "Building Omega Office 204",
                     "department": "cs"
                 }
+                language(:obj:`str`): Language in which the output has to be
     """
     def __init__(self, data, language):
         self.name = data['name']

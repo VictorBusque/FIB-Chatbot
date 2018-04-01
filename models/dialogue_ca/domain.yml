@@ -7,6 +7,7 @@ action_names:
 - action_show_subject_free_spots
 - action_show_subject_classroom
 - action_show_subject_schedule
+- action_show_subject_teachers_mails
 actions:
 - utter_ask_teacher_name
 - utter_ask_subject_acronym
@@ -15,6 +16,7 @@ actions:
 - actions.action_show_subject_free_spots
 - actions.action_show_subject_classroom
 - actions.action_show_subject_schedule
+- actions.action_show_subject_teachers_mails
 config:
   store_entities_as_slots: true
 entities:
@@ -26,6 +28,9 @@ intents:
 - ask_free_spots
 - ask_subject_classroom
 - ask_subject_schedule
+- ask_subject_teacher_mail
+- ask_subject_teacher_office
+- ask_subject_teacher_name
 - inform
 slots:
   matches:

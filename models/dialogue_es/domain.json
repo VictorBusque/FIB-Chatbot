@@ -5,6 +5,9 @@
     "intent_ask_free_spots",
     "intent_ask_subject_classroom",
     "intent_ask_subject_schedule",
+    "intent_ask_subject_teacher_mail",
+    "intent_ask_subject_teacher_office",
+    "intent_ask_subject_teacher_name",
     "intent_inform",
     "entity_teacher_name",
     "entity_subject_acronym",
@@ -18,6 +21,7 @@
     "prev_action_show_teacher_office",
     "prev_action_show_subject_free_spots",
     "prev_action_show_subject_classroom",
-    "prev_action_show_subject_schedule"
+    "prev_action_show_subject_schedule",
+    "prev_action_show_subject_teachers_mails"
   ]
 }

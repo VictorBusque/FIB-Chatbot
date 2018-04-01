@@ -80,15 +80,44 @@ class API_raco(object):
 				if items[field_name] == field_value: return items['nom']
 			return None
 
-	def get_subject_teachers(self, acronym = None, name = None, language = 'English'):
+	"""
+		Parameters:
+			acronym(:obj:`str` or None): Acronym for the subject
+			name(:obj:`str` or None): Name for the subject (has to be exact atm)
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			(:obj:`list`): list of dictionaries with info like:
+				[
+					{
+						"nom": "Jorge Castro Rabal",
+						"email": "castro@cs.upc.edu",
+						"is_responsable": false
+					},
+					...
+				]
+	"""
+	def get_subject_teachers(self, acronym = None, name = None, language = 'en'):
 		url = self.base_url+"{}".format("assignatures/")
+		url_2 = self.base_url+"{}".format("assignatures/?page=2")
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language[language]
+				"Accept-Language": language
 		}
 		if acronym: query = {'field': 'id', 'value': acronym}
 		elif name: query = {'field': 'nom', 'value': name}
 		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			result = []
+			url_guia = None
+			field_name = query['field']
+			field_value = query['value']
+			response_json = response.json().get('results')
+			for items in response_json:
+				if items[field_name] == field_value:
+					url_guia = items['guia']
+					return self.get_teachers(url_guia, language)
+		response = requests.get(url_2, headers = headers)
 		if response.status_code == 200:
 			result = []
 			url_guia = None
@@ -104,7 +133,7 @@ class API_raco(object):
 	def get_teachers(self, url_guia, language):
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language[language]
+				"Accept-Language": language
 		}
 		response = requests.get(url_guia, headers=headers)
 		if response.status_code == 200:

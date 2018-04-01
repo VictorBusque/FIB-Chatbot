@@ -21,6 +21,7 @@ class Lecture(object):
                     "tipus": "T",
                     "aules": "A5201"
                 }
+            language(:obj:`str`): Language in which the output has to be
     """
     def __init__(self, data, language):
         days = {

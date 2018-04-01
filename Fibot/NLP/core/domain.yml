@@ -4,6 +4,9 @@ intents:
   - ask_free_spots
   - ask_subject_classroom
   - ask_subject_schedule
+  - ask_subject_teacher_mail
+  - ask_subject_teacher_office
+  - ask_subject_teacher_name
   - inform
 
 
@@ -39,3 +42,4 @@ actions:
   - actions.action_show_subject_free_spots
   - actions.action_show_subject_classroom
   - actions.action_show_subject_schedule
+  - actions.action_show_subject_teachers_mails

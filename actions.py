@@ -13,6 +13,7 @@ from Fibot.api.api_raco import API_raco
 from Fibot.chats import Chats
 from Fibot.Data.data_types.lecture import Lecture
 from Fibot.Data.data_types.subject_spots import Subject_spots
+from Fibot.Data.data_types.subject_teachers import Subject_teachers
 from Fibot.Data.teachers import Teachers
 
 
@@ -129,4 +130,29 @@ class action_show_subject_schedule(Action):
             for data in response:
                 lecture = Lecture(data, user_lang)
                 dispatcher.utter_message("{}".format(lecture))
+        return []
+
+
+class action_show_subject_teachers_mails(Action):
+
+    def name(self):
+        return 'action_show_subject_teachers_mails'
+
+    def resets_topic(self):
+        return True
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        print(tracker.slots)
+        subject_acro = tracker.get_slot("subject_acronym").upper()
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        print("Querying for teachers with language {} and acronym {}".format(user_lang, subject_acro))
+        teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
+        print("The result of the api call is {}".format(teachers_info))
+        teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
+        print("This is the result from the teachers class: {}".format(teachers_info))
+        print("This is how the list looks like:\n {}".format(list(teachers_info.get_mails())))
+        for response in teachers_info.get_mails():
+            dispatcher.utter_message("{}".format(response))
         return []
