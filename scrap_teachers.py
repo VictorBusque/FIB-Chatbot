@@ -116,7 +116,6 @@ class Directory(object):
             office = str(re.findall('%s(.*)%s' % (self.start_office, self.end_office), str(content))[0])
             office = office.replace('<br/>',' ').title()
             office = office.split('C. Jordi Girona')[0]
-            office = office.replace('Edifici', 'Building').replace('Despatx', 'Office').replace('Planta', 'Floor')
             return office
         except:
             print ("Teacher without office...")

@@ -16,13 +16,6 @@ from Fibot.Data.data_types.subject_spots import Subject_spots
 from Fibot.Data.teachers import Teachers
 
 
-class teacher_db:
-    def search_mail(self, info):
-        return 'bejar@cs.upc.edu'
-
-    def search_desk(self, info):
-        return 'Omega, 204'
-
 """
     Could be improved by checking the slots given
     or by doing the query search to the db and see if there
@@ -40,10 +33,10 @@ class action_show_teacher_mail(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teachers = Teachers()
-        teacher = teachers.get_closer_teacher(teacher_name)
-        print(teacher.get_mail())
-        dispatcher.utter_message("{}".format(teacher.get_mail()))
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        mail = Teachers(language = user_lang).get_closer_teacher(teacher_name).get_mail()
+        dispatcher.utter_message("{}".format(mail))
         return []
 
 
@@ -59,10 +52,10 @@ class action_show_teacher_office(Action):
         print(self.name())
         print(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
-        teachers = Teachers()
-        teacher = teachers.get_closer_teacher(teacher_name)
-        print(teacher.get_mail())
-        dispatcher.utter_message("{}".format(teacher.get_office()))
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        office = Teachers(language = user_lang).get_closer_teacher(teacher_name).get_office()
+        dispatcher.utter_message("{}".format(office))
         return []
 
 
@@ -78,10 +71,11 @@ class action_show_subject_free_spots(Action):
         print(self.name())
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
-        raco_api = API_raco()
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
         query = {'places-matricula': { 'field': 'assig', 'value': subject_acro }}
-        response = raco_api.get_main(query)
-        s_s = Subject_spots(response)
+        response = API_raco().get_main(query)
+        s_s = Subject_spots(response, user_lang)
         for group in s_s.group_info.keys():
             dispatcher.utter_message("{}".format(s_s.get_group_spots(group)))
         return []
@@ -99,16 +93,15 @@ class action_show_subject_classroom(Action):
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
-        c = Chats()
-        access_token = c.get_chat_lite(chat_id)['access_token']
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
         if not access_token: dispatcher.utter_message("{}".format("You have not logged in with your Racó account. I cannot see your information"))
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
-            raco_api = API_raco()
             query = {'horari': {'field': 'codi_assig' , 'value': subject_acro}}
-            response = raco_api.get_main(query, public = False, access_token = access_token)
+            response = API_raco().get_main(query, public = False, access_token = access_token)
             for data in response:
-                lecture = Lecture(data)
+                lecture = Lecture(data, user_lang)
                 dispatcher.utter_message("{}".format(lecture))
         return []
 
@@ -125,15 +118,15 @@ class action_show_subject_schedule(Action):
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
-        c = Chats()
-        access_token = c.get_chat_lite(chat_id)['access_token']
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
         if not access_token: dispatcher.utter_message("{}".format("You have not logged in with your Racó account. I cannot see your information"))
         print("el access token de {} es {}".format(chat_id, access_token))
         if subject_acro:
-            raco_api = API_raco()
             query = {'horari': {'field': 'codi_assig' , 'value': subject_acro}}
-            response = raco_api.get_main(query, public = False, access_token = access_token)
+            response = API_raco().get_main(query, public = False, access_token = access_token)
+            print(response)
             for data in response:
-                lecture = Lecture(data)
+                lecture = Lecture(data, user_lang)
                 dispatcher.utter_message("{}".format(lecture))
         return []

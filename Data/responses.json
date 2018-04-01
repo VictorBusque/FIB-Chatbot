@@ -1,0 +1,64 @@
+{
+  "ask_teacher_mail": {
+    "ca": [
+      "El correu de {} és {}.",
+      "El mail de {} és {}.",
+      "Aquí el tens, és {}.",
+      "És {}."
+    ],
+    "es": [
+      "El correo de {} es {}.",
+      "El mail de {} es {}.",
+      "Aquí lo tienes, es {}.",
+      "Es {}."
+    ],
+    "en": [
+    "{}'s mail is {}.",
+    "{} has this mail: {}.",
+    "There you go, {}.",
+    "It is {}"
+    ]
+  },
+  "ask_teacher_office": {
+    "ca": [
+      "El despatx de {} és {}.",
+      "Aquí el tens, és {}.",
+      "És {}."
+    ],
+    "es": [
+      "El despacho de {} es {}.",
+      "Aquí lo tienes, es {}.",
+      "Es {}."
+    ],
+    "en": [
+      "{}'s office is {}.",
+      "There you go, {}.",
+      "It is {}."
+    ]
+  },
+  "ask_free_spots": {
+    "ca": [
+      "Queden {} de {} places a {}, grup {}.",
+      "Hi ha {}/{} places lliures a {} al grup {}."
+    ],
+    "es": [
+      "Quedan {} de {} plazas en {}, grupo {}.",
+      "Hay {}/{} plazas llibres en {} en el grupo {}."
+    ],
+    "en": [
+      "there are {} out of {} free spots in {}, group {}.",
+      "{}/{} spots left for {} in group {}."
+    ]
+  },
+  "ask_subject_schedule": {
+    "ca": [
+      "{} de {} a {}, tens classe de {} a l'aula {}."
+    ],
+    "es": [
+      "{} de {} a {}, tienes clase de {} en el aula {}."
+    ],
+    "en": [
+      "{} from {} to {}, a {} class at classroom {}."
+    ]
+  }
+}

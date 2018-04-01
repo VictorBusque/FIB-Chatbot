@@ -65,10 +65,11 @@ class Teachers(object):
         departments(:obj:`list`): List of the current departments in the database
         data(:obj:`dict`): Dictionary that maps departments to a dictionary of teachers and info
     """
-    def __init__(self):
+    def __init__(self,  language = 'es'):
         with open('./Data/urls_upc.json', 'r') as fp:
         	self.departments = json.load(fp).keys()
         self.data = {}
+        self.language = language
         for department in self.departments:
             with open('./Data/teachers/{}.json'.format(department), 'r') as fp:
             	self.data[department] = json.load(fp)
@@ -97,7 +98,7 @@ class Teachers(object):
         match['name'] = match_teacher
         match['department'] = match_department
         if debug: print("{} is the distance.".format(lower_dist))
-        return Teacher(match)
+        return Teacher(match, language = self.language)
 
     """
         Parameters:
