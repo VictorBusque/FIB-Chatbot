@@ -2,24 +2,6 @@
 * ask_teacher_mail{"teacher_name": "Javier bejar"}
    - action_show_teacher_mail
 
-## Generated Story -6722568917034356707
-* ask_free_spots
-   - utter_ask_subject_acronym
-* inform{"subject_acronym": "APA"}
-   - action_show_subject_free_spots
-
-## Generated Story -506273328525262325
-* ask_free_spots
-   - utter_ask_subject_acronym
-* inform{"subject_acronym": "CAIM"}
-   - action_show_subject_free_spots
-
-## Generated Story -285687546708757097
-* ask_free_spots
-   - utter_ask_subject_acronym
-* inform{"subject_acronym": "VJ"}
-   - action_show_subject_free_spots
-
 ## Generated Story 4159295003752193517
 * ask_subject_schedule{"subject_acronym": "APA"}
    - action_show_subject_schedule
@@ -49,14 +31,6 @@
     - slot{"teacher_name": "jordi turmo"}
     - action_show_teacher_mail
 
-## Generated Story 1773597325570318402
-* ask_free_spots{"subject_acronym": "there"}
-    - slot{"subject_acronym": "there"}
-    - utter_ask_subject_acronym
-* inform{"subject_acronym": "wse"}
-    - slot{"subject_acronym": "wse"}
-    - action_show_subject_free_spots
-
 ## Generated Story -9139943478910206366
 * ask_free_spots{"subject_acronym": "vc"}
     - slot{"subject_acronym": "vc"}
@@ -76,3 +50,23 @@
 * ask_subject_teacher_mail{"subject_acronym": "ac"}
     - slot{"subject_acronym": "ac"}
     - action_show_subject_teachers_mails
+
+## Generated Story 3
+* ask_subject_teacher_office{"subject_acronym": "pro1"}
+    - slot{"subject_acronym": "prop"}
+    - action_show_subject_teachers_offices
+
+## Generated Story 4
+* ask_subject_teacher_office{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_teachers_offices
+
+## Generated Story 5
+* ask_subject_teacher_office{"subject_acronym": "asw"}
+    - slot{"subject_acronym": "prop"}
+    - action_show_subject_teachers_names
+
+## Generated Story 6
+* ask_subject_teacher_office{"subject_acronym": "sim"}
+    - slot{"subject_acronym": "ac"}
+    - action_show_subject_teachers_names

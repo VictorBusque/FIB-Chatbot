@@ -29,6 +29,7 @@ class Subject_teachers(object):
         self.subject = subject
         self.data = data
         self.language = language
+        self.amount = len(self.data)
         self.responses = {}
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
@@ -48,9 +49,11 @@ class Subject_teachers(object):
 
     def get_offices(self):
         for teacher in self.data:
+            print("Getting office for teacher: {}".format(teacher['nom']))
             chosen_response = randint(0, len(self.responses['ask_subject_teacher_office'][self.language])-1)
             final_response = self.responses['ask_subject_teacher_office'][self.language][chosen_response]
-            office = Teachers(language = self.language).get_closer_teacher(teacher['name']).get_office()
+            office = Teachers(language = self.language).get_closer_teacher(teacher['nom']).office
+            print(office)
             yield final_response.format(
                 teacher['nom'].title(),
                 office

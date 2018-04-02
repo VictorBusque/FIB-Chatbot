@@ -38,7 +38,7 @@ class Chats(object):
 	"""
 	def __init__(self):
 		self.chats = {}
-		self.encryption_key = os.getenv('encryption_key')
+		self.encryption_key = '2222222222222222'#os.getenv('encryption_key')
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -155,7 +155,7 @@ class Chats(object):
 	"""
 	def token_has_expired(self, chat_id):
 		expiration_time = self.chats[str(chat_id)]['expire_time_end']
-		if not expiration_time: return True
+		if not expiration_time: return False
 		now = datetime.now()
 		expiration_time = datetime(
 			expiration_time['year'],

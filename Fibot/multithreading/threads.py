@@ -59,7 +59,7 @@ class Refresh_token_thread(object):
             print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
-            self.chats.update_chat(chat, callback, full_data = False)
+            self.chats.update_chat(chat, data = callback, full_data = False)
             print("Refresh token thread: Refreshed token successfully!\n")
         self.queue = []
         self.run()
@@ -126,7 +126,7 @@ class Notification_thread(object):
                 for avis in avisos:
                     message = Notification(avis).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
-                self.last_check = datetime.datetime.now()
+            self.last_check = datetime.datetime.now()
         self.run()
 
     """

@@ -19,7 +19,8 @@ class Item_generator(object):
 			num_items(:obj:`int`): limit of items that the generator can generate
 			items(:obj:`list`): list of the items that can be generated
 	"""
-	def __init__(self, data, num_items = 9999):
+	def __init__(self, data, num_items = 9999, name = False):
+		self.name = name
 		if isinstance(data, list):
 			d_size = len(data)
 			self.num_items = min(num_items, d_size)
@@ -33,6 +34,10 @@ class Item_generator(object):
 	"""
 	def get_random(self):
 		i_idx = random.randint(0, self.num_items-1)
+		shorten = random.randint(0,100) <= 50;
+		if shorten and self.name:
+			length = random.randint(1, 2)
+			return ' '.join(self.items[i_idx].split(' ')[0:length])
 		return self.items[i_idx]
 
 
@@ -109,7 +114,9 @@ def main(amount = 250, language = 'es'):
 			"aula de {}", "en que aula tengo {}"]
 	intros_subject_teacher_mail = ["correo del profesor de {}", "cual es el correo del profe de {}", "mail del profe de {}", "cual es el mail del profe de {}"]
 	intros_subject_teacher_office = ["despacho del profesor de {}", "cual es el despacho del profe de {}", "donde esta el despacho del profesor de {}"]
-	intros_subject_teacher_name = ["nombre del profesor de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}"]
+	intros_subject_teacher_name = ["nombre del profesor de {}", "nombre de la profesora de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}", "quien es el profesor de {}",
+	"quienes son los profesores de {}", "quien es el profesor de {}?", "quien es la profesora de {}"]
+
 	if language == 'en':
 		intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}", "what's the mail of {}"]
 		intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}", "what's the office of {}"]
@@ -123,7 +130,7 @@ def main(amount = 250, language = 'es'):
 				"classroom of {}", "class of {}"]
 		intros_subject_teacher_mail = ["{}'s teacher's mail ", "what's the mail of {}'s teacher", "{}'s teacher mail", "what is the mail of {} teacher"]
 		intros_subject_teacher_office = ["office of {}'s teacher'", "{}'s teacher office", "{} teacher office", "whats {} teacher office"]
-		intros_subject_teacher_name = ["nombre del profesor de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}"]
+		intros_subject_teacher_name = ["name of the teacher of {}", "{}'s teacher's name", "Who is the teacher of {}", "{}'s teacher"]
 
 	elif language == 'ca':
 		intros_teacher_mail = ["correu de {}", "correu del {}", "correu de la {}",
@@ -163,14 +170,14 @@ def main(amount = 250, language = 'es'):
 		intros_subject_teacher_name = ["nom del profesor de {}", "nom de la professora de {}",
 		 "com es diu el profe de {}?",  "com es diu la  profe de {}?", "com es diu el professor de {}?", "com es diu la professora de {}?",
 		 "professor de {}", "professora de {}",
-		 "profe de {}"]
+		 "profe de {}", "qui és el professor de {}", "qui és la professora de {}?", "qui és profe de {}"]
 
 
 	regex_features = []
 	entity_synonyms = []
 	common_examples = []
 
-	teacher_gen = Item_generator(data = "./Data/Professors.txt")
+	teacher_gen = Item_generator(data = "./Data/Professors.txt", name = True)
 	subject_gen = Item_generator(data = "./Data/Subjects.txt")
 
 	intro_mail_gen = Item_generator(data = intros_teacher_mail)

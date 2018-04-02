@@ -70,7 +70,7 @@ class Query_answer_unit(object):
 
 		This function trains the agent and saves the model in the dialog's model path
 	"""
-	def train(self, augmentation_factor=150, max_history=5, epochs=500, batch_size=50, validation_split=0.3):
+	def train(self, augmentation_factor=250, max_history=3, epochs=500, batch_size=50, validation_split=0.3):
 		self.agent_ca.train(self.training_data_file,
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,

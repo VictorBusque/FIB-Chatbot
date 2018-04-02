@@ -115,10 +115,11 @@ class Fibot(object):
 	"""
 	def send_preset_message(self, chat_id, preset, param = None):
 		print("sending {}".format(preset))
+		user_lang = self.chats.get_chat(chat_id)['language']
 		if param:
-			message = self.messages[preset].format(param)
+			message = self.messages[user_lang][preset].format(param)
 		else:
-			message = self.messages[preset]
+			message = self.messages[user_lang][preset]
 		self.send_message(chat_id, message, typing=True)
 
 	"""
