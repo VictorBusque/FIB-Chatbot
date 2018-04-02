@@ -160,11 +160,7 @@ def ask(bot, update):
 	text = update.message.text
 	message_id = update.message.message_id
 	if Fibot.chats.get_chat(chat_id)['logged'] & Fibot.chats.token_has_expired(chat_id):
-		print("This token has expired!!")
-		r_t = Fibot.chats.get_chat(chat_id)['refresh_token']
-		print("This is the rt {}".format(r_t))
-		callback = Fibot.oauth.refresh_token(r_t)
-		Fibot.chats.update_chat(chat_id, callback, full_data = False)
+		Fibot.chats.load()
 	Fibot.process_income_message(chat_id, text)
 	return MESSAGE_INCOME
 

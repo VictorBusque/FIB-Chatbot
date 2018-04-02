@@ -153,6 +153,7 @@ class action_show_subject_teachers_mails(Action):
         teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
         print("This is the result from the teachers class: {}".format(teachers_info))
         print("This is how the list looks like:\n {}".format(list(teachers_info.get_mails())))
+        print("The teachers are:\n{}".format(list(teachers_info.get_names())))
         for response in teachers_info.get_mails():
             dispatcher.utter_message("{}".format(response))
-        return []
+        #return [SlotSet("matches", teachers_info.get_names())]

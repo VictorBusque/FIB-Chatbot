@@ -21,7 +21,7 @@ slots:
   subject_acronym:
     type: text
   matches:
-    type: unfeaturized
+    type: list
 
 
 templates:
