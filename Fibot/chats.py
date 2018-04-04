@@ -97,9 +97,10 @@ class Chats(object):
 				self.chats[str(chat_id)] = data
 				self.dump_data()
 			else:
-				for field in data.keys():
-					self.chats[str(chat_id)][field] = data[field]
-				self.dump_data()
+				if data:
+					for field in data.keys():
+						self.chats[str(chat_id)][field] = data[field]
+					self.dump_data()
 
 	"""
 		Parameters:

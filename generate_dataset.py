@@ -108,7 +108,8 @@ def main(amount = 250, language = 'es'):
 			'cuantos huecos hay en {}', 'plazas de {}', 'plazas en {}', "cuantas plazas libres hay en {}?",
 			"plazas en {}", "cuantas plazas hay en {}"]
 	intros_subject_schedule = ['horario de {}', "cual es el horario de {}?",
-			"cuando tengo {}?", 'cuando tengo {}', "cuando hago {}?", "cuando hago {}"]
+			"cuando tengo {}?", 'cuando tengo {}', "cuando hago {}?", "cuando hago {}",
+			"a qué hora tengo {}?", "a que hora tengo {}"]
 	intros_subject_clasroom = ['en que clase hago {}?', "en que clase tengo {}",
 			'donde hago {}', "clase de {}", 'cual es la clase de {}?',
 			"aula de {}", "en que aula tengo {}"]
@@ -126,7 +127,7 @@ def main(amount = 250, language = 'es'):
 		intros_subject_schedule = ['schedule of {}', "what's {}'s schedule?",
 				"what's {}'s schedule", 'when do i have {}', "when do i do {}"]
 		intros_subject_clasroom = ['in which class do i have {}?', "where do i do {}",
-				'in which class do i have {}', "{}'s classroom", 'where do i have {}',
+				'in which class do i have {}',"{}'s classroom", "where do i have {}",
 				"classroom of {}", "class of {}"]
 		intros_subject_teacher_mail = ["{}'s teacher's mail ", "what's the mail of {}'s teacher", "{}'s teacher mail", "what is the mail of {} teacher"]
 		intros_subject_teacher_office = ["office of {}'s teacher'", "{}'s teacher office", "{} teacher office", "whats {} teacher office"]
@@ -149,7 +150,8 @@ def main(amount = 250, language = 'es'):
 				'quants espais hi ha a {}', 'places de {}', 'places a {}', "quantes places lliures hi ha a {}?",
 				"plazas en {}", "cuantas plazas hay en {}"]
 		intros_subject_schedule = ['horari de {}', "quin és l'horari de {}?",
-				"quant tinc {}?", 'quan hi ha {}', "quan faig {}?", "quan tindré {}"]
+				"quant tinc {}?", 'quan hi ha {}', "quan faig {}?", "quan tindré {}",
+				"A quina hora tinc {}", "a quina hora faig {}?"]
 		intros_subject_clasroom = ['a quina classe faig{}?', "a quina classe faig {}",
 				'on tinc {}', "aula de {}", 'quina és la classe de {}?',
 				"aula de {}", "a quina aula tinc {}?"]

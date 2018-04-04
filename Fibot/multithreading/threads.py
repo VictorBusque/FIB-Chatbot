@@ -59,6 +59,7 @@ class Refresh_token_thread(object):
             print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
+            print("This is the callback from refreshment {}".format(callback))
             self.chats.update_chat(chat, data = callback, full_data = False)
             print("Refresh token thread: Refreshed token successfully!\n")
         self.queue = []
@@ -99,6 +100,7 @@ class Notification_thread(object):
         self.delay = delay
         self.thread = None
         self.polling = True
+        #self.last_check = datetime.datetime(int(2018), int(4), int(3), int(17), int(50), int(00))
         self.last_check = datetime.datetime.now()
 
     """
@@ -123,10 +125,11 @@ class Notification_thread(object):
                 access_token = student['access_token']
                 avisos = self.api.get_avisos(access_token)
                 avisos = self.filter(avisos)
+                if len(list(avisos)) == 0: print("This user has no new publications!\n")
                 for avis in avisos:
                     message = Notification(avis).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
-            self.last_check = datetime.datetime.now()
+        self.last_check = datetime.datetime.now()
         self.run()
 
     """
@@ -139,7 +142,9 @@ class Notification_thread(object):
         if not avisos: return
         for avis in avisos:
             if not self.last_check: yield avis
-            elif self.get_date(avis) > self.last_check: yield avis
+            elif self.get_date(avis) > self.last_check:
+                print("There's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
+                yield avis
 
     """
         Parameters:
@@ -152,9 +157,11 @@ class Notification_thread(object):
     """
     def get_date(self, avis):
         avis_date = avis['data_modificacio']
+        #print("Date before: {}".format(avis_date))
         avis_date_day, avis_date_hour = avis_date.split('T')
         year, month, day = avis_date_day.split('-')
         hour, minute, second = avis_date_hour.split(':')
+        #print("Date after: {}".format(datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))))
         return datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
 
     """
