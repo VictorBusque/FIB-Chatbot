@@ -2,33 +2,33 @@
   "312420157": {
     "name": "Joel",
     "language": "en",
-    "access_token": "9Z0nXxBRt44ZGOXym0MdgnC+lUee4K8OTBGCxI7Jj8Q=",
-    "refresh_token": "CySr/PBkGFmbpo0EA+1gIvKLvp6rfSAuQ6Z3J3eNzRA=",
+    "access_token": "MnR0dfo/iMVVWksP5jV9IZm5FXytcRQOD9myEYAB8m8=",
+    "refresh_token": "Pwkt8mJA6l8A+UPUtQodR2REeZK3KSYRMUxqeyl5dAY=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 4,
+      "day": 7,
       "month": 4,
       "year": 2018,
-      "hour": 23,
-      "minute": 18,
-      "second": 23
+      "hour": 10,
+      "minute": 7,
+      "second": 56
     },
     "logged": true,
-    "notifications": false
+    "notifications": true
   },
   "349611162": {
     "name": "Carla",
     "language": "es",
-    "access_token": "/0FRMGN3Be+f4K5TR4mUyVczdnTi3MnbZWN/i/kVtDo=",
-    "refresh_token": "34YBAT/k9dMrQzpz6efUP+7KSwQo57x6hgEIdfJ/djg=",
+    "access_token": "8OeE9s6KYMRJNSM2Cq+LTVYdz81y5PQAgSjg2MOcSA4=",
+    "refresh_token": "+gNLXbOBkWNPshXVtZGAu2txRK8qHxt1u7Ku51Oc3TE=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 4,
+      "day": 7,
       "month": 4,
       "year": 2018,
-      "hour": 23,
-      "minute": 18,
-      "second": 23
+      "hour": 10,
+      "minute": 7,
+      "second": 56
     },
     "logged": true,
     "notifications": true
@@ -36,16 +36,33 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "ca",
-    "access_token": "9BhVay1ME4tWh2BTCMAicYDwT9JQHoUyLbCVAyBLjkE=",
-    "refresh_token": "wQ6SWCEiHj8zIPIV5pR12QDirZdaBKRnPHd4kkW8r6Y=",
+    "access_token": "64IHoQrbA6cffiFC4C/itlDAMO07jnabI7eiBQsdUy4=",
+    "refresh_token": "aQfFNWXe290MiBtlR7avXjxEiQ2SwPMeJy9lOFWGWZs=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 4,
+      "day": 7,
       "month": 4,
       "year": 2018,
-      "hour": 23,
-      "minute": 18,
-      "second": 23
+      "hour": 10,
+      "minute": 7,
+      "second": 57
+    },
+    "logged": true,
+    "notifications": true
+  },
+  "461088493": {
+    "name": "Albert",
+    "language": "ca",
+    "access_token": "a5rwl2lc4lU1yemcj8Yur950srzS15h0fG9LX1bndeI=",
+    "refresh_token": "zT99q1bX8Bnn6HRSDZFDO1b/XywkczlwR6H9zsL6BiY=",
+    "current_state": "0",
+    "expire_time_end": {
+      "day": 7,
+      "month": 4,
+      "year": 2018,
+      "hour": 2,
+      "minute": 8,
+      "second": 22
     },
     "logged": true,
     "notifications": true

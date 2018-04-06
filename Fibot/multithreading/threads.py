@@ -5,6 +5,7 @@
 #-- General imports --#
 from threading import Timer
 import datetime
+from pprint import pprint
 
 #-- Local imports --#
 from Fibot.Data.data_types.notification import Notification
@@ -44,9 +45,9 @@ class Refresh_token_thread(object):
     """
         This function defines the new timer and starts it (effectively allows the scanning)
     """
-    def run(self):
+    def run(self, initial_offset = 0):
         if self.polling:
-            self.thread = Timer(self.delay, self.poll)
+            self.thread = Timer(self.delay - initial_offset, self.poll)
             self.thread.start()
 
     """
@@ -100,14 +101,16 @@ class Notification_thread(object):
         self.delay = delay
         self.thread = None
         self.polling = True
-        #self.last_check = datetime.datetime(int(2018), int(4), int(3), int(17), int(50), int(00))
-        self.last_check = datetime.datetime.now()
+        now = datetime.datetime.now()
+        self.last_check = now
+        #self.last_check = datetime.datetime(now.year, now.month, now.day, 0, 0, 1)
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
     """
     def run(self):
         if self.polling:
+            self.chats.load()
             self.thread = Timer(self.delay, self.poll)
             self.thread.start()
 
@@ -119,17 +122,19 @@ class Notification_thread(object):
         print("Notification scanner thread: Scanning for notifications\n")
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
-            print("Notification scanner thread: Checking chat_id {}\n".format(student_id))
             if student['notifications']:
                 print("Notification scanner thread: Scanning {}.\n".format(student['name']))
                 access_token = student['access_token']
                 avisos = self.api.get_avisos(access_token)
-                avisos = self.filter(avisos)
-                if len(list(avisos)) == 0: print("This user has no new publications!\n")
-                for avis in avisos:
+                print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
+                filtered = list(self.filter(avisos))
+                print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
+                if filtered: pprint(filtered)
+                for avis in filtered:
                     message = Notification(avis).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
-        self.last_check = datetime.datetime.now()
+                    print("Notification was sent!")
+        self.last_check = self.last_check + datetime.timedelta(hours = 3)
         self.run()
 
     """
@@ -139,11 +144,11 @@ class Notification_thread(object):
         This function filters the publications so that they were not sent previously.
     """
     def filter(self, avisos):
-        if not avisos: return
+        if not avisos: return []
         for avis in avisos:
             if not self.last_check: yield avis
             elif self.get_date(avis) > self.last_check:
-                print("There's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
+                print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
                 yield avis
 
     """

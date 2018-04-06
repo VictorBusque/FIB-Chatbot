@@ -45,7 +45,7 @@ class Fibot(object):
 		self.oauth = Oauth()
 		self.qa = Query_answer_unit()
 		self.message_handler = None
-		self.delay = 60
+		self.delay = 20
 		self.notification_thread = None
 		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}
@@ -72,7 +72,7 @@ class Fibot(object):
 		print("Message handler loaded")
 		self.notification_thread = Notification_thread(self.message_handler, self.delay)
 		self.notification_thread.run()
-		self.refresh_token_thread.run()
+		self.refresh_token_thread.run(initial_offset = 10)
 		self.qa.load(train=False)
 		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:

@@ -196,7 +196,7 @@ def main():
 	conv_handler = ConversationHandler(
 		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
-					CommandHandler('updates_off', updates_off)],
+					CommandHandler('updates_off', updates_off), MessageHandler(filters = Filters.text, callback = state_machine)],
 		states = {
 			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
 		},
