@@ -3,7 +3,7 @@
     "start_known": "Hola {}!",
     "start_unknown_1": "Hola {}, benvingut a Fibot!",
     "start_unknown_2": "S\u00f3c un assistent per als estudiants de la FIB, i et puc ajudar de moltes formes! Fes servir /help per saber qu\u00e8 puc fer per tu!",
-    "start_unknown_3": "Si vols, pots identificar-te amb el teu usuar\u00ed del Rac\u00f3 per a poder ajudar-te encara m\u00e9s, fes-ho amb la comanda /login!",
+    "start_unknown_3": "Si vols, pots identificar-te amb el teu usuari del Rac\u00f3 per a poder ajudar-te encara m\u00e9s, fes-ho amb la comanda /login!",
     "send_oauth_url": "Perfecte! Entra a aquesta p\u00e0gina per a identificar-te amb el teu usuari del Rac\u00f3: {}",
     "inform_oauth_procedure": "Un cop ho hagis fet, si us plau, envia'm per missatge la URL a la qual et porti quan et registris!",
     "already_login": "Ja has fet login amb el teu usuari del Rac\u00f3, {}.",

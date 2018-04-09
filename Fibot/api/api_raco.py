@@ -79,6 +79,52 @@ class API_raco(object):
 			for items in response_json:
 				if items[field_name] == field_value: return items['nom']
 			return None
+	"""
+		Parameters
+			assig(:obj:`str`): Acronym for the subject
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			(:obj:`list`): List with the exams of subject assig
+	"""
+	def get_examens(self, assig, language = 'English'):
+		assig = assig.upper()
+		actual_semester_url = 'https://api.fib.upc.edu/v2/quadrimestres/actual/'
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		response = requests.get(actual_semester_url, headers = headers)
+		if response.status_code == 200:
+			response_json = response.json()
+			examens_url = response_json['examens']
+			response = requests.get(examens_url, headers = headers)
+			if response.status_code == 200:
+				result = []
+				response_json = response.json().get('results')
+				for item in response_json:
+					if item['assig'] == assig: result.append(item)
+				return result
+		return []
+
+	def get_practiques(self, access_token, assig = None, language = 'English'):
+		if assig: assig = assig.upper()
+		practiques_url = 'https://api.fib.upc.edu/v2/jo/practiques/'
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": self.language[language]
+		}
+		response = requests.get(practiques_url, headers = headers)
+		if response.status_code == 200:
+			response_json = response.json().get('results')
+			if not assig: return response_json
+			else:
+				result = []
+				for item in response_json:
+					if item['codi_asg'] == assig:
+						result.appen(item)
+				return result
+		return []
 
 	"""
 		Parameters:

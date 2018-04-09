@@ -45,7 +45,7 @@ class Fibot(object):
 		self.oauth = Oauth()
 		self.qa = Query_answer_unit()
 		self.message_handler = None
-		self.delay = 20
+		self.delay = 60
 		self.notification_thread = None
 		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}

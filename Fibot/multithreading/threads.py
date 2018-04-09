@@ -60,9 +60,10 @@ class Refresh_token_thread(object):
             print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
+            if not callback: print ("Something is wrong with this refreshment")
             print("This is the callback from refreshment {}".format(callback))
-            self.chats.update_chat(chat, data = callback, full_data = False)
-            print("Refresh token thread: Refreshed token successfully!\n")
+            if callback: self.chats.update_chat(chat, data = callback, full_data = False)
+            if callback: print("Refresh token thread: Refreshed token successfully!\n")
         self.queue = []
         self.run()
 
@@ -102,15 +103,14 @@ class Notification_thread(object):
         self.thread = None
         self.polling = True
         now = datetime.datetime.now()
-        self.last_check = now
-        #self.last_check = datetime.datetime(now.year, now.month, now.day, 0, 0, 1)
+        #self.last_check = now
+        self.last_check = datetime.datetime(2018, 4, 9, 12, 55, 28)
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
     """
     def run(self):
         if self.polling:
-            self.chats.load()
             self.thread = Timer(self.delay, self.poll)
             self.thread.start()
 
@@ -118,7 +118,8 @@ class Notification_thread(object):
         Does a scan over all users, and then returns to the activation function
     """
     def poll(self):
-        print("Notification scanner thread: Last check was done: {}\n".format(self.last_check))
+        self.chats.load()
+        print("Notification scanner thread: Last check was done: {}\n".format(datetime.datetime.now()))
         print("Notification scanner thread: Scanning for notifications\n")
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
@@ -127,14 +128,15 @@ class Notification_thread(object):
                 access_token = student['access_token']
                 avisos = self.api.get_avisos(access_token)
                 print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
-                filtered = list(self.filter(avisos))
+                filtered = self.filter(avisos)
                 print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
                 if filtered: pprint(filtered)
                 for avis in filtered:
                     message = Notification(avis).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
                     print("Notification was sent!")
-        self.last_check = self.last_check + datetime.timedelta(hours = 3)
+                    self.last_check = max(self.last_check, self.get_date(avis))
+        print("Last notification was received {}!".format(self.last_check))
         self.run()
 
     """
@@ -144,12 +146,19 @@ class Notification_thread(object):
         This function filters the publications so that they were not sent previously.
     """
     def filter(self, avisos):
+        not_new = 0
+        result = []
         if not avisos: return []
         for avis in avisos:
-            if not self.last_check: yield avis
+            if not self.last_check: result.append(avis)
             elif self.get_date(avis) > self.last_check:
                 print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
-                yield avis
+                result.append(avis)
+            else:
+                #print("\nThere's a NOT new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
+                not_new+=1
+        print("Not new avisos: {}".format(not_new))
+        return result
 
     """
         Parameters:
@@ -162,11 +171,9 @@ class Notification_thread(object):
     """
     def get_date(self, avis):
         avis_date = avis['data_modificacio']
-        #print("Date before: {}".format(avis_date))
         avis_date_day, avis_date_hour = avis_date.split('T')
         year, month, day = avis_date_day.split('-')
         hour, minute, second = avis_date_hour.split(':')
-        #print("Date after: {}".format(datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))))
         return datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
 
     """
