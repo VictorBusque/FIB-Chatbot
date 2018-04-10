@@ -104,7 +104,7 @@ class Notification_thread(object):
         self.polling = True
         now = datetime.datetime.now()
         #self.last_check = now
-        self.last_check = datetime.datetime(2018, 4, 9, 12, 55, 28)
+        self.last_check = datetime.datetime(2018, 4, 10, 12, 55, 28)
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
@@ -121,6 +121,7 @@ class Notification_thread(object):
         self.chats.load()
         print("Notification scanner thread: Last check was done: {}\n".format(datetime.datetime.now()))
         print("Notification scanner thread: Scanning for notifications\n")
+        last_avis = self.last_check
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
             if student['notifications']:
@@ -135,7 +136,8 @@ class Notification_thread(object):
                     message = Notification(avis).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
                     print("Notification was sent!")
-                    self.last_check = max(self.last_check, self.get_date(avis))
+                    last_avis = max(self.last_check, self.get_date(avis))
+        self.last_check = last_avis
         print("Last notification was received {}!".format(self.last_check))
         self.run()
 
