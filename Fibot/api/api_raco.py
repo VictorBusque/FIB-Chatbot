@@ -144,37 +144,9 @@ class API_raco(object):
 				]
 	"""
 	def get_subject_teachers(self, acronym = None, name = None, language = 'en'):
-		url = self.base_url+"{}".format("assignatures/")
-		url_2 = self.base_url+"{}".format("assignatures/?page=2")
-		headers = {"client_id": self.client_id,
-				"Accept": "application/json",
-				"Accept-Language": language
-		}
-		if acronym: query = {'field': 'id', 'value': acronym}
-		elif name: query = {'field': 'nom', 'value': name}
-		response = requests.get(url, headers = headers)
-		if response.status_code == 200:
-			result = []
-			url_guia = None
-			field_name = query['field']
-			field_value = query['value']
-			response_json = response.json().get('results')
-			for items in response_json:
-				if items[field_name] == field_value:
-					url_guia = items['guia']
-					return self.get_teachers(url_guia, language)
-		response = requests.get(url_2, headers = headers)
-		if response.status_code == 200:
-			result = []
-			url_guia = None
-			field_name = query['field']
-			field_value = query['value']
-			response_json = response.json().get('results')
-			for items in response_json:
-				if items[field_name] == field_value:
-					url_guia = items['guia']
-					return self.get_teachers(url_guia, language)
-			return False
+		acronym = acronym.upper() #Should do a matching maybe, but not all subjects exist
+		url = "https://api.fib.upc.edu/v2/assignatures/{}/guia/"
+		return self.get_teachers(url.format(acronym), language)
 
 	def get_teachers(self, url_guia, language):
 		headers = {"client_id": self.client_id,

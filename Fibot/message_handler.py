@@ -47,7 +47,7 @@ class Message_handler(object):
     	This function sends a message to the chat with chat_id with content text,
     	and depending on the rest of the parameters i might do extra functionality.
     """
-    def send_message(self, chat_id, message, typing = False, reply_to = None):
+    def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
     	ini = time()
     	if isinstance(message, list):
     		for item in message:
@@ -58,7 +58,8 @@ class Message_handler(object):
     		user_language = self.chats.get_chat(chat_id)['language']
     		params = {
     			'chat_id': chat_id,
-    			'text': message
+    			'text': message,
+                'parse_mode': parse_mode
     		}
     		if reply_to: params['reply_to_message_id'] = reply_to
     		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)

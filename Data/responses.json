@@ -99,5 +99,41 @@
     "en": [
       "{}"
     ]
+  },
+  "notification": {
+    "ca": {
+      "intro": [
+        "S'ha penjat un avís de {} al Racó.",
+        "Tens un nou avís de {} al Racó.",
+        "Nou avís de {} amb títol '{}' al Racó."
+      ],
+      "attachment": [
+        "Un fitxer adjunt és ['{}']({}).",
+        "També té ['{}']({}) com fitxer adjunt."
+      ]
+    },
+    "es": {
+      "intro": [
+        "Se ha colgado un aviso de {} en el Racó.",
+        "Tienes un nuevo aviso de {} en el Racó.",
+        "Nuevo aviso de {} con título '{}' en el Racó."
+      ],
+      "attachment": [
+        "Un fichero adjunto es ['{}']({}).",
+        "También tiene ['{}']({}) como fichero adjunto."
+      ]
+    },
+    "en": {
+      "intro": [
+        "New post from {} at Racó.",
+        "You have a new post from {} at Racó.",
+        "New post with title '{}' from {} at Racó."
+      ],
+      "attachment": [
+        "An attached file is ['{}']({}).",
+        "It also has ['{}']({}) as a attached file."
+      ]
+    }
+
   }
 }

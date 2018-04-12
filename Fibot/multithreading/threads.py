@@ -104,7 +104,7 @@ class Notification_thread(object):
         self.polling = True
         now = datetime.datetime.now()
         #self.last_check = now
-        self.last_check = datetime.datetime(2018, 4, 10, 12, 55, 28)
+        self.last_check = datetime.datetime(2018, 4, 16, 1, 00, 28)
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
@@ -127,13 +127,14 @@ class Notification_thread(object):
             if student['notifications']:
                 print("Notification scanner thread: Scanning {}.\n".format(student['name']))
                 access_token = student['access_token']
+                user_lang = student['language']
                 avisos = self.api.get_avisos(access_token)
                 print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
                 filtered = self.filter(avisos)
                 print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
                 if filtered: pprint(filtered)
                 for avis in filtered:
-                    message = Notification(avis).get_notif()
+                    message = Notification(avis, user_lang).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
                     print("Notification was sent!")
                     last_avis = max(self.last_check, self.get_date(avis))

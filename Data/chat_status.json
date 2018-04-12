@@ -2,16 +2,16 @@
   "461088493": {
     "name": "Albert",
     "language": "ca",
-    "access_token": "YbWAPIH83dvMhhj/egszLsCs+QVCjWBKajSpK6qTR98=",
-    "refresh_token": "3Kv5N0otAOKqMl7H35LClYCXLUi6yG6O7jokSbCes34=",
+    "access_token": "dIz/HpGJESJo/Q6b496aV21F9P1Fhy1avzyKQ2XO1pI=",
+    "refresh_token": "zfzGIRpEXvEG4rnScZNWUC2e9RQ6jJ9EfrtWUAwvzjA=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 11,
+      "day": 13,
       "month": 4,
       "year": 2018,
-      "hour": 7,
-      "minute": 10,
-      "second": 47
+      "hour": 2,
+      "minute": 56,
+      "second": 19
     },
     "logged": true,
     "notifications": true
@@ -19,16 +19,16 @@
   "349611162": {
     "name": "Carla",
     "language": "ca",
-    "access_token": "eVQzU4MzDTi/PB6Wr2RQILoFEQyf4oL5vY1YrgP1JOE=",
-    "refresh_token": "cUzTo8HB+T1XMKnupDpwpVVUFLXNR9f4YH58TvuI7oY=",
+    "access_token": "kkcXHDgLg/Gmm82q4xON0JePSrmEBSVGoS1qudnqeQI=",
+    "refresh_token": "s++3OcK0G0z4HbDJgRujP5uveALUW2EPPLKbVLWxZi0=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 11,
+      "day": 13,
       "month": 4,
       "year": 2018,
-      "hour": 7,
-      "minute": 10,
-      "second": 47
+      "hour": 2,
+      "minute": 56,
+      "second": 20
     },
     "logged": true,
     "notifications": true
@@ -36,16 +36,16 @@
   "312420157": {
     "name": "Joel",
     "language": "ca",
-    "access_token": "yDKfLRkXAJIgHCv6Z+xsXAciufIy1qS7/65YOzcEDIk=",
-    "refresh_token": "aH4u4PBPVxQzs6wKcKNs9fAXCEKQJtheotEFIYIkeDk=",
+    "access_token": "qZ+BuphWn6LK/Wkr3e237/Ee3qxBaNG5+NVU3BqGIRo=",
+    "refresh_token": "wSA7aGyBMbiWBWau6XDImZW/c3XU8qW1fEVAl6NEzXw=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 11,
+      "day": 13,
       "month": 4,
       "year": 2018,
-      "hour": 7,
-      "minute": 10,
-      "second": 47
+      "hour": 2,
+      "minute": 56,
+      "second": 20
     },
     "logged": true,
     "notifications": true
@@ -53,16 +53,16 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "ca",
-    "access_token": "CsJzKXCPwi+gm/jNm1576rzJJ6xP3YoGxMzhg6WJoV4=",
-    "refresh_token": "NcAIQE66MATY4KKV2ve0gEkgJksd+UyubXVTtYzFxd0=",
+    "access_token": "VHUizsEWu9MFKPkIOr56nUXnZRCaMr0ziT2yGVtkf1w=",
+    "refresh_token": "X1NvyFgK29j0ZcXGjQjuLliWc9NDWnUB1MTXW1M32mQ=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 11,
+      "day": 13,
       "month": 4,
       "year": 2018,
-      "hour": 4,
-      "minute": 16,
-      "second": 28
+      "hour": 6,
+      "minute": 3,
+      "second": 49
     },
     "logged": true,
     "notifications": true

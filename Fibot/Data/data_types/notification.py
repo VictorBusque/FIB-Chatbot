@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#-- General imports --#
+from random import randint
+import json
+
 
 class Notification(object):
 
@@ -26,26 +30,38 @@ class Notification(object):
                 ]
             }
     """
-    def __init__(self, data):
+    def __init__(self, data, language):
         self.titol = data['titol']
         self.subject = data['codi_assig']
         self.is_from_subject = self.subject[0] != "#"
         self.text = data['text']
         self.attachments = []
+        self.language = language
         if 'adjunts' in data.keys():
             for att_file in data['adjunts']:
                 self.attachments.append({
                         'name': att_file['nom'],
                         'url': att_file['url']
                 })
+        with open('./Data/responses.json', 'rb') as fp:
+            data = json.load(fp)
+            self.responses = data['notification']
+
 
     """
         Returns an array of messages to be sent for this particular notification.
     """
     def get_notif(self):
-        val = ["New publication of {} with title:\n {}.".format(self.subject, self.titol)]
+        chosen_response = randint(0, len(self.responses[self.language]['intro'])-1)
+        final_response = self.responses[self.language]['intro'][chosen_response]
+        type = len(final_response.split('{}'))==2
+        if type:
+            val = [final_response.format(self.subject)]
+        else:
+            val = [final_response.format(self.subject, self.titol)]
         if self.attachments:
-            val.append("It has {} attachments.".format(len(self.attachments)))
-            for att_file in self.attachments:
-                val.append("Attachment with title {} can be found here: {}.".format(att_file['name'], att_file['url']))
+            for attachment in self.attachments:
+                chosen_response = randint(0, len(self.responses[self.language]['attachment'])-1)
+                final_response = self.responses[self.language]['attachment'][chosen_response]
+                val.append(final_response.format(attachment['name'], attachment['url']))
         return val
