@@ -104,7 +104,7 @@ class Notification_thread(object):
         self.polling = True
         now = datetime.datetime.now()
         #self.last_check = now
-        self.last_check = datetime.datetime(2018, 4, 16, 1, 00, 28)
+        self.last_check = datetime.datetime(2018, 4, 13, 15, 00, 28)
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)

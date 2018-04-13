@@ -100,8 +100,9 @@ class Fibot(object):
 		This function sends a message to the chat with chat_id with content text,
 		and depending on the rest of the parameters i might do extra functionality.
 	"""
-	def send_message(self, chat_id, message, typing = False, reply_to = None):
-		self.message_handler.send_message(chat_id, message, typing, reply_to)
+	def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
+		print("Sending this: {}".format(message))
+		self.message_handler.send_message(chat_id, message, typing, reply_to, parse_mode)
 
 
 	"""
@@ -120,7 +121,8 @@ class Fibot(object):
 			message = self.messages[user_lang][preset].format(param)
 		else:
 			message = self.messages[user_lang][preset]
-		self.send_message(chat_id, message, typing=True)
+		if 'set_lang' in message: self.send_message(chat_id, message, typing=True, parse_mode = None)
+		else: self.send_message(chat_id, message, typing=True)
 
 	"""
 		Parameters:

@@ -53,15 +53,16 @@ class Message_handler(object):
     		for item in message:
     			self.send_message(chat_id, item, typing, reply_to)
     	else:
-    		if typing: self.send_chat_action(chat_id)
-    		print("chat action sent in {}".format( (time()-ini) ))
-    		user_language = self.chats.get_chat(chat_id)['language']
-    		params = {
-    			'chat_id': chat_id,
-    			'text': message,
-                'parse_mode': parse_mode
-    		}
-    		if reply_to: params['reply_to_message_id'] = reply_to
-    		base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
-    		response = requests.get(base_url, params = params)
-    		print("message sent in {}".format( (time()-ini) ))
+            if typing: self.send_chat_action(chat_id)
+            print("chat action sent in {}".format( (time()-ini) ))
+            user_language = self.chats.get_chat(chat_id)['language']
+            params = {
+            	'chat_id': chat_id,
+            	'text': message
+            }
+            if parse_mode: params['parse_mode'] = parse_mode
+            if reply_to: params['reply_to_message_id'] = reply_to
+            print("This are the params of the message: {}".format(params))
+            base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
+            response = requests.get(base_url, params = params)
+            print("message sent in {}".format( (time()-ini) ))

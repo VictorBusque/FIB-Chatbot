@@ -150,6 +150,23 @@ def updates_off(bot, update):
 	elif Fibot.chats.get_chat(chat_id)['notifications']:
 		Fibot.send_preset_message(chat_id, "notif_inactive_failed")
 
+def set_lang(bot, update):
+	global Fibot
+	languages = ['ca','es','en']
+	chat_id = update.message.chat_id
+	text = update.message.text
+	if len(text.split(' ')) > 1:
+		lang = text.split(' ')[1]
+		if lang in languages:
+			Fibot.chats.update_info(chat_id, 'language', lang, overwrite = True)
+			Fibot.send_preset_message(chat_id, "language_change_ok")
+		else:
+			Fibot.send_preset_message(chat_id, "select_language")
+	else:
+		Fibot.send_preset_message(chat_id, "wrong_lang_format")
+
+
+
 
 """
 	Function that reads a regular message and decides which mechanism has to answer
@@ -196,7 +213,8 @@ def main():
 	conv_handler = ConversationHandler(
 		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
-					CommandHandler('updates_off', updates_off), MessageHandler(filters = Filters.text, callback = state_machine)],
+					CommandHandler('updates_off', updates_off), CommandHandler('set_lang', set_lang),
+					MessageHandler(filters = Filters.text, callback = state_machine)],
 		states = {
 			MESSAGE_INCOME: [MessageHandler(filters = Filters.text, callback = state_machine)],
 		},

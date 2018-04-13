@@ -26,7 +26,10 @@
     "processing_message": "Processant...",
     "request_good_answer": "Qu\u00e8 hauria estat coherent aleshores?",
     "ask_check_answer": "La meva \u00faltima resposta et sembla coherent?",
-    "corrected_message": "Ho he corregit! Moltes gr\u00e0cies!"
+    "corrected_message": "Ho he corregit! Moltes gr\u00e0cies!",
+    "language_change_ok": "Idioma canviat correctament!",
+    "select_language": "Els idiomes disponibles s\u00f3n: 'ca' per el catal\u00e0, 'es' per el castell\u00e0 i 'en' per l'angl\u00e8s",
+    "wrong_lang_format": "Per canviar l'idioma indica'm quin vols junt amb la comanda, per exemple: /set_lang ca."
   },
   "es": {
     "start_known": "Hola {}!",
@@ -55,7 +58,10 @@
     "processing_message": "Procesando...",
     "request_good_answer": "¿Qu\u00e9 habr\u00eda sido coherente?",
     "ask_check_answer": "¿Mi \u00faltima respuesta te parece coherente?",
-    "corrected_message": "Lo correg\u00ed! Muchas gracias!"
+    "corrected_message": "Lo correg\u00ed! Muchas gracias!",
+    "language_change_ok": "Idioma cambiado correctamente!",
+    "select_language": "Los idiomas disponibles son 'ca' para el catal\u00e1n, 'es' para el castellano y 'en' para el ingl\u00e9s.",
+    "wrong_lang_format": "Para cambiar el idioma m\u00e1ndame el comando con el idioma, por ejemplo: /set_lang ca."
   },
   "en": {
     "start_known": "Hi {}!",
@@ -84,6 +90,9 @@
     "processing_message": "Processing...",
     "request_good_answer": "What would have been coherent then?",
     "ask_check_answer": "Was my last answer correct?",
-    "corrected_message": "I corrected that! Many thanks!"
+    "corrected_message": "I corrected that! Many thanks!",
+    "language_change_ok": "Language changed successfully!",
+    "select_language": "The available languages are 'ca' for Catalan, 'es' for Spanish and 'en' for English.",
+    "wrong_lang_format": "To change the language, you need to send me the command and the selected language, for example: /set_lang ca."
   }
 }
