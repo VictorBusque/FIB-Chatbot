@@ -149,6 +149,11 @@ class Notification_thread(object):
                 access_token = student['access_token']
                 user_lang = student['language']
                 avisos = self.api.get_avisos(access_token)
+                if not avisos:
+                    print("AVISOS IS NOT OKAY, LETS CHECK SEVERAL THINGS:")
+                print("DO WE HAVE ACCESS TOKEN? {}".format(access_token))
+                print("IS IT EXPIRED? {}".format(student['expire_time_end']))
+                print("IS IT CONSIDERED TO BE EXPIRED? {}".format(self.chats.token_has_expired(student_id)))
                 print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
                 filtered = self.filter(avisos)
                 print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))

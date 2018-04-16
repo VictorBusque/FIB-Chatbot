@@ -166,7 +166,7 @@ class Chats(object):
 			expiration_time['minute'],
 			expiration_time['second']
 		)
-		return now > expiration_time - timedelta(minutes=1)
+		return now > (expiration_time - timedelta(minutes=5))
 
 
 	def get_expired_chats(self):

@@ -2,16 +2,16 @@
   "461088493": {
     "name": "Albert",
     "language": "ca",
-    "access_token": "LUiGxVKVNxNyJk/mvSAaRGRJDikTgEMgNc0CHIYlBoY=",
-    "refresh_token": "9Sje8eABQcJJva51E3ms2792EQD2O/Zk7PEfXAjpG8s=",
+    "access_token": "fpsGscY0k/Pgi2d7RI+6dc+j1PmC2IzFwvWKzs26P2U=",
+    "refresh_token": "U26WETPe49YLdCtILQZHqE4g87XN9wCwZmSB9R334Ns=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 16,
+      "day": 17,
       "month": 4,
       "year": 2018,
-      "hour": 20,
-      "minute": 29,
-      "second": 18
+      "hour": 6,
+      "minute": 28,
+      "second": 46
     },
     "logged": true,
     "notifications": true
@@ -19,16 +19,16 @@
   "349611162": {
     "name": "Carla",
     "language": "ca",
-    "access_token": "otlVrN9WsoJHT5ugNDrphMe/cGJ2GM4ChG+4A6I1UIM=",
-    "refresh_token": "qlHTAgVDR+BiZf+wCskEIXaJWNt6WXsYQX0BfOI3L2Q=",
+    "access_token": "kUaC6QtOc/xdPkfgPKREdRsvQZh5C4R5gGDeJjbPhd8=",
+    "refresh_token": "pSGNbGQgWeMAtp/nfPjlHsRS2Q+AEne3JjMW5aG+CtI=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 16,
+      "day": 17,
       "month": 4,
       "year": 2018,
-      "hour": 20,
-      "minute": 29,
-      "second": 19
+      "hour": 6,
+      "minute": 28,
+      "second": 46
     },
     "logged": true,
     "notifications": true
@@ -36,16 +36,16 @@
   "312420157": {
     "name": "Joel",
     "language": "ca",
-    "access_token": "iCxftXKlAlGjvvHVpTlCDCmUchnki9RTUMpyjqqJdjE=",
-    "refresh_token": "RdzNMU0fXXgmULqDsOqL6b1xGl5R5TgrWKyAHwDAicQ=",
+    "access_token": "yNpQ8aXOdO9UNJRgMDSTKGeIeLfq57tzI2ZXmR0SL/w=",
+    "refresh_token": "cF5rB4MI4/pCVjp629fFhvSK1bTJqUV0Ha8UY6f4oWM=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 16,
+      "day": 17,
       "month": 4,
       "year": 2018,
-      "hour": 20,
-      "minute": 29,
-      "second": 19
+      "hour": 6,
+      "minute": 28,
+      "second": 46
     },
     "logged": true,
     "notifications": true
@@ -53,16 +53,16 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "ca",
-    "access_token": "5w1zKzw2RsgxWe0ndRDqEo0uzokIB+n//5cp6dK9PXM=",
-    "refresh_token": "+TLGwFLRWj75/hA+cYK24CnEWMfB1NfXlvxyCK/HgSg=",
+    "access_token": "Yic/FrwVKU1ngMqX7PJVFJzR5k3WPYw+UqmX4LKiI88=",
+    "refresh_token": "xaZtXVhrvSTV+Mk8JzYU0dfkClX6oIIjBLVMVhJqOhg=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 16,
+      "day": 17,
       "month": 4,
       "year": 2018,
-      "hour": 20,
-      "minute": 29,
-      "second": 19
+      "hour": 6,
+      "minute": 28,
+      "second": 46
     },
     "logged": true,
     "notifications": true
