@@ -56,7 +56,8 @@ class Data_generator(object):
 			items(:obj:`list`): list of the items that can be generated
 	"""
 	def __init__(self, i_g, s_g, type_, intent):
-		self.i_g = i_g
+		if i_g: self.i_g = i_g
+		else: self.i_g = None
 		self.s_g = s_g
 		self.type = type_
 		self.intent = intent
@@ -77,28 +78,34 @@ class Data_generator(object):
 		This function returns a random sentence generated with both generators
 	"""
 	def get_random_element(self):
-		entity = self.i_g.get_random().lower().rstrip()
 		sentence = self.s_g.get_random()
-		offset_ini = 0
-		for char in sentence:
-			if char != "{":
-				offset_ini += 1
-			else: break
-		offset_fi = offset_ini + len(entity)
-		if self.type == 'teacher': entity_type = 'teacher_name'
-		if self.type == 'subject': entity_type = 'subject_acronym'
-		return {
-			"text": sentence.format(entity),
-			"intent": self.intent,
-			"entities": [
-				{
-					'start': offset_ini,
-					'end': offset_fi,
-					'value': entity,
-					'entity': entity_type,
-				}
-			]
-		}
+		if self.i_g:
+			entity = self.i_g.get_random().lower().rstrip()
+			offset_ini = 0
+			for char in sentence:
+				if char != "{":
+					offset_ini += 1
+				else: break
+			offset_fi = offset_ini + len(entity)
+			if self.type == 'teacher': entity_type = 'teacher_name'
+			if self.type == 'subject': entity_type = 'subject_acronym'
+			return {
+				"text": sentence.format(entity),
+				"intent": self.intent,
+				"entities": [
+					{
+						'start': offset_ini,
+						'end': offset_fi,
+						'value': entity,
+						'entity': entity_type,
+					}
+				]
+			}
+		else:
+			return {
+				"text": sentence,
+				"intent": self.intent
+			}
 
 
 def main(amount = 250, language = 'es'):
@@ -117,7 +124,9 @@ def main(amount = 250, language = 'es'):
 	intros_subject_teacher_office = ["despacho del profesor de {}", "cual es el despacho del profe de {}", "donde esta el despacho del profesor de {}"]
 	intros_subject_teacher_name = ["nombre del profesor de {}", "nombre de la profesora de {}", "como se llama el profe de {}", "profesor de {}", "profe de {}", "quien es el profesor de {}",
 	"quienes son los profesores de {}", "quien es el profesor de {}?", "quien es la profesora de {}"]
-
+	intros_now_class = ["que me toca ahora", "qué me toca ahora?", "de que tengo clase?", "donde tengo que ir?", "que clase tengo ahora?",
+	"que clase me toca", "clase ahora", "que clase tengo", "proxima clase", "cual es la proxima clase",
+	"donde tengo la proxima clase", "cuando tengo la proxima clase", "siguiente clase", "donde es la siguiente clase", "cuando es la siguiente clase?"]
 	if language == 'en':
 		intros_teacher_mail = ["{}'s mail", "what is {}'s mail", "what is {}'s mail?", "mail of {}", "what's the mail of {}"]
 		intros_teacher_desk = ["what's {}'s office?", "what's {}'s office", "{}'s office", "office of {}", "what's the office of {}"]
@@ -132,6 +141,8 @@ def main(amount = 250, language = 'es'):
 		intros_subject_teacher_mail = ["{}'s teacher's mail ", "what's the mail of {}'s teacher", "{}'s teacher mail", "what is the mail of {} teacher"]
 		intros_subject_teacher_office = ["office of {}'s teacher'", "{}'s teacher office", "{} teacher office", "whats {} teacher office"]
 		intros_subject_teacher_name = ["name of the teacher of {}", "{}'s teacher's name", "Who is the teacher of {}", "{}'s teacher"]
+		intros_now_class = ["what do i have now", "what do i have now?", "where do i have to go?", "where do i have to go now?", "which classroom do i have to go?",
+		"which is my next class", "class now", "what is the class", "next class", "where is next class", "when is next class"]
 
 	elif language == 'ca':
 		intros_teacher_mail = ["correu de {}", "correu del {}", "correu de la {}",
@@ -173,6 +184,10 @@ def main(amount = 250, language = 'es'):
 		 "com es diu el profe de {}?",  "com es diu la  profe de {}?", "com es diu el professor de {}?", "com es diu la professora de {}?",
 		 "professor de {}", "professora de {}",
 		 "profe de {}", "qui és el professor de {}", "qui és la professora de {}?", "qui és profe de {}"]
+		intros_now_class = ["que em toca ara", "què em toca ara?", "de què tinc classe?", "on he d'anar ara?", "quina classe tinc ara?",
+		"quina clase em toca", "classe ara", "quina classe tinc", "proxima classe", "quina es la proxima classe?", "propera classe",
+		"quina es la propera classe", "quan tornare a tenir classe?", "on es la propera classe", "seguent classe", "on es la següent classe?",
+		"quan tinc la següent classe?"]
 
 
 	regex_features = []
@@ -190,6 +205,7 @@ def main(amount = 250, language = 'es'):
 	intro_subject_teacher_mail_gen = Item_generator(data = intros_subject_teacher_mail)
 	intro_subject_teacher_office_gen = Item_generator(data = intros_subject_teacher_office)
 	intro_subject_teacher_name_gen = Item_generator(data = intros_subject_teacher_name)
+	intro_next_class_gen = Item_generator(data = intros_now_class)
 	#intro_inform_teacher_gen = Item_generator(data = intros_inform_teacher)
 	#intro_inform_subject_gen = Item_generator(data = intros_inform_subject)
 
@@ -201,6 +217,7 @@ def main(amount = 250, language = 'es'):
 	subject_teacher_mail_gen = Data_generator(subject_gen, intro_subject_teacher_mail_gen, type_ ="subject", intent = "ask_subject_teacher_mail")
 	subject_teacher_office_gen = Data_generator(subject_gen, intro_subject_teacher_office_gen, type_ = "subject", intent = "ask_subject_teacher_office")
 	subject_teacher_name_gen = Data_generator(subject_gen, intro_subject_teacher_name_gen, type_="subject", intent = "ask_subject_teacher_name")
+	next_class_gen = Data_generator(None, intro_next_class_gen, type_ = None, intent = "ask_next_class")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
 
@@ -212,6 +229,7 @@ def main(amount = 250, language = 'es'):
 	common_examples.extend( subject_teacher_mail_gen.get_examples(amount) )
 	common_examples.extend( subject_teacher_office_gen.get_examples(amount) )
 	common_examples.extend( subject_teacher_name_gen.get_examples(amount) )
+	common_examples.extend( next_class_gen.get_examples(amount) )
 	#common_examples.extend( inform_teacher_gen.get_examples(amount) )
 	#common_examples.extend( inform_subject_gen.get_examples(amount) )
 

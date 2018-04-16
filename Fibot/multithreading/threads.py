@@ -102,9 +102,29 @@ class Notification_thread(object):
         self.delay = delay
         self.thread = None
         self.polling = True
-        now = datetime.datetime.now()
-        #self.last_check = now
-        self.last_check = datetime.datetime(2018, 4, 13, 15, 00, 28)
+        self.last_check = datetime.datetime.now()
+        self.retrieve_timestamp()
+        print("Loaded timestamp: {}".format(self.last_check))
+
+    """
+        Saves the timestamp when the last scan was done
+    """
+    def dump_timestamp(self):
+        to_save = str(self.last_check)
+        with open('Data/timestamp.txt', 'w') as file:
+            file.write(to_save)
+
+    """
+        Retrieves and stores the timestamp when the last scan was done
+    """
+    def retrieve_timestamp(self):
+        with open('Data/timestamp.txt', 'r') as file:
+            timestamp = file.readline()
+            print("This is the timestamp: {}".format(timestamp))
+            date, time = timestamp.split(' ')
+            year, month, day = date.split('-')
+            hour, minute, second = time.split(':')
+            self.last_check = datetime.datetime(int(year),int(month), int(day), int(hour), int(minute), int(second))
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
@@ -137,8 +157,9 @@ class Notification_thread(object):
                     message = Notification(avis, user_lang).get_notif()
                     self.message_handler.send_message(student_id, message, typing=True)
                     print("Notification was sent!")
-                    last_avis = max(self.last_check, self.get_date(avis))
+                    last_avis = max(last_avis, self.get_date(avis))
         self.last_check = last_avis
+        self.dump_timestamp()
         print("Last notification was received {}!".format(self.last_check))
         self.run()
 

@@ -5,7 +5,7 @@
 #-- General imports --#
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pprint import pprint
 from copy import deepcopy as copy
 import base64
@@ -166,7 +166,7 @@ class Chats(object):
 			expiration_time['minute'],
 			expiration_time['second']
 		)
-		return now > expiration_time
+		return now > expiration_time - timedelta(minutes=1)
 
 
 	def get_expired_chats(self):

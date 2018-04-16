@@ -50,7 +50,6 @@ class Query_answer_unit(object):
 		This function loads the model into the agent, and trains if necessary
 	"""
 	def load(self, train=False):
-		#self.nlu.load(train)
 		self.nlu.load(train)
 		if train: self.train()
 		self.agent_ca = Agent.load(self.model_path_ca,

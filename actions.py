@@ -11,7 +11,7 @@ from rasa_core.events import SlotSet
 from Fibot.api.api_raco import API_raco
 #from Fibot.Data.teachers import Teachers
 from Fibot.chats import Chats
-from Fibot.Data.data_types.lecture import Lecture
+from Fibot.Data.data_types.lecture import Lecture, Schedule
 from Fibot.Data.data_types.subject_spots import Subject_spots
 from Fibot.Data.data_types.subject_teachers import Subject_teachers
 from Fibot.Data.teachers import Teachers
@@ -177,7 +177,7 @@ class action_show_subject_teachers_mails(Action):
             for teacher in teachers_info.get_names():
                 answer = answer + teacher + '\n'
             dispatcher.utter_message("{}".format(answer))
-        return []#[SlotSet("matches", teachers_info.get_names())]
+        return []
 
 
 class action_show_subject_teachers_offices(Action):
@@ -228,12 +228,32 @@ class action_show_subject_teachers_names(Action):
         teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
         teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
         print("This are the teachers: {}".format(list(teachers_info.get_names())))
-        answers = {'ca': "Aquests són els professores de {}\n",
+        answers = {'ca': "Aquests són els professors de {}\n",
             'es': 'Éstos son los profesores de {}\n',
             'en': "These are {}'s teachers\n"
         }
         answer = answers[user_lang].format(subject_acro)
         for teacher in teachers_info.get_names():
             answer = answer + teacher + '\n'
+        dispatcher.utter_message("{}".format(answer))
+        return []
+
+class action_show_next_class(Action):
+
+    def name(self):
+        return 'action_show_next_class'
+
+    def resets_topic(self):
+        return True
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        print(tracker.slots)
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
+        schedule = API_raco().get_schedule(access_token, user_lang)
+        schedule = Schedule(schedule, user_lang)
+        answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
         return []

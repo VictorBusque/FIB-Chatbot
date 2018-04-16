@@ -100,11 +100,52 @@
       "{}"
     ]
   },
+  "ask_next_class": {
+    "ca": {
+      "same_day": [
+        "Tens classe de {} a les {} a l'aula {}.",
+        "La propera classe que tens és de {} a les {} a l'aula {}."
+      ],
+      "other_day_week": [
+        "La propera classe és {}, de {} a les {} a l'aula {}.",
+        "Tens la pròxima classe {}, de {} a les {} a l'aula {}."
+      ],
+      "other_day_other_week": [
+        "Fins la setmana que ve no tens més classe!"
+      ]
+    },
+    "es": {
+      "same_day": [
+        "Tienes clase de {} a las {} en la clase {}.",
+        "La próxima clase que tienes es de {} a las {} en la clase {}."
+      ],
+      "other_day_week": [
+        "La proxima clase es {}, de {} a las {} en la clase {}.",
+        "Tienes la próxima clase {}, de {} a las {} en la clase {}."
+      ],
+      "other_day_other_week": [
+        "No tienes más clases hasta la semana que viene!"
+      ]
+    },
+    "en": {
+      "same_day": [
+        "You have got a {}, class at {}, at classroom {}.",
+        "Your next class is of {} at {}, at classroom {}."
+      ],
+      "other_day_week": [
+        "Your next class is {}, of {} at {}, at classroom {}.",
+        "Next class is {}, of {} at {}, in classroom {}."
+      ],
+      "other_day_other_week": [
+        "You have no more classes this week!"
+      ]
+    }
+  },
   "notification": {
     "ca": {
       "intro": [
-        "S'ha penjat un avís de {} al Racó.",
-        "Tens un nou avís de {} al Racó.",
+        "S'ha penjat un avís de {} amb títol '{}' al Racó.",
+        "Tens un nou avís de {} amb títol '{}' al Racó.",
         "Nou avís de {} amb títol '{}' al Racó."
       ],
       "attachment": [
@@ -114,8 +155,8 @@
     },
     "es": {
       "intro": [
-        "Se ha colgado un aviso de {} en el Racó.",
-        "Tienes un nuevo aviso de {} en el Racó.",
+        "Se ha colgado un aviso de {} con título '{}' en el Racó.",
+        "Tienes un nuevo aviso de {} con título '{}' en el Racó.",
         "Nuevo aviso de {} con título '{}' en el Racó."
       ],
       "attachment": [
@@ -125,8 +166,8 @@
     },
     "en": {
       "intro": [
-        "New post from {} at Racó.",
-        "You have a new post from {} at Racó.",
+        "New post from {} with title '{}' at Racó.",
+        "You have a new post from {} with title '{}' at Racó.",
         "New post with title '{}' from {} at Racó."
       ],
       "attachment": [

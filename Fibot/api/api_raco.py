@@ -28,6 +28,17 @@ class API_raco(object):
 		self.base_url = 'https://api.fib.upc.edu/v2/'
 		self.language =  {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
 
+	def get_schedule(self, access_token, language):
+		url = 'https://api.fib.upc.edu/v2/jo/classes/'
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": language,
+				"Authorization": 'Bearer {}'.format(access_token)
+		}
+		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			return response.json().get('results')
+
 	"""
 		Parameters:
 			acronym(:obj:`str` or None): Acronym for the subject if any

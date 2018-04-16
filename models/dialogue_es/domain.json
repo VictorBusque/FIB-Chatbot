@@ -8,7 +8,7 @@
     "intent_ask_subject_teacher_mail",
     "intent_ask_subject_teacher_office",
     "intent_ask_subject_teacher_name",
-    "intent_inform",
+    "intent_ask_next_class",
     "entity_teacher_name",
     "entity_subject_acronym",
     "slot_matches_0",
@@ -23,6 +23,7 @@
     "prev_action_show_subject_schedule",
     "prev_action_show_subject_teachers_mails",
     "prev_action_show_subject_teachers_offices",
-    "prev_action_show_subject_teachers_names"
+    "prev_action_show_subject_teachers_names",
+    "prev_action_show_next_class"
   ]
 }
