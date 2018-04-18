@@ -98,7 +98,7 @@ class Teachers(object):
         match['name'] = match_teacher
         match['department'] = match_department
         if debug: print("{} is the distance, the closest name is {}.".format(lower_dist, match_teacher))
-        return Teacher(match, language = self.language)
+        return Teacher(match, language = self.language), lower_dist
 
     """
         Parameters:

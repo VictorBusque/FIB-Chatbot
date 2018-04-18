@@ -42,29 +42,45 @@ class API_raco(object):
 	"""
 		Parameters:
 			acronym(:obj:`str` or None): Acronym for the subject if any
-			name(:obj:`str` or None): Name of the subject if any
 			language(:obj:`str`): Name if the language for the search
 
 		This function returns:
 			True if funcion with acronym or name parameters exist,
 			False otherwise
 	"""
-	def subject_exists(self, acronym = None, name = None, language = 'English'):
-		url = self.base_url+"{}".format("assignatures/")
+	def subject_exists(self, acronym = None):
+		url = self.base_url+"{}".format("assignatures/{}".format(acronym.upper()))
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language[language]
+				"Accept-Language": 'en'
 		}
-		if acronym: query = {'field': 'id', 'value': acronym}
-		elif name: query = {'field': 'nom', 'value': name}
+		response = requests.get(url, headers=headers)
+		return response.status_code == 200
+
+	"""
+		Parameters:
+			acronym(:obj:`str` or None): Acronym for the subject if any
+			access_token(:obj:`str`): Access token from user to check subject
+
+		This function returns:
+			True if funcion with acronym or name parameters is a subject the user is enrolled,
+			False otherwise
+	"""
+	def user_enrolled_subject(self, acronym, access_token):
+		acronym = acronym.upper()
+		url = "https://api.fib.upc.edu/v2/jo/assignatures/"
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": 'en',
+				"Authorization": 'Bearer {}'.format(access_token)
+		}
 		response = requests.get(url, headers = headers)
 		if response.status_code == 200:
-			field_name = query['field']
-			field_value = query['value']
 			response_json = response.json().get('results')
-			for items in response_json:
-				if items[field_name] == field_value: return True
+			for subject in response_json:
+				if subject['sigles'] == acronym: return True
 			return False
+
 
 	"""
 		Parameters
@@ -90,6 +106,8 @@ class API_raco(object):
 			for items in response_json:
 				if items[field_name] == field_value: return items['nom']
 			return None
+
+
 	"""
 		Parameters
 			assig(:obj:`str`): Acronym for the subject

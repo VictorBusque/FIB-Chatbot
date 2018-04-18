@@ -151,18 +151,20 @@ class Notification_thread(object):
                 avisos = self.api.get_avisos(access_token)
                 if not avisos:
                     print("AVISOS IS NOT OKAY, LETS CHECK SEVERAL THINGS:")
-                print("DO WE HAVE ACCESS TOKEN? {}".format(access_token))
-                print("IS IT EXPIRED? {}".format(student['expire_time_end']))
-                print("IS IT CONSIDERED TO BE EXPIRED? {}".format(self.chats.token_has_expired(student_id)))
-                print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
-                filtered = self.filter(avisos)
-                print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
-                if filtered: pprint(filtered)
-                for avis in filtered:
-                    message = Notification(avis, user_lang).get_notif()
-                    self.message_handler.send_message(student_id, message, typing=True)
-                    print("Notification was sent!")
-                    last_avis = max(last_avis, self.get_date(avis))
+                    print("WADU HEK I AM? {}".format(avisos))
+                    print("DO WE HAVE ACCESS TOKEN? {}".format(access_token))
+                    print("IS IT EXPIRED? {}".format(student['expire_time_end']))
+                    print("IS IT CONSIDERED TO BE EXPIRED? {}".format(self.chats.token_has_expired(student_id)))
+                else:
+                    print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
+                    filtered = self.filter(avisos)
+                    print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
+                    if filtered: pprint(filtered)
+                    for avis in filtered:
+                        message = Notification(avis, user_lang).get_notif()
+                        self.message_handler.send_message(student_id, message, typing=True)
+                        print("Notification was sent!")
+                        last_avis = max(last_avis, self.get_date(avis))
         self.last_check = last_avis
         self.dump_timestamp()
         print("Last notification was received {}!".format(self.last_check))

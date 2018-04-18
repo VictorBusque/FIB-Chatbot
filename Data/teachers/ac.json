@@ -11,10 +11,6 @@
     "mail": "jose.alberola@upc.edu",
     "office": null
   },
-  "lluc alvarez marti": {
-    "mail": "lluc.alvarez@upc.edu",
-    "office": "Edifici C6 Despatx 122"
-  },
   "carlos alvarez martinez": {
     "mail": "calvarez@ac.upc.edu",
     "office": "Edifici D6 Despatx 108"
@@ -42,6 +38,10 @@
   "rosa maria badia sala": {
     "mail": "rosab@ac.upc.edu",
     "office": "Edifici D6 "
+  },
+  "baig baig": {
+    "mail": "shuja-ur-rehman.baig@upc.edu",
+    "office": "Edifici D6 Planta 1"
   },
   "jose maria barcelo ordinas": {
     "mail": "joseb@ac.upc.edu",
@@ -150,10 +150,6 @@
   "josep-lloren\u00e7 cruz diaz": {
     "mail": "cruz@ac.upc.edu",
     "office": "Edifici C6 Despatx 207"
-  },
-  "raul cuadrado santolaria": {
-    "mail": "cuadrado@ac.upc.edu",
-    "office": null
   },
   "jose roberto de almeida amazonas": {
     "mail": "jose.roberto.amazonas@upc.edu",
@@ -274,10 +270,6 @@
   "alberto hornos vidal": {
     "mail": "alberto.hornos@upc.edu",
     "office": null
-  },
-  "jose luis izquierdo zaragoza": {
-    "mail": "jose.luis.izquierdo@upc.edu",
-    "office": "Edifici D4 Planta 2 Despatx 213"
   },
   "luc etienne jaulmes": {
     "mail": "luc.jaulmes@upc.edu",
@@ -475,6 +467,10 @@
     "mail": "apvela@ac.upc.edu",
     "office": "Edifici D4 Planta 2 Despatx 213"
   },
+  "daniel pinto rivero": {
+    "mail": "daniel.pinto.rivero@upc.edu",
+    "office": null
+  },
   "roger pueyo centelles": {
     "mail": "roger.pueyo@upc.edu",
     "office": null
@@ -555,10 +551,6 @@
     "mail": "behnam.shariati@upc.edu",
     "office": "Edifici D6 Planta 1"
   },
-  "baig shuja ur rehman": {
-    "mail": "shuja-ur-rehman.baig@upc.edu",
-    "office": "Edifici D6 Planta 1"
-  },
   "nuno silvestre apolonia": {
     "mail": "apolonia@ac.upc.edu",
     "office": "Edifici C6 Planta E Despatx 208"
@@ -570,10 +562,6 @@
   "josep sole pareta": {
     "mail": "pareta@ac.upc.edu",
     "office": "Edifici D6 Despatx 110"
-  },
-  "giorgio stampa": {
-    "mail": "giorgio@ac.upc.edu",
-    "office": "Edifici D6 Planta 0 Despatx 008"
   },
   "jose-rafael suarez-varela macia": {
     "mail": "jsuarezv@ac.upc.edu",

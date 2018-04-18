@@ -68,8 +68,8 @@
     "office": "Edifici Omega Despatx 125"
   },
   "petar jovanovic": {
-    "mail": "petar.jovanovic@upc.edu",
-    "office": "Edifici B6  "
+    "mail": "petar@essi.upc.edu",
+    "office": null
   },
   "raimon lapuente ferran": {
     "mail": "raimon.lapuente@upc.edu",
@@ -98,10 +98,6 @@
   "sergio morales garcia": {
     "mail": "smorales@essi.upc.edu",
     "office": "Edifici Omega "
-  },
-  "joaquim motger de la encarnacion": {
-    "mail": "jmotger@essi.upc.edu",
-    "office": null
   },
   "rana faisal munir": {
     "mail": "rana.faisal.munir@upc.edu",

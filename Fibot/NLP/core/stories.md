@@ -18,12 +18,12 @@
 * ask_teacher_mail{"teacher_name": "carlos"}
    - action_show_teacher_mail
 
-## Generated Story 6
+## Generated Story teacher mail 6
 * ask_teacher_mail{"teacher_name": "jordi turmo"}
    - slot{"teacher_name": "jordi turmo"}
    - action_show_teacher_mail
 
-## Generated Story 7
+## Generated Story teacher mail 7
 * ask_teacher_mail{"teacher_name": "roberto niehhuehuis"}
    - slot{"teacher_name": "roberto niehhuehuis"}
    - action_show_teacher_mail
@@ -52,23 +52,23 @@
 
 
 
-## Generated Story subject schedule 1
+## Generated Story subject classroom 1
 * ask_subject_classroom{"subject_acronym": "APA"}
 - action_show_subject_classroom
 
-## Generated Story subject schedule 2
+## Generated Story subject classroom 2
 * ask_subject_classroom{"subject_acronym": "apc"}
 - action_show_subject_classroom
 
-## Generated Story subject schedule 3
+## Generated Story subject classroom 3
 * ask_subject_classroom{"subject_acronym": "wse"}
 - action_show_subject_classroom
 
-## Generated Story subject schedule 4
+## Generated Story subject classroom 4
 * ask_subject_classroom{"subject_acronym": "IES"}
 - action_show_subject_classroom
 
-## Generated Story subject schedule 5
+## Generated Story subject classroom 5
 * ask_subject_classroom{"subject_acronym": "asw"}
 - action_show_subject_classroom
 

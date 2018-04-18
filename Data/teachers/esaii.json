@@ -11,6 +11,10 @@
     "mail": "wilbert.aguilar@estudiant.upc.edu",
     "office": null
   },
+  "isaac agusti ventura": {
+    "mail": "isaac.agusti@upc.edu",
+    "office": null
+  },
   "enrique javier ajenjo escolano": {
     "mail": "enrique.ajenjo@upc.edu",
     "office": "Edifici B6 "
@@ -49,7 +53,7 @@
   },
   "toni benedico blanes": {
     "mail": "toni.benedico@upc.edu",
-    "office": "Edifici Omega Planta 3 Despatx 306"
+    "office": "Edifici Omega Planta 3 Despatx 308 "
   },
   "raul benitez iglesias": {
     "mail": "raul.benitez@upc.edu",
@@ -58,10 +62,6 @@
   "eduard berges martin": {
     "mail": "eduard.berges@upc.edu",
     "office": "Edifici K2M Planta 2 Laboratori 203"
-  },
-  "joaquim blesa izquierdo": {
-    "mail": "joaquim.blesa@upc.edu",
-    "office": null
   },
   "yolanda bolea monte": {
     "mail": "yolanda.bolea@upc.edu",
@@ -87,7 +87,7 @@
     "mail": "andreu.catala@upc.edu",
     "office": null
   },
-  "julian francisco cayero becerra": {
+  "julen cayero becerra": {
     "mail": "julen.cayero@upc.edu",
     "office": null
   },
@@ -166,6 +166,10 @@
   "daniel garcia sola": {
     "mail": "daniel.garcia.sola@upc.edu",
     "office": "Edifici Omega Despatx 303"
+  },
+  "jon garrido de aguirre": {
+    "mail": null,
+    "office": null
   },
   "beatriz f. giraldo giraldo": {
     "mail": "beatriz.giraldo@upc.edu",
@@ -355,11 +359,7 @@
     "mail": "francisco.javier.ruiz@upc.edu",
     "office": null
   },
-  "jean carlo salazar cortes": {
-    "mail": "jean.salazar@upc.edu",
-    "office": null
-  },
-  "ferran sanabria ortega": {
+  "fernando guillermo sanabria ortega": {
     "mail": "ferran.sanabria@upc.edu",
     "office": null
   },
