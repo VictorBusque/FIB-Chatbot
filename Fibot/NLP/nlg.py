@@ -6,6 +6,7 @@
 import os
 import requests
 from pprint import pprint
+from random import randint
 
 #-- 3rd party imports --#
 from rasa_core.agent import Agent
@@ -126,12 +127,32 @@ class Query_answer_unit(object):
 	"""
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		print(language)
+		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
 			print("Interpreter understood the following intent:")
 			pprint(self.nlu.get_intent(message, language))
 			print("And the following entities:")
 			pprint(self.nlu.get_entities(message, language))
 			print('\n going to respond with the model {}'.format(language))
+		if confidence < 0.5:
+			messages = {
+	            'ca': [
+	                "No he entès la teva pregunta",
+	                "No he acabat d'entendre què m'has demanat",
+	                "Perdona, no t'he entès"
+	            ],
+	            'es': [
+	                "No he entendido tu pregunta",
+	                "No he acabado de entender qué me pediste",
+	                "Perdona, no te entiendo"
+	            ],
+	            'en': [
+	                "I did not understand what you just asked",
+	                "I did not get what you asked",
+	                "I'm sorry, I did not understand you"
+	            ]
+            }
+			return [messages[language][randint(0,len(messages[language])-1)]]
 		if language == 'ca':
 			print('Getting response in catalan')
 			return self.agent_ca.handle_message(message, sender_id=sender_id)
