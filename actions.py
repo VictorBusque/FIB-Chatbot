@@ -126,6 +126,7 @@ class action_show_teacher_mail(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
 
@@ -152,6 +153,7 @@ class action_show_teacher_office(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
 
@@ -167,6 +169,7 @@ class action_show_subject_free_spots(Action):
         print(self.name())
         print(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
+        group = tracker.get_slot("group")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         print("this is the boolen value of the shit: {}".format(bool(subject_acro)))
@@ -175,8 +178,11 @@ class action_show_subject_free_spots(Action):
                 query = {'places-matricula': { 'field': 'assig', 'value': subject_acro.upper() }}
                 response = API_raco().get_main(query)
                 s_s = Subject_spots(response, user_lang)
-                for group in s_s.group_info.keys():
+                if group:
                     dispatcher.utter_message("{}".format(s_s.get_group_spots(group)))
+                else:
+                    for group in s_s.group_info.keys():
+                        dispatcher.utter_message("{}".format(s_s.get_group_spots(group)))
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
@@ -217,6 +223,7 @@ class action_show_subject_classroom(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
     def not_logged_message(self, user_lang):
@@ -261,6 +268,7 @@ class action_show_subject_schedule(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
     def not_logged_message(self, user_lang):
@@ -270,6 +278,7 @@ class action_show_subject_schedule(Action):
             'en': "You have not logged in with your Racó account. I cannot see your information."
         }
         return messages[user_lang]
+
 
 class action_show_subject_teachers_mails(Action):
 
@@ -306,6 +315,7 @@ class action_show_subject_teachers_mails(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
 
@@ -344,7 +354,9 @@ class action_show_subject_teachers_offices(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
+
 
 class action_show_subject_teachers_names(Action):
 
@@ -381,6 +393,7 @@ class action_show_subject_teachers_names(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        tracker._reset_slots()
         return []
 
 
@@ -402,4 +415,5 @@ class action_show_next_class(Action):
         schedule = Schedule(schedule, user_lang)
         answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
+        tracker._reset_slots()
         return []

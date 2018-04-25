@@ -55,12 +55,13 @@ class Data_generator(object):
 			num_items(:obj:`int`): limit of items that the generator can generate
 			items(:obj:`list`): list of the items that can be generated
 	"""
-	def __init__(self, i_g, s_g, type_, intent):
+	def __init__(self, i_g, s_g, type_, intent, language = 'ca'):
 		if i_g: self.i_g = i_g
 		else: self.i_g = None
 		self.s_g = s_g
 		self.type = type_
 		self.intent = intent
+		self.language = language
 
 	"""
 		Parameters:
@@ -79,6 +80,13 @@ class Data_generator(object):
 	"""
 	def get_random_element(self):
 		sentence = self.s_g.get_random()
+		if self.intent == "ask_free_spots":
+			chosen_grp = random.randint(10, 45)
+			grp_str = "grup"
+			if self.language == 'es': grp_str = "grupo"
+			elif self.language == 'en': grp_str = "group"
+			aux = grp_str+' {}'
+			sentence = sentence.replace(aux, aux.format(chosen_grp))
 		if self.i_g:
 			entity = self.i_g.get_random().lower().rstrip()
 			offset_ini = 0
@@ -87,9 +95,32 @@ class Data_generator(object):
 					offset_ini += 1
 				else: break
 			offset_fi = offset_ini + len(entity)
+			sentence = sentence.format(entity)
 			if self.type == 'teacher': entity_type = 'teacher_name'
 			if self.type == 'subject': entity_type = 'subject_acronym'
-			return {
+			if self.intent == "ask_free_spots" and grp_str in sentence:
+				grp_start = sentence.find(grp_str)+len(grp_str)+1
+				grp_end = grp_start+2;
+				return {
+					"text": sentence,
+					"intent": self.intent,
+					"entities": [
+						{
+							'start': offset_ini,
+							'end': offset_fi,
+							'value': entity,
+							'entity': entity_type,
+						},
+						{
+							'start': grp_start,
+							'end': grp_end,
+							'value': '{}'.format(chosen_grp),
+							'entity': 'group',
+						}
+					]
+				}
+			else:
+				return {
 				"text": sentence.format(entity),
 				"intent": self.intent,
 				"entities": [
@@ -133,7 +164,7 @@ def main(amount = 250, language = 'es'):
 
 	teacher_mail_gen = Data_generator(teacher_gen, intro_mail_gen, type_="teacher", intent="ask_teacher_mail")
 	teacher_desk_gen = Data_generator(teacher_gen, intro_desk_gen, type_="teacher", intent="ask_teacher_office")
-	subject_spots_gen = Data_generator(subject_gen, intro_spots_gen, type_="subject", intent="ask_free_spots")
+	subject_spots_gen = Data_generator(subject_gen, intro_spots_gen, type_="subject", intent="ask_free_spots", language = language)
 	subject_schedule_gen = Data_generator(subject_gen, intro_schedule_gen, type_="subject", intent="ask_subject_schedule")
 	subject_classroom_gen = Data_generator(subject_gen, intro_classroom_gen, type_="subject", intent="ask_subject_classroom")
 	subject_teacher_mail_gen = Data_generator(subject_gen, intro_subject_teacher_mail_gen, type_ ="subject", intent = "ask_subject_teacher_mail")

@@ -3,7 +3,8 @@
     "action_listen": {
       "slots": [
         "teacher_name",
-        "subject_acronym"
+        "subject_acronym",
+        "group"
       ]
     }
   },

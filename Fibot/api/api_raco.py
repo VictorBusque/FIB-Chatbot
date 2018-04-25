@@ -28,6 +28,15 @@ class API_raco(object):
 		self.base_url = 'https://api.fib.upc.edu/v2/'
 		self.language =  {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
 
+	"""
+		Parameters:
+			access_token(:obj:`str`): Access token of the user to get the schedule from
+			language(:obj:`str`): Name of the language for the search
+
+		This function returns:
+			True if funcion with acronym or name parameters exist,
+			False otherwise
+	"""
 	def get_schedule(self, access_token, language):
 		url = 'https://api.fib.upc.edu/v2/jo/classes/'
 		headers = {"client_id": self.client_id,
@@ -107,6 +116,26 @@ class API_raco(object):
 				if items[field_name] == field_value: return items['nom']
 			return None
 
+
+	def get_subjects_user(self, access_token, language = 'English'):
+		url = "https://api.fib.upc.edu/v2/jo/assignatures/"
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": 'en',
+				"Authorization": 'Bearer {}'.format(access_token)
+		}
+		response = requests.get(url, headers = headers)
+		if response.status_code == 200:
+			response_json = response.json().get('results')
+			for subject in response_json:
+				yield subject['sigles']
+		return []
+
+	def get_exams_user(self, access_token, language = 'English'):
+		subjects = self.get_subjects_user(access_token, language)
+		for subject in subjects:
+			exam = self.get_examens(subject, language)
+			yield exam
 
 	"""
 		Parameters

@@ -1,18 +1,18 @@
 ## Generated Story teacher mail 1
 * ask_teacher_mail{"teacher_name": "Javier bejar"}
-   - action_show_teacher_mail
+  - action_show_teacher_mail
 
 ## Generated Story teacher mail 2
 * ask_teacher_mail{"teacher_name": "joan climent"}
-- action_show_teacher_mail
+  - action_show_teacher_mail
 
 ## Generated Story teacher mail 3
 * ask_teacher_mail{"teacher_name": "Javier vazquez"}
-- action_show_teacher_mail
+  - action_show_teacher_mail
 
 ## Generated Story teacher mail 4
 * ask_teacher_mail{"teacher_name": "luis antonio belanche"}
-- action_show_teacher_mail
+  - action_show_teacher_mail
 
 ## Generated Story teacher mail 5
 * ask_teacher_mail{"teacher_name": "carlos"}
@@ -32,45 +32,45 @@
 
 ## Generated Story subject schedule 1
 * ask_subject_schedule{"subject_acronym": "APA"}
-- action_show_subject_schedule
+    - action_show_subject_schedule
 
 ## Generated Story subject schedule 2
 * ask_subject_schedule{"subject_acronym": "apc"}
-- action_show_subject_schedule
+  - action_show_subject_schedule
 
 ## Generated Story subject schedule 3
 * ask_subject_schedule{"subject_acronym": "wse"}
-- action_show_subject_schedule
+  - action_show_subject_schedule
 
 ## Generated Story subject schedule 4
 * ask_subject_schedule{"subject_acronym": "IES"}
-- action_show_subject_schedule
+  - action_show_subject_schedule
 
 ## Generated Story subject schedule 5
 * ask_subject_schedule{"subject_acronym": "asw"}
-- action_show_subject_schedule
+  - action_show_subject_schedule
 
 
 
 ## Generated Story subject classroom 1
 * ask_subject_classroom{"subject_acronym": "APA"}
-- action_show_subject_classroom
+  - action_show_subject_classroom
 
 ## Generated Story subject classroom 2
 * ask_subject_classroom{"subject_acronym": "apc"}
-- action_show_subject_classroom
+  - action_show_subject_classroom
 
 ## Generated Story subject classroom 3
 * ask_subject_classroom{"subject_acronym": "wse"}
-- action_show_subject_classroom
+  - action_show_subject_classroom
 
 ## Generated Story subject classroom 4
 * ask_subject_classroom{"subject_acronym": "IES"}
-- action_show_subject_classroom
+  - action_show_subject_classroom
 
 ## Generated Story subject classroom 5
 * ask_subject_classroom{"subject_acronym": "asw"}
-- action_show_subject_classroom
+  - action_show_subject_classroom
 
 
 
@@ -115,6 +115,30 @@
 
 ## Generated Story free spots  5
 * ask_free_spots{"subject_acronym": "VJ"}
+  - slot{"subject_acronym": "VJ"}
+  - action_show_subject_free_spots
+
+
+
+## Generated Story free spots group 1
+* ask_free_spots{"subject_acronym": "VJ", "group": "22"}
+   - action_show_subject_free_spots
+
+## Generated Story free spots group 2
+* ask_free_spots{"subject_acronym": "IA", "group": "14"}
+   - action_show_subject_free_spots
+
+## Generated Story free spots group 3
+* ask_free_spots{"subject_acronym": "pro1", "group": "12"}
+   - action_show_subject_free_spots
+
+## Generated Story free spots group  4
+* ask_free_spots{"subject_acronym": "eda", "group": "33"}
+   - slot{"subject_acronym": "vc"}
+   - action_show_subject_free_spots
+
+## Generated Story free spots group  5
+* ask_free_spots{"subject_acronym": "pes", "group": "41"}
   - slot{"subject_acronym": "VJ"}
   - action_show_subject_free_spots
 

@@ -24,6 +24,7 @@ config:
 entities:
 - teacher_name
 - subject_acronym
+- group
 intents:
 - ask_teacher_mail
 - ask_teacher_office
@@ -35,6 +36,9 @@ intents:
 - ask_subject_teacher_name
 - ask_next_class
 slots:
+  group:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
   matches:
     initial_value: null
     type: rasa_core.slots.ListSlot

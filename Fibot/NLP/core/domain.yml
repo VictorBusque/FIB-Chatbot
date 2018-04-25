@@ -13,11 +13,14 @@ intents:
 entities:
   - teacher_name
   - subject_acronym
+  - group
 
 slots:
   teacher_name:
     type: text
   subject_acronym:
+    type: text
+  group:
     type: text
   matches:
     type: list

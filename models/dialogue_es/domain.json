@@ -11,6 +11,8 @@
     "intent_ask_next_class",
     "entity_teacher_name",
     "entity_subject_acronym",
+    "entity_group",
+    "slot_group_0",
     "slot_matches_0",
     "slot_subject_acronym_0",
     "slot_teacher_name_0",
