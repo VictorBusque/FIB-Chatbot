@@ -53,6 +53,9 @@ class Subject_spots(object):
         }
 
 
+    """
+        Returns a per group formatted response to a question of group specific free spots
+    """
     def get_group_spots(self, group):
         if not group in self.group_info.keys():
             chosen_response = randint(0, len(self.messages[self.language])-1)

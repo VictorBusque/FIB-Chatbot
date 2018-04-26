@@ -134,7 +134,7 @@ class API_raco(object):
 	def get_exams_user(self, access_token, language = 'English'):
 		subjects = self.get_subjects_user(access_token, language)
 		for subject in subjects:
-			exam = self.get_examens(subject, language)
+			exam = list(self.get_examens(subject, language))
 			yield exam
 
 	"""
@@ -161,9 +161,7 @@ class API_raco(object):
 				result = []
 				response_json = response.json().get('results')
 				for item in response_json:
-					if item['assig'] == assig: result.append(item)
-				return result
-		return []
+					if item['assig'] == assig: yield item
 
 	def get_practiques(self, access_token, assig = None, language = 'English'):
 		if assig: assig = assig.upper()

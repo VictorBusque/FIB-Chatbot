@@ -38,7 +38,7 @@ class Chats(object):
 	"""
 	def __init__(self):
 		self.chats = {}
-		self.encryption_key = '2222222222222222'#os.getenv('encryption_key')
+		self.encryption_key = os.getenv('encryption_key')
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -151,7 +151,7 @@ class Chats(object):
 			chat_id (:obj:`str`): chat_id of the chat
 
 		This function returns:
-			True: if the access_token from user with chat_id has expired
+			True: if the access_token from user with chat_id has expired (within 5 minutes)
 			False: otherwise
 	"""
 	def token_has_expired(self, chat_id):
@@ -168,7 +168,10 @@ class Chats(object):
 		)
 		return now > (expiration_time - timedelta(minutes=5))
 
-
+	"""
+		This function returns:
+			A generator of a list of the chat_id from students with expired tokens
+	"""
 	def get_expired_chats(self):
 		for chat in self.chats.keys():
 			if self.token_has_expired(chat): yield chat

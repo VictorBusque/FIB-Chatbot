@@ -89,6 +89,20 @@
       "The office of {} is {}."
     ]
   },
+  "ask_next_exams": {
+    "ca": [
+      "Tens un examen de {} el dia {} de {} a les {}h.",
+      "Tens examen de {} el {} de {} a les {}h."
+    ],
+    "es": [
+      "Tienes un examen de {} el dia {} de {} a las {}h.",
+      "Tienes examen de {} el {} de {} a las {}h."
+    ],
+    "en": [
+      "You have an exam of {} on the {} of {}, at {}h.",
+      "There's an exam of {} on the {} of {}, at {}h."
+    ]
+  },
   "ask_subject_teacher_name": {
     "ca": [
       "{}"

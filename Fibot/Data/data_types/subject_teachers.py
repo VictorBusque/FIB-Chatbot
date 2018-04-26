@@ -38,6 +38,9 @@ class Subject_teachers(object):
             self.responses['ask_subject_teacher_name'] = data['ask_subject_teacher_name']
 
 
+    """
+        Function that returns str formatted response to a subject teacher mail question
+    """
     def get_mails(self):
         for teacher in self.data:
             chosen_response = randint(0, len(self.responses['ask_subject_teacher_mail'][self.language])-1)
@@ -47,6 +50,9 @@ class Subject_teachers(object):
                 teacher['email']
             )
 
+    """
+        Function that returns str formatted response to a subject teacher office question
+    """
     def get_offices(self):
         for teacher in self.data:
             print("Getting office for teacher: {}".format(teacher['nom']))
