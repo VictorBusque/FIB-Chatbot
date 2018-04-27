@@ -235,3 +235,17 @@
 ## Generated Story next class 3
 * ask_next_class
     - action_show_next_class
+
+
+
+## Generated Story exams 1
+* ask_exams
+    - action_show_next_exams
+
+## Generated Story exams 2
+* ask_exams
+    - action_show_next_exams
+
+## Generated Story exams 3
+* ask_exams
+    - action_show_next_exams

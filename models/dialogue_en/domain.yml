@@ -9,6 +9,7 @@ action_names:
 - action_show_subject_teachers_offices
 - action_show_subject_teachers_names
 - action_show_next_class
+- action_show_next_exams
 actions:
 - actions.action_show_teacher_mail
 - actions.action_show_teacher_office
@@ -19,6 +20,7 @@ actions:
 - actions.action_show_subject_teachers_offices
 - actions.action_show_subject_teachers_names
 - actions.action_show_next_class
+- actions.action_show_next_exams
 config:
   store_entities_as_slots: true
 entities:
@@ -35,6 +37,7 @@ intents:
 - ask_subject_teacher_office
 - ask_subject_teacher_name
 - ask_next_class
+- ask_exams
 slots:
   group:
     initial_value: null

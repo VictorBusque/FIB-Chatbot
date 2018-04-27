@@ -95,7 +95,7 @@
       "Tens examen de {} el {} de {} a les {}h."
     ],
     "es": [
-      "Tienes un examen de {} el dia {} de {} a las {}h.",
+      "Tienes un examen de {} el día {} de {} a las {}h.",
       "Tienes examen de {} el {} de {} a las {}h."
     ],
     "en": [
@@ -154,6 +154,20 @@
         "You have no more classes this week!"
       ]
     }
+  },
+  "ask_next_pracs": {
+    "ca": [
+      "Tens la pràctica '{0}' de {1} per el dia {2} de {3} a les {4}h.",
+      "Has d'entregar la pràctica {0} de {1} el {2} de {3} abans de les {4}h."
+    ],
+    "es": [
+      "Tienes la práctica '{0}' de {1} para el día {2} de {3} a las {4}h.",
+      "Debes entregar la práctica {0} de {1} el {2} de {3} antes de las {4}h."
+    ],
+    "en": [
+      "You have practical work '{0}' of {1} due to the {2} of {3} at {4}h.",
+      "You need to deliver practical work '{0}' of {1} due to the {2} of {3} before {4}h."
+    ]
   },
   "notification": {
     "ca": {

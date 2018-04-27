@@ -287,6 +287,16 @@
       "què tinc ara?",
       "quan és la proxima classe",
       "quan és la propera classe?"
+    ],
+    "intros_exams": [
+      "quan tinc examens",
+      "quins son els seguents examens",
+      "quan tinc el seguent examen",
+      "quins examens tinc",
+      "quan em toca examen",
+      "de que tinc examen",
+      "examen",
+      "examens"
     ]
   },
   "es": {
@@ -462,6 +472,16 @@
       "siguiente clase",
       "donde es la siguiente clase",
       "cuando es la siguiente clase?"
+    ],
+    "intros_exams": [
+      "cuando tengo exámenes",
+      "cuales son los siguientes exámenes",
+      "cuando tengo el siguiente examen",
+      "qué examenes tengo",
+      "cuando me toca examen",
+      "de que tengo examen",
+      "examen",
+      "examenes"
     ]
   },
   "en": {
@@ -561,6 +581,15 @@
       "next class",
       "where is next class",
       "when is next class"
+    ],
+    "intros_exams": [
+      "when do i have exams",
+      "what are the next exams",
+      "when do i have the following exam",
+      "which exams do i have",
+      "when do i have an exam",
+      "what do i have an exam",
+      "exams"
     ]
   }
 }

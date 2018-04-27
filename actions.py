@@ -15,6 +15,7 @@ from Fibot.chats import Chats
 from Fibot.Data.data_types.lecture import Lecture, Schedule
 from Fibot.Data.data_types.subject_spots import Subject_spots
 from Fibot.Data.data_types.subject_teachers import Subject_teachers
+from Fibot.Data.data_types.exam import Exam_schedule
 from Fibot.Data.teachers import Teachers
 
 
@@ -415,5 +416,27 @@ class action_show_next_class(Action):
         schedule = Schedule(schedule, user_lang)
         answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
+        tracker._reset_slots()
+        return []
+
+
+class action_show_next_exams(Action):
+
+    def name(self):
+        return 'action_show_next_exams'
+
+    def resets_topic(self):
+        return True
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        print(tracker.slots)
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
+        exams = list(API_raco().get_exams_user(access_token))
+        e_e = Exam_schedule(exams, user_lang)
+        for exam in list(e_e.get_closest_exams(range = 120)):
+            dispatcher.utter_message("{}".format(exam))
         tracker._reset_slots()
         return []
