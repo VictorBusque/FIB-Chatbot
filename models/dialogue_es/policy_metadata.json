@@ -2,9 +2,9 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "group",
+        "teacher_name",
         "subject_acronym",
-        "teacher_name"
+        "group"
       ]
     }
   },

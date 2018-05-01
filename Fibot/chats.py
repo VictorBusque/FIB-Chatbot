@@ -39,6 +39,7 @@ class Chats(object):
 	def __init__(self):
 		self.chats = {}
 		self.encryption_key = os.getenv('encryption_key')
+		
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.

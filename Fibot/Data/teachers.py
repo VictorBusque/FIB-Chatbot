@@ -84,13 +84,3 @@ class Teachers(object):
             word = ' '.join(word)
             min_dist = min(min_dist, edit_distance(word1, word))
         return min_dist
-
-    """
-        Helper in order to find list of matches (not used atm)
-    """
-    def get_min_values(self, dict_ret):
-        min_values = (None, -(float("inf")))
-        for name, value in dict_ret.items():
-            if value > min_values[1]:
-                min_values = (name, value)
-        return min_values

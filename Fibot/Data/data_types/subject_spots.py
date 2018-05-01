@@ -34,24 +34,8 @@ class Subject_spots(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['ask_free_spots']
-        self.messages = {
-            'ca': [
-                "Aquest grup no existeix",
-                "{0} no té cap grup {1}",
-                "El grup {1} no existeix a {0}"
-            ],
-            'es': [
-                "Este grupo no existe",
-                "{0} no tiene grupo {1}",
-                "El grupo {1} no existe en {0}"
-            ],
-            'en': [
-                "This group does not exist",
-                "{0} does not have group {1}",
-                "Group {1} does not exist in {0}"
-            ]
-        }
-
+        with open('./Data/error_responses.json', 'rb') as fp:
+        	self.messages = json.load(fp)['not_group']
 
     """
         Returns a per group formatted response to a question of group specific free spots

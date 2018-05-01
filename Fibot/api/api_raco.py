@@ -125,6 +125,14 @@ class API_raco(object):
 				yield subject['sigles']
 		return []
 
+	"""
+		Parameters
+			acces_token(:obj:`str`): Access token of the user to get subjects from
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			(:obj:`list`): List of exams of a user
+	"""
 	def get_exams_user(self, access_token, language = 'English'):
 		subjects = self.get_subjects_user(access_token, language)
 		for subject in subjects:

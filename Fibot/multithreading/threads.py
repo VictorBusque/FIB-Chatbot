@@ -120,7 +120,6 @@ class Notification_thread(object):
     def retrieve_timestamp(self):
         with open('Data/timestamp.txt', 'r') as file:
             timestamp = file.readline()
-            print("This is the timestamp: {}".format(timestamp))
             date, time = timestamp.split(' ')
             year, month, day = date.split('-')
             hour, minute, second = time.split(':')
@@ -177,7 +176,6 @@ class Notification_thread(object):
         This function filters the publications so that they were not sent previously.
     """
     def filter(self, avisos):
-        not_new = 0
         result = []
         if not avisos: return []
         for avis in avisos:
@@ -185,10 +183,6 @@ class Notification_thread(object):
             elif self.get_date(avis) > self.last_check:
                 print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
                 result.append(avis)
-            else:
-                #print("\nThere's a NOT new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
-                not_new+=1
-        print("Not new avisos: {}".format(not_new))
         return result
 
     """

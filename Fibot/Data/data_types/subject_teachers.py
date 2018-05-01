@@ -65,6 +65,9 @@ class Subject_teachers(object):
                 office
             )
 
+    """
+        Function that returns str formatted response to a subject teacher name question
+    """
     def get_names(self):
         for teacher in self.data:
             chosen_response = randint(0, len(self.responses['ask_subject_teacher_name'][self.language])-1)

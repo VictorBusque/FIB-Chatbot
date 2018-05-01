@@ -101,7 +101,6 @@ class Fibot(object):
 		and depending on the rest of the parameters i might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
-		print("Sending this: {}".format(message))
 		self.message_handler.send_message(chat_id, message, typing, reply_to, parse_mode)
 
 
@@ -115,7 +114,7 @@ class Fibot(object):
 		See /Data/messages.json to see the preset messages.
 	"""
 	def send_preset_message(self, chat_id, preset, param = None):
-		print("sending {}".format(preset))
+		print("#### SENDING PRESET MESSAGE: {} #####".format(preset))
 		user_lang = self.chats.get_chat(chat_id)['language']
 		if param:
 			message = self.messages[user_lang][preset].format(param)
@@ -135,13 +134,10 @@ class Fibot(object):
 		for responding the message.
 	"""
 	def process_income_message(self, chat_id, message, message_id = None):
-		print("Processing income message...")
+		print("##### USER SAID: {} #####".format(message))
 		user_language = self.chats.get_chat(chat_id)['language']
-		print("Processing message in {}".format(user_language))
-		ini = time()
 		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
-		print("Getting response time is {}".format( (time()-ini) ))
-		print(response)
+		print("##### RESPONSE IS: {} #####".format(response))
 		if message_id:
-			self.send_message(chat_id, response, typing=True, reply_to = message_id)
-		else: self.send_message(chat_id, response, typing=True)
+			self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)
+		else: self.send_message(chat_id, response, typing=True, parse_mode = None)

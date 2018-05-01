@@ -10,6 +10,7 @@
     "intent_ask_subject_teacher_name",
     "intent_ask_next_class",
     "intent_ask_exams",
+    "intent_ask_pracs",
     "entity_teacher_name",
     "entity_subject_acronym",
     "entity_group",
@@ -28,6 +29,7 @@
     "prev_action_show_subject_teachers_offices",
     "prev_action_show_subject_teachers_names",
     "prev_action_show_next_class",
-    "prev_action_show_next_exams"
+    "prev_action_show_next_exams",
+    "prev_action_show_next_pracs"
   ]
 }

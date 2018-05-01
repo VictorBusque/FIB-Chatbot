@@ -249,3 +249,17 @@
 ## Generated Story exams 3
 * ask_exams
     - action_show_next_exams
+
+
+
+## Generated Story pracs 1
+* ask_pracs
+    - action_show_next_pracs
+
+## Generated Story pracs 2
+* ask_pracs
+    - action_show_next_pracs
+
+## Generated Story pracs 3
+* ask_pracs
+    - action_show_next_pracs

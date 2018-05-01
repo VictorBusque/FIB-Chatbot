@@ -9,6 +9,7 @@ intents:
   - ask_subject_teacher_name
   - ask_next_class
   - ask_exams
+  - ask_pracs
 
 
 entities:
@@ -38,3 +39,4 @@ actions:
   - actions.action_show_subject_teachers_names
   - actions.action_show_next_class
   - actions.action_show_next_exams
+  - actions.action_show_next_pracs

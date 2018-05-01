@@ -7,6 +7,7 @@ import os
 import requests
 from pprint import pprint
 from random import randint
+import json
 
 #-- 3rd party imports --#
 from rasa_core.agent import Agent
@@ -126,7 +127,6 @@ class Query_answer_unit(object):
 		defined in Fibot/NLP/core/actions.py
 	"""
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
-		print(language)
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
 			print("Interpreter understood the following intent:")
@@ -134,24 +134,9 @@ class Query_answer_unit(object):
 			print("And the following entities:")
 			pprint(self.nlu.get_entities(message, language))
 			print('\n going to respond with the model {}'.format(language))
-		if confidence < 0.5:
-			messages = {
-	            'ca': [
-	                "No he entès la teva pregunta",
-	                "No he acabat d'entendre què m'has demanat",
-	                "Perdona, no t'he entès"
-	            ],
-	            'es': [
-	                "No he entendido tu pregunta",
-	                "No he acabado de entender qué me pediste",
-	                "Perdona, no te entiendo"
-	            ],
-	            'en': [
-	                "I did not understand what you just asked",
-	                "I did not get what you asked",
-	                "I'm sorry, I did not understand you"
-	            ]
-            }
+		if confidence < 0.7:
+			with open('./Data/error_responses.json', 'rb') as fp:
+				messages = json.load(fp)['not_understand']
 			return [messages[language][randint(0,len(messages[language])-1)]]
 		if language == 'ca':
 			print('Getting response in catalan')
