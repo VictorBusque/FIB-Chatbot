@@ -5,7 +5,7 @@
 #-- General imports --#
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pprint import pprint
 from copy import deepcopy as copy
 import base64
@@ -39,6 +39,7 @@ class Chats(object):
 	def __init__(self):
 		self.chats = {}
 		self.encryption_key = os.getenv('encryption_key')
+		
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -97,9 +98,10 @@ class Chats(object):
 				self.chats[str(chat_id)] = data
 				self.dump_data()
 			else:
-				for field in data.keys():
-					self.chats[str(chat_id)][field] = data[field]
-				self.dump_data()
+				if data:
+					for field in data.keys():
+						self.chats[str(chat_id)][field] = data[field]
+					self.dump_data()
 
 	"""
 		Parameters:
@@ -150,12 +152,12 @@ class Chats(object):
 			chat_id (:obj:`str`): chat_id of the chat
 
 		This function returns:
-			True: if the access_token from user with chat_id has expired
+			True: if the access_token from user with chat_id has expired (within 5 minutes)
 			False: otherwise
 	"""
 	def token_has_expired(self, chat_id):
 		expiration_time = self.chats[str(chat_id)]['expire_time_end']
-		if not expiration_time: return True
+		if not expiration_time: return False
 		now = datetime.now()
 		expiration_time = datetime(
 			expiration_time['year'],
@@ -165,9 +167,12 @@ class Chats(object):
 			expiration_time['minute'],
 			expiration_time['second']
 		)
-		return now > expiration_time
+		return now > (expiration_time - timedelta(minutes=5))
 
-
+	"""
+		This function returns:
+			A generator of a list of the chat_id from students with expired tokens
+	"""
 	def get_expired_chats(self):
 		for chat in self.chats.keys():
 			if self.token_has_expired(chat): yield chat

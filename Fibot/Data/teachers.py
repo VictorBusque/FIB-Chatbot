@@ -14,45 +14,6 @@ from nltk import edit_distance
 from Fibot.Data.data_types.teacher import Teacher
 
 
-class Teacher_name_classifier(object):
-
-    def __init__(self, path_to_data = './Data/Names/'):
-        self.names_data = pd.read_csv(path_to_data+'{}.csv'.format('names'), delimiter=',', header = 0)[['Nombre']]
-        self.names_data = list(map(str.lower, self.names_data['Nombre'].values.tolist()))
-        self.process()
-
-    def process(self):
-        for idx, item in enumerate(self.names_data):
-            if '/' in item:
-                print(item)
-                name1, garbo = item.split('/')
-                print("{} - {}".format(name1, garbo))
-                name1 = name1.lower()
-                self.names_data[idx] = name1
-
-
-
-    def is_name(self, word):
-        word = word.lower()
-        for accent in accents:
-            word = word.replace(accent,'�')
-        print(word)
-        for name in self.names_data:
-            name = self.delete_accents(name)
-            print("{} - {}".format(word, name))
-            if edit_distance(word, name) == 0: return True
-        return False
-
-
-    def get_name(self, word):
-        return
-
-    def get_surname(self, word):
-        return
-
-    def delete_accents(self, word):
-        return ''.join((c for c in unicodedata.normalize('NFD', word) if unicodedata.category(c) != 'Mn'))
-
 class Teachers(object):
 
     """This class allows the bot to interact with the teachers information
@@ -65,10 +26,11 @@ class Teachers(object):
         departments(:obj:`list`): List of the current departments in the database
         data(:obj:`dict`): Dictionary that maps departments to a dictionary of teachers and info
     """
-    def __init__(self):
+    def __init__(self,  language = 'es'):
         with open('./Data/urls_upc.json', 'r') as fp:
         	self.departments = json.load(fp).keys()
         self.data = {}
+        self.language = language
         for department in self.departments:
             with open('./Data/teachers/{}.json'.format(department), 'r') as fp:
             	self.data[department] = json.load(fp)
@@ -96,8 +58,8 @@ class Teachers(object):
         match = self.data[match_department][match_teacher]
         match['name'] = match_teacher
         match['department'] = match_department
-        if debug: print("{} is the distance.".format(lower_dist))
-        return Teacher(match)
+        if debug: print("{} is the distance, the closest name is {}.".format(lower_dist, match_teacher))
+        return Teacher(match, language = self.language), lower_dist
 
     """
         Parameters:
@@ -122,13 +84,3 @@ class Teachers(object):
             word = ' '.join(word)
             min_dist = min(min_dist, edit_distance(word1, word))
         return min_dist
-
-    """
-        Helper in order to find list of matches (not used atm)
-    """
-    def get_min_values(self, dict_ret):
-        min_values = (None, -(float("inf")))
-        for name, value in dict_ret.items():
-            if value > min_values[1]:
-                min_values = (name, value)
-        return min_values

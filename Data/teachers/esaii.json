@@ -11,9 +11,13 @@
     "mail": "wilbert.aguilar@estudiant.upc.edu",
     "office": null
   },
+  "isaac agusti ventura": {
+    "mail": "isaac.agusti@upc.edu",
+    "office": null
+  },
   "enrique javier ajenjo escolano": {
     "mail": "enrique.ajenjo@upc.edu",
-    "office": "Building B6 "
+    "office": "Edifici B6 "
   },
   "aliakbar akbari": {
     "mail": "aliakbar.akbari@upc.edu",
@@ -33,7 +37,7 @@
   },
   "joan aranda lopez": {
     "mail": "joan.aranda@upc.edu",
-    "office": "Building Omega Floor 4, Office 405"
+    "office": "Edifici Omega Planta 4, Despatx 405"
   },
   "f. xavier aymerich martinez": {
     "mail": "xavier.aymerich@upc.edu",
@@ -49,7 +53,7 @@
   },
   "toni benedico blanes": {
     "mail": "toni.benedico@upc.edu",
-    "office": "Building Omega Floor 3 Office 306"
+    "office": "Edifici Omega Planta 3 Despatx 308 "
   },
   "raul benitez iglesias": {
     "mail": "raul.benitez@upc.edu",
@@ -57,11 +61,7 @@
   },
   "eduard berges martin": {
     "mail": "eduard.berges@upc.edu",
-    "office": "Building K2M Floor 2 Laboratori 203"
-  },
-  "joaquim blesa izquierdo": {
-    "mail": "joaquim.blesa@upc.edu",
-    "office": null
+    "office": "Edifici K2M Planta 2 Laboratori 203"
   },
   "yolanda bolea monte": {
     "mail": "yolanda.bolea@upc.edu",
@@ -81,23 +81,23 @@
   },
   "alicia casals gelpi": {
     "mail": "alicia.casals@upc.edu",
-    "office": "Building Omega Floor 4 Office 408"
+    "office": "Edifici Omega Planta 4 Despatx 408"
   },
   "andreu catala mallofre": {
     "mail": "andreu.catala@upc.edu",
     "office": null
   },
-  "julian francisco cayero becerra": {
+  "julen cayero becerra": {
     "mail": "julen.cayero@upc.edu",
     "office": null
   },
   "miquel angel cervantes prada": {
     "mail": "miquel.angel.cervantes@upc.edu",
-    "office": "Building Omega "
+    "office": "Edifici Omega "
   },
   "joan climent vilaro": {
     "mail": "juan.climent@upc.edu",
-    "office": "Building Omega Office 404"
+    "office": "Edifici Omega Despatx 404"
   },
   "ramon comasolivas font": {
     "mail": "ramon.comasolivas@upc.edu",
@@ -105,7 +105,7 @@
   },
   "atia cortes martinez": {
     "mail": "atia.cortes@upc.edu",
-    "office": "Building Omega "
+    "office": "Edifici Omega  "
   },
   "ramon costa castello": {
     "mail": "ramon.costa@upc.edu",
@@ -137,7 +137,7 @@
   },
   "josep fernandez ruzafa": {
     "mail": "josep.fernandez@upc.edu",
-    "office": "Building Omega Office 403"
+    "office": "Edifici Omega Despatx 403"
   },
   "jaume figueras jove": {
     "mail": "jaume.figueras@upc.edu",
@@ -153,7 +153,7 @@
   },
   "manel frigola bourlon": {
     "mail": "manel.frigola@upc.edu",
-    "office": "Building Omega Office 407"
+    "office": "Edifici Omega Despatx 407"
   },
   "javier francisco gamiz caro": {
     "mail": "javier.gamiz@upc.edu",
@@ -165,7 +165,11 @@
   },
   "daniel garcia sola": {
     "mail": "daniel.garcia.sola@upc.edu",
-    "office": "Building Omega Office 303"
+    "office": "Edifici Omega Despatx 303"
+  },
+  "jon garrido de aguirre": {
+    "mail": null,
+    "office": null
   },
   "beatriz f. giraldo giraldo": {
     "mail": "beatriz.giraldo@upc.edu",
@@ -173,7 +177,7 @@
   },
   "xavier giralt ludevid": {
     "mail": "xavier.giralt@upc.edu",
-    "office": "Building K2M Office 203"
+    "office": "Edifici K2M Despatx 203"
   },
   "pedro gomis roman": {
     "mail": "pedro.gomis@upc.edu",
@@ -189,7 +193,7 @@
   },
   "antoni guasch petit": {
     "mail": "toni.guasch@upc.edu",
-    "office": "Building B5 S102 -Logisim-Lcfib Campus Nord"
+    "office": "Edifici B5 S102 -Logisim-Lcfib Campus Nord"
   },
   "edmundo guerra paradas": {
     "mail": "edmundo.guerra@upc.edu",
@@ -249,11 +253,11 @@
   },
   "enric x. martin rull": {
     "mail": "enric.xavier.martin@upc.edu",
-    "office": "Building Omega Office 304"
+    "office": "Edifici Omega Despatx 304"
   },
   "antonio benito martinez velasco": {
     "mail": "antonio.b.martinez@upc.edu",
-    "office": "Building Omega Office 402"
+    "office": "Edifici Omega Despatx 402"
   },
   "albert masip alvarez": {
     "mail": "albert.masip@upc.edu",
@@ -265,7 +269,7 @@
   },
   "carlos morata nu\u00f1ez": {
     "mail": "carlos.morata@upc.edu",
-    "office": "Building Omega Floor 3 Office 305"
+    "office": "Edifici Omega Planta 3 Despatx 305"
   },
   "bernardo morcego seix": {
     "mail": "bernardo.morcego@upc.edu",
@@ -355,11 +359,7 @@
     "mail": "francisco.javier.ruiz@upc.edu",
     "office": null
   },
-  "jean carlo salazar cortes": {
-    "mail": "jean.salazar@upc.edu",
-    "office": null
-  },
-  "ferran sanabria ortega": {
+  "fernando guillermo sanabria ortega": {
     "mail": "ferran.sanabria@upc.edu",
     "office": null
   },
@@ -453,6 +453,6 @@
   },
   "manuel vinagre ruiz": {
     "mail": "manuel.vinagre.ruiz@upc.edu",
-    "office": "Building K2M Laboratori 204 "
+    "office": "Edifici K2M Laboratori 204 "
   }
 }

@@ -1,0 +1,115 @@
+{
+        "not_understand": {
+            "ca": [
+                "No he entès la teva pregunta",
+                "No he acabat d'entendre què m'has demanat",
+                "Perdona, no t'he entès"
+            ],
+            "es": [
+                "No he entendido tu pregunta",
+                "No he acabado de entender qué me pediste",
+                "Perdona, no te entiendo"
+            ],
+            "en": [
+                "I did not understand what you just asked",
+                "I did not get what you asked",
+                "I'm sorry, I did not understand you"
+            ]
+        },
+        "wrong_teacher": {
+            "ca": [
+                "Aquest@ professor@ no existeix",
+                "No sé a qui et refereixes",
+                "Perdona, no trobo cap professor similar a qui dius"
+            ],
+            "es": [
+                "Est@ profesor@ no existe",
+                "No sé a quién te refieres",
+                "Perdona, no encuentro a ningún profesor similar al que dices"
+            ],
+            "en": [
+                "This teacher does not exist",
+                "I dont know who are you asking about",
+                "I'm sorry, I cannot find any similar teacher to who you asked about"
+            ]
+        },
+        "wrong_subject": {
+            "ca": [
+                "Aquesta assignatura no existeix",
+                "No sé per quina assignatura m'estàs preguntant",
+                "Perdona, no trobo la assignatura a la que et refereixes"
+            ],
+            "es": [
+                "Esa asignatura no existe",
+                "No sé de qué asignatura me hablas",
+                "Perdona, no encuentro la asignatura por la que me preguntaste"
+            ],
+            "en": [
+                "I could not understand the subject you asked about",
+                "I don't know what subject are you asking about",
+                "I'm sorry, I did not understand the subject you asked about",
+                "I think that this subject does not exist"
+            ]
+        },
+        "not_enrolled": {
+            "ca": [
+                "No estàs matriculat a aquesta assignatura",
+                "No estàs cursant aquesta assignatura",
+                "No estàs matriculat a {}"
+            ],
+            "es": [
+                "No estás matriculado en esta asignatura",
+                "No estás cursando esta asignatura",
+                "No estás matriculado en {}"
+            ],
+            "en": [
+                "You did not enroll this subject",
+                "You did not enroll {}"
+            ]
+        },
+        "not_exams": {
+            "ca": [
+                "No tens cap exàmen pròximament",
+                "No tens examens properament."
+            ],
+            "es": [
+                "No tienes ningun examen próximamente",
+                "No tienes examenes próximamente"
+            ],
+            "en": [
+                "You have no exams coming soon",
+                "You don't have exams coming soon"
+            ]
+        },
+        "not_pracs": {
+            "ca": [
+                "No tens cap pràctica a entregar pròximament",
+                "No tens pràctiques pendents properament."
+            ],
+            "es": [
+                "No tienes ninguna práctica a entregar próximamente",
+                "No tienes prácticas pendientes"
+            ],
+            "en": [
+                "You have no practical works to deliver soon",
+                "You don't have practical works coming soon"
+            ]
+        },
+        "not_group": {
+            "ca": [
+                "Aquest grup no existeix",
+                "{0} no té cap grup {1}",
+                "El grup {1} no existeix a {0}"
+            ],
+            "es": [
+                "Este grupo no existe",
+                "{0} no tiene grupo {1}",
+                "El grupo {1} no existe en {0}"
+            ],
+            "en": [
+                "This group does not exist",
+                "{0} does not have group {1}",
+                "Group {1} does not exist in {0}"
+            ]
+        }
+    }

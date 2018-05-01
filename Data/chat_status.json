@@ -1,19 +1,97 @@
 {
   "469557458": {
     "name": "V\u00edctor",
-    "language": "English",
-    "access_token": "KIQCIS8WbbDKPXntRsdgfR0NWIOiTagvPyQEbb8w2f8=",
-    "refresh_token": "EudRXvCrWUTSsKW8I3sgH4/2jsJl0at/yewAEH/bScs=",
+    "refresh_token": "frSgDQvbk7+gNsMh9ceamZk9lK7gwix3eZrtYkhwSWQ=",
+    "notifications": true,
     "current_state": "0",
     "expire_time_end": {
-      "day": 19,
-      "month": 3,
+      "day": 1,
+      "month": 5,
       "year": 2018,
-      "hour": 20,
-      "minute": 21,
-      "second": 55
+      "hour": 21,
+      "minute": 43,
+      "second": 48
+    },
+    "language": "ca",
+    "logged": true,
+    "access_token": "iPmxervlJhh996fJvrRPrZKAqJiOdn7pKj7h5IHeOUU="
+  },
+  "312420157": {
+    "name": "Joel",
+    "refresh_token": "zpXSLAB0cUBzQlrAnj4rmKbavnRSSTzcsZuRgwwupyc=",
+    "notifications": true,
+    "current_state": "0",
+    "expire_time_end": {
+      "day": 1,
+      "month": 5,
+      "year": 2018,
+      "hour": 21,
+      "minute": 43,
+      "second": 48
+    },
+    "language": "ca",
+    "logged": true,
+    "access_token": "lY2JDAwbemYxXy27aEIz+QRGu7zAJOg9rOSH1WgaKng="
+  },
+  "461088493": {
+    "name": "Albert",
+    "refresh_token": "FjKhA5w2c29xHo3mBQqKYw4lr13mRFBTtKyyMQexzZc=",
+    "notifications": true,
+    "current_state": "0",
+    "expire_time_end": {
+      "day": 1,
+      "month": 5,
+      "year": 2018,
+      "hour": 21,
+      "minute": 43,
+      "second": 49
+    },
+    "language": "ca",
+    "logged": true,
+    "access_token": "coW1jRbi1Ts9Wlpy5SQLG74Uz5WgzLtgZs1iRVHZ6YQ="
+  },
+  "349611162": {
+    "name": "Carla",
+    "refresh_token": "67/Vw03em98AIHibjuosAOp6/PFMFrveFjnWapvGKp4=",
+    "notifications": true,
+    "current_state": "0",
+    "expire_time_end": {
+      "day": 1,
+      "month": 5,
+      "year": 2018,
+      "hour": 21,
+      "minute": 43,
+      "second": 49
+    },
+    "language": "ca",
+    "logged": true,
+    "access_token": "Z3dK8rpaG7ze0qWV8ELmiSGqH5qFnrQ0zQV6BcsKU8I="
+  },
+  "443306157": {
+    "name": "Daniel",
+    "language": "ca",
+    "access_token": "EkNCjsgZP6Vk9TjmZqV2rtcoxLvNCD5proJ5RDt/BqM=",
+    "refresh_token": "f/xovFiV6l1A7BimBh6UEjg8ZdH2sjwwCIY75qJuj3s=",
+    "current_state": "0",
+    "expire_time_end": {
+      "day": 1,
+      "month": 5,
+      "year": 2018,
+      "hour": 21,
+      "minute": 43,
+      "second": 49
     },
     "logged": true,
     "notifications": true
+  },
+  "473862645": {
+    "name": "Lulzx",
+    "language": "en",
+    "access_token": null,
+    "refresh_token": null,
+    "current_state": "2",
+    "expire_time_end": null,
+    "logged": false,
+    "notifications": false
   }
 }

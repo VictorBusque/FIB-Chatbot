@@ -1,0 +1,208 @@
+{
+  "ask_teacher_mail": {
+    "ca": [
+      "El correu de {} és {}.",
+      "El mail de {} és {}.",
+      "Aquí el tens, és {}.",
+      "És {}."
+    ],
+    "es": [
+      "El correo de {} es {}.",
+      "El mail de {} es {}.",
+      "Aquí lo tienes, es {}.",
+      "Es {}."
+    ],
+    "en": [
+    "{}'s mail is {}.",
+    "{} has this mail: {}.",
+    "There you go, {}.",
+    "It is {}"
+    ]
+  },
+  "ask_teacher_office": {
+    "ca": [
+      "El despatx de {} és {}.",
+      "Aquí el tens, és {}.",
+      "És {}."
+    ],
+    "es": [
+      "El despacho de {} es {}.",
+      "Aquí lo tienes, es {}.",
+      "Es {}."
+    ],
+    "en": [
+      "{}'s office is {}.",
+      "There you go, {}.",
+      "It is {}."
+    ]
+  },
+  "ask_free_spots": {
+    "ca": [
+      "Queden {} de {} places a {}, grup {}.",
+      "Hi ha {}/{} places lliures a {} al grup {}."
+    ],
+    "es": [
+      "Quedan {} de {} plazas en {}, grupo {}.",
+      "Hay {}/{} plazas llibres en {} en el grupo {}."
+    ],
+    "en": [
+      "there are {} out of {} free spots in {}, group {}.",
+      "{}/{} spots left for {} in group {}."
+    ]
+  },
+  "ask_subject_schedule": {
+    "ca": [
+      "{} de {} a {}, tens classe de {} a l'aula {}."
+    ],
+    "es": [
+      "{} de {} a {}, tienes clase de {} en el aula {}."
+    ],
+    "en": [
+      "{} from {} to {}, a {} class at classroom {}."
+    ]
+  },
+  "ask_subject_teacher_mail": {
+    "ca": [
+      "El correu de {} és {}.",
+      "El mail de {} és {}."
+    ],
+    "es": [
+      "El correo de {} es {}.",
+      "El mail de {} es {}."
+    ],
+    "en": [
+      "{}'s mail is {}.",
+      "The email of {} is {}."
+    ]
+  },
+  "ask_subject_teacher_office": {
+    "ca": [
+      "El despatx de {} és {}.",
+      "La oficina de {} és {}."
+    ],
+    "es": [
+      "El despacho de {} es {}.",
+      "La oficina de {} es {}."
+    ],
+    "en": [
+      "{}'s office is {}.",
+      "The office of {} is {}."
+    ]
+  },
+  "ask_next_exams": {
+    "ca": [
+      "Tens un examen de {} el dia {} de {} a les {}h.",
+      "Tens examen de {} el {} de {} a les {}h."
+    ],
+    "es": [
+      "Tienes un examen de {} el día {} de {} a las {}h.",
+      "Tienes examen de {} el {} de {} a las {}h."
+    ],
+    "en": [
+      "You have an exam of {} on the {} of {}, at {}h.",
+      "There's an exam of {} on the {} of {}, at {}h."
+    ]
+  },
+  "ask_subject_teacher_name": {
+    "ca": [
+      "{}"
+    ],
+    "es": [
+      "{}"
+    ],
+    "en": [
+      "{}"
+    ]
+  },
+  "ask_next_class": {
+    "ca": {
+      "same_day": [
+        "Tens classe de {} a les {} a l'aula {}.",
+        "La propera classe que tens és de {} a les {} a l'aula {}."
+      ],
+      "other_day_week": [
+        "La propera classe és {}, de {} a les {} a l'aula {}.",
+        "Tens la pròxima classe {}, de {} a les {} a l'aula {}."
+      ],
+      "other_day_other_week": [
+        "Fins la setmana que ve no tens més classe!"
+      ]
+    },
+    "es": {
+      "same_day": [
+        "Tienes clase de {} a las {} en la clase {}.",
+        "La próxima clase que tienes es de {} a las {} en la clase {}."
+      ],
+      "other_day_week": [
+        "La proxima clase es {}, de {} a las {} en la clase {}.",
+        "Tienes la próxima clase {}, de {} a las {} en la clase {}."
+      ],
+      "other_day_other_week": [
+        "No tienes más clases hasta la semana que viene!"
+      ]
+    },
+    "en": {
+      "same_day": [
+        "You have got a {}, class at {}, at classroom {}.",
+        "Your next class is of {} at {}, at classroom {}."
+      ],
+      "other_day_week": [
+        "Your next class is {}, of {} at {}, at classroom {}.",
+        "Next class is {}, of {} at {}, in classroom {}."
+      ],
+      "other_day_other_week": [
+        "You have no more classes this week!"
+      ]
+    }
+  },
+  "ask_next_pracs": {
+    "ca": [
+      "Tens la pràctica '{0}' de {1} per el dia {2} de {3} a les {4}h.",
+      "Has d'entregar la pràctica {0} de {1} el {2} de {3} abans de les {4}h."
+    ],
+    "es": [
+      "Tienes la práctica '{0}' de {1} para el día {2} de {3} a las {4}h.",
+      "Debes entregar la práctica {0} de {1} el {2} de {3} antes de las {4}h."
+    ],
+    "en": [
+      "You have practical work '{0}' of {1} due to the {2} of {3} at {4}h.",
+      "You need to deliver practical work '{0}' of {1} due to the {2} of {3} before {4}h."
+    ]
+  },
+  "notification": {
+    "ca": {
+      "intro": [
+        "S'ha penjat un avís de {} amb títol '{}' al Racó.",
+        "Tens un nou avís de {} amb títol '{}' al Racó.",
+        "Nou avís de {} amb títol '{}' al Racó."
+      ],
+      "attachment": [
+        "Un fitxer adjunt és ['{}']({}).",
+        "També té ['{}']({}) com fitxer adjunt."
+      ]
+    },
+    "es": {
+      "intro": [
+        "Se ha colgado un aviso de {} con título '{}' en el Racó.",
+        "Tienes un nuevo aviso de {} con título '{}' en el Racó.",
+        "Nuevo aviso de {} con título '{}' en el Racó."
+      ],
+      "attachment": [
+        "Un fichero adjunto es ['{}']({}).",
+        "También tiene ['{}']({}) como fichero adjunto."
+      ]
+    },
+    "en": {
+      "intro": [
+        "New post from {} with title '{}' at Racó.",
+        "You have a new post from {} with title '{}' at Racó.",
+        "New post with title '{}' from {} at Racó."
+      ],
+      "attachment": [
+        "An attached file is ['{}']({}).",
+        "It also has ['{}']({}) as a attached file."
+      ]
+    }
+
+  }
+}

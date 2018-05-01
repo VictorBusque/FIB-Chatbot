@@ -1,0 +1,7 @@
+{
+  "pipeline":  "spacy_sklearn",
+  "num_threads": 3,
+  "log_level": "DEBUG",
+  "path" : "./models",
+  "data" : "./Data/Dataset_en.json"
+}
