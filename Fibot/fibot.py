@@ -31,9 +31,9 @@ class Fibot(object):
 		chats (:class:`Fibot.Chat`): Object that represents the chats
 		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
-		message_handler(:class:`Fibot.message_handler.Message_handler`): Object that handles messages
-		delay(:obj:`int`): Cantidad de segundos entre escaneos en los threads
-		notification_thread(:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
+		message_handler (:class:`Fibot.message_handler.Message_handler`): Object that handles messages
+		delay (:obj:`int`): Cantidad de segundos entre escaneos en los threads
+		notification_thread (:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
 		refresh_token_thread(:class:`Fibot.multithreading.threads.Refresh_token_thread`): Object that enables a thread to scan for tokens to refresh.
 		messages (:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine (:obj:`dict`): Object that simplifies the state machine management
@@ -62,8 +62,10 @@ class Fibot(object):
 			chats: Loads the chats information from persistence
 			message_handler: Enables it to send messages to users
 			notification_thread: Starts its activation and defines the polling interval
-			nlu: Loads the trained model
-			nlg: Loads the trained model
+			refresh_token_thread: Starts its activation and defines the polling interval (and the offset)
+			nlu: Loads the trained models
+			qa: Loads the trained models
+			messages: Loads the preset messages to memory
 	"""
 	def load_components(self):
 		self.chats.load()
@@ -96,9 +98,10 @@ class Fibot(object):
 			typing (:obj:`bool`): value that defines whether to send typing action or not
 			reply_to (:obj:`int` or None): If defined, it is the message_id of the message
 				that will be replied to, else no message will be replied.
+			parse_mode (:obj:`str`): The parse mode to use (normally Markdown or None)
 
 		This function sends a message to the chat with chat_id with content text,
-		and depending on the rest of the parameters i might do extra functionality.
+		and depending on the rest of the parameters it might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
 		self.message_handler.send_message(chat_id, message, typing, reply_to, parse_mode)
@@ -138,6 +141,4 @@ class Fibot(object):
 		user_language = self.chats.get_chat(chat_id)['language']
 		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
 		print("##### RESPONSE IS: {} #####".format(response))
-		if message_id:
-			self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)
-		else: self.send_message(chat_id, response, typing=True, parse_mode = None)
+		self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)

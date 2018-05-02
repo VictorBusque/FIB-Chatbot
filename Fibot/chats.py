@@ -39,7 +39,7 @@ class Chats(object):
 	def __init__(self):
 		self.chats = {}
 		self.encryption_key = os.getenv('encryption_key')
-		
+
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -52,7 +52,7 @@ class Chats(object):
 			if (data['access_token']):
 				data['access_token'] = self.decrypt_data(data['access_token'])
 				data['refresh_token'] = self.decrypt_data(data['refresh_token'])
-			return data
+		return data
 
 	"""
 		Loads the data from persistence (if any)

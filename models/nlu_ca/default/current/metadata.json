@@ -1,5 +1,5 @@
 {
-    "language": "en",
+    "language": "es",
     "pipeline": [
         "rasa_nlu.utils.spacy_utils.SpacyNLP",
         "rasa_nlu.tokenizers.spacy_tokenizer.SpacyTokenizer",
@@ -10,7 +10,7 @@
         "rasa_nlu.classifiers.sklearn_intent_classifier.SklearnIntentClassifier"
     ],
     "training_data": "training_data.json",
-    "spacy_model_name": "en",
+    "spacy_model_name": "es",
     "regex_featurizer": null,
     "entity_extractor_crf": {
         "model_file": "crf_model.pkl",
@@ -47,6 +47,6 @@
     },
     "entity_synonyms": null,
     "intent_classifier_sklearn": "intent_classifier.pkl",
-    "trained_at": "20180430-221012",
+    "trained_at": "20180502-183031",
     "rasa_nlu_version": "0.11.3"
 }

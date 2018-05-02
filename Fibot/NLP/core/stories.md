@@ -252,6 +252,20 @@
 
 
 
+## Generated Story exams 1
+* ask_exams{"subject_acronym": "m1"}
+    - action_show_next_exams
+
+## Generated Story exams 2
+* ask_exams{"subject_acronym": "as"}
+    - action_show_next_exams
+
+## Generated Story exams 3
+* ask_exams{"subject_acronym": "pes"}
+    - action_show_next_exams
+
+
+
 ## Generated Story pracs 1
 * ask_pracs
     - action_show_next_pracs

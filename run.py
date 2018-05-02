@@ -178,7 +178,7 @@ def ask(bot, update):
 	message_id = update.message.message_id
 	if Fibot.chats.get_chat(chat_id)['logged'] & Fibot.chats.token_has_expired(chat_id):
 		Fibot.chats.load()
-	Fibot.process_income_message(chat_id, text)
+	Fibot.process_income_message(chat_id, text, message_id = message_id)
 	return MESSAGE_INCOME
 
 """

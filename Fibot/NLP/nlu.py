@@ -5,6 +5,7 @@
 #-- General imports --#
 import json
 import os.path
+from time import time
 
 #-- 3rd party imports --#
 from rasa_core.interpreter import RasaNLUInterpreter
@@ -19,7 +20,9 @@ class NLU_unit(object):
 	""" This object contains the interpreter for the NLU model, and tools to train and retrieve it
 
 	Attributes:
-		name(:class:`rasa_nlu.model.Interpreter`): Interpreter for the users FIB-related queries
+		interpreter_ca(:class:`rasa_nlu.model.Interpreter`): Interpreter for the users FIB-related queries in catalan
+		interpreter_es(:class:`rasa_nlu.model.Interpreter`): Interpreter for the users FIB-related queries in spanish
+		interpreter_en(:class:`rasa_nlu.model.Interpreter`): Interpreter for the users FIB-related queries in english
 	"""
 	def __init__(self):
 		self.interpreter_ca = None
@@ -35,16 +38,21 @@ class NLU_unit(object):
 	"""
 	def load(self, train = False):
 		if train:
+			now = time()
 			training_data_ca = load_data('./Data/Dataset_ca.json')
 			training_data_es = load_data('./Data/Dataset_es.json')
 			training_data_en = load_data('./Data/Dataset_en.json')
-			print("Data Loaded")
+			print("Data Loaded in {}s".format(time()-now))
+			now = time()
 			trainer_ca = Trainer(RasaNLUConfig("./config/config_spacy_ca.json"))
 			trainer_es = Trainer(RasaNLUConfig("./config/config_spacy_es.json"))
 			trainer_en = Trainer(RasaNLUConfig("./config/config_spacy_en.json"))
-			print("NLU Trainer launched")
+			print("NLU Trainer launched in {}s".format(time()-now))
+			print("Training CA model")
 			trainer_ca.train(training_data_ca)
+			print("Training ES model")
 			trainer_es.train(training_data_es)
+			print("Training EN model")
 			trainer_en.train(training_data_en)
 			print("NLU Training done")
 			model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in

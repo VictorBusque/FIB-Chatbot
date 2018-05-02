@@ -58,8 +58,8 @@ class Subject_teachers(object):
             print("Getting office for teacher: {}".format(teacher['nom']))
             chosen_response = randint(0, len(self.responses['ask_subject_teacher_office'][self.language])-1)
             final_response = self.responses['ask_subject_teacher_office'][self.language][chosen_response]
-            office = Teachers(language = self.language).get_closer_teacher(teacher['nom']).office
-            print(office)
+            teacher_data, distance = Teachers(language = self.language).get_closer_teacher(teacher['nom'])
+            office = teacher_data.office
             yield final_response.format(
                 teacher['nom'].title(),
                 office

@@ -24,7 +24,7 @@ class API_raco(object):
 		self.client_id = os.getenv('client_id')
 		self.client_secret = os.getenv('client_secret')
 		self.base_url = 'https://api.fib.upc.edu/v2/'
-		self.language =  {'Catalan': 'ca', 'Spanish': 'es', 'English': 'en'}
+
 
 	"""
 		Parameters:
@@ -35,7 +35,7 @@ class API_raco(object):
 			True if funcion with acronym or name parameters exist,
 			False otherwise
 	"""
-	def get_schedule(self, access_token, language):
+	def get_schedule(self, access_token, language = 'es'):
 		url = 'https://api.fib.upc.edu/v2/jo/classes/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
@@ -46,6 +46,7 @@ class API_raco(object):
 		if response.status_code == 200:
 			return response.json().get('results')
 
+
 	"""
 		Parameters:
 			acronym(:obj:`str` or None): Acronym for the subject if any
@@ -55,52 +56,15 @@ class API_raco(object):
 			True if funcion with acronym or name parameters exist,
 			False otherwise
 	"""
-	def subject_exists(self, acronym = None):
+	def subject_exists(self, acronym, language = 'es'):
 		url = self.base_url+"{}".format("assignatures/{}".format(acronym.upper()))
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": 'en'
+				"Accept-Language": language
 		}
 		response = requests.get(url, headers=headers)
 		return response.status_code == 200
 
-	"""
-		Parameters:
-			acronym(:obj:`str` or None): Acronym for the subject if any
-			access_token(:obj:`str`): Access token from user to check subject
-
-		This function returns:
-			True if funcion with acronym or name parameters is a subject the user is enrolled,
-			False otherwise
-	"""
-	def user_enrolled_subject(self, acronym, access_token):
-		acronym = acronym.upper()
-		return acronym in self.get_subjects_user(access_token)
-
-	"""
-		Parameters
-			acronym(:obj:`str` or None): Acronym for the subject
-			language(:obj:`str`): Name if the language for the search
-
-		This function returns:
-			(:obj:`str`): Name of the subject with acronym as the parameter (if it exists)
-			(None): otherwise
-	"""
-	def get_subject_name(self, acronym, language = 'English'):
-		url = self.base_url+"{}".format("assignatures/")
-		headers = {"client_id": self.client_id,
-				"Accept": "application/json",
-				"Accept-Language": self.language[language]
-		}
-		query = {'field': 'id', 'value': acronym}
-		response = requests.get(url, headers = headers)
-		if response.status_code == 200:
-			field_name = query['field']
-			field_value = query['value']
-			response_json = response.json().get('results')
-			for items in response_json:
-				if items[field_name] == field_value: return items['nom']
-			return None
 
 	"""
 		Parameters
@@ -111,11 +75,11 @@ class API_raco(object):
 			(:obj:`list`): Name of the subjects with acronym as the parameter (if it exists)
 			(None): otherwise
 	"""
-	def get_subjects_user(self, access_token, language = 'English'):
+	def get_subjects_user(self, access_token, language = 'es'):
 		url = "https://api.fib.upc.edu/v2/jo/assignatures/"
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": 'en',
+				"Accept-Language": language,
 				"Authorization": 'Bearer {}'.format(access_token)
 		}
 		response = requests.get(url, headers = headers)
@@ -125,6 +89,40 @@ class API_raco(object):
 				yield subject['sigles']
 		return []
 
+
+	"""
+		Parameters:
+			acronym(:obj:`str` or None): Acronym for the subject if any
+			access_token(:obj:`str`): Access token from user to check subject
+
+		This function returns:
+			True if funcion with acronym or name parameters is a subject the user is enrolled,
+			False otherwise
+	"""
+	def user_enrolled_subject(self, acronym, access_token, language = 'es'):
+		return acronym.upper() in self.get_subjects_user(access_token, language)
+
+
+	"""
+		Parameters
+			acronym(:obj:`str` or None): Acronym for the subject
+			language(:obj:`str`): Name if the language for the search
+
+		This function returns:
+			(:obj:`str`): Name of the subject with acronym as the parameter (if it exists)
+			(None): otherwise
+	"""
+	def get_subject_name(self, acronym, language = 'es'):
+		url = self.base_url+"{}".format("assignatures/{}".format(acronym.upper()))
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": language
+		}
+		response = requests.get(url, headers=headers)
+		if response.status_code == 200:
+			return response.json()['nom']
+
+
 	"""
 		Parameters
 			acces_token(:obj:`str`): Access token of the user to get subjects from
@@ -133,11 +131,12 @@ class API_raco(object):
 		This function returns:
 			(:obj:`list`): List of exams of a user
 	"""
-	def get_exams_user(self, access_token, language = 'English'):
-		subjects = self.get_subjects_user(access_token, language)
+	def get_exams_user(self, access_token, language = 'es'):
+		subjects = list(self.get_subjects_user(access_token, language))
 		for subject in subjects:
 			exam = list(self.get_examens(subject, language))
 			yield exam
+
 
 	"""
 		Parameters
@@ -147,12 +146,12 @@ class API_raco(object):
 		This function returns:
 			(:obj:`list`): List with the exams of subject assig
 	"""
-	def get_examens(self, assig, language = 'English'):
-		assig = assig.upper()
+	def get_examens(self, acronym, language = 'es'):
+		acronym = acronym.upper()
 		actual_semester_url = 'https://api.fib.upc.edu/v2/quadrimestres/actual/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language[language]
+				"Accept-Language": language
 		}
 		response = requests.get(actual_semester_url, headers = headers)
 		if response.status_code == 200:
@@ -163,7 +162,8 @@ class API_raco(object):
 				result = []
 				response_json = response.json().get('results')
 				for item in response_json:
-					if item['assig'] == assig: yield item
+					if item['assig'] == acronym: yield item
+
 
 	"""
 		Parameters
@@ -174,12 +174,12 @@ class API_raco(object):
 		This function returns:
 			(:obj:`list`): List with the practical works open of subject assig (if any)
 	"""
-	def get_practiques(self, access_token, assig = None, language = 'English'):
+	def get_practiques(self, access_token, assig = None, language = 'es'):
 		if assig: assig = assig.upper()
 		practiques_url = 'https://api.fib.upc.edu/v2/jo/practiques/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language[language],
+				"Accept-Language": language,
 				"Authorization": 'Bearer {}'.format(access_token)
 		}
 		response = requests.get(practiques_url, headers = headers)
@@ -193,6 +193,28 @@ class API_raco(object):
 						result.appen(item)
 				return result
 		return []
+
+
+	"""
+		Parameters:
+			access_token(:obj:`string`): the access token of the retriever
+
+		This function returns:
+			(:obj:`list`): list of avisos of the user with access_token
+	"""
+	def get_avisos(self, access_token, language = 'es'):
+		params = {}
+		headers = {"client_id": self.client_id,
+				"Accept": "application/json",
+				"Accept-Language": language,
+				"Authorization": 'Bearer {}'.format(access_token)
+		}
+		url = "https://api.fib.upc.edu/v2/jo/avisos/"
+		response = requests.get(url, headers = headers, params = params)
+		if response.status_code == 200:
+			response_json = response.json().get('results')
+			return response_json
+
 
 	"""
 		Parameters:
@@ -210,7 +232,7 @@ class API_raco(object):
 					...
 				]
 	"""
-	def get_subject_teachers(self, acronym = None, language = 'en'):
+	def get_subject_teachers(self, acronym = None, language = 'es'):
 		acronym = acronym.upper() #Should do a matching maybe, but not all subjects exist
 		url_guia = "https://api.fib.upc.edu/v2/assignatures/{}/guia/".format(acronym)
 		headers = {"client_id": self.client_id,
@@ -223,6 +245,7 @@ class API_raco(object):
 			return teachers
 		return []
 
+
 	"""
 		Parameters:
 			query(:obj:`dict`): json format of the query (p.e. {'places-matricula': { 'field': 'assig', 'value': 'APC' } } )
@@ -233,11 +256,11 @@ class API_raco(object):
 			None: If something goes wrong
 			dict: result of the query
 	"""
-	def get_main(self, query, public = True, access_token = None):
+	def get_main(self, query, public = True, access_token = None, language = 'es'):
 		params = {}
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
-				"Accept-Language": self.language['Spanish']
+				"Accept-Language": language
 		}
 		if not public:
 			headers['Authorization'] = 'Bearer {}'.format(access_token)
@@ -256,6 +279,7 @@ class API_raco(object):
 					return None
 		else:
 			return None
+
 
 	"""
 		Parameters:
@@ -281,23 +305,3 @@ class API_raco(object):
 			return result
 		else:
 			return None
-
-	"""
-		Parameters:
-			access_token(:obj:`string`): the access token of the retriever
-
-		This function returns:
-			(:obj:`list`): list of avisos of the user with access_token
-	"""
-	def get_avisos(self, access_token):
-		params = {}
-		headers = {"client_id": self.client_id,
-				"Accept": "application/json",
-				"Accept-Language": self.language['Spanish'],
-				"Authorization": 'Bearer {}'.format(access_token)
-		}
-		url = "https://api.fib.upc.edu/v2/jo/avisos/"
-		response = requests.get(url, headers = headers, params = params)
-		if response.status_code == 200:
-			response_json = response.json().get('results')
-			return response_json

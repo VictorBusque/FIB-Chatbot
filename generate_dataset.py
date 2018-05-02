@@ -87,7 +87,7 @@ class Data_generator(object):
 			elif self.language == 'en': grp_str = "group"
 			aux = grp_str+' {}'
 			sentence = sentence.replace(aux, aux.format(chosen_grp))
-		if self.i_g:
+		if self.i_g and "{}" in sentence:
 			entity = self.i_g.get_random().lower().rstrip()
 			offset_ini = 0
 			for char in sentence:
@@ -140,7 +140,7 @@ class Data_generator(object):
 
 
 def main(amount = 250, language = 'es'):
-	with open('Data/data_gen.json') as jsonfile:
+	with open('Data/data_gen.json', 'rb') as jsonfile:
 		data = json.load(jsonfile)[language]
 
 	regex_features = []
@@ -173,7 +173,7 @@ def main(amount = 250, language = 'es'):
 	subject_teacher_office_gen = Data_generator(subject_gen, intro_subject_teacher_office_gen, type_ = "subject", intent = "ask_subject_teacher_office")
 	subject_teacher_name_gen = Data_generator(subject_gen, intro_subject_teacher_name_gen, type_="subject", intent = "ask_subject_teacher_name")
 	next_class_gen = Data_generator(None, intro_next_class_gen, type_ = None, intent = "ask_next_class")
-	next_exam_gen = Data_generator(None, intro_exams_gen, type_ = None, intent = "ask_exams")
+	next_exam_gen = Data_generator(subject_gen, intro_exams_gen, type_="subject", intent = "ask_exams")
 	next_pracs_gen = Data_generator(None, intro_pracs_gen, type_ = None, intent = "ask_pracs")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
@@ -201,7 +201,7 @@ def main(amount = 250, language = 'es'):
 			 }
 	print ( "Size of the dataset: {}".format(len(common_examples)))
 	json_ = str(json.dumps(result, indent=2))
-	file = open(file_path,"w")
+	file = open(file_path,"wb")
 	file.write(json_)
 	file.close()
 

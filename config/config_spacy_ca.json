@@ -1,7 +1,8 @@
 {
+  "language": "es",
   "pipeline":  "spacy_sklearn",
   "num_threads": 3,
-  "log_level": "DEBUG",
+  "log_level": "INFO",
   "path" : "./models",
   "data" : "./Data/Dataset_ca.json"
 }

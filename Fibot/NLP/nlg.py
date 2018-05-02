@@ -28,9 +28,13 @@ class Query_answer_unit(object):
 	Attributes:
 		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets queries
 		training_data_file(:obj:`str`): String indicating the path to the stories markdown file
-		model_path(:obj:`str`): String indicating where the dialog model is
+		model_path_ca(:obj:`str`): String indicating where the catalan dialog model is
+		model_path_es(:obj:`str`): String indicating where the spanish dialog model is
+		model_path_en(:obj:`str`): String indicating where the english dialog model is
 		domain_path(:obj:`str`): String indicating where the domain yml file is
-		agent(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages
+		agent_ca(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in catalan
+		agent_es(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in spanish
+		agent_en(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in english
 	"""
 	def __init__(self):
 		self.nlu = NLU_unit()
@@ -48,8 +52,8 @@ class Query_answer_unit(object):
 
 	"""
 		Parameters:
-			train (:obj:`bool`): Specifies if the agent has to be trained
-		This function loads the model into the agent, and trains if necessary
+			train (:obj:`bool`): Specifies if the agents have to be trained
+		This function loads the model into the agents, and trains them if necessary
 	"""
 	def load(self, train=False):
 		self.nlu.load(train)
@@ -69,7 +73,7 @@ class Query_answer_unit(object):
 			batch_size (:obj:`int`): batch_size for the training
 			validation_split (:obj:`int`): validation_split factor for the error calculation
 
-		This function trains the agent and saves the model in the dialog's model path
+		This function trains the agents and saves the models in the dialog's model path
 	"""
 	def train(self, augmentation_factor=250, max_history=3, epochs=500, batch_size=50, validation_split=0.3):
 		self.agent_ca.train(self.training_data_file,
@@ -122,6 +126,9 @@ class Query_answer_unit(object):
 	"""
 		Parameters:
 			message (:obj:`str`): the incoming message from some user
+			sender_id(:obj:`str`): The id (chat_id) of the sender of the messages
+			language(:obj:`str`): The language of the sender ('ca', 'es' or 'en')
+			debug(:obj:`bool`): Boolean value indicating wether it has to output model's response
 
 		This function returns the response from the agent using the actions
 		defined in Fibot/NLP/core/actions.py
@@ -129,12 +136,14 @@ class Query_answer_unit(object):
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
+			print("\n\nDEBUGGING INFO:")
+			print("__________________________________________")
 			print("Interpreter understood the following intent:")
 			pprint(self.nlu.get_intent(message, language))
 			print("And the following entities:")
 			pprint(self.nlu.get_entities(message, language))
-			print('\n going to respond with the model {}'.format(language))
-		if confidence < 0.7:
+			print("\n\n")
+		if confidence < 0.5:
 			with open('./Data/error_responses.json', 'rb') as fp:
 				messages = json.load(fp)['not_understand']
 			return [messages[language][randint(0,len(messages[language])-1)]]
