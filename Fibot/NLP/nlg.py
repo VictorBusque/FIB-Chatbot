@@ -28,10 +28,7 @@ class Query_answer_unit(object):
 	Attributes:
 		nlu(:class:`Fibot.NLP.nlu.NLU_unit`): Object that interprets queries
 		training_data_file(:obj:`str`): String indicating the path to the stories markdown file
-		model_path_ca(:obj:`str`): String indicating where the catalan dialog model is
-		model_path_es(:obj:`str`): String indicating where the spanish dialog model is
-		model_path_en(:obj:`str`): String indicating where the english dialog model is
-		domain_path(:obj:`str`): String indicating where the domain yml file is
+		model_path(:obj:`str`): String indicating where the dialog model is
 		agent_ca(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in catalan
 		agent_es(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in spanish
 		agent_en(:class:`rasa_core.agent.Agent`): Agent capable of handling any incoming messages in english
@@ -40,9 +37,7 @@ class Query_answer_unit(object):
 		self.nlu = NLU_unit()
 		self.training_data_file = './Fibot/NLP/core/stories.md'
 		self.domain_path = './Fibot/NLP/core/domain.yml'
-		self.model_path_ca = './models/dialogue_ca'
-		self.model_path_es = './models/dialogue_es'
-		self.model_path_en = './models/dialogue_en'
+		self.model_path = './models/dialogue'
 		self.agent_ca =  Agent(self.domain_path,
 			                  policies=[MemoizationPolicy(), KerasPolicy()])
 		self.agent_es =  Agent(self.domain_path,
@@ -58,11 +53,11 @@ class Query_answer_unit(object):
 	def load(self, train=False):
 		self.nlu.load(train)
 		if train: self.train()
-		self.agent_ca = Agent.load(self.model_path_ca,
+		self.agent_ca = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_ca)
-		self.agent_es = Agent.load(self.model_path_es,
+		self.agent_es = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_es)
-		self.agent_en = Agent.load(self.model_path_en,
+		self.agent_en = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_en)
 
 	"""
@@ -76,15 +71,6 @@ class Query_answer_unit(object):
 		This function trains the agents and saves the models in the dialog's model path
 	"""
 	def train(self, augmentation_factor=250, max_history=3, epochs=500, batch_size=50, validation_split=0.3):
-		self.agent_ca.train(self.training_data_file,
-			augmentation_factor=augmentation_factor,
-			max_history=max_history,
-			epochs=epochs,
-		 	batch_size=batch_size,
-			validation_split=validation_split
-		)
-		self.agent_ca.persist(self.model_path_ca)
-
 		self.agent_es.train(self.training_data_file,
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,
@@ -92,16 +78,7 @@ class Query_answer_unit(object):
 		 	batch_size=batch_size,
 			validation_split=validation_split
 		)
-		self.agent_es.persist(self.model_path_es)
-
-		self.agent_en.train(self.training_data_file,
-			augmentation_factor=augmentation_factor,
-			max_history=max_history,
-			epochs=epochs,
-		 	batch_size=batch_size,
-			validation_split=validation_split
-		)
-		self.agent_en.persist(self.model_path_en)
+		self.agent_es.persist(self.model_path)
 
 	"""
 		Parameters:
@@ -114,7 +91,7 @@ class Query_answer_unit(object):
 		This function makes it possible to generate new stories manually.
 	"""
 	def train_manual(self, augmentation_factor=50, max_history=2, epochs=500, batch_size=50, validation_split=0.2):
-		self.agent_ca.train_online(self.training_data_file,
+		self.agent_es.train_online(self.training_data_file,
 			input_channel = ConsoleInputChannel(),
 			augmentation_factor=augmentation_factor,
 			max_history=max_history,

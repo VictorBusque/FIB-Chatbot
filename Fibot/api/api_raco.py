@@ -35,7 +35,7 @@ class API_raco(object):
 			True if funcion with acronym or name parameters exist,
 			False otherwise
 	"""
-	def get_schedule(self, access_token, language = 'es'):
+	def get_schedule(self, access_token, language = 'es', acronym = None):
 		url = 'https://api.fib.upc.edu/v2/jo/classes/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
@@ -44,7 +44,14 @@ class API_raco(object):
 		}
 		response = requests.get(url, headers = headers)
 		if response.status_code == 200:
-			return response.json().get('results')
+			results = response.json().get('results')
+			if not acronym:
+				return results
+			else:
+				acronym = acronym.upper()
+				for lecture in results:
+					if lecture['codi_assig'] != acronym: results.remove(lecture)
+				return  results
 
 
 	"""
@@ -85,8 +92,7 @@ class API_raco(object):
 		response = requests.get(url, headers = headers)
 		if response.status_code == 200:
 			response_json = response.json().get('results')
-			for subject in response_json:
-				yield subject['sigles']
+			for subject in response_json: yield subject['sigles']
 		return []
 
 
@@ -174,8 +180,7 @@ class API_raco(object):
 		This function returns:
 			(:obj:`list`): List with the practical works open of subject assig (if any)
 	"""
-	def get_practiques(self, access_token, assig = None, language = 'es'):
-		if assig: assig = assig.upper()
+	def get_practiques(self, access_token, language = 'es'):
 		practiques_url = 'https://api.fib.upc.edu/v2/jo/practiques/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
@@ -184,15 +189,7 @@ class API_raco(object):
 		}
 		response = requests.get(practiques_url, headers = headers)
 		if response.status_code == 200:
-			response_json = response.json().get('results')
-			if not assig: return response_json
-			else:
-				result = []
-				for item in response_json:
-					if item['codi_asg'] == assig:
-						result.appen(item)
-				return result
-		return []
+			return response.json().get('results')
 
 
 	"""
@@ -245,63 +242,15 @@ class API_raco(object):
 			return teachers
 		return []
 
-
-	"""
-		Parameters:
-			query(:obj:`dict`): json format of the query (p.e. {'places-matricula': { 'field': 'assig', 'value': 'APC' } } )
-			public(:obj:`bool`): Tells whether we are doing a public retrieval or nothing
-			access_token(:obj:`string`): In case of a private retrieval, the access token of the retriever
-
-		This function returns:
-			None: If something goes wrong
-			dict: result of the query
-	"""
-	def get_main(self, query, public = True, access_token = None, language = 'es'):
-		params = {}
+	def get_free_spots(self, acronym, language = 'es'):
+		acronym = acronym.upper()
+		url_places = 'https://api.fib.upc.edu/v2/assignatures/places/'
 		headers = {"client_id": self.client_id,
 				"Accept": "application/json",
 				"Accept-Language": language
 		}
-		if not public:
-			headers['Authorization'] = 'Bearer {}'.format(access_token)
-		response = requests.get(self.base_url, headers = headers, params = params)
+		response = requests.get(url_places, headers=headers)
 		if response.status_code == 200:
-			if public:
-				response_json = response.json().get('public')
-			else:
-				response_json = response.json().get('privat')
-			for key in query.keys():
-				query_url = response_json.get(key, [])
-				print(query_url )
-				if query_url:
-					return self.get_objects(query_url, query[key], headers)
-				else:
-					return None
-		else:
-			return None
-
-
-	"""
-		Parameters:
-			url(:obj:'str'): url of the api for the query
-			query(:obj:`dict`): query to look for
-			headers(:obj:`dict`): headers to do the request
-			params(:obj:`dict`): parameters to do the requests
-
-		This function returns:
-			None: if the query or the request goes wrong
-			dict: result of the query
-	"""
-	def get_objects(self, url, query, headers, params = {}):
-		response = requests.get(url, headers = headers, params = params)
-		if response.status_code == 200:
-			result = []
-			field_name = query['field']
-			field_value = query['value']
-			response_json = response.json().get('results')
-			for items in response_json:
-				if items[field_name] == field_value:
-					result.append(items)
-			return result
-		else:
-			return None
+			places = response.json().get('results')
+			for subject in places:
+				if subject['assig'] == acronym: yield subject

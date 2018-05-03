@@ -103,9 +103,9 @@ class action_show_subject_free_spots(Action):
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         if subject_acro:
-            if API_raco().subject_exists(subject_acro.upper(), user_lang):
-                query = {'places-matricula': { 'field': 'assig', 'value': subject_acro.upper() }}
-                response = API_raco().get_main(query, language = user_lang)
+            subject_acro = subject_acro.upper()
+            if API_raco().subject_exists(subject_acro, user_lang):
+                response = list(API_raco().get_free_spots(subject_acro, user_lang))
                 s_s = Subject_spots(response, user_lang)
                 if group:
                     dispatcher.utter_message("{}".format(s_s.get_group_spots(group)))
@@ -132,35 +132,29 @@ class action_show_subject_classroom(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
+        if not access_token:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            return []
         if subject_acro:
-            if API_raco().subject_exists(subject_acro.upper()):
-                access_token = Chats().get_chat_lite(chat_id)['access_token']
-                if not access_token: dispatcher.utter_message("{}".format(self.not_logged_message(user_lang)))
-                elif not API_raco().user_enrolled_subject(subject_acro.upper(), access_token, user_lang):
-                        response = str(Not_understood(user_lang, 'not_enrolled'))
-                        if '{}' in response:
-                            dispatcher.utter_message(response.format(subject_acro.upper()))
-                        else: dispatcher.utter_message(response)
+            subject_acro = subject_acro.upper()
+            if API_raco().subject_exists(subject_acro):
+                if not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
+                    response = str(Not_understood(user_lang, 'not_enrolled'))
+                    if '{}' in response:
+                        dispatcher.utter_message(response.format(subject_acro))
+                    else: dispatcher.utter_message(response)
                 else:
-                        query = {'horari': {'field': 'codi_assig' , 'value': subject_acro.upper()}}
-                        response = API_raco().get_main(query, public = False, access_token = access_token, language = user_lang)
-                        for data in response:
-                            lecture = Lecture(data, user_lang)
-                            dispatcher.utter_message("{}".format(lecture))
+                    response = API_raco().get_schedule(access_token, user_lang, subject_acro)
+                    for data in response:
+                        lecture = Lecture(data, user_lang)
+                        dispatcher.utter_message("{}".format(lecture))
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
         tracker._reset_slots()
         return []
-
-    def not_logged_message(self, user_lang):
-        messages = {
-            'ca': "No estàs identificat amb el teu usuari del Racó. No puc accedir a la teva informació.",
-            'es': "No estás identifcado con tu usuario del Racó. No puedo acceder a la tu información.",
-            'en': "You have not logged in with your Racó account. I cannot see your information"
-        }
-        return messages[user_lang]
 
 
 class action_show_subject_schedule(Action):
@@ -176,18 +170,20 @@ class action_show_subject_schedule(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
+        if not access_token:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            return []
         if subject_acro:
+            subject_acro = subject_acro.upper()
             if API_raco().subject_exists(subject_acro):
-                access_token = Chats().get_chat_lite(chat_id)['access_token']
-                if not access_token: dispatcher.utter_message("{}".format(self.not_logged_message(user_lang)))
-                elif not API_raco().user_enrolled_subject(subject_acro.upper(), access_token, user_lang):
-                        response = str(Not_understood(user_lang, 'not_enrolled'))
-                        if '{}' in response:
-                            dispatcher.utter_message(response.format(subject_acro.upper()))
-                        else: dispatcher.utter_message(response)
+                if not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
+                    response = str(Not_understood(user_lang, 'not_enrolled'))
+                    if '{}' in response:
+                        dispatcher.utter_message(response.format(subject_acro))
+                    else: dispatcher.utter_message(response)
                 else:
-                    query = {'horari': {'field': 'codi_assig' , 'value': subject_acro.upper()}}
-                    response = API_raco().get_main(query, public = False, access_token = access_token, language = user_lang)
+                    response = API_raco().get_schedule(access_token, user_lang, subject_acro)
                     for data in response:
                         lecture = Lecture(data, user_lang)
                         dispatcher.utter_message("{}".format(lecture))
@@ -222,9 +218,10 @@ class action_show_subject_teachers_mails(Action):
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         if subject_acro:
-            if API_raco().subject_exists(subject_acro.upper()):
-                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro.upper(), language = user_lang)
-                teachers_info = Subject_teachers(subject_acro.upper(), teachers_info, user_lang)
+            subject_acro = subject_acro.upper()
+            if API_raco().subject_exists(subject_acro):
+                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
+                teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
                 if teachers_info.amount < 4:
                     for response in teachers_info.get_mails():
                         dispatcher.utter_message("{}".format(response))
@@ -256,13 +253,14 @@ class action_show_subject_teachers_offices(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym").upper()
+        subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         if subject_acro:
-            if API_raco().subject_exists(subject_acro.upper()):
-                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro.upper(), language = user_lang)
-                teachers_info = Subject_teachers(subject_acro.upper(), teachers_info, user_lang)
+            subject_acro = subject_acro.upper()
+            if API_raco().subject_exists(subject_acro):
+                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
+                teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
                 if teachers_info.amount < 4:
                     for response in teachers_info.get_offices():
                         dispatcher.utter_message("{}".format(response))
@@ -294,13 +292,14 @@ class action_show_subject_teachers_names(Action):
     def run(self, dispatcher, tracker, domain):
         print(self.name())
         print(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym").upper()
+        subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         if subject_acro:
-            if API_raco().subject_exists(subject_acro.upper()):
-                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro.upper(), language = user_lang)
-                teachers_info = Subject_teachers(subject_acro.upper(), teachers_info, user_lang)
+            subject_acro = subject_acro.upper()
+            if API_raco().subject_exists(subject_acro):
+                teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
+                teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
                 if teachers_info.amount < 4:
                     for response in teachers_info.get_names():
                         dispatcher.utter_message("{}".format(response))
@@ -335,7 +334,10 @@ class action_show_next_class(Action):
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
-        schedule = API_raco().get_schedule(access_token, user_lang)
+        if not access_token:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            return []
+        schedule = API_raco().get_schedule(access_token = access_token, language = user_lang)
         schedule = Schedule(schedule, user_lang)
         answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
@@ -358,19 +360,25 @@ class action_show_next_exams(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
-        exams = list(API_raco().get_exams_user(access_token, language = user_lang))
-        e_e = Exam_schedule(exams, user_lang)
+        if not access_token:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            return []
         if subject_acro:
+            subject_acro = subject_acro.upper()
             coincidences = ["examen", "examens", "exam", "exams", "examenes", "exàmens", "exámenes", "exàmen", "exámen"]
             if subject_acro in coincidences: acro_filter = None
-            elif not API_raco().user_enrolled_subject(subject_acro.upper(), access_token, user_lang):
+            elif not API_raco().subject_exists(subject_acro, user_lang):
+                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
+                return []
+            elif not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
                 response = str(Not_understood(user_lang, 'not_enrolled'))
-                if '{}' in response: dispatcher.utter_message(response.format(subject_acro.upper()))
+                if '{}' in response: dispatcher.utter_message(response.format(subject_acro))
                 else: dispatcher.utter_message(response)
                 return []
-            if API_raco().subject_exists(subject_acro.upper(), user_lang): acro_filter = subject_acro.upper()
-            else: acro_filter = None
+            else: acro_filter = subject_acro
         else: acro_filter = None
+        exams = list(API_raco().get_exams_user(access_token = access_token, language = user_lang))
+        e_e = Exam_schedule(exams, user_lang)
         exams = list(e_e.get_closest_exams(range = 62, acro_filter = acro_filter))
         if exams:
             for exam in exams:
@@ -394,15 +402,33 @@ class action_show_next_pracs(Action):
         print(self.name())
         print(tracker.slots)
         chat_id = tracker.sender_id
+        subject_acro = tracker.get_slot("subject_acronym")
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
-        pracs = list(API_raco().get_practiques(access_token, language = user_lang))
+        if not access_token:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            return []
+        if subject_acro:
+            subject_acro = subject_acro.upper()
+            coincidences = ["practica", "practiques", "practical work", "practical works", "practicas", "pràctica", "pràctiques", "práctica", "prácticas"]
+            if subject_acro in coincidences: acro_filter = None
+            elif not API_raco().subject_exists(subject_acro, user_lang):
+                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
+                return []
+            elif not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
+                response = str(Not_understood(user_lang, 'not_enrolled'))
+                if '{}' in response: dispatcher.utter_message(response.format(subject_acro))
+                else: dispatcher.utter_message(response)
+                return []
+            else: acro_filter = subject_acro
+        else: acro_filter = None
+        pracs = list(API_raco().get_practiques(access_token = access_token, language = user_lang))
         p_e = Practical_schedule(pracs, user_lang)
-        pracs = list(p_e.get_closest_pracs(range = 120))
+        pracs = list(p_e.get_closest_pracs(range = 62, acro_filter = acro_filter))
         if pracs:
             for prac in pracs:
                 dispatcher.utter_message("{}".format(prac))
-                tracker._reset_slots()
+            tracker._reset_slots()
             return []
         dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_pracs')))
         tracker._reset_slots()

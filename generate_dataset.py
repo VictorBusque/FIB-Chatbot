@@ -174,7 +174,7 @@ def main(amount = 250, language = 'es'):
 	subject_teacher_name_gen = Data_generator(subject_gen, intro_subject_teacher_name_gen, type_="subject", intent = "ask_subject_teacher_name")
 	next_class_gen = Data_generator(None, intro_next_class_gen, type_ = None, intent = "ask_next_class")
 	next_exam_gen = Data_generator(subject_gen, intro_exams_gen, type_="subject", intent = "ask_exams")
-	next_pracs_gen = Data_generator(None, intro_pracs_gen, type_ = None, intent = "ask_pracs")
+	next_pracs_gen = Data_generator(subject_gen, intro_pracs_gen, type_ = "subject", intent = "ask_pracs")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
 
@@ -201,7 +201,7 @@ def main(amount = 250, language = 'es'):
 			 }
 	print ( "Size of the dataset: {}".format(len(common_examples)))
 	json_ = str(json.dumps(result, indent=2))
-	file = open(file_path,"wb")
+	file = open(file_path,"w")
 	file.write(json_)
 	file.close()
 

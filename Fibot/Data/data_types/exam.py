@@ -22,12 +22,9 @@ class Exam_schedule(object):
         if number: return self.exams[:number]
         else:
             for exam in self.exams:
-                print(exam.subject)
                 if acro_filter:
-                    print("Tinc un filtrat per {}".format(acro_filter))
-                    if acro_filter == exam.subject and  self.get_day_difference(exam) <= range: yield exam
+                    if acro_filter == exam.subject and self.get_day_difference(exam) <= range: yield exam
                 else:
-                    print("No tinc cap filtrat, perque acro_filter = {}".format(acro_filter))
                     if self.get_day_difference(exam) <= range: yield exam
 
 
