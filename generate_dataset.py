@@ -36,7 +36,7 @@ class Item_generator(object):
 		i_idx = random.randint(0, self.num_items-1)
 		shorten = random.randint(0,100) <= 50;
 		if shorten and self.name:
-			length = random.randint(1, 2)
+			length = random.randint(1, len(self.items[i_idx])-1)
 			return ' '.join(self.items[i_idx].split(' ')[0:length])
 		return self.items[i_idx]
 

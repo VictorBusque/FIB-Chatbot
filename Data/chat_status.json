@@ -2,84 +2,84 @@
   "469557458": {
     "name": "V\u00edctor",
     "language": "ca",
-    "access_token": "qvv+ed1BM8pF31lRqAYP1F03iHDdMyKg0+xAomNd1Bw=",
-    "refresh_token": "MCKmJOYaP7i25qDf4ewkPpTHx8hRxqAhIoVl0Gf9qZw=",
+    "access_token": "4qQa4yh0XY1MJ+17RAR8UsPso/jb3wsB4k0KxI6Km5w=",
+    "refresh_token": "LoH7le36XE5GYJayRR0ffYSiT3XV3Khge1OrLcVfeVc=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 3,
+      "day": 9,
       "month": 5,
       "year": 2018,
-      "hour": 22,
-      "minute": 33,
-      "second": 41
+      "hour": 2,
+      "minute": 16,
+      "second": 46
     },
     "logged": true,
-    "notifications": false
+    "notifications": true
   },
   "312420157": {
     "name": "Joel",
-    "refresh_token": "hHa10WJsSYKcQOu8vN5Lb+IoRJpV42XKskViAwG0h7A=",
+    "refresh_token": "hPT1o2BLvdt6mzvXh5csr0iK7Rr32pHdDCjFvTlfXpg=",
     "notifications": true,
     "current_state": "0",
     "expire_time_end": {
-      "day": 3,
+      "day": 9,
       "month": 5,
       "year": 2018,
-      "hour": 20,
-      "minute": 1,
-      "second": 52
+      "hour": 2,
+      "minute": 16,
+      "second": 46
     },
     "language": "ca",
     "logged": true,
-    "access_token": "o8uaAAzVMZBQMzpnBedYoYdlad5Zfemuyoto4FUm5wQ="
+    "access_token": "KsCHzRK+SR2cvm+zlEcQqj/g2vpB7pNLRPK5IaZ31Nk="
   },
   "461088493": {
     "name": "Albert",
-    "refresh_token": "Kfdi1u3Np3ABI7ApHaRUETLU0v66Sh0cwtoQTMtQO6E=",
+    "refresh_token": "ZZg//QnCICKU6fWz9Rn+Pofd+5YnHyIXqaFXMmub46w=",
     "notifications": true,
     "current_state": "0",
     "expire_time_end": {
-      "day": 3,
+      "day": 9,
       "month": 5,
       "year": 2018,
-      "hour": 20,
-      "minute": 1,
-      "second": 52
+      "hour": 2,
+      "minute": 16,
+      "second": 47
     },
     "language": "ca",
     "logged": true,
-    "access_token": "Nq2Xlu8G/+jKoJ8FlkIppeVosSl5KpNZCRoHmIFuUBo="
+    "access_token": "umXtX8ccnHoz0+n/FDAOf3RMy15shEzjQr/KPAcOMlo="
   },
   "349611162": {
     "name": "Carla",
-    "refresh_token": "9jcSZZqQ0u3AwkEX4c4GUbty7cdpdvKW0uu3/DLSRE4=",
+    "refresh_token": "nFOB5vo/JuPklP7pLrbCx/UMywg+VY/g/wehYv9e9fY=",
     "notifications": true,
     "current_state": "0",
     "expire_time_end": {
-      "day": 3,
+      "day": 9,
       "month": 5,
       "year": 2018,
-      "hour": 20,
-      "minute": 1,
-      "second": 52
+      "hour": 2,
+      "minute": 16,
+      "second": 47
     },
     "language": "ca",
     "logged": true,
-    "access_token": "mUADa48p3SGQ8aHakactTJX60DwNCEllJXygSroZvEM="
+    "access_token": "VDdZBI6PAO6SQDyUQTjCV0bmPDWZPs+sbget2xqSybQ="
   },
   "443306157": {
     "name": "Daniel",
     "language": "ca",
-    "access_token": "aDsX0iGyZL/i4jgqKsaf0wkiea70qcC9wNdvp7pagbk=",
-    "refresh_token": "KBkYrzBJ+hCR0ZsSaZZlUgwAAuI5OmN5UGN3YxpfJR8=",
+    "access_token": "53y376iAD96neApwRXLH3lx3d1qMsbTNuFD64rsEl7o=",
+    "refresh_token": "XvE6yraovb3CL8lhgQLmiGCihWi4g6qanW03v22bPq8=",
     "current_state": "0",
     "expire_time_end": {
-      "day": 3,
+      "day": 9,
       "month": 5,
       "year": 2018,
-      "hour": 20,
-      "minute": 1,
-      "second": 52
+      "hour": 2,
+      "minute": 16,
+      "second": 47
     },
     "logged": true,
     "notifications": true

@@ -1,8 +1,25 @@
 {
   "language": "en",
-  "pipeline":  "spacy_sklearn",
+  "pipeline":  ["nlp_spacy", "tokenizer_spacy", "intent_entity_featurizer_regex", "intent_featurizer_spacy", "ner_crf", "intent_classifier_sklearn"],
   "num_threads": 3,
-  "log_level": "INFO",
+  "log_level": "DEBUG",
   "path" : "./models",
-  "data" : "./Data/Dataset_en.json"
+  "data" : "./Data/Dataset_en.json",
+  "response_log": "nlu_logs/",
+
+  "ner_crf": {
+    "BILOU_flag": true,
+    "features": [
+      ["low", "upper", "pos", "pos2"],
+      ["bias", "low", "word3", "word2", "upper", "digit", "pos", "pos2", "pattern"],
+      ["low", "upper", "pos", "pos2"]],
+    "max_iterations": 50,
+    "L1_c": 1,
+    "L2_c": 1e-3
+  },
+
+  "intent_classifier_sklearn": {
+    "C": [1, 2, 5, 10, 20, 100],
+    "kernel": "linear"
+  }
 }

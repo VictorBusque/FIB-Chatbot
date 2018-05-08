@@ -365,7 +365,8 @@ class action_show_next_exams(Action):
             return []
         if subject_acro:
             subject_acro = subject_acro.upper()
-            coincidences = ["examen", "examens", "exam", "exams", "examenes", "exàmens", "exámenes", "exàmen", "exámen"]
+            coincidences = ["examen".upper(), "examens".upper(), "exam".upper(), "exams".upper(), "examenes".upper(),
+                            "exàmens".upper(), "exámenes".upper(), "exàmen".upper(), "exámen".upper()]
             if subject_acro in coincidences: acro_filter = None
             elif not API_raco().subject_exists(subject_acro, user_lang):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
@@ -410,8 +411,11 @@ class action_show_next_pracs(Action):
             return []
         if subject_acro:
             subject_acro = subject_acro.upper()
-            coincidences = ["practica", "practiques", "practical work", "practical works", "practicas", "pràctica", "pràctiques", "práctica", "prácticas"]
-            if subject_acro in coincidences: acro_filter = None
+            coincidences = ["practica".upper(), "practiques".upper(), "practical work".upper(), "practical works".upper(),
+                            "practicas".upper(), "pràctica".upper(), "pràctiques".upper(), "práctica".upper(), "prácticas".upper()]
+            if subject_acro in coincidences:
+                print("M'ha preguntat practiques")
+                acro_filter = None
             elif not API_raco().subject_exists(subject_acro, user_lang):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
                 return []
