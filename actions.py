@@ -7,7 +7,7 @@ import json
 
 #-- 3rd party imports --#
 from rasa_core.actions.action import Action
-from rasa_core.events import SlotSet
+from rasa_core.events import AllSlotsReset
 
 #-- Local imports --#
 from Fibot.api.api_raco import API_raco
@@ -32,11 +32,17 @@ class Not_understood(object):
         chosen_response = self.messages[self.type_][self.language][randint(0,len(self.messages[self.type_][self.language])-1)]
         return chosen_response
 
+class Action_slot_reset(Action):
+    def name(self):
+        return 'Action_slot_reset'
+    def run(self, dispatcher, tracker, domain):
+        return[AllSlotsReset()]
 
-class action_show_teacher_mail(Action):
+
+class Action_show_teacher_mail(Action):
 
     def name(self):
-        return 'action_show_teacher_mail'
+        return 'Action_show_teacher_mail'
 
     def resets_topic(self):
         return True
@@ -56,14 +62,13 @@ class action_show_teacher_mail(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_teacher_office(Action):
+class Action_show_teacher_office(Action):
 
     def name(self):
-        return 'action_show_teacher_office'
+        return 'Action_show_teacher_office'
 
     def resets_topic(self):
         return True
@@ -83,14 +88,13 @@ class action_show_teacher_office(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_subject_free_spots(Action):
+class Action_show_subject_free_spots(Action):
 
     def name(self):
-        return 'action_show_subject_free_spots'
+        return 'Action_show_subject_free_spots'
 
     def resets_topic(self):
         return True
@@ -119,9 +123,9 @@ class action_show_subject_free_spots(Action):
         return []
 
 
-class action_show_subject_classroom(Action):
+class Action_show_subject_classroom(Action):
     def name(self):
-        return 'action_show_subject_classroom'
+        return 'Action_show_subject_classroom'
 
     def resets_topic(self):
         return True
@@ -153,13 +157,12 @@ class action_show_subject_classroom(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_subject_schedule(Action):
+class Action_show_subject_schedule(Action):
     def name(self):
-        return 'action_show_subject_schedule'
+        return 'Action_show_subject_schedule'
 
     def resets_topic(self):
         return True
@@ -191,7 +194,6 @@ class action_show_subject_schedule(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
     def not_logged_message(self, user_lang):
@@ -203,10 +205,10 @@ class action_show_subject_schedule(Action):
         return messages[user_lang]
 
 
-class action_show_subject_teachers_mails(Action):
+class Action_show_subject_teachers_mails(Action):
 
     def name(self):
-        return 'action_show_subject_teachers_mails'
+        return 'Action_show_subject_teachers_mails'
 
     def resets_topic(self):
         return True
@@ -238,14 +240,13 @@ class action_show_subject_teachers_mails(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_subject_teachers_offices(Action):
+class Action_show_subject_teachers_offices(Action):
 
     def name(self):
-        return 'action_show_subject_teachers_offices'
+        return 'Action_show_subject_teachers_offices'
 
     def resets_topic(self):
         return True
@@ -277,14 +278,13 @@ class action_show_subject_teachers_offices(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_subject_teachers_names(Action):
+class Action_show_subject_teachers_names(Action):
 
     def name(self):
-        return 'action_show_subject_teachers_names'
+        return 'Action_show_subject_teachers_names'
 
     def resets_topic(self):
         return True
@@ -316,14 +316,13 @@ class action_show_subject_teachers_names(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_next_class(Action):
+class Action_show_next_class(Action):
 
     def name(self):
-        return 'action_show_next_class'
+        return 'Action_show_next_class'
 
     def resets_topic(self):
         return True
@@ -341,14 +340,13 @@ class action_show_next_class(Action):
         schedule = Schedule(schedule, user_lang)
         answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
-        tracker._reset_slots()
         return []
 
 
-class action_show_next_exams(Action):
+class Action_show_next_exams(Action):
 
     def name(self):
-        return 'action_show_next_exams'
+        return 'Action_show_next_exams'
 
     def resets_topic(self):
         return True
@@ -387,14 +385,13 @@ class action_show_next_exams(Action):
             tracker._reset_slots()
             return []
         dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_exams')))
-        tracker._reset_slots()
         return []
 
 
-class action_show_next_pracs(Action):
+class Action_show_next_pracs(Action):
 
     def name(self):
-        return 'action_show_next_pracs'
+        return 'Action_show_next_pracs'
 
     def resets_topic(self):
         return True
@@ -435,5 +432,4 @@ class action_show_next_pracs(Action):
             tracker._reset_slots()
             return []
         dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_pracs')))
-        tracker._reset_slots()
         return []

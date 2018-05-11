@@ -1,15 +1,18 @@
 {
   "action_fingerprints": {
     "action_listen": {
+      "slots": []
+    },
+    "null": {
       "slots": [
-        "subject_acronym",
         "teacher_name",
+        "subject_acronym",
         "group"
       ]
     }
   },
-  "rasa_core": "0.8.2",
-  "max_history": 3,
+  "rasa_core": "0.8.3",
+  "max_history": 1,
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.memoization.MemoizationPolicy",

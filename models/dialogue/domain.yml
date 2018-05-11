@@ -1,28 +1,30 @@
 action_factory: null
 action_names:
-- action_show_teacher_mail
-- action_show_teacher_office
-- action_show_subject_free_spots
-- action_show_subject_classroom
-- action_show_subject_schedule
-- action_show_subject_teachers_mails
-- action_show_subject_teachers_offices
-- action_show_subject_teachers_names
-- action_show_next_class
-- action_show_next_exams
-- action_show_next_pracs
+- Action_slot_reset
+- Action_show_teacher_mail
+- Action_show_teacher_office
+- Action_show_subject_free_spots
+- Action_show_subject_classroom
+- Action_show_subject_schedule
+- Action_show_subject_teachers_mails
+- Action_show_subject_teachers_offices
+- Action_show_subject_teachers_names
+- Action_show_next_class
+- Action_show_next_exams
+- Action_show_next_pracs
 actions:
-- actions.action_show_teacher_mail
-- actions.action_show_teacher_office
-- actions.action_show_subject_free_spots
-- actions.action_show_subject_classroom
-- actions.action_show_subject_schedule
-- actions.action_show_subject_teachers_mails
-- actions.action_show_subject_teachers_offices
-- actions.action_show_subject_teachers_names
-- actions.action_show_next_class
-- actions.action_show_next_exams
-- actions.action_show_next_pracs
+- actions.Action_slot_reset
+- actions.Action_show_teacher_mail
+- actions.Action_show_teacher_office
+- actions.Action_show_subject_free_spots
+- actions.Action_show_subject_classroom
+- actions.Action_show_subject_schedule
+- actions.Action_show_subject_teachers_mails
+- actions.Action_show_subject_teachers_offices
+- actions.Action_show_subject_teachers_names
+- actions.Action_show_next_class
+- actions.Action_show_next_exams
+- actions.Action_show_next_pracs
 config:
   store_entities_as_slots: true
 entities:
