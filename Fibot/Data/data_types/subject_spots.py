@@ -36,6 +36,7 @@ class Subject_spots(object):
             self.responses = data['ask_free_spots']
         with open('./Data/error_responses.json', 'rb') as fp:
         	self.messages = json.load(fp)['not_group']
+        return
 
     """
         Returns a per group formatted response to a question of group specific free spots

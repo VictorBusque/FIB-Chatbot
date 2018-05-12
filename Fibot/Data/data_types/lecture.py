@@ -17,6 +17,7 @@ class Schedule(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['ask_next_class']
+        return
 
 
     def get_next_class(self):
@@ -131,6 +132,7 @@ class Lecture(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['ask_subject_schedule']
+        return
 
 
     def __repr__(self):

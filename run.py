@@ -4,6 +4,7 @@
 #-- General imports --#
 import re
 import datetime
+from pprint import pprint
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -25,7 +26,7 @@ Fibot = Fibot()
 """
 	Function that responds to the /start command
 """
-def start(bot, update):
+def start(bot, update, args):
 	global Fibot
 	chat_id = update.message.chat_id
 	if Fibot.chats.user_has_data(chat_id):
@@ -212,7 +213,7 @@ def main():
 	dp = updater.dispatcher
 
 	conv_handler = ConversationHandler(
-		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
+		entry_points=[CommandHandler('start', start, pass_args = True), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
 					CommandHandler('updates_off', updates_off), CommandHandler('set_lang', set_lang),
 					MessageHandler(filters = Filters.text, callback = state_machine)],

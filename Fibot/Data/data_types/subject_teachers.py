@@ -36,6 +36,7 @@ class Subject_teachers(object):
             self.responses['ask_subject_teacher_mail'] = data['ask_subject_teacher_mail']
             self.responses['ask_subject_teacher_office'] = data['ask_subject_teacher_office']
             self.responses['ask_subject_teacher_name'] = data['ask_subject_teacher_name']
+        return
 
 
     """

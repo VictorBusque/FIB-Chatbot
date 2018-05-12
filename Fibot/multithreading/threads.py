@@ -113,6 +113,7 @@ class Notification_thread(object):
         to_save = str(self.last_check)
         with open('Data/timestamp.txt', 'w') as file:
             file.write(to_save)
+        return
 
     """
         Retrieves and stores the timestamp when the last scan was done
@@ -124,6 +125,7 @@ class Notification_thread(object):
             year, month, day = date.split('-')
             hour, minute, second = time.split(':')
             self.last_check = datetime.datetime(int(year),int(month), int(day), int(hour), int(minute), int(second))
+        return
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)

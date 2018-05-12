@@ -51,10 +51,7 @@ class Fibot(object):
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
-			'Authorise': '1',
-			'Wait_authorisation': '2',
-			'Erase_user': '3',
-			'Push_notification': '4',
+			'Wait_authorisation': '1'
 		}
 
 	"""
@@ -80,6 +77,7 @@ class Fibot(object):
 		with open('./Data/messages.json', 'r') as fp:
 			self.messages = json.load(fp)
 		print("Preset messages loaded")
+		return
 
 	"""
 		Parameters:

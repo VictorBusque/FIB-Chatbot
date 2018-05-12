@@ -32,6 +32,7 @@ class Teacher(object):
             data = json.load(fp)
             self.responses['ask_teacher_mail'] = data['ask_teacher_mail']
             self.responses['ask_teacher_office'] = data['ask_teacher_office']
+        return
 
     """
         Returns a string formatted text which explains the mail for the teacher

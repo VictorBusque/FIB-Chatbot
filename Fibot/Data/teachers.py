@@ -35,6 +35,7 @@ class Teachers(object):
             with open('./Data/teachers/{}.json'.format(department), 'r') as fp:
             	self.data[department] = json.load(fp)
         print("Loaded teachers data for departments {}".format(self.departments))
+        return
 
     """
         Parameters:

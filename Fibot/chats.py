@@ -65,11 +65,12 @@ class Chats(object):
 					if (self.chats[item]['access_token']):
 						self.chats[item]['access_token'] = self.decrypt_data(self.chats[item]['access_token'])
 						self.chats[item]['refresh_token'] = self.decrypt_data(self.chats[item]['refresh_token'])
-
+			return
 		except:
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
 				json.dump({}, fp, indent = 2)
+			return
 
 	"""
 		Parameters:
@@ -132,6 +133,7 @@ class Chats(object):
 					cpy[item]['access_token'] = self.encrypt_data(cpy[item]['access_token'])
 					cpy[item]['refresh_token'] = self.encrypt_data(cpy[item]['refresh_token'])
 			json.dump(cpy, fp, indent = 2)
+		return
 
 	"""
 		Parameters:
