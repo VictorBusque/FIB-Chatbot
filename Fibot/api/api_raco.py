@@ -18,7 +18,6 @@ class API_raco(object):
 			client_id(:obj:`str`): the client_id for our api application
 			client_secret(:obj:`str`): the client_secret for our api application
 			base_url(:obj:`str`): the base url for checking content on the api_raco
-			language(:obj:`dict`): allows to find information in 3 different languages
 	"""
 	def __init__(self):
 		self.client_id = os.getenv('client_id')
@@ -242,6 +241,14 @@ class API_raco(object):
 			return teachers
 		return []
 
+	"""
+		Parameters
+			assig(:obj:`str` or None): Acronym of the assig if this is a specific search, o None if it is general
+			language(:obj:`str`): Name of the language for the search
+
+		This function returns:
+			(:obj:`list`): List with the free spots for the subject with acronym
+	"""
 	def get_free_spots(self, acronym, language = 'es'):
 		acronym = acronym.upper()
 		url_places = 'https://api.fib.upc.edu/v2/assignatures/places/'
