@@ -48,9 +48,11 @@ class API_raco(object):
 				return results
 			else:
 				acronym = acronym.upper()
+				output = []
 				for lecture in results:
-					if lecture['codi_assig'] != acronym: results.remove(lecture)
-				return  results
+					if lecture['codi_assig'] == acronym:
+						output.append(lecture)
+				return  output
 
 
 	"""

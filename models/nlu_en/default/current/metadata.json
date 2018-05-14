@@ -16,6 +16,7 @@
         "crf_features": [
             [
                 "low",
+                "title",
                 "upper",
                 "pos",
                 "pos2"
@@ -26,6 +27,7 @@
                 "word3",
                 "word2",
                 "upper",
+                "title",
                 "digit",
                 "pos",
                 "pos2",
@@ -33,6 +35,7 @@
             ],
             [
                 "low",
+                "title",
                 "upper",
                 "pos",
                 "pos2"
@@ -42,6 +45,6 @@
         "version": 1
     },
     "intent_classifier_sklearn": "intent_classifier.pkl",
-    "trained_at": "20180511-175154",
+    "trained_at": "20180513-225759",
     "rasa_nlu_version": "0.11.3"
 }

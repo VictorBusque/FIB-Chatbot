@@ -163,13 +163,11 @@
 
 ## Generated Story free spots group  4
 * ask_free_spots{"subject_acronym": "eda", "group": "33"}
-   - slot{"subject_acronym": "vc"}
    - Action_show_subject_free_spots
    - Action_slot_reset
 
 ## Generated Story free spots group  5
 * ask_free_spots{"subject_acronym": "pes", "group": "41"}
-  - slot{"subject_acronym": "VJ"}
   - Action_show_subject_free_spots
   - Action_slot_reset
 
@@ -209,31 +207,31 @@
 
 ## Generated Story subject teacher office 1
 * ask_subject_teacher_office{"subject_acronym": "pro1"}
-    - slot{"subject_acronym": "prop"}
+    - slot{"subject_acronym": "pro1"}
     - Action_show_subject_teachers_offices
     - Action_slot_reset
 
 ## Generated Story subject teacher office 2
 * ask_subject_teacher_office{"subject_acronym": "APA"}
-    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "APA"}
     - Action_show_subject_teachers_offices
     - Action_slot_reset
 
 ## Generated Story subject teacher office 3
 * ask_subject_teacher_office{"subject_acronym": "asw"}
-  - slot{"subject_acronym": "prop"}
+  - slot{"subject_acronym": "asw"}
   - Action_show_subject_teachers_offices
   - Action_slot_reset
 
 ## Generated Story subject teacher office 4
 * ask_subject_teacher_office{"subject_acronym": "AC"}
-  - slot{"subject_acronym": "ac"}
+  - slot{"subject_acronym": "AC"}
   - Action_show_subject_teachers_offices
   - Action_slot_reset
 
 ## Generated Story subject teacher office 5
 * ask_subject_teacher_office{"subject_acronym": "IA"}
-    - slot{"subject_acronym": "ac"}
+    - slot{"subject_acronym": "IA"}
     - Action_show_subject_teachers_offices
     - Action_slot_reset
 
