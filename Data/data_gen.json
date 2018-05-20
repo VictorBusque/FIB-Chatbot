@@ -84,9 +84,6 @@
       "quin es el despatx de {}",
       "quin es el despatx del {}",
       "quin es el despatx de la {}",
-      "quin es el despatx de {}",
-      "quin es el despatx del {}",
-      "quin es el despatx de la {}",
       "despatx de {}",
       "despatx del {}",
       "despatx de la {}",
@@ -115,9 +112,6 @@
       "on despatx {}",
       "despatx {}",
       "quin despatx {}",
-      "quin es el despatx de {}?",
-      "quin es el despatx del {}?",
-      "quin es el despatx de la {}?",
       "quin es el despatx de {}?",
       "quin es el despatx del {}?",
       "quin es el despatx de la {}?",
@@ -324,7 +318,6 @@
       "quina és la classe de {}",
       "quina és la aula de {}",
       "aula {}",
-      "a quina aula tinc {}",
       "diga'm on tinc {}",
       "Em pots dir a quina classe faig {}",
 
@@ -347,7 +340,6 @@
       "quina és la classe de {}?",
       "quina és la aula de {}?",
       "aula {}?",
-      "a quina aula tinc {}?",
       "diga'm on tinc {}?",
       "Em pots dir a quina classe faig {}?"
     ],
@@ -495,7 +487,9 @@
       "qui és el profe de {}",
       "qui és la profe de {}",
       "qui son els professors de {}",
+      "qui son els profes de {}",
       "diga'm els professors de {}",
+      "diga'm els profes de {}",
       "em pots dir els professors de {}",
       "em pots dir qui es el profe de {}",
 
@@ -755,7 +749,10 @@
       "quines pràctiques de {} tinc?",
       "quan tinc pràctiques de {}?",
       "pràctiques per entregar de {}?",
-      "quines pràctiques de {} he d'entregar?"
+      "quines pràctiques de {} he d'entregar?",
+      "quan haig dentregar la practica de {}",
+      "quan haig dentregar la practica de {}?",
+      "quan he dentregar practiques?"
     ]
   },
   "es": {

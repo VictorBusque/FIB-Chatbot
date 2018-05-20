@@ -224,15 +224,15 @@ class Action_show_subject_teachers_mails(Action):
             if API_raco().subject_exists(subject_acro):
                 teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
                 teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
-                if teachers_info.amount < 4:
+                if teachers_info.amount <= 4:
                     for response in teachers_info.get_mails():
                         dispatcher.utter_message("{}".format(response))
                 else:
-                    answers = {'ca': "Quin d'aquests professors t'interessa?\n",
-                        'es': '¿Quién de estos te interesa?\n',
-                        'en': 'Who out of this teachers are you interested in?\n'
+                    answers = {'ca': "Aquests són els professors de {}, pregunta'm per qui vulguis!\n",
+                        'es': 'Éstos son los profesores de {}. ¡Pregúntame por el que quieras!\n',
+                        'en': "These are {}'s teachers. Ask me for the one you are interested in!\n"
                     }
-                    answer = answers[user_lang]
+                    answer = answers[user_lang].format(subject_acro)
                     for teacher in teachers_info.get_names():
                         answer = answer + teacher + '\n'
                     dispatcher.utter_message("{}".format(answer))
@@ -266,11 +266,11 @@ class Action_show_subject_teachers_offices(Action):
                     for response in teachers_info.get_offices():
                         dispatcher.utter_message("{}".format(response))
                 else:
-                    answers = {'ca': "Quin d'aquests professors t'interessa?\n",
-                        'es': '¿Quién de estos te interesa?\n',
-                        'en': 'Who out of this teachers are you interested in?\n'
+                    answers = {'ca': "Aquests són els professors de {}, pregunta'm per qui vulguis!\n",
+                        'es': 'Éstos son los profesores de {}. ¡Pregúntame por el que quieras!\n',
+                        'en': "These are {}'s teachers. Ask me for the one you are interested in!\n"
                     }
-                    answer = answers[user_lang]
+                    answer = answers[user_lang].format(subject_acro)
                     for teacher in teachers_info.get_names():
                         answer = answer + teacher + '\n'
                     dispatcher.utter_message("{}".format(answer))
@@ -300,18 +300,14 @@ class Action_show_subject_teachers_names(Action):
             if API_raco().subject_exists(subject_acro):
                 teachers_info = API_raco().get_subject_teachers(acronym = subject_acro, language = user_lang)
                 teachers_info = Subject_teachers(subject_acro, teachers_info, user_lang)
-                if teachers_info.amount < 4:
-                    for response in teachers_info.get_names():
-                        dispatcher.utter_message("{}".format(response))
-                else:
-                    answers = {'ca': "Quin d'aquests professors t'interessa?\n",
-                        'es': '¿Quién de estos te interesa?\n',
-                        'en': 'Who out of this teachers are you interested in?\n'
-                    }
-                    answer = answers[user_lang]
-                    for teacher in teachers_info.get_names():
-                        answer = answer + teacher + '\n'
-                    dispatcher.utter_message("{}".format(answer))
+                answers = {'ca': "Aquests són els professors de {}:\n",
+                    'es': 'Éstos son los profesores de {}:\n',
+                    'en': "These are {}'s teachers:\n"
+                }
+                answer = answers[user_lang].format(subject_acro)
+                for teacher in teachers_info.get_names():
+                    answer = answer + teacher + '\n'
+                dispatcher.utter_message("{}".format(answer))
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
