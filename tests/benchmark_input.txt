@@ -20,3 +20,49 @@ cuando tengo examen de vc
 ask_exams
 cuando tengo que entregar la practica de wse
 ask_pracs
+a que hora me toca vc
+ask_subject_schedule
+en que aula tengo wse
+ask_subject_classroom
+puedes decirme el mail de javier bejar
+ask_teacher_mail
+donde puedo encontrar el despacho de jordi turmo?
+ask_teacher_office
+a que hora tengo clase de wse
+ask_subject_schedule
+dime el correo del profesor de teoria de apa
+ask_subject_teacher_mail
+a que hora tengo asw
+ask_subject_schedule
+cual es la dirección de correo electrónico de luis belanche
+ask_teacher_mail
+dónde puedo localizar el despacho de jordi delgado
+ask_teacher_office
+en que aula tengo clase de PES
+ask_subject_classroom
+cuando tengo examen de apa
+ask_exams
+proximos examenes
+ask_exams
+proximas practicas
+ask_pracs
+cuando tengo que entregar la practica de PES
+ask_pracs
+cuantos huecos hay libres en prop grupo 22
+ask_free_spots
+cuantas plazas de matricula hay libres en pro1 grupo 11
+ask_free_spots
+cuantas matriculas libres hay en apa grupo 11
+ask_free_spots
+correo electrónico del profesor de apa
+ask_subject_teacher_mail
+cual es el despacho del profesor de caim
+ask_subject_teacher_office
+a que hora me toca vc
+ask_subject_schedule
+cual es el despacho del profesor de caim
+ask_subject_teacher_office
+que me toca
+ask_next_class
+a que hora tengo prop
+ask_subject_schedule

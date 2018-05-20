@@ -1,6 +1,6 @@
 {
   "language": "es",
-  "pipeline":  ["nlp_spacy", "tokenizer_spacy", "intent_entity_featurizer_regex", "intent_featurizer_ngrams", "intent_featurizer_spacy", "ner_crf", "intent_classifier_sklearn"],
+  "pipeline":  ["nlp_spacy", "tokenizer_spacy", "intent_entity_featurizer_regex", "intent_featurizer_spacy", "intent_featurizer_ngrams", "ner_crf", "intent_classifier_sklearn"],
   "num_threads": 3,
   "log_level": "DEBUG",
   "path" : "./models",

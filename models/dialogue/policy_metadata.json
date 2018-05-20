@@ -3,12 +3,12 @@
     "action_listen": {
       "slots": [
         "group",
-        "subject_acronym",
-        "teacher_name"
+        "teacher_name",
+        "subject_acronym"
       ]
     }
   },
-  "rasa_core": "0.8.2",
+  "rasa_core": "0.8.3",
   "max_history": 5,
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [

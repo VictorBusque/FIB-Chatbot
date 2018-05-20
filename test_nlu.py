@@ -65,6 +65,20 @@ def print_conf_matrix(conf_matrix):
         else: fill = "\t"
         print("{}:{}{}".format(idx2intent[row], fill, conf_matrix[row]))
 
+def get_global_accuracy(conf_matrix):
+    return sum(conf_matrix.diagonal())/sum(sum(conf_matrix))
+
+
+def get_avg_precision(conf_matrix):
+    precisions = conf2precision(conf_matrix)
+    val = list(precisions.values())
+    return np.mean(val)
+
+def get_avg_recall(conf_matrix):
+    recalls = conf2recall(conf_matrix)
+    val = list(recalls.values())
+    return np.mean(val)
+
 if __name__ == '__main__':
     nlu = NLU_unit()
     nlu.load()
@@ -121,16 +135,21 @@ if __name__ == '__main__':
             contents = file.readlines()
             size = len(contents)
             for message_idx in range(0, size, 2):
-                message = contents[message_idx]
+                message = contents[message_idx].rstrip()
                 ok_intent = contents[message_idx+1].rstrip()
                 ok_idx = intent2idx[ok_intent]
                 pred_intent = nlu.get_intent(message, language)['name']
                 pred_idx = intent2idx[pred_intent]
+                if ok_idx != pred_idx: print("\n{}: {} -> {}".format(message, ok_intent, pred_intent))
                 intent_conf_matrix[ok_idx][pred_idx] += 1
 
-    print("\n\n\n\nLa matriz de confusión resultante es la siguiente:")
+
+    print("\n\nLa matriz de confusión resultante es la siguiente:")
     print_conf_matrix(intent_conf_matrix)
     print("\n\nLa precisión por intenciones es la siguiente:")
     pprint(conf2precision(intent_conf_matrix))
+    print("\nLa precisión promedio es {}".format(get_avg_precision(intent_conf_matrix)))
     print("\n\nEl recall por intenciones es la siguiente:")
     pprint(conf2recall(intent_conf_matrix))
+    print("\nEl recall promedio es {}".format(get_avg_recall(intent_conf_matrix)))
+    print("\n\nLa precisión global es de: {}".format(get_global_accuracy(intent_conf_matrix)))

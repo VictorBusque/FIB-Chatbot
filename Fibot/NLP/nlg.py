@@ -50,9 +50,9 @@ class Query_answer_unit(object):
 			train (:obj:`bool`): Specifies if the agents have to be trained
 		This function loads the model into the agents, and trains them if necessary
 	"""
-	def load(self, train=False):
-		self.nlu.load(train)
-		if train: self.train()
+	def load(self, trainNLG=False, trainNLU=False):
+		self.nlu.load(trainNLU)
+		if trainNLG: self.train()
 		self.agent_ca = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_ca)
 		self.agent_es = Agent.load(self.model_path,
