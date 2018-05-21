@@ -45,6 +45,7 @@ def conf2precision(conf_matrix):
         else: accuracy_dict[intent] = hits/total
     return accuracy_dict
 
+
 def conf2recall(conf_matrix):
     global intent2idx
     intents = intent2idx.keys()
@@ -57,6 +58,7 @@ def conf2recall(conf_matrix):
         else: recall_dict[intent] = hits/total
     return recall_dict
 
+
 def print_conf_matrix(conf_matrix):
     global idx2intent
     for row in range(0, len(conf_matrix)):
@@ -64,6 +66,7 @@ def print_conf_matrix(conf_matrix):
         elif row in [2,8,9,10]: fill = "\t\t\t"
         else: fill = "\t"
         print("{}:{}{}".format(idx2intent[row], fill, conf_matrix[row]))
+
 
 def get_global_accuracy(conf_matrix):
     return sum(conf_matrix.diagonal())/sum(sum(conf_matrix))
@@ -131,6 +134,10 @@ if __name__ == '__main__':
                     intent_conf_matrix[ok_idx][pred_idx] += 1
             message = input("Introduce el mensaje:\n")
     else:
+        avg_confidence_success = 0
+        times_success = 0
+        avg_confidence_failure = 0
+        times_failure = 0
         with open(file_route, 'r') as file:
             contents = file.readlines()
             size = len(contents)
@@ -140,8 +147,24 @@ if __name__ == '__main__':
                 ok_idx = intent2idx[ok_intent]
                 pred_intent = nlu.get_intent(message, language)['name']
                 pred_idx = intent2idx[pred_intent]
-                if ok_idx != pred_idx: print("\n{}: {} -> {}".format(message, ok_intent, pred_intent))
+                if ok_idx != pred_idx:
+                    pred_confidence = nlu.get_intent(message, language)['confidence']
+                    avg_confidence_failure += pred_confidence
+                    times_failure +=1
+                    print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
+                    print("La lista de alternativas es la siguiente:")
+                    pprint(nlu.get_intent_ranking(message, language))
+                else:
+                    pred_confidence = nlu.get_intent(message, language)['confidence']
+                    avg_confidence_success += pred_confidence
+                    times_success +=1
                 intent_conf_matrix[ok_idx][pred_idx] += 1
+        avg_confidence_success = avg_confidence_success/times_success
+        avg_confidence_failure = avg_confidence_failure/times_failure
+        print("------------------------------------")
+        print("\n\nRatio de éxito = {}/{}".format(times_success,(times_success+times_failure)))
+        print("Confianza promedio en aciertos: {}".format(avg_confidence_success))
+        print("Confianza promedio en fallos: {}".format(avg_confidence_failure))
 
 
     print("\n\nLa matriz de confusión resultante es la siguiente:")

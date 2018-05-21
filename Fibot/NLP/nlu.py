@@ -80,6 +80,16 @@ class NLU_unit(object):
 			parsed = self.interpreter_en.parse(query)
 		return parsed['intent']
 
+	def get_intent_ranking(self, query, lang = 'es'):
+		parsed = None
+		if lang == 'ca':
+			parsed = self.interpreter_ca.parse(query)
+		elif lang == 'es':
+			parsed = self.interpreter_es.parse(query)
+		else:
+			parsed = self.interpreter_en.parse(query)
+		return parsed['intent_ranking']
+
 	"""
 		Parameters:
 			query (:obj:`str`): query or user messages

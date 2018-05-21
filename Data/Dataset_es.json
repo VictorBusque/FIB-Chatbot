@@ -4,403 +4,1099 @@
     "entity_synonyms": [],
     "common_examples": [
       {
-        "text": "correo de bernat coma?",
+        "text": "email enrique romero merino?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
-            "start": 10,
-            "end": 21,
-            "value": "bernat coma",
+            "start": 6,
+            "end": 27,
+            "value": "enrique romero merino",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "cual es el correo de audi primadhanty",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 21,
-            "end": 37,
-            "value": "audi primadhanty",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime el mail de tuomas antero hakoniemi?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 16,
-            "end": 39,
-            "value": "tuomas antero hakoniemi",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "email de anna gkatzioura",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 9,
-            "end": 24,
-            "value": "anna gkatzioura",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el email de ignasi gomez sebastia",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 20,
-            "end": 41,
-            "value": "ignasi gomez sebastia",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "mail de dani tost pardell",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 8,
-            "end": 25,
-            "value": "dani tost pardell",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "me puedes decir cual es el correo de miquel sanchez marre?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 37,
-            "end": 57,
-            "value": "miquel sanchez marre",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "mail amalia duch brown?",
+        "text": "mail jose luis balcazar navarro",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 5,
-            "end": 22,
-            "value": "amalia duch brown",
+            "end": 31,
+            "value": "jose luis balcazar navarro",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "cual es el mail de otger rogl\u00e3?",
+        "text": "mail marc comino trinidad",
         "intent": "ask_teacher_mail",
         "entities": [
           {
-            "start": 19,
-            "end": 30,
-            "value": "otger rogl\u00e3",
+            "start": 5,
+            "end": 25,
+            "value": "marc comino trinidad",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "correo jaume baixeries juvilla?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 7,
-            "end": 30,
-            "value": "jaume baixeries juvilla",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "correo luis antonio belanche mu\u00e3\u00b1oz",
+        "text": "correo gabriel verdejo alvarez?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 7,
-            "end": 35,
-            "value": "luis antonio belanche mu\u00e3\u00b1oz",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "correo de josep maria merenciano saladrigues?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 10,
-            "end": 44,
-            "value": "josep maria merenciano saladrigues",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el correo de emma rollon rico",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 21,
-            "end": 37,
-            "value": "emma rollon rico",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el email de luis jose talavera mendez?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 20,
-            "end": 45,
-            "value": "luis jose talavera mendez",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el email de ricard gavalda mestre",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 20,
-            "end": 41,
-            "value": "ricard gavalda mestre",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "me puedes decir cual es el email de gabriel verdejo alvarez?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 36,
-            "end": 59,
+            "end": 30,
             "value": "gabriel verdejo alvarez",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "cual es el correo de enric rodriguez carbonell",
+        "text": "cual es el mail de frederic muniente peix?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
-            "start": 21,
-            "end": 46,
-            "value": "enric rodriguez carbonell",
+            "start": 19,
+            "end": 41,
+            "value": "frederic muniente peix",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "mail de angela martin prat",
+        "text": "correo de eva moncl\u00e3\u00bas lahoya",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 29,
+            "value": "eva moncl\u00e3\u00bas lahoya",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de neus catala roig?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 26,
+            "value": "neus catala roig",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de oscar argudo medrano?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 41,
+            "value": "oscar argudo medrano",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de ivan couto vivas?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 36,
+            "value": "ivan couto vivas",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "email jose luis balcazar navarro?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 6,
+            "end": 32,
+            "value": "jose luis balcazar navarro",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de maria angela nebot castells?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 19,
+            "end": 46,
+            "value": "maria angela nebot castells",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de argimiro arratia quesada",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 45,
+            "value": "argimiro arratia quesada",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el mail de antoni?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 16,
+            "end": 22,
+            "value": "antoni",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de juan luis esteban angeles?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 45,
+            "value": "juan luis esteban angeles",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "mail de jordi turmo borras?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 8,
             "end": 26,
-            "value": "angela martin prat",
+            "value": "jordi turmo borras",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "mail de alfredo vellido alcacena",
+        "text": "mail de maria teresa abad soriano?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 8,
-            "end": 32,
-            "value": "alfredo vellido alcacena",
+            "end": 33,
+            "value": "maria teresa abad soriano",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "dime el correo de horacio rodriguez hontoria",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 18,
-            "end": 44,
-            "value": "horacio rodriguez hontoria",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "email marcus aloysius bezem?",
+        "text": "email oscar argudo medrano",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 6,
-            "end": 27,
-            "value": "marcus aloysius bezem",
+            "end": 26,
+            "value": "oscar argudo medrano",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "dime el mail de rosa maria jimenez gomez",
+        "text": "cual es el email de gabriel valiente feruglio",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 45,
+            "value": "gabriel valiente feruglio",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir cual es el email de albert atserias peri?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 36,
+            "end": 56,
+            "value": "albert atserias peri",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de amalia duch brown?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 38,
+            "value": "amalia duch brown",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de nuria pla garcia",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 37,
+            "value": "nuria pla garcia",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de alvaro vinacua pla?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 39,
+            "value": "alvaro vinacua pla",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de neus catala roig",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 26,
+            "value": "neus catala roig",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de joaquin gabarro valles?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 43,
+            "value": "joaquin gabarro valles",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de salvador medina herrera?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 33,
+            "value": "salvador medina herrera",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de antoni lozano bojados",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 31,
+            "value": "antoni lozano bojados",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de luis jose talavera mendez",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 46,
+            "value": "luis jose talavera mendez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "email cristian barrue subirana",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 6,
+            "end": 30,
+            "value": "cristian barrue subirana",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo josep vilaplana past\u00e3\u00b3",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 7,
+            "end": 29,
+            "value": "josep vilaplana past\u00e3\u00b3",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de amalia duch brown",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 27,
+            "value": "amalia duch brown",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el mail de ivan javier dotu rodriguez?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 16,
-            "end": 40,
+            "end": 42,
+            "value": "ivan javier dotu rodriguez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de alvaro vinacua",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 34,
+            "value": "alvaro vinacua",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de otger rogl\u00e3\u00a0 pujalt",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 39,
+            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "mail josep maria merenciano saladrigues",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 5,
+            "end": 39,
+            "value": "josep maria merenciano saladrigues",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo arnau messegue buisan",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 7,
+            "end": 28,
+            "value": "arnau messegue buisan",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "mail de maria",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "maria",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "email francisco javier larrosa bondia",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 6,
+            "end": 37,
+            "value": "francisco javier larrosa bondia",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "mail javier bejar alonso",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 5,
+            "end": 24,
+            "value": "javier bejar alonso",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de nuria font caimel",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 21,
+            "end": 38,
+            "value": "nuria font caimel",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de ivan javier dotu rodriguez",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 46,
+            "value": "ivan javier dotu rodriguez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo rosa maria jimenez gomez",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 7,
+            "end": 31,
             "value": "rosa maria jimenez gomez",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "cual es el mail de ilario bonacina",
+        "text": "me puedes decir cual es el correo de maria jose lopez lopez?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 59,
+            "value": "maria jose lopez lopez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de alexandre vidal obiols",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 19,
+            "end": 41,
+            "value": "alexandre vidal obiols",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el mail de luis javier oliva felipe",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 16,
+            "end": 40,
+            "value": "luis javier oliva felipe",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de ruben fernandez?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 19,
             "end": 34,
-            "value": "ilario bonacina",
+            "value": "ruben fernandez",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "email maria jose lopez lopez?",
-        "intent": "ask_teacher_mail",
-        "entities": [
-          {
-            "start": 6,
-            "end": 28,
-            "value": "maria jose lopez lopez",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el correo de maria jose lopez lopez?",
+        "text": "cual es el correo de lluis padro cirera?",
         "intent": "ask_teacher_mail",
         "entities": [
           {
             "start": 21,
-            "end": 43,
-            "value": "maria jose lopez lopez",
+            "end": 39,
+            "value": "lluis padro cirera",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "despacho de francisco jos\u00e3\u00a9 mugica alvarez?",
-        "intent": "ask_teacher_office",
+        "text": "mail de xavier messeguer peypoch",
+        "intent": "ask_teacher_mail",
         "entities": [
           {
-            "start": 12,
+            "start": 8,
+            "end": 32,
+            "value": "xavier messeguer peypoch",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "correo de eduardo ulises moya sanchez?",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 10,
+            "end": 37,
+            "value": "eduardo ulises moya sanchez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de michal garlik",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 33,
+            "value": "michal garlik",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el email de samir kanaan izquierdo",
+        "intent": "ask_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
             "end": 42,
-            "value": "francisco jos\u00e3\u00a9 mugica alvarez",
+            "value": "samir kanaan izquierdo",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "cual es el despacho de marta fairen gonzalez",
+        "text": "dime cual es el despacho de albert atserias peri?",
         "intent": "ask_teacher_office",
         "entities": [
           {
-            "start": 23,
-            "end": 44,
+            "start": 28,
+            "end": 48,
+            "value": "albert atserias peri",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir donde esta el despacho de marta fairen gonzalez?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 42,
+            "end": 63,
             "value": "marta fairen gonzalez",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "despacho de maria josep blesa aguilera",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 12,
-            "end": 38,
-            "value": "maria josep blesa aguilera",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho de blum blum",
+        "text": "cual es el despacho de josep diaz cort",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 23,
-            "end": 32,
-            "value": "blum blum",
+            "end": 38,
+            "value": "josep diaz cort",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "dime donde esta el despacho de maria angela nebot",
+        "text": "cual es el despacho de arnau messegue buisan?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 44,
+            "value": "arnau messegue buisan",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de jordi marco gomez?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 45,
+            "value": "jordi marco gomez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime donde esta el despacho de otger rogl\u00e3\u00a0 pujalt?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 50,
+            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de pilar nivela alos?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 45,
+            "value": "pilar nivela alos",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de cristian barrue subirana",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 52,
+            "value": "cristian barrue subirana",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de gerard escudero bakx",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 46,
+            "value": "gerard escudero bakx",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el despacho de otger rogl\u00e3\u00a0 pujalt",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 39,
+            "value": "otger rogl\u00e3\u00a0 pujalt",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de lluis padro cirera",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 41,
+            "value": "lluis padro cirera",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el despacho de neus",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 24,
+            "value": "neus",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de alexandre vidal obiols",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 48,
+            "value": "alexandre vidal obiols",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de marta fairen gonzalez?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 47,
+            "value": "marta fairen gonzalez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de jorge castro rabal?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 44,
+            "value": "jorge castro rabal",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de cristian barrue subirana?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 47,
+            "value": "cristian barrue subirana",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime donde esta el despacho de jordi marco",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 42,
+            "value": "jordi marco",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de jose carmona vargas?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 45,
+            "value": "jose carmona vargas",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de jordi cortadella fortuny?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 47,
+            "value": "jordi cortadella fortuny",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime donde esta el despacho de conrado martinez parra?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 53,
+            "value": "conrado martinez parra",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de mario martin mu\u00e3\u00b1oz",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 45,
+            "value": "mario martin mu\u00e3\u00b1oz",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el despacho de dani tost pardell?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 37,
+            "value": "dani tost pardell",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de francisco javier larrosa bondia",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 54,
+            "value": "francisco javier larrosa bondia",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de carlos andujar gran?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 45,
+            "value": "carlos andujar gran",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "despacho de ignasi gomez sebastia",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 12,
+            "end": 33,
+            "value": "ignasi gomez sebastia",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de jose antonio roman jimenez",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 52,
+            "value": "jose antonio roman jimenez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime donde esta el despacho de elvira pino blanco?",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 31,
             "end": 49,
-            "value": "maria angela nebot",
+            "value": "elvira pino blanco",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "dime cual es el despacho de fernando orejas valdes",
+        "text": "dime cual es el despacho de isabel navazo alvaro",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 28,
+            "end": 48,
+            "value": "isabel navazo alvaro",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de alfredo vellido alcacena?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
             "end": 50,
-            "value": "fernando orejas valdes",
+            "value": "alfredo vellido alcacena",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "despacho de tuomas antero hakoniemi?",
+        "text": "d\u00f3nde est\u00e1 el despacho de emma rollon rico",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 42,
+            "value": "emma rollon rico",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de nuria pla garcia",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 42,
+            "value": "nuria pla garcia",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de mario martin mu\u00e3\u00b1oz",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 45,
+            "value": "mario martin mu\u00e3\u00b1oz",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de antoni perez poch?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 45,
+            "value": "antoni perez poch",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "despacho de ivan couto vivas?",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 12,
-            "end": 35,
-            "value": "tuomas antero hakoniemi",
+            "end": 28,
+            "value": "ivan couto vivas",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "despacho de nicolas mylonakis pascual",
+        "text": "dime el despacho de cristian barrue subirana?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 44,
+            "value": "cristian barrue subirana",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir donde esta el despacho de glyn morrill?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 42,
+            "end": 54,
+            "value": "glyn morrill",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de jordi marco gomez",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 43,
+            "value": "jordi marco gomez",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "despacho de robert joan arinyo?",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 12,
-            "end": 37,
-            "value": "nicolas mylonakis pascual",
+            "end": 30,
+            "value": "robert joan arinyo",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "dime cual es el despacho de ivan javier dotu rodriguez?",
+        "text": "dime cual es el despacho de salvador medina herrera?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 51,
+            "value": "salvador medina herrera",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de argimiro arratia quesada?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 50,
+            "value": "argimiro arratia quesada",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de carlos andujar gran?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 45,
+            "value": "carlos andujar gran",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de ivan javier dotu rodriguez",
         "intent": "ask_teacher_office",
         "entities": [
           {
@@ -412,229 +1108,583 @@
         ]
       },
       {
-        "text": "cual es el despacho de gabriel valiente feruglio?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 23,
-            "end": 48,
-            "value": "gabriel valiente feruglio",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime donde esta el despacho de alvaro vinacua pla",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 31,
-            "end": 49,
-            "value": "alvaro vinacua pla",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime cual es el despacho de jordi cortadella fortuny",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 28,
-            "end": 52,
-            "value": "jordi cortadella fortuny",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime donde esta el despacho de anna gkatzioura?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 31,
-            "end": 46,
-            "value": "anna gkatzioura",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho de josefina lopez herrera?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 23,
-            "end": 45,
-            "value": "josefina lopez herrera",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho de samir kanaan izquierdo",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 23,
-            "end": 45,
-            "value": "samir kanaan izquierdo",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho de maria jose serna iglesias?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 23,
-            "end": 48,
-            "value": "maria jose serna iglesias",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "donde esta el despacho de bernardino casas fernandez",
+        "text": "donde esta el despacho de nuria font caimel?",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 26,
-            "end": 52,
+            "end": 43,
+            "value": "nuria font caimel",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "d\u00f3nde est\u00e1 el despacho de lluis solano albajes?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 26,
+            "end": 46,
+            "value": "lluis solano albajes",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el despacho de alfredo vellido alcacena?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 44,
+            "value": "alfredo vellido alcacena",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de tuomas antero",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 36,
+            "value": "tuomas antero",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de marc vigo anglada?",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 23,
+            "end": 40,
+            "value": "marc vigo anglada",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime el despacho de marc vigo anglada",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 20,
+            "end": 37,
+            "value": "marc vigo anglada",
+            "entity": "teacher_name"
+          }
+        ]
+      },
+      {
+        "text": "dime cual es el despacho de bernardino casas fernandez",
+        "intent": "ask_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 54,
             "value": "bernardino casas fernandez",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "me puedes decir donde esta el despacho de maria jose serna iglesias?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 42,
-            "end": 67,
-            "value": "maria jose serna iglesias",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "me puedes decir donde esta el despacho de mart\u00e3\u00ad zamora casals?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 42,
-            "end": 62,
-            "value": "mart\u00e3\u00ad zamora casals",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime donde esta el despacho de samir kanaan izquierdo",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 31,
-            "end": 53,
-            "value": "samir kanaan izquierdo",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "d\u00f3nde est\u00e1 el despacho de antoni perez poch?",
+        "text": "d\u00f3nde est\u00e1 el despacho de antonio chica calaf?",
         "intent": "ask_teacher_office",
         "entities": [
           {
             "start": 26,
-            "end": 43,
-            "value": "antoni perez poch",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime donde esta el despacho de francisco javier larrosa bondia?",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 31,
-            "end": 62,
-            "value": "francisco javier larrosa bondia",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "dime el despacho de ivan javier dotu rodriguez",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 20,
-            "end": 46,
-            "value": "ivan javier dotu rodriguez",
-            "entity": "teacher_name"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho de conrado martinez parra",
-        "intent": "ask_teacher_office",
-        "entities": [
-          {
-            "start": 23,
             "end": 45,
-            "value": "conrado martinez parra",
+            "value": "antonio chica calaf",
             "entity": "teacher_name"
           }
         ]
       },
       {
-        "text": "despacho de marc comino trinidad?",
-        "intent": "ask_teacher_office",
+        "text": "plazas en bc-mmc",
+        "intent": "ask_free_spots",
         "entities": [
           {
-            "start": 12,
-            "end": 32,
-            "value": "marc comino trinidad",
-            "entity": "teacher_name"
+            "start": 10,
+            "end": 16,
+            "value": "bc-mmc",
+            "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "sitios libres en sio grupo 22",
+        "text": "cuantos sitios hay en pie1-gced?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 31,
+            "value": "pie1-gced",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en ccbda-miri",
         "intent": "ask_free_spots",
         "entities": [
           {
             "start": 17,
-            "end": 20,
-            "value": "sio",
+            "end": 27,
+            "value": "ccbda-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantos sitios hay en grupo 43 de bdm-miri",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 34,
+            "end": 42,
+            "value": "bdm-miri",
             "entity": "subject_acronym"
           },
           {
-            "start": 27,
-            "end": 29,
-            "value": "22",
+            "start": 28,
+            "end": 30,
+            "value": "43",
             "entity": "group"
           }
         ]
       },
       {
-        "text": "cuantas plazas hay en ci?",
+        "text": "cuantas plazas libres tiene el grupo 28 de wse?",
         "intent": "ask_free_spots",
         "entities": [
           {
-            "start": 22,
-            "end": 24,
-            "value": "ci",
+            "start": 43,
+            "end": 46,
+            "value": "wse",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 37,
+            "end": 39,
+            "value": "28",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en ic?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 12,
+            "value": "ic",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "sitios en f, grupo 31",
+        "text": "plazas en od-miri grupo 13",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 17,
+            "value": "od-miri",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 24,
+            "end": 26,
+            "value": "13",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "huecos libres en bd?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "bd",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantos huecos hay en bmt-mpal, grupo 18",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "bmt-mpal",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 38,
+            "end": 40,
+            "value": "18",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en idss-mai grupo 39",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "idss-mai",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 32,
+            "end": 34,
+            "value": "39",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas de eda",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "eda",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas de pae grupo 16",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "pae",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 20,
+            "end": 22,
+            "value": "16",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "huecos libres en im",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "im",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en cdi",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "cdi",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios en prop, grupo 33?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 14,
+            "value": "prop",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 22,
+            "end": 24,
+            "value": "33",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres quedan en el grupo 30 de slds",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 47,
+            "end": 51,
+            "value": "slds",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 41,
+            "end": 43,
+            "value": "30",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "huecos libres en so",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "so",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas en pro2",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 14,
+            "value": "pro2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantos huecos hay en reservat, grupo 26?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "reservat",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 38,
+            "end": 40,
+            "value": "26",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en ini-fp?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 16,
+            "value": "ini-fp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas libres del grupo 13 en soa",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 30,
+            "end": 33,
+            "value": "soa",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 24,
+            "end": 26,
+            "value": "13",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres quedan en cc-mei",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 32,
+            "end": 38,
+            "value": "cc-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas libres en so2, grupo 29?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "so2",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 28,
+            "end": 30,
+            "value": "29",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "huecos libres en sdm-bdma?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "sdm-bdma",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantos huecos hay en od-miri, grupo 14?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "od-miri",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 37,
+            "end": 39,
+            "value": "14",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en g",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 11,
+            "value": "g",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en pro2 grupo 34?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 21,
+            "value": "pro2",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 28,
+            "end": 30,
+            "value": "34",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres tiene sv-miri?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "sv-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "espacios libres de ac2-gced",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "ac2-gced",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantos huecos hay en li?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 24,
+            "value": "li",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres hay en el grupo 38 de apa",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 44,
+            "end": 47,
+            "value": "apa",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 38,
+            "end": 40,
+            "value": "38",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres tiene tfg",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 28,
+            "end": 31,
+            "value": "tfg",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas hay en ic?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 22,
+            "end": 24,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas en f, grupo 44",
         "intent": "ask_free_spots",
         "entities": [
           {
@@ -646,596 +1696,1226 @@
           {
             "start": 19,
             "end": 21,
-            "value": "31",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "cuantos sitios hay en grupo 41 de as",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 34,
-            "end": 36,
-            "value": "as",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 28,
-            "end": 30,
-            "value": "41",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "cuantos sitios hay en ml-miri",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "ml-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "plazas en kre-mai?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 17,
-            "value": "kre-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "plazas en pes",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 13,
-            "value": "pes",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cuantas plazas hay en el grupo 13 de dq-mmc?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 37,
-            "end": 43,
-            "value": "dq-mmc",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 31,
-            "end": 33,
-            "value": "13",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "cuantos huecos hay en prop?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 22,
-            "end": 26,
-            "value": "prop",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cuantos huecos hay en pro1",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 22,
-            "end": 26,
-            "value": "pro1",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "espacios libres del grupo 45 en im",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 32,
-            "end": 34,
-            "value": "im",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 26,
-            "end": 28,
-            "value": "45",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "plazas en li",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 12,
-            "value": "li",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "sitios en cc-bdma",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 17,
-            "value": "cc-bdma",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "plazas en pca",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 13,
-            "value": "pca",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "plazas en fomar",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 15,
-            "value": "fomar",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "espacios libres del grupo 44 en bc-mmc?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 32,
-            "end": 38,
-            "value": "bc-mmc",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 26,
-            "end": 28,
             "value": "44",
             "entity": "group"
           }
         ]
       },
       {
-        "text": "sitios en gps, grupo 20?",
+        "text": "cuantos sitios hay en grupo 35 de tc",
         "intent": "ask_free_spots",
         "entities": [
           {
-            "start": 10,
-            "end": 13,
-            "value": "gps",
+            "start": 34,
+            "end": 36,
+            "value": "tc",
             "entity": "subject_acronym"
           },
           {
-            "start": 21,
-            "end": 23,
-            "value": "20",
+            "start": 28,
+            "end": 30,
+            "value": "35",
             "entity": "group"
           }
         ]
       },
       {
-        "text": "cuantos sitios hay en isdcm-mei",
+        "text": "cuantas plazas libres hay en el grupo 37 de lp?",
         "intent": "ask_free_spots",
         "entities": [
           {
-            "start": 22,
-            "end": 31,
+            "start": 44,
+            "end": 46,
+            "value": "lp",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 38,
+            "end": 40,
+            "value": "37",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en eee",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "eee",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas de tmiri-miri?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 20,
+            "value": "tmiri-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios en as, grupo 40?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 12,
+            "value": "as",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 20,
+            "end": 22,
+            "value": "40",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en slds grupo 38",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 14,
+            "value": "slds",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 21,
+            "end": 23,
+            "value": "38",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas hay en el grupo 32 de pds?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 37,
+            "end": 40,
+            "value": "pds",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 31,
+            "end": 33,
+            "value": "32",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas libres en im, grupo 35",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "im",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 27,
+            "end": 29,
+            "value": "35",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "sitios libres en lp",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "lp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "plazas en fdm?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres quedan en el grupo 39 de prop?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 47,
+            "end": 51,
+            "value": "prop",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 41,
+            "end": 43,
+            "value": "39",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en fdm",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 13,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "sitios en lai-mai, grupo 40?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 17,
+            "value": "lai-mai",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 25,
+            "end": 27,
+            "value": "40",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "plazas en pegti-mei",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 10,
+            "end": 19,
+            "value": "pegti-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuantas plazas libres quedan en el grupo 42 de mgtn-miri?",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 47,
+            "end": 56,
+            "value": "mgtn-miri",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 41,
+            "end": 43,
+            "value": "42",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "cuantos sitios hay en grupo 28 de im",
+        "intent": "ask_free_spots",
+        "entities": [
+          {
+            "start": 34,
+            "end": 36,
+            "value": "im",
+            "entity": "subject_acronym"
+          },
+          {
+            "start": 28,
+            "end": 30,
+            "value": "28",
+            "entity": "group"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir cuando tengo cc-mei",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "cc-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo bd?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "bd",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago fdm?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 15,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago isdcm-mei",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 21,
             "value": "isdcm-mei",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "plazas de cbde",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 14,
-            "value": "cbde",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "sitios en caim, grupo 31?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 14,
-            "value": "caim",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 22,
-            "end": 24,
-            "value": "31",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "sitios libres en pti",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 17,
-            "end": 20,
-            "value": "pti",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "huecos libres en el grupo 41 de prop",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 32,
-            "end": 36,
-            "value": "prop",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 26,
-            "end": 28,
-            "value": "41",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "plazas de atci-mai grupo 11?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 10,
-            "end": 18,
-            "value": "atci-mai",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 25,
-            "end": 27,
-            "value": "11",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "plazas libres en vc, grupo 45",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 17,
-            "end": 19,
-            "value": "vc",
-            "entity": "subject_acronym"
-          },
-          {
-            "start": 27,
-            "end": 29,
-            "value": "45",
-            "entity": "group"
-          }
-        ]
-      },
-      {
-        "text": "huecos libres en reservat?",
-        "intent": "ask_free_spots",
-        "entities": [
-          {
-            "start": 17,
-            "end": 25,
-            "value": "reservat",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "me puedes decir cuando tengo pro1?",
+        "text": "me puedes decir cuando tengo al-m1",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 29,
-            "end": 33,
-            "value": "pro1",
+            "end": 34,
+            "value": "al-m1",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando hago im",
+        "text": "cuando hago fomar?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 12,
-            "end": 14,
-            "value": "im",
+            "end": 17,
+            "value": "fomar",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo ies?",
-        "intent": "ask_subject_schedule",
-        "entities": [
-          {
-            "start": 13,
-            "end": 16,
-            "value": "ies",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "horario de masd-mai?",
+        "text": "horario de cps-miri?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 11,
             "end": 19,
+            "value": "cps-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo ac?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 13,
+            "end": 15,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago sim",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 15,
+            "value": "sim",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a que hora tengo mva-miri",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "mva-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo caso",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 21,
+            "value": "caso",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago soas-mai?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 20,
+            "value": "soas-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir cuando tengo ac",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 29,
+            "end": 31,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir cuando tengo tia-mei?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 29,
+            "end": 36,
+            "value": "tia-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "horario de vpei-mei",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 11,
+            "end": 19,
+            "value": "vpei-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo masd-mai",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
             "value": "masd-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando hago od-miri?",
+        "text": "horario de eee",
         "intent": "ask_subject_schedule",
         "entities": [
           {
-            "start": 12,
-            "end": 19,
-            "value": "od-miri",
+            "start": 11,
+            "end": 14,
+            "value": "eee",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo mp?",
+        "text": "me puedes decir cuando tengo dq-mmc?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "dq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo eda?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 13,
-            "end": 15,
-            "value": "mp",
+            "end": 16,
+            "value": "eda",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo cn-mai",
+        "text": "dime el horario de er?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
-            "start": 13,
-            "end": 19,
-            "value": "cn-mai",
+            "start": 19,
+            "end": 21,
+            "value": "er",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime cuando hago sid",
+        "text": "a que hora tengo ml-miri?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "ml-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime el horario de ini-tec",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "ini-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo sdx",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 17,
             "end": 20,
-            "value": "sid",
+            "value": "sdx",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "a qu\u00e9 hora tengo hci-mai",
+        "text": "a que hora tengo clase de si",
         "intent": "ask_subject_schedule",
         "entities": [
           {
-            "start": 17,
-            "end": 24,
-            "value": "hci-mai",
+            "start": 26,
+            "end": 28,
+            "value": "si",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo li?",
+        "text": "cuando tengo pmcdss-mai",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 13,
-            "end": 15,
-            "value": "li",
+            "end": 23,
+            "value": "pmcdss-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "horario de dsbm",
-        "intent": "ask_subject_schedule",
-        "entities": [
-          {
-            "start": 11,
-            "end": 15,
-            "value": "dsbm",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el horario de so",
+        "text": "cuando tengo clase de eee",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 22,
-            "end": 24,
-            "value": "so",
+            "end": 25,
+            "value": "eee",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime cuando hago as?",
+        "text": "cuando tengo clase de apa",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 22,
+            "end": 25,
+            "value": "apa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo ia",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 17,
             "end": 19,
-            "value": "as",
+            "value": "ia",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime cuando hago caim",
+        "text": "cuando hago al-pro2?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "al-pro2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime el horario de cc-miri",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "cc-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a que hora tengo lp?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 17,
-            "end": 21,
+            "end": 19,
+            "value": "lp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago ini-fp",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "ini-fp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me puedes decir cuando tengo ac2?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 29,
+            "end": 32,
+            "value": "ac2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime cuando hago fpei-mei",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "fpei-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago cc-miri?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "cc-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago si?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "si",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "horario de url-mai?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "url-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo clase de ic",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 22,
+            "end": 24,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a que hora tengo clase de a",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 26,
+            "end": 27,
+            "value": "a",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime el horario de pec",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 19,
+            "end": 22,
+            "value": "pec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "horario de mene-mmc",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 11,
+            "end": 19,
+            "value": "mene-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime cuando hago sim",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "sim",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo sv-miri?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 13,
+            "end": 20,
+            "value": "sv-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "a qu\u00e9 hora tengo ptdma-mei",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "ptdma-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo md?",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 13,
+            "end": 15,
+            "value": "md",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando hago vj",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "vj",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime cuando hago ic",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime el horario de caim",
+        "intent": "ask_subject_schedule",
+        "entities": [
+          {
+            "start": 19,
+            "end": 23,
             "value": "caim",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo g",
+        "text": "a que hora tengo clase de ads-miri",
         "intent": "ask_subject_schedule",
         "entities": [
           {
-            "start": 13,
-            "end": 14,
-            "value": "g",
+            "start": 26,
+            "end": 34,
+            "value": "ads-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime cuando hago atci-mai",
+        "text": "a qu\u00e9 hora tengo com-gced?",
         "intent": "ask_subject_schedule",
         "entities": [
           {
             "start": 17,
             "end": 25,
-            "value": "atci-mai",
+            "value": "com-gced",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "me puedes decir cuando tengo ecsdi",
-        "intent": "ask_subject_schedule",
+        "text": "cual es la clase de ac2",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 29,
-            "end": 34,
-            "value": "ecsdi",
+            "start": 20,
+            "end": 23,
+            "value": "ac2",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "horario de pti?",
-        "intent": "ask_subject_schedule",
+        "text": "dime donde hago bdm-miri?",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 11,
-            "end": 14,
-            "value": "pti",
+            "start": 16,
+            "end": 24,
+            "value": "bdm-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "horario de tfg",
-        "intent": "ask_subject_schedule",
+        "text": "clase de frr-miri?",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 11,
-            "end": 14,
-            "value": "tfg",
+            "start": 9,
+            "end": 17,
+            "value": "frr-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando hago prop?",
-        "intent": "ask_subject_schedule",
+        "text": "cual es la clase de idi?",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 12,
-            "end": 16,
-            "value": "prop",
+            "start": 20,
+            "end": 23,
+            "value": "idi",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime cuando hago vc?",
-        "intent": "ask_subject_schedule",
+        "text": "dime donde tengo eda",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 17,
-            "end": 19,
-            "value": "vc",
+            "end": 20,
+            "value": "eda",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo as?",
-        "intent": "ask_subject_schedule",
+        "text": "en que clase hago vpei-mei?",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 13,
+            "start": 18,
+            "end": 26,
+            "value": "vpei-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que clase tengo ml-miri",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "ml-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "aula de tia-mei",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 8,
             "end": 15,
+            "value": "tia-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me podr\u00edas decir donde hago ma-miri",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "ma-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que clase tengo fomar?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 19,
+            "end": 24,
+            "value": "fomar",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde hago fdm",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 11,
+            "end": 14,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde hago asdp?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 11,
+            "end": 15,
+            "value": "asdp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde tengo ppai-mai?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 20,
+            "value": "ppai-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago apa-miri",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "apa-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me podr\u00edas decir donde hago wse?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 28,
+            "end": 31,
+            "value": "wse",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "aula de dsbm",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 8,
+            "end": 12,
+            "value": "dsbm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que clase tengo url-mai?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "url-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde tengo as",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
             "value": "as",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "horario de frr-miri?",
-        "intent": "ask_subject_schedule",
+        "text": "en que aula tengo or-mai?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 18,
+            "end": 24,
+            "value": "or-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde tengo adei?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 16,
+            "value": "adei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula tengo ies",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 18,
+            "end": 21,
+            "value": "ies",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "clase de fdm",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 9,
+            "end": 12,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime donde hago mi",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 16,
+            "end": 18,
+            "value": "mi",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago gps?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "gps",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me podr\u00edas decir donde hago or-mai?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 28,
+            "end": 34,
+            "value": "or-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago sio",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "sio",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago si",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 19,
+            "value": "si",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula tengo er",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 18,
+            "end": 20,
+            "value": "er",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde tengo aws",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 15,
+            "value": "aws",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que clase hago apss?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 18,
+            "end": 22,
+            "value": "apss",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde hago frr-miri?",
+        "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 11,
@@ -1246,337 +2926,577 @@
         ]
       },
       {
-        "text": "cual es el horario de asdp",
-        "intent": "ask_subject_schedule",
-        "entities": [
-          {
-            "start": 22,
-            "end": 26,
-            "value": "asdp",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "horario de vbp-bdma?",
-        "intent": "ask_subject_schedule",
-        "entities": [
-          {
-            "start": 11,
-            "end": 19,
-            "value": "vbp-bdma",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que clase hago pe?",
+        "text": "en que clase hago ecsdi?",
         "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 18,
-            "end": 20,
-            "value": "pe",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que clase hago vj",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 18,
-            "end": 20,
-            "value": "vj",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que clase tengo li?",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 19,
-            "end": 21,
-            "value": "li",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que aula tengo atci-mai?",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 18,
-            "end": 26,
-            "value": "atci-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "aula de so",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 8,
-            "end": 10,
-            "value": "so",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "aula de mene-mmc",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 8,
-            "end": 16,
-            "value": "mene-mmc",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde me toca pae",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 14,
-            "end": 17,
-            "value": "pae",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "dime donde hago bd?",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 16,
-            "end": 18,
-            "value": "bd",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde tengo fdm",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 12,
-            "end": 15,
-            "value": "fdm",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde me toca isdcm-mei",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 14,
             "end": 23,
-            "value": "isdcm-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "dime donde hago mene-mmc?",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 16,
-            "end": 24,
-            "value": "mene-mmc",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "me podr\u00edas decir donde hago dl-mai",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 28,
-            "end": 34,
-            "value": "dl-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que clase tengo pe",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 19,
-            "end": 21,
-            "value": "pe",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "dime donde hago ecsdi?",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 16,
-            "end": 21,
             "value": "ecsdi",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde me toca dq-mmc?",
+        "text": "en que clase hago masd-mai",
         "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "dq-mmc",
+            "start": 18,
+            "end": 26,
+            "value": "masd-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde hago fdm?",
+        "text": "me podr\u00edas decir donde hago url-mai",
         "intent": "ask_subject_classroom",
         "entities": [
           {
-            "start": 11,
-            "end": 14,
-            "value": "fdm",
+            "start": 28,
+            "end": 35,
+            "value": "url-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "dime donde tengo as",
+        "text": "clase de ahlt-mai?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 9,
+            "end": 17,
+            "value": "ahlt-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime donde tengo cv",
         "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 17,
             "end": 19,
-            "value": "as",
+            "value": "cv",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "en que aula tengo so2",
+        "text": "donde tengo pro2",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 16,
+            "value": "pro2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago al-ec?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "al-ec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula tengo smde-miri?",
         "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 18,
+            "end": 27,
+            "value": "smde-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde tengo sdx",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 12,
+            "end": 15,
+            "value": "sdx",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que clase tengo cn",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 19,
             "end": 21,
-            "value": "so2",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es la clase de vpei-mei",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 20,
-            "end": 28,
-            "value": "vpei-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "en que aula tengo cn",
-        "intent": "ask_subject_classroom",
-        "entities": [
-          {
-            "start": 18,
-            "end": 20,
             "value": "cn",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "en que aula tengo tc",
+        "text": "en que aula tengo lp?",
         "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 18,
             "end": 20,
+            "value": "lp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime donde tengo ahlt-mai",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ahlt-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es la clase de li",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 20,
+            "end": 22,
+            "value": "li",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime donde tengo tmiri-miri",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "tmiri-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "dime donde tengo gps",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "gps",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "aula de pmcdss-mai",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 8,
+            "end": 18,
+            "value": "pmcdss-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "en que aula hago debd-bdma",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "debd-bdma",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "me podr\u00edas decir donde hago tc?",
+        "intent": "ask_subject_classroom",
+        "entities": [
+          {
+            "start": 28,
+            "end": 30,
             "value": "tc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "en que aula hago im?",
+        "text": "en que aula hago f",
         "intent": "ask_subject_classroom",
         "entities": [
           {
             "start": 17,
-            "end": 19,
-            "value": "im",
+            "end": 18,
+            "value": "f",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cual es el aula de fpei-mei",
-        "intent": "ask_subject_classroom",
+        "text": "que mail tiene la profe de lai-mai?",
+        "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 19,
-            "end": 27,
-            "value": "fpei-mei",
+            "start": 27,
+            "end": 34,
+            "value": "lai-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "aula de as",
-        "intent": "ask_subject_classroom",
+        "text": "que mail tiene el profesor de al-pro2?",
+        "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 8,
-            "end": 10,
-            "value": "as",
+            "start": 30,
+            "end": 37,
+            "value": "al-pro2",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "en que aula tengo ptdma-mei?",
-        "intent": "ask_subject_classroom",
+        "text": "cual es el mail del profesor de ma-miri",
+        "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 18,
-            "end": 27,
-            "value": "ptdma-mei",
+            "start": 32,
+            "end": 39,
+            "value": "ma-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "que mail tiene la profesora de lai-mai?",
+        "text": "correo del profesor de bdm-miri?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 23,
+            "end": 31,
+            "value": "bdm-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de ml-miri",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "ml-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de pes?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 33,
+            "value": "pes",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo del profe de asmi?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 24,
+            "value": "asmi",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de ic?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail del profe de idi",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 29,
+            "end": 32,
+            "value": "idi",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de ac",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 39,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de aso",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 33,
+            "value": "aso",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profe de si",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 33,
+            "end": 35,
+            "value": "si",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo de la profesora de pec?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 26,
+            "end": 29,
+            "value": "pec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de la profe de fm",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
             "start": 31,
+            "end": 33,
+            "value": "fm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo del profe de com-gced?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 31,
+            "end": 39,
+            "value": "com-gced",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo de la profe de hci-mai?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "hci-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "mail del profe de eda",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 18,
+            "end": 21,
+            "value": "eda",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de la profesora de cc-mei?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 35,
+            "end": 41,
+            "value": "cc-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de ies",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 40,
+            "value": "ies",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo del profe de pe",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 31,
+            "end": 33,
+            "value": "pe",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de er",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 39,
+            "value": "er",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo de la profesora de adei",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 26,
+            "end": 30,
+            "value": "adei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profe de prop?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 27,
+            "end": 31,
+            "value": "prop",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo del profe de aem2-tec?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 28,
+            "value": "aem2-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "mail del profe de ic",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 18,
+            "end": 20,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo del profesor de apss?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 34,
             "end": 38,
-            "value": "lai-mai",
+            "value": "apss",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail del profesor de aem2-tec?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 32,
+            "end": 40,
+            "value": "aem2-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el mail de la profe de fdm",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 31,
+            "end": 34,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de ac2?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 33,
+            "value": "ac2",
             "entity": "subject_acronym"
           }
         ]
@@ -1594,559 +3514,307 @@
         ]
       },
       {
-        "text": "cual es el mail del profe de ies",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 29,
-            "end": 32,
-            "value": "ies",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el correo del profe de ia?",
+        "text": "cual es el mail de la profe de ic?",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
             "start": 31,
             "end": 33,
-            "value": "ia",
+            "value": "ic",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cual es el correo de la profe de pegti-mei?",
+        "text": "mail de la profe de pe?",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 33,
-            "end": 42,
-            "value": "pegti-mei",
+            "start": 20,
+            "end": 22,
+            "value": "pe",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "correo de la profe de sdm-bdma",
+        "text": "que mail tiene la profe de m1",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 22,
-            "end": 30,
-            "value": "sdm-bdma",
+            "start": 27,
+            "end": 29,
+            "value": "m1",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "correo de la profe de ies?",
+        "text": "correo de la profesora de wse?",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 22,
-            "end": 25,
+            "start": 26,
+            "end": 29,
+            "value": "wse",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene la profe de f?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 27,
+            "end": 28,
+            "value": "f",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene la profesora de ies",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 31,
+            "end": 34,
             "value": "ies",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "correo de la profesora de si",
+        "text": "mail del profe de fdm",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 26,
-            "end": 28,
-            "value": "si",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "correo de la profe de mbm-mai?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "mbm-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el correo de la profe de vc?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 33,
-            "end": 35,
-            "value": "vc",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el mail del profesor de asdp?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 32,
-            "end": 36,
-            "value": "asdp",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el correo de la profe de apss?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 33,
-            "end": 37,
-            "value": "apss",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que mail tiene la profe de pegti-mei?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 27,
-            "end": 36,
-            "value": "pegti-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "correo del profesor de cn?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 23,
-            "end": 25,
-            "value": "cn",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "correo del profesor de sdx?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 23,
-            "end": 26,
-            "value": "sdx",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "correo del profe de fdm",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 20,
-            "end": 23,
+            "start": 18,
+            "end": 21,
             "value": "fdm",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cual es el mail del profe de si",
+        "text": "que mail tiene la profe de apa-miri",
         "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 29,
-            "end": 31,
-            "value": "si",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que mail tiene la profesora de hci-mai?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 31,
-            "end": 38,
-            "value": "hci-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el mail del profesor de caso?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 32,
-            "end": 36,
-            "value": "caso",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "mail del profe de ccbda-miri",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 18,
-            "end": 28,
-            "value": "ccbda-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que mail tiene el profesor de bdm-miri",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 30,
-            "end": 38,
-            "value": "bdm-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que mail tiene el profesor de g",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 30,
-            "end": 31,
-            "value": "g",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "mail del profesor de od-miri?",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 21,
-            "end": 28,
-            "value": "od-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que mail tiene la profesora de as",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 31,
-            "end": 33,
-            "value": "as",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "mail del profe de lp",
-        "intent": "ask_subject_teacher_mail",
-        "entities": [
-          {
-            "start": 18,
-            "end": 20,
-            "value": "lp",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que despacho tiene la profesora de fomar?",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 35,
-            "end": 40,
-            "value": "fomar",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que despacho tiene la profesora de eda",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 35,
-            "end": 38,
-            "value": "eda",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho de la profesora de apss?",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 28,
-            "end": 32,
-            "value": "apss",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde esta el despacho de la profe de vbp-bdma?",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 38,
-            "end": 46,
-            "value": "vbp-bdma",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde esta el despacho de la profe de ia",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 38,
-            "end": 40,
-            "value": "ia",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho del profesor de vbp-bdma?",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 25,
-            "end": 33,
-            "value": "vbp-bdma",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde esta el despacho de la profesora de isdcm-mei",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 42,
-            "end": 51,
-            "value": "isdcm-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "donde esta el despacho del profe de ads-miri",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 36,
-            "end": 44,
-            "value": "ads-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho del profe de mbm-mai",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "mbm-mai",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que despacho tiene la profesora de tia-mei",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 35,
-            "end": 42,
-            "value": "tia-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho del profe de so2",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 33,
-            "end": 36,
-            "value": "so2",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho de la profesora de ds-miri",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 28,
+            "start": 27,
             "end": 35,
-            "value": "ds-miri",
+            "value": "apa-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde esta el despacho del profesor de sv-miri",
-        "intent": "ask_subject_teacher_office",
+        "text": "correo de la profesora de ini-tec",
+        "intent": "ask_subject_teacher_mail",
         "entities": [
           {
-            "start": 39,
-            "end": 46,
+            "start": 26,
+            "end": 33,
+            "value": "ini-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de sv-miri?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 37,
             "value": "sv-miri",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde esta el despacho del profesor de si",
+        "text": "cual es el mail del profe de im",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 29,
+            "end": 31,
+            "value": "im",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profe de li",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 27,
+            "end": 29,
+            "value": "li",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de ptdma-mei",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 46,
+            "value": "ptdma-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "mail de la profe de a3dm-miri?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 20,
+            "end": 29,
+            "value": "a3dm-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene el profesor de vj",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "vj",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "correo de la profesora de fm?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 26,
+            "end": 28,
+            "value": "fm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profesora de ml-miri?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "ml-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el correo de la profe de as",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 33,
+            "end": 35,
+            "value": "as",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que mail tiene la profesora de ini-tec",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 31,
+            "end": 38,
+            "value": "ini-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "mail de la profesora de pro1?",
+        "intent": "ask_subject_teacher_mail",
+        "entities": [
+          {
+            "start": 24,
+            "end": 28,
+            "value": "pro1",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho del profesor de m2?",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
             "start": 39,
             "end": 41,
-            "value": "si",
+            "value": "m2",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "que despacho tiene la profesora de tc",
+        "text": "donde esta el despacho del profesor de apc?",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 35,
-            "end": 37,
-            "value": "tc",
+            "start": 39,
+            "end": 42,
+            "value": "apc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cual es el despacho del profesor de cdi?",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 36,
-            "end": 39,
-            "value": "cdi",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho de la profesora de bd",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 28,
-            "end": 30,
-            "value": "bd",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "despacho del profesor de eia-mmc",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 25,
-            "end": 32,
-            "value": "eia-mmc",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que despacho tiene el profe de isdcm-mei",
+        "text": "que despacho tiene el profe de caso?",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
             "start": 31,
-            "end": 40,
-            "value": "isdcm-mei",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cual es el despacho del profe de er",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 33,
             "end": 35,
-            "value": "er",
+            "value": "caso",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde esta el despacho del profe de sdm-bdma",
+        "text": "que despacho tiene el profesor de a",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 36,
-            "end": 44,
-            "value": "sdm-bdma",
+            "start": 34,
+            "end": 35,
+            "value": "a",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "donde esta el despacho de la profesora de examens",
-        "intent": "ask_subject_teacher_office",
-        "entities": [
-          {
-            "start": 42,
-            "end": 49,
-            "value": "examens",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "que despacho tiene el profe de fdm?",
+        "text": "que despacho tiene el profe de sim",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
             "start": 31,
             "end": 34,
-            "value": "fdm",
+            "value": "sim",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cual es el despacho de la profe de mva-miri?",
+        "text": "que despacho tiene la profesora de mva-miri",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
@@ -2158,407 +3826,1143 @@
         ]
       },
       {
-        "text": "donde esta el despacho del profesor de sim?",
+        "text": "despacho del profesor de tc?",
         "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 39,
-            "end": 42,
-            "value": "sim",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "quien es el profe de ecsdi",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 21,
-            "end": 26,
-            "value": "ecsdi",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "como se llama el profesor de prop?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 29,
-            "end": 33,
-            "value": "prop",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "nombre de la profe de f?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 22,
-            "end": 23,
-            "value": "f",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "profesor de gps",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 12,
-            "end": 15,
-            "value": "gps",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "quien es la profesora de cor-mai?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
             "start": 25,
-            "end": 32,
-            "value": "cor-mai",
+            "end": 27,
+            "value": "tc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "nombre de la profesora de srgge-miri?",
-        "intent": "ask_subject_teacher_name",
+        "text": "cual es el despacho de la profe de atci-mai?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 26,
-            "end": 36,
-            "value": "srgge-miri",
+            "start": 35,
+            "end": 43,
+            "value": "atci-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "como se llama la profe de fomar",
-        "intent": "ask_subject_teacher_name",
+        "text": "despacho de la profe de lai-mai",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 26,
+            "start": 24,
             "end": 31,
-            "value": "fomar",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "nombre de la profesora de pds",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 26,
-            "end": 29,
-            "value": "pds",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "quien es la profesora de pro1?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 25,
-            "end": 29,
-            "value": "pro1",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "nombre del profesor de frr-miri?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 23,
-            "end": 31,
-            "value": "frr-miri",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "profe de par?",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 9,
-            "end": 12,
-            "value": "par",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "como se llama la profe de pro2",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 26,
-            "end": 30,
-            "value": "pro2",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "nombre de la profe de im",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 22,
-            "end": 24,
-            "value": "im",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "quienes son los profesores de pie1-gced",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 30,
-            "end": 39,
-            "value": "pie1-gced",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "nombre de la profe de lai-mai",
-        "intent": "ask_subject_teacher_name",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
             "value": "lai-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "como se llama el profe de cor-mai",
-        "intent": "ask_subject_teacher_name",
+        "text": "cual es el despacho de la profesora de vj",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 26,
+            "start": 39,
+            "end": 41,
+            "value": "vj",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de la profe de ds-miri?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "ds-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profesor de bc-mmc",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 34,
+            "end": 40,
+            "value": "bc-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de la profe de dq-mmc?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 38,
+            "end": 44,
+            "value": "dq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene la profe de vj",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 31,
             "end": 33,
-            "value": "cor-mai",
+            "value": "vj",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "nombre del profesor de so",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene la profesora de f?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 23,
-            "end": 25,
-            "value": "so",
+            "start": 35,
+            "end": 36,
+            "value": "f",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "quienes son los profesores de cbde?",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene el profesor de a?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 30,
-            "end": 34,
-            "value": "cbde",
+            "start": 34,
+            "end": 35,
+            "value": "a",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "nombre de la profe de apa?",
-        "intent": "ask_subject_teacher_name",
+        "text": "despacho del profesor de md?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 25,
+            "end": 27,
+            "value": "md",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho del profe de mene-mmc",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "mene-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profesor de ci",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 34,
+            "end": 36,
+            "value": "ci",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho del profesor de apa-miri",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 25,
+            "end": 33,
+            "value": "apa-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de la profe de gps",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 35,
+            "end": 38,
+            "value": "gps",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene la profesora de sio",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 35,
+            "end": 38,
+            "value": "sio",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profe de srgge-miri",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 41,
+            "value": "srgge-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profe de slds?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 35,
+            "value": "slds",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de la profe de pes",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 35,
+            "end": 38,
+            "value": "pes",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profe de bdm-miri?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 39,
+            "value": "bdm-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene la profesora de pae?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 35,
+            "end": 38,
+            "value": "pae",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profesor de fdm?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 34,
+            "end": 37,
+            "value": "fdm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho del profe de bd?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
             "start": 22,
-            "end": 25,
-            "value": "apa",
+            "end": 24,
+            "value": "bd",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "quien es el profesor de adm-miri",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene la profesora de im?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 24,
-            "end": 32,
-            "value": "adm-miri",
+            "start": 35,
+            "end": 37,
+            "value": "im",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "quien es la profe de so?",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene la profesora de pe",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 21,
-            "end": 23,
-            "value": "so",
+            "start": 35,
+            "end": 37,
+            "value": "pe",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "como se llama la profesora de pegti-mei",
-        "intent": "ask_subject_teacher_name",
+        "text": "cual es el despacho del profe de ac?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 30,
+            "start": 33,
+            "end": 35,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de la profe de mgtn-miri?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 38,
+            "end": 47,
+            "value": "mgtn-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho del profesor de idi?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 36,
             "end": 39,
-            "value": "pegti-mei",
+            "value": "idi",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "como se llama el profe de wse",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene el profesor de eia-mmc?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 26,
-            "end": 29,
+            "start": 34,
+            "end": 41,
+            "value": "eia-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho del profe de ptdma-mei?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 33,
+            "end": 42,
+            "value": "ptdma-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profesor de wse?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 34,
+            "end": 37,
             "value": "wse",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "quien es el profesor de psi?",
-        "intent": "ask_subject_teacher_name",
+        "text": "que despacho tiene la profe de pro2?",
+        "intent": "ask_subject_teacher_office",
         "entities": [
           {
-            "start": 24,
-            "end": 27,
-            "value": "psi",
+            "start": 31,
+            "end": 35,
+            "value": "pro2",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "quien es el profe de od-miri?",
+        "text": "donde esta el despacho del profesor de bdm-miri?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 39,
+            "end": 47,
+            "value": "bdm-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de la profesora de aa?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 39,
+            "end": 41,
+            "value": "aa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profesor de pegti-mei",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 34,
+            "end": 43,
+            "value": "pegti-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho del profesor de tfg?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 25,
+            "end": 28,
+            "value": "tfg",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene la profesora de bc-mmc",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 35,
+            "end": 41,
+            "value": "bc-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho de la profesora de si",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 39,
+            "end": 41,
+            "value": "si",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho del profesor de m2?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 25,
+            "end": 27,
+            "value": "m2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho del profesor de prop",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 25,
+            "end": 29,
+            "value": "prop",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que despacho tiene el profe de cn-mai?",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "cn-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "despacho de la profesora de cc-bdma",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "cc-bdma",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "donde esta el despacho de la profesora de ap2-gced",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 42,
+            "end": 50,
+            "value": "ap2-gced",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cual es el despacho del profe de fm",
+        "intent": "ask_subject_teacher_office",
+        "entities": [
+          {
+            "start": 33,
+            "end": 35,
+            "value": "fm",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de mmcgm-mmc",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 31,
+            "value": "mmcgm-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es la profe de asw?",
         "intent": "ask_subject_teacher_name",
         "entities": [
           {
             "start": 21,
-            "end": 28,
-            "value": "od-miri",
+            "end": 24,
+            "value": "asw",
             "entity": "subject_acronym"
           }
         ]
       },
       {
+        "text": "quienes son los profesores de cpds-miri?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 39,
+            "value": "cpds-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profe de pmcdss-mai",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 36,
+            "value": "pmcdss-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quienes son los profesores de asdp?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 34,
+            "value": "asdp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profesor de com-gced",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 29,
+            "end": 37,
+            "value": "com-gced",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quienes son los profesores de ac",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profe de pes",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 9,
+            "end": 12,
+            "value": "pes",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profesora de md",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "md",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quienes son los profesores de so2?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 33,
+            "value": "so2",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quienes son los profesores de asdp",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 34,
+            "value": "asdp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profesora de aa?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 13,
+            "end": 15,
+            "value": "aa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profe de soa?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 29,
+            "value": "soa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profe de ic?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 28,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profe de sid",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 9,
+            "end": 12,
+            "value": "sid",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profesor de g",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 12,
+            "end": 13,
+            "value": "g",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profe de adm-miri?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "adm-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre del profe de dq-mmc",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 20,
+            "end": 26,
+            "value": "dq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profesor de dl-mai",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "dl-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profesora de im",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "im",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profesora de tmiri-miri",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 40,
+            "value": "tmiri-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es la profesora de hci-mai",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "hci-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es el profesor de ic",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 24,
+            "end": 26,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es la profe de bmt-mpal?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "bmt-mpal",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profesora de dq-mmc?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 32,
+            "value": "dq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profesora de caim",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 30,
+            "value": "caim",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre del profe de fomar?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "fomar",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profesora de ml-miri",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 33,
+            "value": "ml-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quienes son los profesores de vc",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 32,
+            "value": "vc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profe de ne",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 28,
+            "value": "ne",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profesora de dq-mmc",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 32,
+            "value": "dq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profe de cl?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 9,
+            "end": 11,
+            "value": "cl",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre del profesor de cpds-miri?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 23,
+            "end": 32,
+            "value": "cpds-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de prop",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 26,
+            "value": "prop",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profesora de pca?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 29,
+            "value": "pca",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de idss-mai?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "idss-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profe de soas-mai?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "soas-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profesor de li?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "li",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de ies?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 25,
+            "value": "ies",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profesor de pro1",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 29,
+            "end": 33,
+            "value": "pro1",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama el profe de tc",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 26,
+            "end": 28,
+            "value": "tc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "como se llama la profesora de adei",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 30,
+            "end": 34,
+            "value": "adei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de bd?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 24,
+            "value": "bd",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es el profe de ci?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 21,
+            "end": 23,
+            "value": "ci",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre de la profe de cpds-miri?",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 22,
+            "end": 31,
+            "value": "cpds-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profe de soa",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 9,
+            "end": 12,
+            "value": "soa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es el profesor de mva-miri",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "mva-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "quien es la profe de aws",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 21,
+            "end": 24,
+            "value": "aws",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "nombre del profesor de ci",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 23,
+            "end": 25,
+            "value": "ci",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "profesora de mp",
+        "intent": "ask_subject_teacher_name",
+        "entities": [
+          {
+            "start": 13,
+            "end": 15,
+            "value": "mp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "siguiente clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
         "text": "que clase me toca",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "donde tengo que ir?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "que clase me toca",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "cuando es la siguiente clase?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "que clase tengo?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "cual es la proxima clase?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "cuando tengo la proxima clase",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "qu\u00e9 me toca ahora?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "de que tengo clase",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "de que tengo clase?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "que clase tengo ahora?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "de que tengo clase",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "cual es la proxima clase",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "que clase tengo ahora?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "que clase me toca",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "cuando es la siguiente clase?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "proxima clase?",
-        "intent": "ask_next_class"
-      },
-      {
-        "text": "clase ahora?",
         "intent": "ask_next_class"
       },
       {
@@ -2570,27 +4974,191 @@
         "intent": "ask_next_class"
       },
       {
-        "text": "qu\u00e9 ex\u00e1menes tengo?",
+        "text": "cuando es la siguiente clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando es la siguiente clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "siguiente clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cual es la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "clase ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "donde tengo la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "clase ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cual es la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "qu\u00e9 me toca ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando tengo la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "donde tengo la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "qu\u00e9 me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cual es la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase tengo?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "donde tengo la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "de que tengo clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "siguiente clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cual es la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "clase ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando tengo la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando tengo la proxima clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando tengo la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "de que tengo clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando tengo la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "qu\u00e9 me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "donde tengo la proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase tengo ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "clase ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "cuando es la siguiente clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "proxima clase?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "siguiente clase",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "qu\u00e9 me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que me toca ahora?",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "que clase me toca",
+        "intent": "ask_next_class"
+      },
+      {
+        "text": "qu\u00e9 examenes tengo?",
         "intent": "ask_exams"
       },
       {
-        "text": "ex\u00e1menes",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "examenes de com-gced?",
-        "intent": "ask_exams",
-        "entities": [
-          {
-            "start": 12,
-            "end": 20,
-            "value": "com-gced",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "ex\u00e1menes",
+        "text": "cuando me toca examen",
         "intent": "ask_exams"
       },
       {
@@ -2598,69 +5166,41 @@
         "intent": "ask_exams"
       },
       {
-        "text": "cuando me toca examen de ia",
+        "text": "cuales son los siguientes examenes de mmcgm-mmc?",
         "intent": "ask_exams",
         "entities": [
           {
-            "start": 25,
-            "end": 27,
-            "value": "ia",
+            "start": 38,
+            "end": 47,
+            "value": "mmcgm-mmc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "examenes?",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "cuando tengo examenes de apss",
-        "intent": "ask_exams",
-        "entities": [
-          {
-            "start": 25,
-            "end": 29,
-            "value": "apss",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "qu\u00e9 examenes tengo de vj?",
+        "text": "qu\u00e9 examenes tengo de ies",
         "intent": "ask_exams",
         "entities": [
           {
             "start": 22,
-            "end": 24,
-            "value": "vj",
+            "end": 25,
+            "value": "ies",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuales son los siguientes ex\u00e1menes",
+        "text": "cuando me toca ex\u00e1men?",
         "intent": "ask_exams"
       },
       {
-        "text": "examen",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "cuando tengo el siguiente ex\u00e1men",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "de que tengo examen?",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "qu\u00e9 examenes tengo de so?",
+        "text": "cuando tengo el siguiente examen de pptm-miri",
         "intent": "ask_exams",
         "entities": [
           {
-            "start": 22,
-            "end": 24,
-            "value": "so",
+            "start": 36,
+            "end": 45,
+            "value": "pptm-miri",
             "entity": "subject_acronym"
           }
         ]
@@ -2670,63 +5210,167 @@
         "intent": "ask_exams"
       },
       {
-        "text": "qu\u00e9 examenes tengo",
+        "text": "cuando tengo el siguiente ex\u00e1men",
         "intent": "ask_exams"
       },
       {
-        "text": "cuando me toca ex\u00e1men de mmcgm-mmc",
+        "text": "cuales son los siguientes ex\u00e1menes?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo el siguiente examen de dq-mmc",
         "intent": "ask_exams",
         "entities": [
           {
-            "start": 25,
-            "end": 34,
-            "value": "mmcgm-mmc",
+            "start": 36,
+            "end": 42,
+            "value": "dq-mmc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "ex\u00e1men de pro1?",
+        "text": "cuando tengo el siguiente ex\u00e1men de isdcm-mei?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 36,
+            "end": 45,
+            "value": "isdcm-mei",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "ex\u00e1men?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "qu\u00e9 ex\u00e1menes tengo de aem2-tec",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "aem2-tec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "ex\u00e1men de ac",
         "intent": "ask_exams",
         "entities": [
           {
             "start": 10,
-            "end": 14,
-            "value": "pro1",
+            "end": 12,
+            "value": "ac",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "qu\u00e9 ex\u00e1menes tengo de tia-mei?",
+        "text": "cuales son los siguientes examenes",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando me toca ex\u00e1men de as",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 25,
+            "end": 27,
+            "value": "as",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "qu\u00e9 examenes tengo de emrq-mmc",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "emrq-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuales son los siguientes examenes",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuales son los siguientes examenes",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuales son los siguientes ex\u00e1menes de cv?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 38,
+            "end": 40,
+            "value": "cv",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "qu\u00e9 examenes tengo de vbp-bdma?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "vbp-bdma",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando me toca examen",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo el siguiente examen?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "qu\u00e9 ex\u00e1menes tengo de ini-tec",
         "intent": "ask_exams",
         "entities": [
           {
             "start": 22,
             "end": 29,
-            "value": "tia-mei",
+            "value": "ini-tec",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo examenes",
-        "intent": "ask_exams"
-      },
-      {
-        "text": "cuando me toca ex\u00e1men de cdi",
+        "text": "qu\u00e9 examenes tengo de atci-mai",
         "intent": "ask_exams",
         "entities": [
           {
-            "start": 25,
-            "end": 28,
-            "value": "cdi",
+            "start": 22,
+            "end": 30,
+            "value": "atci-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuales son los siguientes ex\u00e1menes?",
+        "text": "cuando tengo el siguiente ex\u00e1men?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "ex\u00e1menes",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo ex\u00e1menes?",
         "intent": "ask_exams"
       },
       {
@@ -2734,151 +5378,311 @@
         "intent": "ask_exams"
       },
       {
-        "text": "de que tengo examen?",
+        "text": "de que tengo examen",
         "intent": "ask_exams"
       },
       {
-        "text": "cuando tengo el siguiente examen de cv",
+        "text": "de que tengo ex\u00e1men?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "examenes?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo ex\u00e1menes de kre-mai?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "kre-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "de que tengo ex\u00e1men?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "examen de caim",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 10,
+            "end": 14,
+            "value": "caim",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo el siguiente ex\u00e1men de al-ec",
         "intent": "ask_exams",
         "entities": [
           {
             "start": 36,
-            "end": 38,
-            "value": "cv",
+            "end": 41,
+            "value": "al-ec",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "qu\u00e9 practicas de lai-mai tengo",
-        "intent": "ask_pracs",
-        "entities": [
-          {
-            "start": 17,
-            "end": 24,
-            "value": "lai-mai",
-            "entity": "subject_acronym"
-          }
-        ]
+        "text": "examen?",
+        "intent": "ask_exams"
       },
       {
-        "text": "practicas de aem2-tec",
-        "intent": "ask_pracs",
-        "entities": [
-          {
-            "start": 13,
-            "end": 21,
-            "value": "aem2-tec",
-            "entity": "subject_acronym"
-          }
-        ]
+        "text": "examen?",
+        "intent": "ask_exams"
       },
       {
-        "text": "que pr\u00e1cticas de fdm tengo que entregar?",
-        "intent": "ask_pracs",
+        "text": "examen de url-mai?",
+        "intent": "ask_exams",
         "entities": [
           {
-            "start": 17,
-            "end": 20,
-            "value": "fdm",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "cuales son las siguientes practicas?",
-        "intent": "ask_pracs"
-      },
-      {
-        "text": "cuando me tocan pr\u00e1cticas de url-mai",
-        "intent": "ask_pracs",
-        "entities": [
-          {
-            "start": 29,
-            "end": 36,
+            "start": 10,
+            "end": 17,
             "value": "url-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo pr\u00e1cticas",
+        "text": "cuando me toca ex\u00e1men de fomar",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 25,
+            "end": 30,
+            "value": "fomar",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando me toca ex\u00e1men?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "de que tengo examen?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo el siguiente examen de tc?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 36,
+            "end": 38,
+            "value": "tc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "qu\u00e9 ex\u00e1menes tengo?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuando tengo ex\u00e1menes?",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "cuales son los siguientes examenes de hci-mai",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "hci-mai",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando me toca examen",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "de que tengo ex\u00e1men",
+        "intent": "ask_exams"
+      },
+      {
+        "text": "examen de ic?",
+        "intent": "ask_exams",
+        "entities": [
+          {
+            "start": 10,
+            "end": 12,
+            "value": "ic",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que practicas tengo que entregar?",
         "intent": "ask_pracs"
       },
       {
-        "text": "que pr\u00e1cticas tengo que entregar",
+        "text": "practicas?",
         "intent": "ask_pracs"
       },
       {
-        "text": "cuales son las siguientes pr\u00e1cticas",
+        "text": "pr\u00e1ctica?",
         "intent": "ask_pracs"
       },
       {
-        "text": "qu\u00e9 practicas tengo?",
-        "intent": "ask_pracs"
-      },
-      {
-        "text": "que pr\u00e1cticas de apss tengo que entregar",
+        "text": "qu\u00e9 pr\u00e1cticas de ini-tec tengo",
         "intent": "ask_pracs",
         "entities": [
           {
             "start": 17,
-            "end": 21,
-            "value": "apss",
+            "end": 24,
+            "value": "ini-tec",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando me tocan practicas?",
+        "text": "pr\u00e1ctica",
         "intent": "ask_pracs"
       },
       {
-        "text": "cuando me tocan pr\u00e1cticas de txc",
+        "text": "que practicas de str tengo",
         "intent": "ask_pracs",
         "entities": [
           {
-            "start": 29,
-            "end": 32,
-            "value": "txc",
+            "start": 17,
+            "end": 20,
+            "value": "str",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo que entregar practicas de pe",
+        "text": "de que tengo pr\u00e1cticas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando me tocan practicas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "pr\u00e1ctica",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "que pr\u00e1cticas de asw tengo?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 17,
+            "end": 20,
+            "value": "asw",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuales son las siguientes practicas de tfg",
         "intent": "ask_pracs",
         "entities": [
           {
             "start": 39,
-            "end": 41,
-            "value": "pe",
+            "end": 42,
+            "value": "tfg",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando me tocan practicas?",
+        "text": "practicas",
         "intent": "ask_pracs"
       },
       {
-        "text": "cuando me tocan pr\u00e1cticas",
-        "intent": "ask_pracs"
-      },
-      {
-        "text": "que pr\u00e1cticas de dq-mmc tengo que entregar",
+        "text": "practicas para entregar de mmcgm-mmc?",
         "intent": "ask_pracs",
         "entities": [
           {
-            "start": 17,
-            "end": 23,
-            "value": "dq-mmc",
+            "start": 27,
+            "end": 36,
+            "value": "mmcgm-mmc",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo practicas de pec?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 26,
+            "end": 29,
+            "value": "pec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo la siguiente pr\u00e1ctica de wse?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 38,
+            "end": 41,
+            "value": "wse",
             "entity": "subject_acronym"
           }
         ]
       },
       {
         "text": "que pr\u00e1cticas tengo que entregar",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando me tocan pr\u00e1cticas de m1",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 29,
+            "end": 31,
+            "value": "m1",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo que entregar practicas?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo practicas de slds?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 26,
+            "end": 30,
+            "value": "slds",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "practica",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "que practicas tengo que entregar",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "que practicas tengo que entregar",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuales son las siguientes pr\u00e1cticas?",
         "intent": "ask_pracs"
       },
       {
@@ -2886,80 +5690,196 @@
         "intent": "ask_pracs"
       },
       {
-        "text": "cuando tengo la siguiente pr\u00e1ctica de pegti-mei?",
-        "intent": "ask_pracs",
-        "entities": [
-          {
-            "start": 38,
-            "end": 47,
-            "value": "pegti-mei",
-            "entity": "subject_acronym"
-          }
-        ]
+        "text": "de que tengo pr\u00e1cticas",
+        "intent": "ask_pracs"
       },
       {
-        "text": "que practicas de apc tengo que entregar?",
+        "text": "que practicas de masd-mai tengo",
         "intent": "ask_pracs",
         "entities": [
           {
             "start": 17,
-            "end": 20,
-            "value": "apc",
+            "end": 25,
+            "value": "masd-mai",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "practicas de vj",
-        "intent": "ask_pracs",
-        "entities": [
-          {
-            "start": 13,
-            "end": 15,
-            "value": "vj",
-            "entity": "subject_acronym"
-          }
-        ]
-      },
-      {
-        "text": "de que tengo practicas",
+        "text": "cuando tengo pr\u00e1cticas?",
         "intent": "ask_pracs"
       },
       {
-        "text": "cuando tengo que entregar pr\u00e1cticas de it-mei?",
+        "text": "practica de ac",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "ac",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuales son las siguientes pr\u00e1cticas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo que entregar pr\u00e1cticas de emrq-mmc?",
         "intent": "ask_pracs",
         "entities": [
           {
             "start": 39,
-            "end": 45,
-            "value": "it-mei",
+            "end": 47,
+            "value": "emrq-mmc",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "cuando tengo que entregar pr\u00e1cticas de md?",
+        "text": "practica",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "practica?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo que entregar pr\u00e1cticas de im?",
         "intent": "ask_pracs",
         "entities": [
           {
             "start": 39,
             "end": 41,
-            "value": "md",
+            "value": "im",
             "entity": "subject_acronym"
           }
         ]
       },
       {
-        "text": "practicas de li para entregar",
+        "text": "pr\u00e1cticas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo pr\u00e1cticas de a3dm-miri",
         "intent": "ask_pracs",
         "entities": [
           {
-            "start": 13,
-            "end": 15,
-            "value": "li",
+            "start": 26,
+            "end": 35,
+            "value": "a3dm-miri",
             "entity": "subject_acronym"
           }
         ]
+      },
+      {
+        "text": "cuando tengo practicas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "pr\u00e1ctica?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo la siguiente practica?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo practicas de aa",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 26,
+            "end": 28,
+            "value": "aa",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "practicas para entregar?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "practica de sv-miri",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "sv-miri",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando me tocan practicas",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "pr\u00e1ctica de lp?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "lp",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "que pr\u00e1cticas tengo",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "que practicas de al-ec tengo que entregar?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "al-ec",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "practicas para entregar de eda?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 27,
+            "end": 30,
+            "value": "eda",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo pr\u00e1cticas?",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo pr\u00e1cticas de caso?",
+        "intent": "ask_pracs",
+        "entities": [
+          {
+            "start": 26,
+            "end": 30,
+            "value": "caso",
+            "entity": "subject_acronym"
+          }
+        ]
+      },
+      {
+        "text": "cuando tengo la siguiente practica",
+        "intent": "ask_pracs"
+      },
+      {
+        "text": "cuando tengo que entregar practicas?",
+        "intent": "ask_pracs"
       }
     ]
   }
