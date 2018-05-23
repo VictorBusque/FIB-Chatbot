@@ -4,6 +4,8 @@
 #-- Local imports --#
 from Fibot.fibot import Fibot
 import argparse
+import tensorflow as tf
+
 
 """
     Allows to decide the training type:
@@ -30,6 +32,10 @@ def main():
     trainNLG = False
     if args.nlu: trainNLU = bool(args.nlu[0] == 'y')
     if args.dialog: trainNLG = bool(args.nlu[0] == 'n')
+
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    tf.Session(config=config)
 
     fibot = Fibot()
     fibot.qa.load(trainNLG=trainNLG, trainNLU = trainNLU)

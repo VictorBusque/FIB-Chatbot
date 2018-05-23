@@ -82,3 +82,19 @@ que clase tengo a continuación
 ask_next_class
 cual es mi siguiente clase
 ask_next_class
+a que hora tengo la siguiente clase
+ask_next_class
+cuando tengo la siguiente clase
+ask_next_class
+cuando tengo el siguiente examen
+ask_exams
+cuando tengo que entregar la practica de asw
+ask_pracs
+nombre del profe de pro2
+ask_subject_teacher_name
+donde tengo clase de er
+ask_subject_classroom
+a que hora me toca PAE
+ask_subject_schedule
+puedes mandarme el correo electronico de lluis belanche
+ask_teacher_mail
