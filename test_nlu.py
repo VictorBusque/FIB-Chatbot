@@ -65,7 +65,7 @@ def print_conf_matrix(conf_matrix):
         if row in [0,1,3,4]: fill = "\t\t"
         elif row in [2,8,9,10]: fill = "\t\t\t"
         else: fill = "\t"
-        print("{}:{}{}".format(idx2intent[row], fill, conf_matrix[row]))
+        print("{}:{}{}\t{}".format(idx2intent[row], fill, conf_matrix[row], int(sum(conf_matrix[row]))))
 
 
 def get_global_accuracy(conf_matrix):
@@ -77,10 +77,12 @@ def get_avg_precision(conf_matrix):
     val = list(precisions.values())
     return np.mean(val)
 
+
 def get_avg_recall(conf_matrix):
     recalls = conf2recall(conf_matrix)
     val = list(recalls.values())
     return np.mean(val)
+
 
 if __name__ == '__main__':
     nlu = NLU_unit()

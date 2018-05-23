@@ -49,11 +49,17 @@ class NLU_unit(object):
 			trainer_en = Trainer(RasaNLUConfig("./config/config_spacy_en.json"))
 			print("NLU Trainer launched in {}s".format(time()-now))
 			print("Training CA NLU model")
+			now = time()
 			trainer_ca.train(training_data_ca)
+			print("Total elapsed time for CA: {}".format(time()-now))
 			print("Training ES NLU model")
+			now = time()
 			trainer_es.train(training_data_es)
+			print("Total elapsed time for ES: {}".format(time()-now))
 			print("Training EN NLU model")
+			now = time()
 			trainer_en.train(training_data_en)
+			print("Total elapsed time for EN: {}".format(time()-now))
 			print("NLU Training done")
 			model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
 			model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in

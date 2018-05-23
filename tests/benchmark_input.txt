@@ -66,3 +66,19 @@ que me toca
 ask_next_class
 a que hora tengo prop
 ask_subject_schedule
+puedes decirme el correo de Juan Perez
+ask_teacher_mail
+donde puedo encontrar el despacho de alberto alvarez
+ask_teacher_office
+dime cual es el email del profesor de asw
+ask_subject_teacher_mail
+donde esta el despacho del profesor de apa
+ask_subject_teacher_office
+quienes son los profesores de li
+ask_subject_teacher_name
+quien es el profesor de li
+ask_subject_teacher_name
+que clase tengo a continuación
+ask_next_class
+cual es mi siguiente clase
+ask_next_class
