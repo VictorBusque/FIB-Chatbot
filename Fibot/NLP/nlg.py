@@ -44,6 +44,9 @@ class Query_answer_unit(object):
 							  policies=[MemoizationPolicy(), KerasPolicy()])
 		self.agent_en =  Agent(self.domain_path,
 							  policies=[MemoizationPolicy(), KerasPolicy()])
+		self.agent_ca.toggle_memoization(activate = True)
+		self.agent_es.toggle_memoization(activate = True)
+		self.agent_en.toggle_memoization(activate = True)
 
 	"""
 		Parameters:
