@@ -105,6 +105,12 @@ if __name__ == '__main__':
                         choices = ['y', 'n'],
                         default = ['n'],
                         help='If the test has to output stats')
+    parser.add_argument('--error',
+                        nargs=1,
+                        required=False,
+                        choices = ['y', 'n'],
+                        default = ['n'],
+                        help ='If the test has to output errors')
     args = parser.parse_args()
 
     language = args.lan[0]
@@ -112,6 +118,8 @@ if __name__ == '__main__':
     else: file_route = None
     if args.stats: stats = args.stats[0] == 'y'
     else: stats = False
+    if args.error: error = args.error[0] == 'y'
+    else: error = False
 
     if not file_route:
         print("Para salir del modo de test escribe 'quit'")
@@ -153,9 +161,10 @@ if __name__ == '__main__':
                     pred_confidence = nlu.get_intent(message, language)['confidence']
                     avg_confidence_failure += pred_confidence
                     times_failure +=1
-                    print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
-                    print("La lista de alternativas es la siguiente:")
-                    pprint(nlu.get_intent_ranking(message, language))
+                    if error:
+                        print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
+                        print("La lista de alternativas es la siguiente:")
+                        pprint(nlu.get_intent_ranking(message, language))
                 else:
                     pred_confidence = nlu.get_intent(message, language)['confidence']
                     avg_confidence_success += pred_confidence

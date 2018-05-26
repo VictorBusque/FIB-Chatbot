@@ -47,6 +47,6 @@
         "version": 1
     },
     "intent_classifier_sklearn": "intent_classifier.pkl",
-    "trained_at": "20180524-215047",
+    "trained_at": "20180525-112026",
     "rasa_nlu_version": "0.11.3"
 }

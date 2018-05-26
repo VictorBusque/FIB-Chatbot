@@ -454,3 +454,7 @@ Donde tiene el profesor de APA su despacho?
 ask_subject_teacher_office
 en que despacho esta el profesor de IA
 ask_subject_teacher_office
+donde puedo encontrar el despacho de joan climent?
+ask_teacher_office
+cuando tendre el examen de vc?
+ask_exams
