@@ -17,14 +17,14 @@ def main():
     parser.add_argument('--nlu',
                         nargs=1,
                         required = False,
-                        choices=['es','ca','en', 'n'],
-                        default = ['n'],
+                        choices=['es', 'ca', 'en', 'n'],
+                        action = 'append',
                         help='Language for the interpretation')
     parser.add_argument('--dialog',
                         nargs=1,
                         required = False,
                         choices=['y','n'],
-                        default = ['n'],
+                        default = [],
                         help='File for the interpreter to use')
     args = parser.parse_args()
     print(args)
@@ -32,9 +32,9 @@ def main():
     trainNLG = False
     languages = []
     if args.nlu:
+        languages = [i[0] for i in args.nlu]
         trainNLU = True
-        languages.append(args.nlu[0])
-    if args.dialog: trainNLG = bool(args.nlu[0] == 'n')
+    if args.dialog: trainNLG = bool(args.dialog[0] == 'y')
 
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
