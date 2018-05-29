@@ -140,6 +140,7 @@ class Data_generator(object):
 
 
 def main(amount = 250, language = 'es'):
+	random.seed(22)
 	with open('Data/data_gen.json', 'rb') as jsonfile:
 		data = json.load(jsonfile)[language]
 
@@ -161,6 +162,7 @@ def main(amount = 250, language = 'es'):
 	intro_next_class_gen = Item_generator(data = data['intros_now_class'])
 	intro_exams_gen = Item_generator(data = data['intros_exams'])
 	intro_pracs_gen = Item_generator(data = data['intros_pracs'])
+	intro_inform_gen = Item_generator(data = data['intros_inform'])
 	#intro_inform_teacher_gen = Item_generator(data = intros_inform_teacher)
 	#intro_inform_subject_gen = Item_generator(data = intros_inform_subject)
 
@@ -175,6 +177,8 @@ def main(amount = 250, language = 'es'):
 	next_class_gen = Data_generator(None, intro_next_class_gen, type_ = None, intent = "ask_next_class")
 	next_exam_gen = Data_generator(subject_gen, intro_exams_gen, type_="subject", intent = "ask_exams")
 	next_pracs_gen = Data_generator(subject_gen, intro_pracs_gen, type_ = "subject", intent = "ask_pracs")
+	inform_subject = Data_generator(subject_gen, intro_inform_gen, type_ = "subject", intent = "inform")
+	inform_teacher = Data_generator(teacher_gen, intro_inform_gen, type_ = "teacher", intent = "inform")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
 
@@ -189,6 +193,8 @@ def main(amount = 250, language = 'es'):
 	common_examples.extend( next_class_gen.get_examples(amount) )
 	common_examples.extend( next_exam_gen.get_examples(amount) )
 	common_examples.extend( next_pracs_gen.get_examples(amount) )
+	common_examples.extend( inform_subject.get_examples(amount) )
+	common_examples.extend( inform_teacher.get_examples(amount) )
 	#common_examples.extend( inform_teacher_gen.get_examples(amount) )
 	#common_examples.extend( inform_subject_gen.get_examples(amount) )
 

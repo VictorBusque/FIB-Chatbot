@@ -16,9 +16,9 @@ def main():
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('--nlu',
                         nargs=1,
-                        required = True,
-                        choices=['y','n'],
-                        default = ['y'],
+                        required = False,
+                        choices=['es','ca','en', 'n'],
+                        default = ['n'],
                         help='Language for the interpretation')
     parser.add_argument('--dialog',
                         nargs=1,
@@ -30,7 +30,10 @@ def main():
     print(args)
     trainNLU = False
     trainNLG = False
-    if args.nlu: trainNLU = bool(args.nlu[0] == 'y')
+    languages = []
+    if args.nlu:
+        trainNLU = True
+        languages.append(args.nlu[0])
     if args.dialog: trainNLG = bool(args.nlu[0] == 'n')
 
     config = tf.ConfigProto()
@@ -38,7 +41,7 @@ def main():
     tf.Session(config=config)
 
     fibot = Fibot()
-    fibot.qa.load(trainNLG=trainNLG, trainNLU = trainNLU)
+    fibot.qa.load(trainNLG=trainNLG, trainNLU = trainNLU, train_list = languages)
     return
 
 if __name__ == "__main__":

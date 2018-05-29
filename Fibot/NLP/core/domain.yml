@@ -10,7 +10,7 @@ intents:
   - ask_next_class
   - ask_exams
   - ask_pracs
-
+  - inform
 
 entities:
   - teacher_name

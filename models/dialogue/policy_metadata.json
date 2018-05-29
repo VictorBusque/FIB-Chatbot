@@ -6,6 +6,16 @@
         "teacher_name",
         "subject_acronym"
       ]
+    },
+    "Action_show_subject_teachers_mails": {
+      "slots": [
+        "matches"
+      ]
+    },
+    "Action_show_subject_teachers_offices": {
+      "slots": [
+        "matches"
+      ]
     }
   },
   "rasa_core": "0.8.2",

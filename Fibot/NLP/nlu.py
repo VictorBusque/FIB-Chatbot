@@ -36,34 +36,32 @@ class NLU_unit(object):
 		This function loads a model from persistency (if train == False)
 		or re-trains and loads the trained model
 	"""
-	def load(self, train = False):
+	def load(self, train = False, train_list = None):
 		if train:
+			print("Training this languages: {}".format(train_list))
 			now = time()
-			training_data_ca = load_data('./Data/Dataset_ca.json')
-			training_data_es = load_data('./Data/Dataset_es.json')
-			training_data_en = load_data('./Data/Dataset_en.json')
-			print("Data Loaded in {}s".format(time()-now))
-			now = time()
-			trainer_ca = Trainer(RasaNLUConfig("./config/config_spacy_ca.json"))
-			trainer_es = Trainer(RasaNLUConfig("./config/config_spacy_es.json"))
-			trainer_en = Trainer(RasaNLUConfig("./config/config_spacy_en.json"))
-			print("NLU Trainer launched in {}s".format(time()-now))
-			print("Training CA NLU model")
-			now = time()
-			trainer_ca.train(training_data_ca)
-			print("Total elapsed time for CA: {}".format(time()-now))
-			print("Training ES NLU model")
-			now = time()
-			trainer_es.train(training_data_es)
-			print("Total elapsed time for ES: {}".format(time()-now))
-			print("Training EN NLU model")
-			now = time()
-			trainer_en.train(training_data_en)
-			print("Total elapsed time for EN: {}".format(time()-now))
+			if not train_list or 'ca' in train_list:
+				print("Training CA NLU model")
+				training_data_ca = load_data('./Data/Dataset_ca.json')
+				trainer_ca = Trainer(RasaNLUConfig("./config/config_spacy_ca.json"))
+				trainer_ca.train(training_data_ca)
+				model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
+				print("Total elapsed time for CA: {}".format(time()-now))
+			if not train_list or 'es' in train_list:
+				print("Training ES NLU model")
+				training_data_es = load_data('./Data/Dataset_es.json')
+				trainer_es = Trainer(RasaNLUConfig("./config/config_spacy_es.json"))
+				trainer_es.train(training_data_es)
+				model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
+				print("Total elapsed time for ES: {}".format(time()-now))
+			if not train_list or 'en' in train_list:
+				print("Training EN NLU model")
+				training_data_en = load_data('./Data/Dataset_en.json')
+				trainer_en = Trainer(RasaNLUConfig("./config/config_spacy_en.json"))
+				trainer_en.train(training_data_en)
+				model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
+				print("Total elapsed time for EN: {}".format(time()-now))
 			print("NLU Training done")
-			model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
-			model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
-			model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
 			# where `model_directory points to the folder the model is persisted in
 		self.interpreter_ca = RasaNLUInterpreter("./models/nlu_ca/default/current")
 		self.interpreter_es = RasaNLUInterpreter("./models/nlu_es/default/current")

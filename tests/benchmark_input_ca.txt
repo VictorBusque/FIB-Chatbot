@@ -1,22 +1,22 @@
-cual es el correo de javier bejar
+quin és el correu de javier bejar
 ask_teacher_mail
-cual es el despacho de javier bejar
+quin es el despatx de javier bejar
 ask_teacher_office
-cuantas plazas quedan en vc grupo 11
+quantes places queden per vc grup 11
 ask_free_spots
-donde tengo vc
+on tinc vc
 ask_subject_classroom
-cuando tengo vc
+quan tinc vc
 ask_subject_schedule
-cual es el mail del profesor de vc
+quin es el correu del profe de vc
 ask_subject_teacher_mail
-dime el despacho del profe de apa
+diga'm el despatx del professor de apa
 ask_subject_teacher_office
-como se llama el profe de apa
+com es diu el profe de apa
 ask_subject_teacher_name
-que me toca ahora
+que em toca ara
 ask_next_class
-cuando tengo examen de vc
+quan tinc examen de vc
 ask_exams
 cuando tengo que entregar la practica de wse
 ask_pracs

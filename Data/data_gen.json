@@ -755,6 +755,13 @@
       "quan haig dentregar la practica de {}",
       "quan haig dentregar la practica de {}?",
       "quan he dentregar practiques?"
+    ],
+    "intros_inform": [
+      "{}",
+      "m'interessa {}",
+      "El {}",
+      "el de {}",
+      "La {}"
     ]
   },
   "es": {
@@ -773,6 +780,7 @@
       "me puedes decir cual es el correo de {}",
       "me puedes decir cual es el email de {}",
       "correo {}",
+      "puedes decirme el mail de {}",
       "mail {}",
       "email {}",
 
@@ -786,6 +794,7 @@
       "cual es el email de {}?",
       "cual es el email de {}?",
       "dime el correo de {}?",
+      "puedes decirme el mail de {}",
       "dime el mail de {}?",
       "me puedes decir cual es el correo de {}?",
       "me puedes decir cual es el email de {}?",
@@ -796,6 +805,7 @@
     "intros_teacher_desk": [
       "cual es el despacho de {}",
       "cual es el despacho de {}",
+      "dónde puedo encontrar a {}",
       "despacho de {}",
       "donde esta el despacho de {}",
       "dónde está el despacho de {}",
@@ -804,6 +814,8 @@
       "me puedes decir donde esta el despacho de {}",
       "dime cual es el despacho de {}",
 
+
+      "dónde puedo encontrar a {}?",
       "cual es el despacho de {}?",
       "cual es el despacho de {}?",
       "despacho de {}?",
@@ -815,6 +827,8 @@
       "dime cual es el despacho de {}?"
     ],
     "intros_subject_free_spots": [
+      "plazas del grupo {} de {}",
+      "hay sitio en {} grupo {}?",
       "plazas libres en {}",
       "plazas libres de {}",
       "cuantas plazas libres quedan en {}",
@@ -889,9 +903,13 @@
       "a que hora tengo clase de {}",
       "a que hora tengo {}",
       "dime el horario de {}",
+      "a que hora me toca {}",
+      "cuando me toca {}",
       "dime cuando hago {}",
       "me puedes decir cuando tengo {}",
+      "que dia tengo {}",
 
+      "qué dia tengo {}?",
       "horario de {}?",
       "cual es el horario de {}?",
       "cuando tengo {}?",
@@ -901,7 +919,9 @@
       "a qué hora tengo {}?",
       "a que hora tengo {}?",
       "dime el horario de {}?",
+      "a que hora me toca {}?",
       "dime cuando hago {}?",
+      "cuando me toca {}?",
       "me puedes decir cuando tengo {}?"
     ],
     "intros_subject_clasroom": [
@@ -1046,6 +1066,7 @@
       "quien es el profe de {}",
       "quien es la profe de {}",
       "quienes son los profesores de {}",
+      "dime el nombre del profe de {}",
 
       "nombre del profesor de {}?",
       "nombre de la profesora de {}?",
@@ -1078,6 +1099,7 @@
       "donde tengo la proxima clase",
       "cuando tengo la proxima clase",
       "siguiente clase",
+      "que clase tengo a continuación",
       "donde es la siguiente clase",
       "cuando es la siguiente clase",
 
@@ -1093,11 +1115,16 @@
       "cual es la proxima clase?",
       "donde tengo la proxima clase?",
       "cuando tengo la proxima clase?",
+      "que clase tengo a continuación",
       "siguiente clase?",
       "donde es la siguiente clase?",
       "cuando es la siguiente clase?"
     ],
     "intros_exams": [
+      "cual es el proximo examen",
+      "cuál es el próximo exámen?",
+      "cuál es el proximo examen de {}?",
+      "cual es el proximo examen de {}",
       "cuando tengo examenes",
       "cuales son los siguientes examenes",
       "cuando tengo el siguiente examen",
@@ -1128,6 +1155,7 @@
       "cuando me toca examen de {}?",
       "examen de {}?",
       "examenes de {}?",
+      "que dia tengo examen de {}",
 
       "cuando tengo exámenes",
       "cuales son los siguientes exámenes",
@@ -1137,7 +1165,7 @@
       "de que tengo exámen",
       "exámen",
       "exámenes",
-
+      "que dia tengo el examen de {}?",
       "cuando tengo exámenes?",
       "cuales son los siguientes exámenes?",
       "cuando tengo el siguiente exámen?",
@@ -1164,6 +1192,8 @@
       "exámenes de {}?"
     ],
     "intros_pracs": [
+      "tengo alguna practica pendiente de {}?",
+      "tengo alguna práctica pendiente de {}",
       "cuando tengo practicas",
       "cuales son las siguientes practicas",
       "cuando tengo la siguiente practica",
@@ -1264,6 +1294,11 @@
       "cuando tengo prácticas de {}?",
       "prácticas para entregar de {}?",
       "que prácticas de {} tengo que entregar?"
+    ],
+    "intros_inform": [
+      "{}",
+      "el de {}",
+      "me interesa {}"
     ]
   },
   "en": {
@@ -1517,6 +1552,11 @@
       "when do i have a practical work of {}?",
       "what practical works of {} do i have?",
       "practical works of {}?"
+    ],
+    "intros_inform": [
+      "{}",
+      "about {}",
+      "im interested in {}"
     ]
   }
 }

@@ -43,6 +43,7 @@ intents:
 - ask_next_class
 - ask_exams
 - ask_pracs
+- inform
 slots:
   group:
     initial_value: null

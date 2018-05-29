@@ -3,7 +3,7 @@ from pprint import pprint
 import numpy as np
 import argparse
 
-INTENT_AMOUNT = 11
+INTENT_AMOUNT = 12
 intent2idx = {
     'ask_teacher_mail': 0,
     'ask_teacher_office': 1,
@@ -15,7 +15,8 @@ intent2idx = {
     'ask_subject_teacher_name': 7,
     'ask_next_class': 8,
     'ask_exams': 9,
-    'ask_pracs': 10
+    'ask_pracs': 10,
+    'inform': 11
 }
 idx2intent = {
     0: 'ask_teacher_mail',
@@ -28,10 +29,12 @@ idx2intent = {
     7: 'ask_subject_teacher_name',
     8: 'ask_next_class',
     9: 'ask_exams',
-    10: 'ask_pracs'
+    10: 'ask_pracs',
+    11: 'inform'
 }
 intent_conf_matrix = np.zeros([INTENT_AMOUNT,INTENT_AMOUNT])
 
+entity_report = {}
 
 def conf2precision(conf_matrix):
     global intent2idx
@@ -64,6 +67,7 @@ def print_conf_matrix(conf_matrix):
     for row in range(0, len(conf_matrix)):
         if row in [0,1,3,4]: fill = "\t\t"
         elif row in [2,8,9,10]: fill = "\t\t\t"
+        elif row == 11: fill = "\t\t\t\t"
         else: fill = "\t"
         print("{}:{}{}\t{}".format(idx2intent[row], fill, conf_matrix[row], int(sum(conf_matrix[row]))))
 
@@ -111,6 +115,12 @@ if __name__ == '__main__':
                         choices = ['y', 'n'],
                         default = ['n'],
                         help ='If the test has to output errors')
+    parser.add_argument('--entity',
+                        nargs=1,
+                        required=False,
+                        choices = ['y', 'n'],
+                        default = ['n'],
+                        help ='If the test has to output errors')
     args = parser.parse_args()
 
     language = args.lan[0]
@@ -120,6 +130,8 @@ if __name__ == '__main__':
     else: stats = False
     if args.error: error = args.error[0] == 'y'
     else: error = False
+    if args.entity: entity = args.entity[0] == 'y'
+    else: entity = False
 
     if not file_route:
         print("Para salir del modo de test escribe 'quit'")
@@ -157,6 +169,13 @@ if __name__ == '__main__':
                 ok_idx = intent2idx[ok_intent]
                 pred_intent = nlu.get_intent(message, language)['name']
                 pred_idx = intent2idx[pred_intent]
+                if entity:
+                    entities = nlu.get_entities(message, language)
+                    print("\n\n{}".format(message))
+                    for ent in entities:
+                        print("{} -> {}".format(ent['value'], ent['entity']))
+                        if not ent['entity'] in entity_report.keys(): entity_report[ent['entity']] = 0
+                        entity_report[ent['entity']] += 1
                 if ok_idx != pred_idx:
                     pred_confidence = nlu.get_intent(message, language)['confidence']
                     avg_confidence_failure += pred_confidence
@@ -172,18 +191,25 @@ if __name__ == '__main__':
                 intent_conf_matrix[ok_idx][pred_idx] += 1
         avg_confidence_success = avg_confidence_success/times_success
         avg_confidence_failure = avg_confidence_failure/times_failure
-        print("------------------------------------")
-        print("\n\nRatio de éxito = {}/{}".format(times_success,(times_success+times_failure)))
-        print("Confianza promedio en aciertos: {}".format(avg_confidence_success))
-        print("Confianza promedio en fallos: {}".format(avg_confidence_failure))
+        if stats:
+            print("------------------------------------")
+            print("\n\nRatio de éxito = {}/{}".format(times_success,(times_success+times_failure)))
+            print("Confianza promedio en aciertos: {}".format(avg_confidence_success))
+            print("Confianza promedio en fallos: {}".format(avg_confidence_failure))
 
+    if stats:
+        print("\n\nLa matriz de confusión resultante es la siguiente:")
+        print_conf_matrix(intent_conf_matrix)
+        print("\n\nLa precisión por intenciones es la siguiente:")
+        pprint(conf2precision(intent_conf_matrix))
+        print("\nLa precisión promedio es {}".format(get_avg_precision(intent_conf_matrix)))
+        print("\n\nEl recall por intenciones es la siguiente:")
+        pprint(conf2recall(intent_conf_matrix))
+        print("\nEl recall promedio es {}".format(get_avg_recall(intent_conf_matrix)))
+        print("\n\nLa precisión global es de: {}".format(get_global_accuracy(intent_conf_matrix)))
 
-    print("\n\nLa matriz de confusión resultante es la siguiente:")
-    print_conf_matrix(intent_conf_matrix)
-    print("\n\nLa precisión por intenciones es la siguiente:")
-    pprint(conf2precision(intent_conf_matrix))
-    print("\nLa precisión promedio es {}".format(get_avg_precision(intent_conf_matrix)))
-    print("\n\nEl recall por intenciones es la siguiente:")
-    pprint(conf2recall(intent_conf_matrix))
-    print("\nEl recall promedio es {}".format(get_avg_recall(intent_conf_matrix)))
-    print("\n\nLa precisión global es de: {}".format(get_global_accuracy(intent_conf_matrix)))
+    if entity:
+        print("\n\nEl resultado en entidades es:")
+        pprint(entity_report)
+        print("\n\nEl total de entidades encontradas es:")
+        print(sum(list(entity_report.values())))

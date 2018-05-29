@@ -7,7 +7,7 @@ import json
 
 #-- 3rd party imports --#
 from rasa_core.actions.action import Action
-from rasa_core.events import AllSlotsReset
+from rasa_core.events import AllSlotsReset, SlotSet
 
 #-- Local imports --#
 from Fibot.api.api_raco import API_raco
@@ -228,14 +228,19 @@ class Action_show_subject_teachers_mails(Action):
                     for response in teachers_info.get_mails():
                         dispatcher.utter_message("{}".format(response))
                 else:
-                    answers = {'ca': "Aquests són els professors de {}, pregunta'm per qui vulguis!\n",
-                        'es': 'Éstos son los profesores de {}. ¡Pregúntame por el que quieras!\n',
-                        'en': "These are {}'s teachers. Ask me for the one you are interested in!\n"
+                    print("Hay más de 4 profesores")
+                    answers = {'ca': "Aquests són els professors de {}, qui t'interessa?!\n",
+                        'es': 'Éstos son los profesores de {}. ¿Quién te interesa?\n',
+                        'en': "These are {}'s teachers. Who are you interested in?\n"
                     }
                     answer = answers[user_lang].format(subject_acro)
                     for teacher in teachers_info.get_names():
+                        print("este es uno {}".format(teacher))
                         answer = answer + teacher + '\n'
                     dispatcher.utter_message("{}".format(answer))
+                    print("mensaje mandado, voy a colocar el slotset")
+                    print(list(teachers_info.get_names()))
+                    return [SlotSet("matches", list(teachers_info.get_names()))]
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
@@ -266,9 +271,9 @@ class Action_show_subject_teachers_offices(Action):
                     for response in teachers_info.get_offices():
                         dispatcher.utter_message("{}".format(response))
                 else:
-                    answers = {'ca': "Aquests són els professors de {}, pregunta'm per qui vulguis!\n",
-                        'es': 'Éstos son los profesores de {}. ¡Pregúntame por el que quieras!\n',
-                        'en': "These are {}'s teachers. Ask me for the one you are interested in!\n"
+                    answers = {'ca': "Aquests són els professors de {}, qui t'interessa?!\n",
+                        'es': 'Éstos son los profesores de {}. ¿Quién te interesa?\n',
+                        'en': "These are {}'s teachers. Who are you interested in?\n"
                     }
                     answer = answers[user_lang].format(subject_acro)
                     for teacher in teachers_info.get_names():

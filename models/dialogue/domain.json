@@ -11,6 +11,7 @@
     "intent_ask_next_class",
     "intent_ask_exams",
     "intent_ask_pracs",
+    "intent_inform",
     "entity_teacher_name",
     "entity_subject_acronym",
     "entity_group",

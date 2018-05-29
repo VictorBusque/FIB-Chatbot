@@ -173,25 +173,31 @@
 
 
 
-## Generated Story subject teacher name 1
+## Generated Story subject teacher mail 1
 * ask_subject_teacher_mail{"subject_acronym": "prop"}
     - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_mails
+    - slot{"matches": ["javier bejar", "luis antonio belanche"]}
+* inform{"teacher_name": "javier bejar"}
+    - Action_show_teacher_mail
     - Action_slot_reset
 
-## Generated Story subject teacher name 2
+## Generated Story subject teacher mail 2
 * ask_subject_teacher_mail{"subject_acronym": "ac"}
     - slot{"subject_acronym": "ac"}
     - Action_show_subject_teachers_mails
     - Action_slot_reset
 
-## Generated Story subject teacher name 3
-* ask_subject_teacher_mail{"subject_acronym": "pro1"}
-    - slot{"subject_acronym": "pro1"}
+## Generated Story subject teacher mail 2
+* ask_subject_teacher_mail{"subject_acronym": "prop"}
+    - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_mails
+    - slot{"matches": ["jordi delgado", "jordi turmo"]}
+* inform{"teacher_name": "jordi delgado"}
+    - Action_show_teacher_mail
     - Action_slot_reset
 
-## Generated Story subject teacher name 4
+## Generated Story subject teacher mail 4
 * ask_subject_teacher_mail{"subject_acronym": "IES"}
     - slot{"subject_acronym": "IES"}
     - Action_show_subject_teachers_mails
@@ -212,9 +218,12 @@
     - Action_slot_reset
 
 ## Generated Story subject teacher office 2
-* ask_subject_teacher_office{"subject_acronym": "APA"}
-    - slot{"subject_acronym": "APA"}
+* ask_subject_teacher_office{"subject_acronym": "prop"}
+    - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_offices
+    - slot{"matches": ["jordi delgado", "jordi turmo"]}
+* inform{"teacher_name": "jordi delgado"}
+    - Action_show_teacher_office
     - Action_slot_reset
 
 ## Generated Story subject teacher office 3
@@ -224,10 +233,13 @@
   - Action_slot_reset
 
 ## Generated Story subject teacher office 4
-* ask_subject_teacher_office{"subject_acronym": "AC"}
-  - slot{"subject_acronym": "AC"}
-  - Action_show_subject_teachers_offices
-  - Action_slot_reset
+* ask_subject_teacher_office{"subject_acronym": "pro1"}
+    - slot{"subject_acronym": "pro1"}
+    - Action_show_subject_teachers_offices
+    - slot{"matches": ["josep carmona", "Emma rollon"]}
+* inform{"teacher_name": "josep carmona"}
+    - Action_show_teacher_office
+    - Action_slot_reset
 
 ## Generated Story subject teacher office 5
 * ask_subject_teacher_office{"subject_acronym": "IA"}
