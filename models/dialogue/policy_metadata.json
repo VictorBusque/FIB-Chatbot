@@ -2,19 +2,9 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "subject_acronym",
+        "group",
         "teacher_name",
-        "group"
-      ]
-    },
-    "Action_show_subject_teachers_offices": {
-      "slots": [
-        "matches"
-      ]
-    },
-    "Action_show_subject_teachers_mails": {
-      "slots": [
-        "matches"
+        "subject_acronym"
       ]
     },
     "Action_check_user_logged": {
@@ -31,10 +21,20 @@
       "slots": [
         "subject_enrollment"
       ]
+    },
+    "Action_show_subject_teachers_offices": {
+      "slots": [
+        "matches"
+      ]
+    },
+    "Action_show_subject_teachers_mails": {
+      "slots": [
+        "matches"
+      ]
     }
   },
-  "rasa_core": "0.8.3",
-  "max_history": 5,
+  "rasa_core": "0.8.2",
+  "max_history": 3,
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.memoization.MemoizationPolicy",

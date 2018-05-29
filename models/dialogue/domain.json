@@ -38,6 +38,7 @@
     "prev_Action_show_subject_teachers_names",
     "prev_Action_show_next_class",
     "prev_Action_show_next_exams",
-    "prev_Action_show_next_pracs"
+    "prev_Action_show_next_pracs",
+    "prev_Action_show_teacher_info"
   ]
 }

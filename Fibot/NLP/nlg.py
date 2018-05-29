@@ -73,10 +73,10 @@ class Query_answer_unit(object):
 
 		This function trains the agents and saves the models in the dialog's model path
 	"""
-	def train(self, augmentation_factor=250, max_history=5, epochs=500, batch_size=500, validation_split=0.33):
+	def train(self, augmentation_factor=200, max_history=7, epochs=300, batch_size=256, validation_split=0.3):
 		self.agent_es.train(self.training_data_file,
-			augmentation_factor=augmentation_factor,
-			max_history=max_history,
+			#augmentation_factor=augmentation_factor,
+			#max_history=max_history,
 			epochs=epochs,
 		 	batch_size=batch_size,
 			validation_split=validation_split

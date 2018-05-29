@@ -24,8 +24,10 @@ from Fibot.Data.teachers import Teachers
 class Not_understood(object):
 
     def __init__(self, language, type_):
+        print("en la creadora de not understood")
         with open('./Data/error_responses.json', 'rb') as fp:
             self.messages = json.load(fp)
+        print("He cargado error_responses.json")
         self.type_ = type_
         self.language = language
 
@@ -50,15 +52,19 @@ class Action_check_subject_existance(Action):
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
-        pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym")
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
         if subject_acro:
+            subject_acro = subject_acro.upper()
             if not API_raco().subject_exists(subject_acro):
-                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
+                dispatcher.utter_message(str(Not_understood(user_lang, 'wrong_subject')))
             else:
+                print("Subject EXISTS")
                 return [SlotSet("subject_existance", True)]
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        print("Subject DOESN'T EXIST")
         return [SlotSet("subject_existance", False)]
 
 
@@ -68,15 +74,20 @@ class Action_check_subject_enrollment(Action):
 
     def run(self, dispatcher, tracker, domain):
         print(self.name())
-        pprint(tracker.slots)
-        subject_acro = tracker.get_slot("subject_acronym")
+        subject_acro = tracker.get_slot("subject_acronym").upper()
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        access_token = Chats().get_chat_lite(chat_id)['access_token']
         if not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
             response = str(Not_understood(user_lang, 'not_enrolled'))
             if '{}' in response:
                 dispatcher.utter_message(response.format(subject_acro))
             else: dispatcher.utter_message(response)
+            print("user NOT ENROLLED")
             return [SlotSet("subject_enrollment", False)]
-        else: return [SlotSet("subject_enrollment", True)]
+        else:
+            print("user ENROLLED")
+            return [SlotSet("subject_enrollment", True)]
 
 
 class Action_check_user_logged(Action):
@@ -85,13 +96,17 @@ class Action_check_user_logged(Action):
         return 'Action_check_user_logged'
 
     def run(self, dispatcher, tracker, domain):
+        print("\n"+self.name())
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
         if not access_token:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
+            print("user NOT LOGGED")
             return [SlotSet('user_logged', False)]
-        else: return [SlotSet('user_logged', True)]
+        else:
+            print("user LOGGED")
+            return [SlotSet('user_logged', True)]
 
 
 class Action_show_teacher_mail(Action):
@@ -384,4 +399,26 @@ class Action_show_next_pracs(Action):
             tracker._reset_slots()
             return []
         dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_pracs')))
+        return []
+
+
+class Action_show_teacher_info(Action):
+
+    def name(self):
+        return 'Action_show_teacher_info'
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        pprint(tracker.slots)
+        teacher_name = tracker.get_slot("teacher_name")
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        if teacher_name:
+            teacher, dist = Teachers(language = user_lang).get_closer_teacher(teacher_name)
+            if dist <= 5:
+                dispatcher.utter_message("{}".format(teacher))
+            else:
+                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
+        else:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
         return []

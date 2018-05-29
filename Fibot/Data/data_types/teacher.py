@@ -32,6 +32,7 @@ class Teacher(object):
             data = json.load(fp)
             self.responses['ask_teacher_mail'] = data['ask_teacher_mail']
             self.responses['ask_teacher_office'] = data['ask_teacher_office']
+            self.responses['teacher_info'] = data['teacher_info']
         return
 
     """
@@ -76,4 +77,6 @@ class Teacher(object):
         Returns a general description of the teacher
     """
     def __repr__(self):
-        return "{} is a teacher from {}'s department".format(self.name.split(' ')[0].title(), self.department)
+        chosen_response = randint(0, len(self.responses['teacher_info'][self.language])-1)
+        final_response = self.responses['teacher_info'][self.language][chosen_response]
+        return final_response.format(self.name.title(), self.department)

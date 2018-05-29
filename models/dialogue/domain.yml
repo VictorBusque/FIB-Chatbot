@@ -15,6 +15,7 @@ action_names:
 - Action_show_next_class
 - Action_show_next_exams
 - Action_show_next_pracs
+- Action_show_teacher_info
 actions:
 - actions.Action_slot_reset
 - actions.Action_check_subject_existance
@@ -31,6 +32,7 @@ actions:
 - actions.Action_show_next_class
 - actions.Action_show_next_exams
 - actions.Action_show_next_pracs
+- actions.Action_show_teacher_info
 config:
   store_entities_as_slots: true
 entities:

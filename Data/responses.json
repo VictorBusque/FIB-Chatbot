@@ -203,6 +203,16 @@
         "It also has ['{}']({}) as a attached file."
       ]
     }
-
+  },
+  "teacher_info": {
+    "ca": [
+      "{0} és docent del departament de {1}."
+    ],
+    "es": [
+      "{0} es docente del departamento de {1}."
+    ],
+    "en": [
+      "{0} is a teacher from {1}'s department."
+    ]
   }
 }
