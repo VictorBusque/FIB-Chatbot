@@ -50,7 +50,7 @@ slots:
     type: rasa_core.slots.TextSlot
   matches:
     initial_value: null
-    type: rasa_core.slots.ListSlot
+    type: rasa_core.slots.BooleanSlot
   subject_acronym:
     initial_value: null
     type: rasa_core.slots.TextSlot

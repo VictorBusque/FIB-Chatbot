@@ -238,9 +238,7 @@ class Action_show_subject_teachers_mails(Action):
                         print("este es uno {}".format(teacher))
                         answer = answer + teacher + '\n'
                     dispatcher.utter_message("{}".format(answer))
-                    print("mensaje mandado, voy a colocar el slotset")
-                    print(list(teachers_info.get_names()))
-                    return [SlotSet("matches", list(teachers_info.get_names()))]
+                    return [SlotSet("matches", True)]
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:
@@ -279,6 +277,7 @@ class Action_show_subject_teachers_offices(Action):
                     for teacher in teachers_info.get_names():
                         answer = answer + teacher + '\n'
                     dispatcher.utter_message("{}".format(answer))
+                    return [SlotSet("matches", True)]
             else:
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
         else:

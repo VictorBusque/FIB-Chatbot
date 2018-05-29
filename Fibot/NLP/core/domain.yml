@@ -25,7 +25,12 @@ slots:
   group:
     type: text
   matches:
-    type: list
+    type: bool
+  subject_existance:
+    type: bool
+  subject_enrollment:
+    type: bool
+
 
 
 actions:

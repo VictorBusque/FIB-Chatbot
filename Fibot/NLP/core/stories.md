@@ -177,7 +177,7 @@
 * ask_subject_teacher_mail{"subject_acronym": "prop"}
     - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_mails
-    - slot{"matches": ["javier bejar", "luis antonio belanche"]}
+    - slot{"matches": true}
 * inform{"teacher_name": "javier bejar"}
     - Action_show_teacher_mail
     - Action_slot_reset
@@ -192,7 +192,7 @@
 * ask_subject_teacher_mail{"subject_acronym": "prop"}
     - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_mails
-    - slot{"matches": ["jordi delgado", "jordi turmo"]}
+    - slot{"matches": true}
 * inform{"teacher_name": "jordi delgado"}
     - Action_show_teacher_mail
     - Action_slot_reset
@@ -221,7 +221,7 @@
 * ask_subject_teacher_office{"subject_acronym": "prop"}
     - slot{"subject_acronym": "prop"}
     - Action_show_subject_teachers_offices
-    - slot{"matches": ["jordi delgado", "jordi turmo"]}
+    - slot{"matches": true}
 * inform{"teacher_name": "jordi delgado"}
     - Action_show_teacher_office
     - Action_slot_reset
@@ -236,7 +236,7 @@
 * ask_subject_teacher_office{"subject_acronym": "pro1"}
     - slot{"subject_acronym": "pro1"}
     - Action_show_subject_teachers_offices
-    - slot{"matches": ["josep carmona", "Emma rollon"]}
+    - slot{"matches": true}
 * inform{"teacher_name": "josep carmona"}
     - Action_show_teacher_office
     - Action_slot_reset
