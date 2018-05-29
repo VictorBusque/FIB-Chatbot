@@ -1,6 +1,9 @@
 action_factory: null
 action_names:
 - Action_slot_reset
+- Action_check_subject_existance
+- Action_check_subject_enrollment
+- Action_check_user_logged
 - Action_show_teacher_mail
 - Action_show_teacher_office
 - Action_show_subject_free_spots
@@ -14,6 +17,9 @@ action_names:
 - Action_show_next_pracs
 actions:
 - actions.Action_slot_reset
+- actions.Action_check_subject_existance
+- actions.Action_check_subject_enrollment
+- actions.Action_check_user_logged
 - actions.Action_show_teacher_mail
 - actions.Action_show_teacher_office
 - actions.Action_show_subject_free_spots
@@ -54,8 +60,17 @@ slots:
   subject_acronym:
     initial_value: null
     type: rasa_core.slots.TextSlot
+  subject_enrollment:
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
+  subject_existance:
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
   teacher_name:
     initial_value: null
     type: rasa_core.slots.TextSlot
+  user_logged:
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
 templates: {}
 topics: []

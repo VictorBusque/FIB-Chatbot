@@ -30,11 +30,15 @@ slots:
     type: bool
   subject_enrollment:
     type: bool
-
+  user_logged:
+    type: bool
 
 
 actions:
   - actions.Action_slot_reset
+  - actions.Action_check_subject_existance
+  - actions.Action_check_subject_enrollment
+  - actions.Action_check_user_logged
   - actions.Action_show_teacher_mail
   - actions.Action_show_teacher_office
   - actions.Action_show_subject_free_spots

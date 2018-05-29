@@ -3,90 +3,97 @@
   - Action_show_teacher_mail
   - Action_slot_reset
 
-## Generated Story teacher mail 2
-* ask_teacher_mail{"teacher_name": "joan climent"}
-  - Action_show_teacher_mail
-  - Action_slot_reset
 
-## Generated Story teacher mail 3
-* ask_teacher_mail{"teacher_name": "Javier vazquez"}
-  - Action_show_teacher_mail
-  - Action_slot_reset
-
-## Generated Story teacher mail 4
-* ask_teacher_mail{"teacher_name": "luis antonio belanche"}
-  - Action_show_teacher_mail
-  - Action_slot_reset
-
-## Generated Story teacher mail 5
-* ask_teacher_mail{"teacher_name": "carlos"}
-   - Action_show_teacher_mail
-
-## Generated Story teacher mail 6
-* ask_teacher_mail{"teacher_name": "jordi turmo"}
-   - slot{"teacher_name": "jordi turmo"}
-   - Action_show_teacher_mail
-   - Action_slot_reset
-
-## Generated Story teacher mail 7
-* ask_teacher_mail{"teacher_name": "roberto niehhuehuis"}
-   - slot{"teacher_name": "roberto niehhuehuis"}
-   - Action_show_teacher_mail
-   - Action_slot_reset
 
 
 
 ## Generated Story subject schedule 1
 * ask_subject_schedule{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
+    - Action_check_subject_enrollment
+    - slot{"subject_enrollment": true}
     - Action_show_subject_schedule
     - Action_slot_reset
 
 ## Generated Story subject schedule 2
-* ask_subject_schedule{"subject_acronym": "apc"}
-  - Action_show_subject_schedule
-  - Action_slot_reset
+* ask_subject_schedule{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": false}
+    - Action_slot_reset
 
 ## Generated Story subject schedule 3
-* ask_subject_schedule{"subject_acronym": "wse"}
-  - Action_show_subject_schedule
-  - Action_slot_reset
+* ask_subject_schedule{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
+    - Action_slot_reset
+
 
 ## Generated Story subject schedule 4
-* ask_subject_schedule{"subject_acronym": "IES"}
-  - Action_show_subject_schedule
-  - Action_slot_reset
+* ask_subject_schedule{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
+    - Action_check_subject_enrollment
+    - slot{"subject_enrollment": false}
+    - Action_slot_reset
 
-## Generated Story subject schedule 5
-* ask_subject_schedule{"subject_acronym": "asw"}
-  - Action_show_subject_schedule
-  - Action_slot_reset
+
 
 
 
 ## Generated Story subject classroom 1
 * ask_subject_classroom{"subject_acronym": "APA"}
-  - Action_show_subject_classroom
-  - Action_slot_reset
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
+    - Action_check_subject_enrollment
+    - slot{"subject_enrollment": true}
+    - Action_show_subject_classroom
+    - Action_slot_reset
 
 ## Generated Story subject classroom 2
-* ask_subject_classroom{"subject_acronym": "apc"}
-  - Action_show_subject_classroom
-  - Action_slot_reset
+* ask_subject_classroom{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": false}
+    - Action_slot_reset
 
 ## Generated Story subject classroom 3
-* ask_subject_classroom{"subject_acronym": "wse"}
-  - Action_show_subject_classroom
-  - Action_slot_reset
+* ask_subject_classroom{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
+    - Action_slot_reset
+
 
 ## Generated Story subject classroom 4
-* ask_subject_classroom{"subject_acronym": "IES"}
-  - Action_show_subject_classroom
-  - Action_slot_reset
+* ask_subject_classroom{"subject_acronym": "APA"}
+    - slot{"subject_acronym": "APA"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
+    - Action_check_subject_enrollment
+    - slot{"subject_enrollment": false}
+    - Action_slot_reset
 
-## Generated Story subject classroom 5
-* ask_subject_classroom{"subject_acronym": "asw"}
-  - Action_show_subject_classroom
-  - Action_slot_reset
+
+
+
 
 
 
