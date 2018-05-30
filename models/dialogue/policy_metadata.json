@@ -2,19 +2,9 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "subject_acronym",
+        "teacher_name",
         "group",
-        "teacher_name"
-      ]
-    },
-    "Action_check_subject_existance": {
-      "slots": [
-        "subject_existance"
-      ]
-    },
-    "Action_show_subject_teachers_mails": {
-      "slots": [
-        "matches"
+        "subject_acronym"
       ]
     },
     "Action_check_user_logged": {
@@ -22,9 +12,19 @@
         "user_logged"
       ]
     },
+    "Action_check_subject_existance": {
+      "slots": [
+        "subject_existance"
+      ]
+    },
     "Action_check_subject_enrollment": {
       "slots": [
         "subject_enrollment"
+      ]
+    },
+    "Action_show_subject_teachers_mails": {
+      "slots": [
+        "matches"
       ]
     },
     "Action_show_subject_teachers_offices": {
