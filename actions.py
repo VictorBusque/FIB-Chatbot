@@ -24,10 +24,8 @@ from Fibot.Data.teachers import Teachers
 class Not_understood(object):
 
     def __init__(self, language, type_):
-        print("en la creadora de not understood")
         with open('./Data/error_responses.json', 'rb') as fp:
             self.messages = json.load(fp)
-        print("He cargado error_responses.json")
         self.type_ = type_
         self.language = language
 

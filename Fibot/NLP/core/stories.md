@@ -348,14 +348,33 @@
 
 ## Generated Story subject teacher mail 1
 * ask_subject_teacher_mail{"subject_acronym": "prop"}
-    - Action_show_subject_teachers_mails
-    - slot{"matches": true}
-* inform{"teacher_name": "javier bejar"}
-    - Action_show_teacher_mail
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
     - Action_slot_reset
 
 ## Generated Story subject teacher mail 2
 * ask_subject_teacher_mail{"subject_acronym": "ac"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
+    - Action_slot_reset
+
+
+## Generated Story subject teacher mail 1
+* ask_subject_teacher_mail{"subject_acronym": "prop"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
+    - Action_show_subject_teachers_mails
+    - slot{"matches": true}
+* inform{"teacher_name": "jordi turmo"}
+    - Action_show_teacher_mail
+    - Action_slot_reset
+
+
+
+## Generated Story subject teacher mail 2
+* ask_subject_teacher_mail{"subject_acronym": "ac"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
     - Action_show_subject_teachers_mails
     - slot{"matches": false}
     - Action_slot_reset
@@ -363,6 +382,8 @@
 
 ## Generated Story subject teacher mail 1
 * ask_subject_teacher_mail{"subject_acronym": "ec"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
     - Action_show_subject_teachers_mails
     - slot{"matches": true}
 * inform{"teacher_name": "javier bejar"}
@@ -371,6 +392,8 @@
 
 ## Generated Story subject teacher mail 2
 * ask_subject_teacher_mail{"subject_acronym": "cn"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
     - Action_show_subject_teachers_mails
     - slot{"matches": false}
     - Action_slot_reset
@@ -380,16 +403,36 @@
 
 
 
+
 ## Generated Story subject teacher office 1
 * ask_subject_teacher_office{"subject_acronym": "prop"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
+    - Action_slot_reset
+
+## Generated Story subject teacher office 2
+* ask_subject_teacher_office{"subject_acronym": "ac"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": false}
+    - Action_slot_reset
+
+
+## Generated Story subject teacher office 1
+* ask_subject_teacher_office{"subject_acronym": "prop"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
     - Action_show_subject_teachers_offices
     - slot{"matches": true}
 * inform{"teacher_name": "javier bejar"}
     - Action_show_teacher_office
     - Action_slot_reset
 
+
+
 ## Generated Story subject teacher office 2
 * ask_subject_teacher_office{"subject_acronym": "ac"}
+    - Action_check_subject_existance
+    - slot{"subject_existance": true}
     - Action_show_subject_teachers_offices
     - slot{"matches": false}
     - Action_slot_reset

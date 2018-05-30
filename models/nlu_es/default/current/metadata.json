@@ -19,9 +19,12 @@
             [
                 "low",
                 "title",
+                "word3",
+                "word2",
                 "upper",
                 "pos",
-                "pos2"
+                "pos2",
+                "pattern"
             ],
             [
                 "bias",
@@ -38,15 +41,18 @@
             [
                 "low",
                 "title",
+                "word3",
+                "word2",
                 "upper",
                 "pos",
-                "pos2"
+                "pos2",
+                "pattern"
             ]
         ],
         "BILOU_flag": true,
         "version": 1
     },
     "intent_classifier_sklearn": "intent_classifier.pkl",
-    "trained_at": "20180530-010422",
+    "trained_at": "20180530-113459",
     "rasa_nlu_version": "0.11.3"
 }
