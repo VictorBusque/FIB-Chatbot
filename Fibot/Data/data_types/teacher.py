@@ -25,8 +25,10 @@ class Teacher(object):
         self.department = data['department']
         self.office = data['office']
         self.language = language
-        if self.language == 'en': self.office = self.office.replace('Edifici', 'Building').replace('Despatx', 'Office').replace('Planta', 'Floor')
-        if self.language == 'es': self.office = self.office.replace('Edifici', 'Edificio').replace('Despatx', 'Despacho')
+        if self.office and self.language == 'en':
+            self.office = self.office.replace('Edifici', 'Building').replace('Despatx', 'Office').replace('Planta', 'Floor')
+        if self.office and self.language == 'es':
+            self.office = self.office.replace('Edifici', 'Edificio').replace('Despatx', 'Despacho')
         self.responses = {}
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)

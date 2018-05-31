@@ -121,6 +121,11 @@ if __name__ == '__main__':
                         choices = ['y', 'n'],
                         default = ['n'],
                         help ='If the test has to output errors')
+    parser.add_argument('--filter',
+                        nargs=1,
+                        required=False,
+                        type = str,
+                        help ='If the test has to output errors')
     args = parser.parse_args()
 
     language = args.lan[0]
@@ -132,6 +137,8 @@ if __name__ == '__main__':
     else: error = False
     if args.entity: entity = args.entity[0] == 'y'
     else: entity = False
+    if args.filter: filter_intention = args.filter[0]
+    else: filter_intention = None
 
     if not file_route:
         print("Para salir del modo de test escribe 'quit'")
@@ -181,9 +188,15 @@ if __name__ == '__main__':
                     avg_confidence_failure += pred_confidence
                     times_failure +=1
                     if error:
-                        print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
-                        print("La lista de alternativas es la siguiente:")
-                        pprint(nlu.get_intent_ranking(message, language))
+                        if not filter_intention:
+                            print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
+                            print("La lista de alternativas es la siguiente:")
+                            pprint(nlu.get_intent_ranking(message, language))
+                        else:
+                            if ok_intent == filter_intention:
+                                print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
+                                print("La lista de alternativas es la siguiente:")
+                                pprint(nlu.get_intent_ranking(message, language))
                 else:
                     pred_confidence = nlu.get_intent(message, language)['confidence']
                     avg_confidence_success += pred_confidence

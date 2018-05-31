@@ -62,6 +62,7 @@ class Teachers(object):
         if debug: print("{} is the distance, the closest name is {}.".format(lower_dist, match_teacher))
         return Teacher(match, language = self.language), lower_dist
 
+
     """
         Parameters:
             word1 (:obj:`str`): word to compare

@@ -175,7 +175,8 @@ class Notification_thread(object):
         Parameters:
             avisos(:obj:`list`): List of publications for a user
 
-        This function filters the publications so that they were not sent previously.
+        This function filters the publications so that they were not sent previously,
+        And also the #'d assig notifications.
     """
     def filter(self, avisos):
         result = []
@@ -184,7 +185,8 @@ class Notification_thread(object):
             if not self.last_check: result.append(avis)
             elif self.get_date(avis) > self.last_check:
                 print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
-                result.append(avis)
+                if '#' in avis['codi_assig']: pass
+                else: result.append(avis)
         return result
 
     """
