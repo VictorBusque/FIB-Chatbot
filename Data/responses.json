@@ -214,5 +214,35 @@
     "en": [
       "{0} is a teacher from {1}'s department."
     ]
+  },
+  "greet_back": {
+    "ca": [
+      "Hola!",
+      "Molt bones!"
+    ],
+    "es": [
+      "Hola!",
+      "Buenas!"
+    ],
+    "en": [
+      "Hi!",
+      "Hello!",
+      "Hey!"
+    ]
+  },
+  "thank": {
+    "ca": [
+      "Cap problema!",
+      "De res!"
+    ],
+    "es": [
+      "No hay de qué!",
+      "De nada!"
+    ],
+    "en": [
+      "No problem!",
+      "You're welcome"
+    ]
   }
+
 }

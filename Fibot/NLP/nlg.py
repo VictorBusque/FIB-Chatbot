@@ -126,7 +126,7 @@ class Query_answer_unit(object):
 		if confidence < 0.5:
 			with open('./Data/error_responses.json', 'rb') as fp:
 				messages = json.load(fp)['not_understand']
-			return [messages[language][randint(0,len(messages[language])-1)]]
+			return [{'recipient_id': sender_id, 'text': messages[language][randint(0,len(messages[language])-1)]}]
 		if language == 'ca':
 			print('Getting response in catalan')
 			return self.agent_ca.handle_message(message, sender_id=sender_id)

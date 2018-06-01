@@ -11,6 +11,8 @@ intents:
   - ask_exams
   - ask_pracs
   - inform
+  - greet
+  - thank
 
 entities:
   - teacher_name
@@ -50,3 +52,5 @@ actions:
   - actions.Action_show_next_exams
   - actions.Action_show_next_pracs
   - actions.Action_show_teacher_info
+  - actions.Action_greet
+  - actions.Action_no_problem

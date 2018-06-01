@@ -312,6 +312,7 @@ class Action_show_next_class(Action):
         access_token = Chats().get_chat_lite(chat_id)['access_token']
         schedule = API_raco().get_schedule(access_token = access_token, language = user_lang)
         schedule = Schedule(schedule, user_lang)
+        print("schedule gotten")
         answer = schedule.get_response()
         dispatcher.utter_message("{}".format(answer))
         return []
@@ -419,4 +420,48 @@ class Action_show_teacher_info(Action):
                 dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_teacher')))
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
+        return []
+
+
+class Action_greet(Action):
+
+    def name(self):
+        return 'Action_greet'
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        pprint(tracker.slots)
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        print("{} -> {}".format(chat_id, user_lang))
+        responses = []
+        try:
+            with open('./Data/responses.json', 'rb') as fp:
+                data = json.load(fp)
+                responses = data['greet_back']
+        except Exception as e:
+            print(e)
+        print("we could take the data")
+        chosen_response = randint(0, len(responses[user_lang])-1)
+        final_response = responses[user_lang][chosen_response]
+        dispatcher.utter_message("{}".format(final_response))
+        return []
+
+
+class Action_no_problem(Action):
+
+    def name(self):
+        return 'Action_no_problem'
+
+    def run(self, dispatcher, tracker, domain):
+        print(self.name())
+        pprint(tracker.slots)
+        chat_id = tracker.sender_id
+        user_lang = Chats().get_chat_lite(chat_id)['language']
+        with open('./Data/responses.json', 'rb') as fp:
+            data = json.load(fp)
+            responses = data['thank']
+        chosen_response = randint(0, len(responses[user_lang])-1)
+        final_response = responses[user_lang][chosen_response]
+        dispatcher.utter_message("{}".format(final_response))
         return []

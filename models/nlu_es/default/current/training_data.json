@@ -71468,9 +71468,4050 @@
           }
         ],
         "text": "gabriel valiente feruglio"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "muy buenas!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos días!"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "saludos!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches!"
+      },
+      {
+        "intent": "greet",
+        "text": "hola que tal!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "grácias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias"
+      },
+      {
+        "intent": "thank",
+        "text": "gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "muchísimas gracias!"
+      },
+      {
+        "intent": "thank",
+        "text": "te lo agradezco"
       }
     ],
-    "regex_features": [],
+    "regex_features": [
+      {
+        "name": "aula",
+        "pattern": "(aula)"
+      },
+      {
+        "name": "despacho",
+        "pattern": "(despacho|oficina|office|despatx)"
+      },
+      {
+        "name": "examen",
+        "pattern": "(examen|examens|exams|exàmens|exámenes|exàmen|exámen|test)"
+      },
+      {
+        "name": "gracias",
+        "pattern": "(gràcies|gracias|gracies|grácias|thanks|thank you|ty)"
+      },
+      {
+        "name": "group",
+        "pattern": "([0-9]{2}|grupo|group)"
+      },
+      {
+        "name": "hora",
+        "pattern": "(hora|horario)"
+      },
+      {
+        "name": "mail",
+        "pattern": "(mail|correo|correu|email)"
+      },
+      {
+        "name": "plazas",
+        "pattern": "(sitios|plazas|huecos|spots|places|matricula)"
+      },
+      {
+        "name": "practicas",
+        "pattern": "(practica|practicas|practiques|practical|practices|práctica|pràctica|prácticas|pràctiques)"
+      },
+      {
+        "name": "saludo",
+        "pattern": "(hola|hello|buenas|hey|hi)"
+      }
+    ],
     "entity_synonyms": []
   }
 }

@@ -1,5 +1,5 @@
 {
-  "features": [
+  "states": [
     "intent_ask_teacher_mail",
     "intent_ask_teacher_office",
     "intent_ask_free_spots",
@@ -12,6 +12,8 @@
     "intent_ask_exams",
     "intent_ask_pracs",
     "intent_inform",
+    "intent_greet",
+    "intent_thank",
     "entity_teacher_name",
     "entity_subject_acronym",
     "entity_group",
@@ -39,6 +41,8 @@
     "prev_Action_show_next_class",
     "prev_Action_show_next_exams",
     "prev_Action_show_next_pracs",
-    "prev_Action_show_teacher_info"
+    "prev_Action_show_teacher_info",
+    "prev_Action_greet",
+    "prev_Action_no_problem"
   ]
 }

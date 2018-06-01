@@ -558,60 +558,96 @@
 ## Generated Story pracs 1
 * ask_pracs
     - Action_show_next_pracs
-
+    - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs
     - Action_show_next_pracs
-
+    - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs{"subject_acronym": "par"}
     - Action_show_next_pracs
-
+    - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs{"subject_acronym": "apss"}
     - Action_show_next_pracs
+    - Action_slot_reset
 
 
 
-
-# Generated Story inform teacher 1
+## Generated Story inform teacher 1
 * inform{"teacher_name": "Javier Bejar"}
     - Action_show_teacher_info
     - Action_slot_reset
 
 
-# Generated Story inform teacher 1
+## Generated Story inform teacher 1
 * inform{"teacher_name": "Robert Lukas Mario"}
     - Action_show_teacher_info
     - Action_slot_reset
 
 
-# Generated Story inform subject 1
+## Generated Story inform subject 1
 * inform{"subject_acro": "VC"}
     - Action_check_subject_existance
     - slot{"subject_existance": "true"}
     - Action_show_subject_teachers_names
     - Action_slot_reset
 
-# Generated Story inform subject 2
+## Generated Story inform subject 2
 * inform{"subject_acronym": "AC"}
     - Action_check_subject_existance
     - slot{"subject_existance": "false"}
     - Action_slot_reset
 
 
-# Generated Story inform subject 1
+## Generated Story inform subject 1
 * inform{"subject_acro": "SI"}
     - Action_check_subject_existance
     - slot{"subject_existance": "true"}
     - Action_show_subject_teachers_names
     - Action_slot_reset
 
-# Generated Story inform subject 2
+## Generated Story inform subject 2
 * inform{"subject_acronym": "SO2"}
     - Action_check_subject_existance
     - slot{"subject_existance": "false"}
     - Action_slot_reset
+
+
+
+
+## Generated Story greet 1
+* greet
+    - Action_greet
+    - Action_slot_reset  
+
+## Generated Story greet 2
+* greet
+    - Action_greet
+    - Action_slot_reset  
+
+## Generated Story greet 3
+* greet
+    - Action_greet
+    - Action_slot_reset  
+
+
+
+
+## Generated Story thank 1
+* thank
+    - Action_no_problem
+    - Action_slot_reset  
+
+## Generated Story thank 2
+* thank
+    - Action_no_problem
+    - Action_slot_reset  
+
+## Generated Story thank 3
+* thank
+    - Action_no_problem
+    - Action_slot_reset  

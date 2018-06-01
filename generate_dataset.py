@@ -144,7 +144,48 @@ def main(amount = 250, language = 'es'):
 	with open('Data/data_gen.json', 'rb') as jsonfile:
 		data = json.load(jsonfile)[language]
 
-	regex_features = []
+	regex_features = [
+		{
+			"name": "group",
+			"pattern": "([0-9]{2}|grupo|group)"
+		},
+		{
+			"name": "plazas",
+			"pattern": "(sitios|plazas|huecos|spots|places|matricula)"
+		},
+		{
+			"name": "mail",
+			"pattern": "(mail|correo|correu|email)"
+		},
+		{
+			"name": "despacho",
+			"pattern": "(despacho|oficina|office|despatx)"
+		},
+		{
+			"name": "hora",
+			"pattern": "(hora|horario)"
+		},
+		{
+			"name": "aula",
+			"pattern": "(aula)"
+		},
+		{
+			"name": "examen",
+			"pattern": "(examen|examens|exams|exàmens|exámenes|exàmen|exámen|test)"
+		},
+		{
+			"name": "practicas",
+			"pattern": "(practica|practicas|practiques|practical|practices|práctica|pràctica|prácticas|pràctiques)"
+		},
+		{
+			"name": "saludo",
+			"pattern": "(hola|hello|buenas|hey|hi)"
+		},
+		{
+			"name": "gracias",
+			"pattern": "(gràcies|gracias|gracies|grácias|thanks|thank you|ty)"
+		}
+	]
 	entity_synonyms = []
 	common_examples = []
 
@@ -163,6 +204,8 @@ def main(amount = 250, language = 'es'):
 	intro_exams_gen = Item_generator(data = data['intros_exams'])
 	intro_pracs_gen = Item_generator(data = data['intros_pracs'])
 	intro_inform_gen = Item_generator(data = data['intros_inform'])
+	intro_greet_gen = Item_generator(data = data['greet'])
+	intro_thank_gen = Item_generator(data = data['thank'])
 	#intro_inform_teacher_gen = Item_generator(data = intros_inform_teacher)
 	#intro_inform_subject_gen = Item_generator(data = intros_inform_subject)
 
@@ -179,6 +222,8 @@ def main(amount = 250, language = 'es'):
 	next_pracs_gen = Data_generator(subject_gen, intro_pracs_gen, type_ = "subject", intent = "ask_pracs")
 	inform_subject = Data_generator(subject_gen, intro_inform_gen, type_ = "subject", intent = "inform")
 	inform_teacher = Data_generator(teacher_gen, intro_inform_gen, type_ = "teacher", intent = "inform")
+	greet = Data_generator(None, intro_greet_gen, type_ = None, intent = "greet")
+	thank = Data_generator(None, intro_thank_gen, type_ = None, intent = "thank")
 	#inform_teacher_gen = Data_generator(teacher_gen, intro_inform_teacher_gen, type_="teacher", intent="inform")
 	#inform_subject_gen = Data_generator(subject_gen, intro_inform_subject_gen, type_="subject", intent="inform")
 
@@ -195,6 +240,8 @@ def main(amount = 250, language = 'es'):
 	common_examples.extend( next_pracs_gen.get_examples(amount) )
 	common_examples.extend( inform_subject.get_examples(amount) )
 	common_examples.extend( inform_teacher.get_examples(amount) )
+	common_examples.extend( greet.get_examples(amount) )
+	common_examples.extend( thank.get_examples(amount) )
 	#common_examples.extend( inform_teacher_gen.get_examples(amount) )
 	#common_examples.extend( inform_subject_gen.get_examples(amount) )
 

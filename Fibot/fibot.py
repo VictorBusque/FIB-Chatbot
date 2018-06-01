@@ -139,5 +139,7 @@ class Fibot(object):
 		user_language = self.chats.get_chat(chat_id)['language']
 		now = time()
 		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
+		print(response)
+		response = [i['text'] for i in response]
 		print("##### RESPONSE IS: {} ##### Obtained in {}s".format(response, time()-now))
 		self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)

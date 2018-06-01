@@ -1,5 +1,35 @@
 {
   "ca": {
+    "greet": [
+      "Hola!",
+      "hola",
+      "molt bones",
+      "hola que tal",
+      "bones",
+      "Hola",
+      "hola!",
+      "molt bones!",
+      "hola que tal!",
+      "bones!",
+      "bon dia",
+      "Bon dia!",
+      "bona tarda",
+      "bona tarda!",
+      "bona nit",
+      "bona nit!"
+    ],
+    "thank": [
+      "gracies",
+      "moltes gràcies",
+      "gràcies",
+      "moltíssimes gràcies",
+      "t'ho agraeixo",
+      "gracies!",
+      "moltes gràcies!",
+      "gràcies!",
+      "moltíssimes gràcies!",
+      "t'ho agraeixo!"
+    ],
     "intros_teacher_mail": [
       "correu de {}",
       "correu del {}",
@@ -765,6 +795,38 @@
     ]
   },
   "es": {
+    "greet": [
+      "Hola!",
+      "hola",
+      "muy buenas",
+      "hola que tal",
+      "buenas",
+      "saludos",
+      "Hola",
+      "hola!",
+      "muy buenas!",
+      "hola que tal!",
+      "buenas!",
+      "saludos!",
+      "buenos dias",
+      "buenos días!",
+      "buenas tardes!",
+      "buenas tardes",
+      "buenas noches",
+      "buenas noches!"
+    ],
+    "thank": [
+      "gracias",
+      "muchas gracias",
+      "grácias",
+      "muchísimas gracias",
+      "te lo agradezco",
+      "gracias!",
+      "muchas gracias!",
+      "grácias!",
+      "muchísimas gracias!",
+      "te lo agradezco"
+    ],
     "intros_teacher_mail": [
       "que dirección de correo electrónico tiene {}",
       "que dirección de mail tiene {}",
@@ -1405,6 +1467,35 @@
     ]
   },
   "en": {
+    "greet": [
+      "hey",
+      "hi",
+      "hello",
+      "what's up",
+      "hey!",
+      "hi!",
+      "hello!",
+      "what's up!",
+      "good morning",
+      "good morning!",
+      "good afternoon",
+      "good afternoon!",
+      "good evening!",
+      "good evening",
+      "goodnight"
+    ],
+    "thank": [
+      "thanks",
+      "thank you",
+      "ty",
+      "many thanks",
+      "thank you so much",
+      "thanks!",
+      "thank you!",
+      "ty!",
+      "many thanks!",
+      "thank you so much!"
+    ],
     "intros_teacher_mail": [
       "{}'s mail",
       "what is {}'s mail",

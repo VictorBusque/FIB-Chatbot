@@ -16,6 +16,8 @@ action_names:
 - Action_show_next_exams
 - Action_show_next_pracs
 - Action_show_teacher_info
+- Action_greet
+- Action_no_problem
 actions:
 - actions.Action_slot_reset
 - actions.Action_check_subject_existance
@@ -33,6 +35,8 @@ actions:
 - actions.Action_show_next_exams
 - actions.Action_show_next_pracs
 - actions.Action_show_teacher_info
+- actions.Action_greet
+- actions.Action_no_problem
 config:
   store_entities_as_slots: true
 entities:
@@ -52,6 +56,8 @@ intents:
 - ask_exams
 - ask_pracs
 - inform
+- greet
+- thank
 slots:
   group:
     initial_value: null

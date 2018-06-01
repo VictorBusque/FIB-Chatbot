@@ -1,0 +1,42 @@
+[
+    {
+        "name": "aula",
+        "pattern": "(aula)"
+    },
+    {
+        "name": "despacho",
+        "pattern": "(despacho|oficina|office|despatx)"
+    },
+    {
+        "name": "examen",
+        "pattern": "(examen|examens|exams|exàmens|exámenes|exàmen|exámen|test)"
+    },
+    {
+        "name": "gracias",
+        "pattern": "(gràcies|gracias|gracies|grácias|thanks|thank you|ty)"
+    },
+    {
+        "name": "group",
+        "pattern": "([0-9]{2}|grupo|group)"
+    },
+    {
+        "name": "hora",
+        "pattern": "(hora|horario)"
+    },
+    {
+        "name": "mail",
+        "pattern": "(mail|correo|correu|email)"
+    },
+    {
+        "name": "plazas",
+        "pattern": "(sitios|plazas|huecos|spots|places|matricula)"
+    },
+    {
+        "name": "practicas",
+        "pattern": "(practica|practicas|practiques|practical|practices|práctica|pràctica|prácticas|pràctiques)"
+    },
+    {
+        "name": "saludo",
+        "pattern": "(hola|hello|buenas|hey|hi)"
+    }
+]
