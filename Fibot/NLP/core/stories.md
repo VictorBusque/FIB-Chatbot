@@ -515,16 +515,24 @@
 
 ## Generated Story next class 1
 * ask_next_class
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_class
     - Action_slot_reset
 
-## Generated Story next class 1
-* ask_next_class
-    - Action_show_next_class
-    - Action_slot_reset
 
 ## Generated Story next class 1
 * ask_next_class
+    - Action_check_user_logged
+    - slot{"user_logged": true}
+    - Action_show_next_class
+    - Action_slot_reset
+
+
+## Generated Story next class 1
+* ask_next_class
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_class
     - Action_slot_reset
 
@@ -533,21 +541,29 @@
 
 ## Generated Story exams 1
 * ask_exams
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_exams
     - Action_slot_reset
 
 ## Generated Story exams 1
 * ask_exams
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_exams
     - Action_slot_reset
 
 ## Generated Story exams 1
 * ask_exams{"subject_acronym: "WSE"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_exams
     - Action_slot_reset
 
 ## Generated Story exams 1
 * ask_exams{"subject_acronym: "par"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_exams
     - Action_slot_reset
 
@@ -557,21 +573,29 @@
 
 ## Generated Story pracs 1
 * ask_pracs
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_pracs
     - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_pracs
     - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs{"subject_acronym": "par"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_pracs
     - Action_slot_reset
 
 ## Generated Story pracs 1
 * ask_pracs{"subject_acronym": "apss"}
+    - Action_check_user_logged
+    - slot{"user_logged": true}
     - Action_show_next_pracs
     - Action_slot_reset
 

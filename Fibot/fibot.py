@@ -46,8 +46,8 @@ class Fibot(object):
 		self.qa = Query_answer_unit()
 		self.message_handler = None
 		self.delay = 60
+		self.refresh_token_thread = None
 		self.notification_thread = None
-		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
@@ -64,14 +64,18 @@ class Fibot(object):
 			qa: Loads the trained models
 			messages: Loads the preset messages to memory
 	"""
-	def load_components(self):
+	def load_components(self, thread_logging = True):
 		self.chats.load()
 		print("Chats loaded")
 		self.message_handler = Message_handler(self.chats)
 		print("Message handler loaded")
-		self.notification_thread = Notification_thread(self.message_handler, self.delay)
-		self.notification_thread.run()
+
+		self.refresh_token_thread = Refresh_token_thread(self.delay,  thread_logging = thread_logging)
 		self.refresh_token_thread.run(initial_offset = 30)
+
+		self.notification_thread = Notification_thread(self.message_handler, self.delay,  thread_logging = thread_logging)
+		self.notification_thread.run()
+
 		self.qa.load()
 		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:
@@ -135,11 +139,9 @@ class Fibot(object):
 		for responding the message.
 	"""
 	def process_income_message(self, chat_id, message, message_id = None):
-		print("##### USER SAID: {} #####".format(message))
+		print("\n\n\n##############################  UN USUARIO HA PREGUNTADO: {} ##############################".format(message))
 		user_language = self.chats.get_chat(chat_id)['language']
 		now = time()
 		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
-		print(response)
 		response = [i['text'] for i in response]
-		print("##### RESPONSE IS: {} ##### Obtained in {}s".format(response, time()-now))
 		self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)

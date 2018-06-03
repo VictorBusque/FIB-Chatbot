@@ -44,21 +44,23 @@ class NLU_unit(object):
 				print("Training CA NLU model")
 				training_data_ca = load_data('./Data/Dataset_ca.json')
 				trainer_ca = Trainer(config.load("./config/config_spacy_ca.yml"))
-				trainer_ca.train(training_data_ca)
+				trainer_ca.train(training_data_ca, num_threads=3)
 				model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Total elapsed time for CA: {}".format(time()-now))
+			now = time()
 			if not train_list or 'es' in train_list:
 				print("Training ES NLU model")
 				training_data_es = load_data('./Data/Dataset_es.json')
 				trainer_es = Trainer(config.load("./config/config_spacy_es.yml"))
-				trainer_es.train(training_data_es)
+				trainer_es.train(training_data_es, num_threads=3)
 				model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Total elapsed time for ES: {}".format(time()-now))
+			now = time()
 			if not train_list or 'en' in train_list:
 				print("Training EN NLU model")
 				training_data_en = load_data('./Data/Dataset_en.json')
 				trainer_en = Trainer(config.load("./config/config_spacy_en.yml"))
-				trainer_en.train(training_data_en)
+				trainer_en.train(training_data_en, num_threads=3)
 				model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Total elapsed time for EN: {}".format(time()-now))
 			print("NLU Training done")

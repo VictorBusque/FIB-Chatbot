@@ -40,6 +40,7 @@ class Action_slot_reset(Action):
         return 'Action_slot_reset'
 
     def run(self, dispatcher, tracker, domain):
+        print("\nReseteando todos los slots...")
         return[AllSlotsReset()]
 
 
@@ -49,7 +50,7 @@ class Action_check_subject_existance(Action):
         return 'Action_check_subject_existance'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
@@ -58,11 +59,11 @@ class Action_check_subject_existance(Action):
             if not API_raco().subject_exists(subject_acro):
                 dispatcher.utter_message(str(Not_understood(user_lang, 'wrong_subject')))
             else:
-                print("Subject EXISTS")
+                print("Asignatura existe")
                 return [SlotSet("subject_existance", True)]
         else:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_understand')))
-        print("Subject DOESN'T EXIST")
+        print("Asignatura NO existe")
         return [SlotSet("subject_existance", False)]
 
 
@@ -71,7 +72,7 @@ class Action_check_subject_enrollment(Action):
         return 'Action_check_subject_enrollment'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
@@ -81,10 +82,10 @@ class Action_check_subject_enrollment(Action):
             if '{}' in response:
                 dispatcher.utter_message(response.format(subject_acro))
             else: dispatcher.utter_message(response)
-            print("user NOT ENROLLED")
+            print("El usuario NO está matriculado")
             return [SlotSet("subject_enrollment", False)]
         else:
-            print("user ENROLLED")
+            print("El usuario está matriculado")
             return [SlotSet("subject_enrollment", True)]
 
 
@@ -94,16 +95,16 @@ class Action_check_user_logged(Action):
         return 'Action_check_user_logged'
 
     def run(self, dispatcher, tracker, domain):
-        print("\n"+self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
         if not access_token:
             dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_logged')))
-            print("user NOT LOGGED")
+            print("Usuario NO está identificado en el Racó")
             return [SlotSet('user_logged', False)]
         else:
-            print("user LOGGED")
+            print("usuario está identificado en el Racó")
             return [SlotSet('user_logged', True)]
 
 
@@ -116,7 +117,8 @@ class Action_show_teacher_mail(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
         chat_id = tracker.sender_id
@@ -142,7 +144,8 @@ class Action_show_teacher_office(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
         chat_id = tracker.sender_id
@@ -168,7 +171,8 @@ class Action_show_subject_free_spots(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         group = tracker.get_slot("group")
@@ -189,7 +193,8 @@ class Action_show_subject_classroom(Action):
         return 'Action_show_subject_classroom'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
@@ -207,7 +212,8 @@ class Action_show_subject_schedule(Action):
         return 'Action_show_subject_schedule'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
@@ -226,7 +232,8 @@ class Action_show_subject_teachers_mails(Action):
         return 'Action_show_subject_teachers_mails'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
@@ -253,7 +260,8 @@ class Action_show_subject_teachers_offices(Action):
         return 'Action_show_subject_teachers_offices'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
@@ -283,7 +291,8 @@ class Action_show_subject_teachers_names(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
@@ -305,16 +314,17 @@ class Action_show_next_class(Action):
         return 'Action_show_next_class'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
         schedule = API_raco().get_schedule(access_token = access_token, language = user_lang)
         schedule = Schedule(schedule, user_lang)
-        print("schedule gotten")
         answer = schedule.get_response()
-        dispatcher.utter_message("{}".format(answer))
+        if isinstance(answer, list): dispatcher.utter_message("{}".format(answer[0]))
+        else: dispatcher.utter_message("{}".format(answer))
         return []
 
 
@@ -324,7 +334,8 @@ class Action_show_next_exams(Action):
         return 'Action_show_next_exams'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         chat_id = tracker.sender_id
         subject_acro = tracker.get_slot("subject_acronym")
@@ -366,7 +377,8 @@ class Action_show_next_pracs(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         chat_id = tracker.sender_id
         subject_acro = tracker.get_slot("subject_acronym")
@@ -407,7 +419,8 @@ class Action_show_teacher_info(Action):
         return 'Action_show_teacher_info'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         teacher_name = tracker.get_slot("teacher_name")
         chat_id = tracker.sender_id
@@ -429,19 +442,15 @@ class Action_greet(Action):
         return 'Action_greet'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
-        print("{} -> {}".format(chat_id, user_lang))
         responses = []
-        try:
-            with open('./Data/responses.json', 'rb') as fp:
-                data = json.load(fp)
-                responses = data['greet_back']
-        except Exception as e:
-            print(e)
-        print("we could take the data")
+        with open('./Data/responses.json', 'rb') as fp:
+            data = json.load(fp)
+            responses = data['greet_back']
         chosen_response = randint(0, len(responses[user_lang])-1)
         final_response = responses[user_lang][chosen_response]
         dispatcher.utter_message("{}".format(final_response))
@@ -454,7 +463,8 @@ class Action_no_problem(Action):
         return 'Action_no_problem'
 
     def run(self, dispatcher, tracker, domain):
-        print(self.name())
+        print("\nEjecutando acción:\t{}".format(self.name()))
+        print("\nRepresentación de los slots:")
         pprint(tracker.slots)
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']

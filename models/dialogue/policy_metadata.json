@@ -2,9 +2,9 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
+        "teacher_name",
         "subject_acronym",
-        "group",
-        "teacher_name"
+        "group"
       ]
     },
     "Action_check_subject_existance": {
@@ -14,11 +14,6 @@
     },
     "Action_slot_reset": {
       "slots": []
-    },
-    "Action_show_subject_teachers_offices": {
-      "slots": [
-        "matches"
-      ]
     },
     "Action_check_user_logged": {
       "slots": [
@@ -31,6 +26,11 @@
       ]
     },
     "Action_show_subject_teachers_mails": {
+      "slots": [
+        "matches"
+      ]
+    },
+    "Action_show_subject_teachers_offices": {
       "slots": [
         "matches"
       ]

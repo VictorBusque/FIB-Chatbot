@@ -96,8 +96,8 @@ if __name__ == '__main__':
     parser.add_argument('--lan',
                         nargs=1,
                         required = True,
-                        choices=['cat','es','en'],
-                        default = ['cat'],
+                        choices=['ca','es','en'],
+                        default = ['ca'],
                         help='Language for the interpretation')
     parser.add_argument('--file',
                         nargs=1,

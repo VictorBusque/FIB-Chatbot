@@ -116,11 +116,13 @@ class Query_answer_unit(object):
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
-			print("\n\nDEBUGGING INFO:")
+			print("\n\nINFORMACIÓN DE MENSAJE:")
 			print("__________________________________________")
-			print("Interpreter understood the following intent:")
+			print("El intérprete ha predecido la siguiente intención:")
 			pprint(self.nlu.get_intent(message, language))
-			print("And the following entities:")
+			print("\nLas alternativas eran:")
+			pprint(self.nlu.get_intent_ranking(message, language))
+			print("\nY las siguientes entidades:")
 			pprint(self.nlu.get_entities(message, language))
 			print("\n\n")
 		if confidence < 0.5:
@@ -128,11 +130,8 @@ class Query_answer_unit(object):
 				messages = json.load(fp)['not_understand']
 			return [{'recipient_id': sender_id, 'text': messages[language][randint(0,len(messages[language])-1)]}]
 		if language == 'ca':
-			print('Getting response in catalan')
 			return self.agent_ca.handle_message(message, sender_id=sender_id)
 		elif language == 'es':
-			print('Getting response in spanish')
 			return self.agent_es.handle_message(message, sender_id=sender_id)
 		else:
-			print('Getting response in english')
 			return self.agent_en.handle_message(message, sender_id=sender_id)

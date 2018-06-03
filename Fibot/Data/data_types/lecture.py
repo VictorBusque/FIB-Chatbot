@@ -27,7 +27,8 @@ class Schedule(object):
         ok = []
         for lecture in self.lectures:
             if lecture.day_schedule > checker: ok.append(lecture)
-        return min(ok)
+        if not ok: return []
+        else: return min(ok)
 
     def get_response(self):
         now = datetime.date.today().isoweekday()

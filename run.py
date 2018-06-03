@@ -4,6 +4,7 @@
 #-- General imports --#
 import re
 import datetime
+import argparse
 from pprint import pprint
 
 #-- 3rd party imports --#
@@ -203,8 +204,19 @@ def state_machine(bot, update):
 """
 def main():
 	global Fibot
-	#Fibot = Fibot()
-	Fibot.load_components()
+
+
+
+	parser = argparse.ArgumentParser(description='')
+	parser.add_argument('--thread_log',
+						action = 'store_true',
+	                    help='Whether to log the threads info')
+	args = parser.parse_args()
+
+	if args.thread_log: print("Thread logging active")
+	else: print("Thread logging inactive")
+
+	Fibot.load_components(thread_logging = bool(args.thread_log))
 	print("Everything initialisated")
 	# Create the Updater and pass it your bot's token.
 
