@@ -66,11 +66,6 @@
             "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor"
         },
         {
-            "name": "ner_synonyms",
-            "synonyms_file": "entity_synonyms.json",
-            "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper"
-        },
-        {
             "C": [
                 1,
                 2,
@@ -90,6 +85,6 @@
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20180602-152241",
+    "trained_at": "20180604-120908",
     "rasa_nlu_version": "0.12.3"
 }

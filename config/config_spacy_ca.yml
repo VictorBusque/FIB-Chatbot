@@ -21,7 +21,6 @@ pipeline:
   max_iterations: 50
   L1_c: 0.1
   L2_c: 0.1
-- name: "ner_synonyms"
 - name: "intent_classifier_sklearn"
   C: [1, 2, 5, 10, 20, 100]
   kernel: "linear"

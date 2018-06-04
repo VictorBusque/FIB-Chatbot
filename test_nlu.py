@@ -3,7 +3,7 @@ from pprint import pprint
 import numpy as np
 import argparse
 
-INTENT_AMOUNT = 12
+INTENT_AMOUNT = 14
 intent2idx = {
     'ask_teacher_mail': 0,
     'ask_teacher_office': 1,
@@ -16,7 +16,9 @@ intent2idx = {
     'ask_next_class': 8,
     'ask_exams': 9,
     'ask_pracs': 10,
-    'inform': 11
+    'inform': 11,
+    'greet': 12,
+    'thank': 13
 }
 idx2intent = {
     0: 'ask_teacher_mail',
@@ -30,7 +32,9 @@ idx2intent = {
     8: 'ask_next_class',
     9: 'ask_exams',
     10: 'ask_pracs',
-    11: 'inform'
+    11: 'inform',
+    12: 'greet',
+    13: 'thank'
 }
 intent_conf_matrix = np.zeros([INTENT_AMOUNT,INTENT_AMOUNT])
 
@@ -215,10 +219,8 @@ if __name__ == '__main__':
         print_conf_matrix(intent_conf_matrix)
         print("\n\nLa precisión por intenciones es la siguiente:")
         pprint(conf2precision(intent_conf_matrix))
-        print("\nLa precisión promedio es {}".format(get_avg_precision(intent_conf_matrix)))
         print("\n\nEl recall por intenciones es la siguiente:")
         pprint(conf2recall(intent_conf_matrix))
-        print("\nEl recall promedio es {}".format(get_avg_recall(intent_conf_matrix)))
         print("\n\nLa precisión global es de: {}".format(get_global_accuracy(intent_conf_matrix)))
 
     if entity:
