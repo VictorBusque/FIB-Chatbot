@@ -34,7 +34,7 @@ class Teachers(object):
         for department in self.departments:
             with open('./Data/teachers/{}.json'.format(department), 'r') as fp:
             	self.data[department] = json.load(fp)
-        print("Loaded teachers data for departments {}".format(self.departments))
+        print("Cargados en memoria los profesores de los departamentos {}".format(list(self.departments)))
         return
 
     """
@@ -59,7 +59,7 @@ class Teachers(object):
         match = self.data[match_department][match_teacher]
         match['name'] = match_teacher
         match['department'] = match_department
-        if debug: print("{} is the distance, the closest name is {}.".format(lower_dist, match_teacher))
+        if debug: print("Distancia al profesor más cercano: {}\nEl profesor más parecido es: {}.".format(lower_dist, match_teacher))
         return Teacher(match, language = self.language), lower_dist
 
 

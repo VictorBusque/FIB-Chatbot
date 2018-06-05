@@ -154,7 +154,7 @@ class Notification_thread(object):
                     if self.thread_logging: print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
                     filtered = self.filter(avisos)
                     if self.thread_logging: print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
-                    if filtered: pprint(filtered)
+                    if filtered & self.thread_logging: pprint(filtered)
                     for avis in filtered:
                         message = Notification(avis, user_lang).get_notif()
                         self.message_handler.send_message(student_id, message, typing=True)

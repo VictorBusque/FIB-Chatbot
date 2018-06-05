@@ -7,6 +7,7 @@ import os
 import requests
 from pprint import pprint
 from random import randint
+from termcolor import colored
 import json
 
 #-- 3rd party imports --#
@@ -116,15 +117,23 @@ class Query_answer_unit(object):
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
+			print("\n\n\n#######  UN USUARIO HA PREGUNTADO: {} #######".format(colored(message, 'cyan')))
 			print("\n\nINFORMACIÓN DE MENSAJE:")
 			print("__________________________________________")
 			print("El intérprete ha predecido la siguiente intención:")
-			pprint(self.nlu.get_intent(message, language))
-			print("\nLas alternativas eran:")
-			pprint(self.nlu.get_intent_ranking(message, language))
-			print("\nY las siguientes entidades:")
-			pprint(self.nlu.get_entities(message, language))
-			print("\n\n")
+			intent = self.nlu.get_intent(message, language)
+			entities = self.nlu.get_entities(message, language)
+			print('Intención: ' + colored(intent['name'], 'green', attrs=['bold']))
+			print('Confianza: ' + colored(str(intent['confidence'])[:8], 'green'))
+			if entities: print("\nY las siguientes entidades:")
+			else: print("\nNo se han encontrado entidades en el mensaje")
+			i = 0
+			for entity in entities:
+				print(colored('['+str(i)+']', 'red'))
+				print('Tipo: ' + colored(entity['entity'], 'blue', attrs=['bold']))
+				print('Valor: ' + colored(entity['value'], 'blue', attrs=['bold']))
+				print('Confianza: ' + colored(str(entity['confidence'])[:8], 'blue'))
+				i+=1
 		if confidence < 0.5:
 			with open('./Data/error_responses.json', 'rb') as fp:
 				messages = json.load(fp)['not_understand']

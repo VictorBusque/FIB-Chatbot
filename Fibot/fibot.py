@@ -139,7 +139,6 @@ class Fibot(object):
 		for responding the message.
 	"""
 	def process_income_message(self, chat_id, message, message_id = None):
-		print("\n\n\n##############################  UN USUARIO HA PREGUNTADO: {} ##############################".format(message))
 		user_language = self.chats.get_chat(chat_id)['language']
 		now = time()
 		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
