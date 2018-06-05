@@ -203,8 +203,6 @@ def state_machine(bot, update):
 def main():
 	global Fibot
 
-
-
 	parser = argparse.ArgumentParser(description='')
 	parser.add_argument('--thread_log',
 						action = 'store_true',

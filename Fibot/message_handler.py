@@ -8,9 +8,29 @@ import requests
 import json
 from pprint import pprint
 from time import time
+from termcolor import colored
 
 #-- 3rd party imports --#
 from telegram import ChatAction
+
+
+class Local_Message_handler(object):
+
+    def __init__(self, chats):
+        print(colored("INFO: Local Message Handler inicializado", 'red'))
+        self.chats = chats
+
+    def send_chat_action(self, chat_id, action = ChatAction.TYPING):
+        print(colored(action, 'blue'))
+
+    def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
+        if isinstance(message, list):
+        	for item in message:
+        		self.send_message(chat_id, item, typing, reply_to, parse_mode)
+        else:
+            if typing: self.send_chat_action(chat_id)
+            user_language = self.chats.get_chat(chat_id)['language']
+            print("FIBOT: {}".format(colored(message, 'green')))
 
 
 class Message_handler(object):

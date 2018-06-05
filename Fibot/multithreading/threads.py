@@ -58,7 +58,7 @@ class Refresh_token_thread(object):
         Does a scan over all users with expired tokens, and then returns to the activation function
     """
     def poll(self):
-        print("\n")
+        if self.thread_logging: print("\n")
         if self.thread_logging: log("R_Thread: Refrescando tokens\n")
         self.update_chats()
         for chat in self.queue:

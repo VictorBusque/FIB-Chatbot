@@ -123,7 +123,7 @@ class Query_answer_unit(object):
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
-			print("\n\n\n#######  UN USUARIO HA PREGUNTADO: {} #######".format(colored(message, 'cyan')))
+			print("\n\n\n#######  UN USUARIO HA DICHO: {} #######".format(colored(message, 'cyan')))
 			print("\n\nINFORMACIÓN DE MENSAJE:")
 			print("__________________________________________")
 			print("El intérprete ha predecido la siguiente intención:")
