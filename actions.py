@@ -351,20 +351,7 @@ class Action_show_next_exams(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
-        if subject_acro:
-            subject_acro = subject_acro.upper()
-            coincidences = ["examen".upper(), "examens".upper(), "exam".upper(), "exams".upper(), "examenes".upper(),
-                            "exàmens".upper(), "exámenes".upper(), "exàmen".upper(), "exámen".upper()]
-            if subject_acro in coincidences: acro_filter = None
-            elif not API_raco().subject_exists(subject_acro, user_lang):
-                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
-                return []
-            elif not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
-                response = str(Not_understood(user_lang, 'not_enrolled'))
-                if '{}' in response: dispatcher.utter_message(response.format(subject_acro))
-                else: dispatcher.utter_message(response)
-                return []
-            else: acro_filter = subject_acro
+        if subject_acro: acro_filter = subject_acro.upper()
         else: acro_filter = None
         exams = list(API_raco().get_exams_user(access_token = access_token, language = user_lang))
         e_e = Exam_schedule(exams, user_lang)
@@ -394,22 +381,7 @@ class Action_show_next_pracs(Action):
         subject_acro = tracker.get_slot("subject_acronym")
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
-        if subject_acro:
-            subject_acro = subject_acro.upper()
-            coincidences = ["practica".upper(), "practiques".upper(), "practical work".upper(), "practical works".upper(),
-                            "practicas".upper(), "pràctica".upper(), "pràctiques".upper(), "práctica".upper(), "prácticas".upper()]
-            if subject_acro in coincidences:
-                print("M'ha preguntat practiques")
-                acro_filter = None
-            elif not API_raco().subject_exists(subject_acro, user_lang):
-                dispatcher.utter_message("{}".format(Not_understood(user_lang, 'wrong_subject')))
-                return []
-            elif not API_raco().user_enrolled_subject(subject_acro, access_token, user_lang):
-                response = str(Not_understood(user_lang, 'not_enrolled'))
-                if '{}' in response: dispatcher.utter_message(response.format(subject_acro))
-                else: dispatcher.utter_message(response)
-                return []
-            else: acro_filter = subject_acro
+        if subject_acro: acro_filter = subject_acro
         else: acro_filter = None
         pracs = list(API_raco().get_practiques(access_token = access_token, language = user_lang))
         p_e = Practical_schedule(pracs, user_lang)
