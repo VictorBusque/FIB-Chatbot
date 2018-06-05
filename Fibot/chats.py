@@ -8,6 +8,7 @@ import os
 from datetime import datetime, timedelta
 from pprint import pprint
 from copy import deepcopy as copy
+from termcolor import colored
 import base64
 
 #-- 3rd Party imports --#
@@ -123,8 +124,7 @@ class Chats(object):
 		This function updates persistence with the contents of the dict chats.
 	"""
 	def dump_data(self):
-		print("Dumping data")
-		print(self.chats)
+		print(colored('\nGuardando cambios en base de datos de usuarios...\n', 'blue'))
 		os.remove('./Data/chat_status.json')
 		with open('./Data/chat_status.json', 'w') as fp:
 			cpy = copy(self.chats)

@@ -7,8 +7,8 @@ from os import getenv
 import requests
 import json
 import re
-from pprint import pprint
 from time import time
+from termcolor import colored
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -54,6 +54,9 @@ class Fibot(object):
 			'Wait_authorisation': '1'
 		}
 
+	def log(self, text):
+		print(colored("LOG: {}".format(text), 'blue'))
+
 	"""
 		Loads the following components:
 			chats: Loads the chats information from persistence
@@ -66,21 +69,20 @@ class Fibot(object):
 	"""
 	def load_components(self, thread_logging = True):
 		self.chats.load()
-		print("Chats loaded")
+		self.log("Base de datos de usuarios cargados")
 		self.message_handler = Message_handler(self.chats)
-		print("Message handler loaded")
 
 		self.refresh_token_thread = Refresh_token_thread(self.delay,  thread_logging = thread_logging)
 		self.refresh_token_thread.run(initial_offset = 30)
 
 		self.notification_thread = Notification_thread(self.message_handler, self.delay,  thread_logging = thread_logging)
 		self.notification_thread.run()
+		self.log("Threads creados")
 
 		self.qa.load()
-		print("Query answering model loaded")
 		with open('./Data/messages.json', 'r') as fp:
 			self.messages = json.load(fp)
-		print("Preset messages loaded")
+		self.log("Mensajes predefinidos cargados")
 		return
 
 	"""
@@ -119,7 +121,6 @@ class Fibot(object):
 		See /Data/messages.json to see the preset messages.
 	"""
 	def send_preset_message(self, chat_id, preset, param = None):
-		print("#### SENDING PRESET MESSAGE: {} #####".format(preset))
 		user_lang = self.chats.get_chat(chat_id)['language']
 		if param:
 			message = self.messages[user_lang][preset].format(param)

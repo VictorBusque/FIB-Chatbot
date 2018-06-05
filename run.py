@@ -6,6 +6,7 @@ import re
 import datetime
 import argparse
 from pprint import pprint
+from termcolor import colored
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -61,12 +62,10 @@ def done(bot, update):
 """
 def start_authentication(bot, update):
 	global Fibot
-	print("Starting authentication")
+	print(colored("LOG: Empezando autenticación", 'blue'))
 	chat_id = update.message.chat_id
 	user_name = Fibot.chats.get_chat(chat_id)['name']
-	print(user_name)
 	logged = Fibot.chats.get_chat(chat_id)['logged']
-	print(logged)
 	if (not logged):
 		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.oauth.get_autho_full_page())
 		Fibot.send_preset_message(chat_id, "inform_oauth_procedure")
@@ -191,7 +190,6 @@ def state_machine(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	print (message)
 	current_state = Fibot.chats.get_chat(chat_id)['current_state']
 	if current_state == Fibot.state_machine['MessageHandler']:
 		return ask(bot, update)
@@ -213,11 +211,11 @@ def main():
 	                    help='Whether to log the threads info')
 	args = parser.parse_args()
 
-	if args.thread_log: print("Thread logging active")
-	else: print("Thread logging inactive")
+	if args.thread_log: print(colored("LOG: Thread logging activo", 'blue'))
+	else: print(colored("LOG: Thread logging inactivo", 'blue'))
 
 	Fibot.load_components(thread_logging = bool(args.thread_log))
-	print("Everything initialisated")
+	print(colored("LOG: Todo inicializado", 'blue'))
 	# Create the Updater and pass it your bot's token.
 
 	updater = Updater(Fibot.bot_token)

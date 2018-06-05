@@ -4,8 +4,8 @@
 
 #-- General imports --#
 from threading import Timer
+from termcolor import colored
 import datetime
-from pprint import pprint
 
 #-- Local imports --#
 from Fibot.Data.data_types.notification import Notification
@@ -13,6 +13,9 @@ from Fibot.api.api_raco import API_raco
 from Fibot.api.oauth import Oauth
 from Fibot.chats import Chats
 
+
+def log(text):
+	print(colored("LOG: {}".format(text), 'blue'))
 
 class Refresh_token_thread(object):
 
@@ -55,14 +58,15 @@ class Refresh_token_thread(object):
         Does a scan over all users with expired tokens, and then returns to the activation function
     """
     def poll(self):
-        if self.thread_logging: print("Refresh token thread: Refreshing tokens\n")
+        print("\n")
+        if self.thread_logging: log("R_Thread: Refrescando tokens\n")
         self.update_chats()
         for chat in self.queue:
-            if self.thread_logging: print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
+            if self.thread_logging: log("R_Thread: Refrescando token de {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
             if callback: self.chats.update_chat(chat, data = callback, full_data = False)
-            if callback and self.thread_logging: print("Refresh token thread: Refreshed token successfully!\n")
+            if callback and self.thread_logging: log("R_Thread: Token refrescado correctamente!\n")
         self.queue = []
         self.run()
 
@@ -104,7 +108,7 @@ class Notification_thread(object):
         self.polling = True
         self.last_check = datetime.datetime.now()
         self.retrieve_timestamp()
-        print("Loaded timestamp: {}".format(self.last_check))
+        log("Marca temporal cargada: {}".format(self.last_check))
 
     """
         Saves the timestamp when the last scan was done
@@ -140,29 +144,26 @@ class Notification_thread(object):
     """
     def poll(self):
         self.chats.load()
-        if self.thread_logging: print("Notification scanner thread: Last check was done: {}\n".format(datetime.datetime.now()))
-        if self.thread_logging: print("Notification scanner thread: Scanning for notifications\n")
+        if self.thread_logging: log("N_Thread: Última comprobación hecha: {}\n".format(datetime.datetime.now()))
+        if self.thread_logging: log("N_Thread: Escaneando notificaciones...\n")
         last_avis = self.last_check
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
             if student['notifications']:
-                if self.thread_logging: print("Notification scanner thread: Scanning {}.\n".format(student['name']))
+                if self.thread_logging: log("N_Thread: Escaneando a {}.\n".format(student['name']))
                 access_token = student['access_token']
                 user_lang = student['language']
                 avisos = self.api.get_avisos(access_token)
                 if avisos:
-                    if self.thread_logging: print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
                     filtered = self.filter(avisos)
-                    if self.thread_logging: print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
-                    if filtered & self.thread_logging: pprint(filtered)
                     for avis in filtered:
                         message = Notification(avis, user_lang).get_notif()
                         self.message_handler.send_message(student_id, message, typing=True)
-                        if self.thread_logging: print("Notification was sent!")
+                        if self.thread_logging: log("N_Thread: Se ha enviado la notificación!")
                         last_avis = max(last_avis, self.get_date(avis))
         self.last_check = last_avis
         self.dump_timestamp()
-        if self.thread_logging: print("Last notification was received {}!".format(self.last_check))
+        if self.thread_logging: log("N_Thread: Última notificación recibida: {}".format(self.last_check))
         self.run()
 
     """
@@ -178,7 +179,7 @@ class Notification_thread(object):
         for avis in avisos:
             if not self.last_check: result.append(avis)
             elif self.get_date(avis) > self.last_check:
-                if self.thread_logging: print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
+                if self.thread_logging: log("N_Thread: Hay una nueva publicación!")
                 if '#' in avis['codi_assig']: pass
                 else: result.append(avis)
         return result

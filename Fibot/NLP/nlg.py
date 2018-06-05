@@ -49,6 +49,10 @@ class Query_answer_unit(object):
 		self.agent_es.toggle_memoization(activate = True)
 		self.agent_en.toggle_memoization(activate = True)
 
+
+	def log(self, text):
+		print(colored("LOG: {}".format(text), 'blue'))
+
 	"""
 		Parameters:
 			train (:obj:`bool`): Specifies if the agents have to be trained
@@ -56,6 +60,7 @@ class Query_answer_unit(object):
 	"""
 	def load(self, trainNLG=False, trainNLU=False, train_list = None):
 		self.nlu.load(trainNLU, train_list = train_list)
+		self.log("Modelos NLU cargados")
 		if trainNLG: self.train()
 		self.agent_ca = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_ca)
@@ -63,6 +68,7 @@ class Query_answer_unit(object):
 				interpreter = self.nlu.interpreter_es)
 		self.agent_en = Agent.load(self.model_path,
 				interpreter = self.nlu.interpreter_en)
+		self.log("Agentes de diálogo cargados")
 
 	"""
 		Parameters:

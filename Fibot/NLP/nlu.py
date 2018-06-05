@@ -68,7 +68,6 @@ class NLU_unit(object):
 		self.interpreter_ca = RasaNLUInterpreter("./models/nlu_ca/default/current")
 		self.interpreter_es = RasaNLUInterpreter("./models/nlu_es/default/current")
 		self.interpreter_en = RasaNLUInterpreter("./models/nlu_en/default/current")
-		print("NLU loaded")
 
 	"""
 		Parameters:
