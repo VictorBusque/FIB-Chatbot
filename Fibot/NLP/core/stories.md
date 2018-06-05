@@ -564,27 +564,6 @@
     - Action_show_next_exams
     - Action_slot_reset
 
-## Generated Story exams 1
-* ask_exams{"subject_acro": "caim"}
-    - Action_check_user_logged
-    - slot{"user_logged": true}
-    - Action_check_subject_existance
-    - slot{"subject_exists": true}
-    - Action_check_subject_enrollment
-    - slot{"subject_enrollment": true}
-    - Action_show_next_exams
-    - Action_slot_reset
-
-## Generated Story exams 1
-* ask_exams{"subject_acro": "ASW"}
-    - Action_check_user_logged
-    - slot{"user_logged": true}
-    - Action_check_subject_existance
-    - slot{"subject_exists": true}
-    - Action_check_subject_enrollment
-    - slot{"subject_enrollment": true}
-    - Action_show_next_exams
-    - Action_slot_reset
 
 ## Generated Story exams 1
 * ask_exams{"subject_acro": "APA"}

@@ -189,6 +189,9 @@ class Action_show_subject_free_spots(Action):
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         response = list(API_raco().get_free_spots(subject_acro, user_lang))
+        if not response:
+            dispatcher.utter_message("{}".format(Not_understood(user_lang, 'not_enrollment_possible')).format(subject_acro))
+            return []
         s_s = Subject_spots(response, user_lang)
         if group:
             dispatcher.utter_message("{}".format(s_s.get_group_spots(group)))

@@ -122,5 +122,16 @@
             "en": [
                 "You have not logged in with your Racó account. I cannot see your information"
             ]
+        },
+        "not_enrollment_possible": {
+          "ca": [
+              "{} no està disponible per matricular-se."
+          ],
+          "es": [
+              "{} no está disponible para matricularse."
+          ],
+          "en": [
+              "{} is not available for enrollments."
+          ]
         }
     }
