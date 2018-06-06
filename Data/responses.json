@@ -16,7 +16,7 @@
     "{}'s mail is {}.",
     "{} has this mail: {}.",
     "There you go, {}.",
-    "It is {}"
+    "It is {}."
     ]
   },
   "ask_teacher_office": {
@@ -58,7 +58,7 @@
       "{} de {} a {}, tienes clase de {} en el aula {}."
     ],
     "en": [
-      "{} from {} to {}, a {} class at classroom {}."
+      "{} from {} to {}, you have a {} class at classroom {}."
     ]
   },
   "ask_subject_teacher_mail": {
@@ -244,5 +244,4 @@
       "You're welcome"
     ]
   }
-
 }

@@ -130,8 +130,8 @@ class Query_answer_unit(object):
 			print("El intérprete ha predecido la siguiente intención:")
 			intent = self.nlu.get_intent(message, language)
 			entities = self.nlu.get_entities(message, language)
-			print('Intención: ' + colored(intent['name'], 'green', attrs=['bold']))
-			print('Confianza: ' + colored(str(intent['confidence'])[:8], 'green'))
+			print('Intención: ' + colored(intent['name'], 'cyan', attrs=['bold']))
+			print('Confianza: ' + colored(str(intent['confidence'])[:8], 'cyan'))
 			if entities: print("\nY las siguientes entidades:")
 			else: print("\nNo se han encontrado entidades en el mensaje")
 			i = 0

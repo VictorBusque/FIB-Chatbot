@@ -80,6 +80,6 @@ class Message_handler(object):
             }
             if parse_mode: params['parse_mode'] = parse_mode
             if reply_to: params['reply_to_message_id'] = reply_to
-            print("Enviando mensaje... {}".format(message))
+            print("Enviando mensaje... {}".format(colored(message, 'magenta')))
             base_url = 'https://api.telegram.org/bot{}/sendMessage'.format(self.bot_token)
             response = requests.get(base_url, params = params)

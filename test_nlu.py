@@ -1,5 +1,6 @@
 from Fibot.NLP.nlu import NLU_unit
 from pprint import pprint
+from termcolor import colored
 import numpy as np
 import argparse
 
@@ -71,7 +72,7 @@ def print_conf_matrix(conf_matrix):
     for row in range(0, len(conf_matrix)):
         if row in [0,1,3,4]: fill = "\t\t"
         elif row in [2,8,9,10]: fill = "\t\t\t"
-        elif row == 11: fill = "\t\t\t\t"
+        elif row in [11, 12, 13]: fill = "\t\t\t\t"
         else: fill = "\t"
         print("{}:{}{}\t{}".format(idx2intent[row], fill, conf_matrix[row], int(sum(conf_matrix[row]))))
 
@@ -148,11 +149,23 @@ if __name__ == '__main__':
         print("Para salir del modo de test escribe 'quit'")
         message = input("Introduce el mensaje:\n")
         while message != "quit":
-            print("Esta es la intención del mensaje:")
-            pprint(nlu.get_intent(message, language))
-            print("\nEstas son las entidades")
-            pprint(nlu.get_entities(message, language))
-            print("\n\n")
+            print("\n\nINFORMACIÓN DE MENSAJE: {}".format(colored(message, 'magenta')))
+            print("__________________________________________")
+            print("El intérprete ha predecido la siguiente intención:")
+            intent = nlu.get_intent(message, language)
+            entities = nlu.get_entities(message, language)
+            print('Intención: ' + colored(intent['name'], 'green', attrs=['bold']))
+            print('Confianza: ' + colored(str(intent['confidence'])[:8], 'green'))
+            if entities: print("\nY las siguientes entidades:")
+            else: print("\nNo se han encontrado entidades en el mensaje")
+            i = 0
+            for entity in entities:
+            	print(colored('['+str(i)+']', 'red'))
+            	print('Tipo: ' + colored(entity['entity'], 'cyan', attrs=['bold']))
+            	print('Valor: ' + colored(entity['value'], 'cyan', attrs=['bold']))
+            	print('Confianza: ' + colored(str(entity['confidence'])[:8], 'cyan'))
+            	i+=1
+            print("\n")
             if stats:
                 hit = input("Está bien la intención? (y/n): ") == 'y'
                 pred_intent = nlu.get_intent(message, language)['name']

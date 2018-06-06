@@ -39,28 +39,34 @@ class NLU_unit(object):
 	"""
 	def load(self, train = False, train_list = None):
 		if train:
-			print(colored("INFO: Training this languages: {}".format(train_list),'red'))
+			print(colored("INFO: Entrenando los siguientes idiomas: {}".format(train_list),'red'))
 			now = time()
 			if not train_list or 'ca' in train_list:
 				print(colored("INFO: Entrenando CA NLU model", 'red'))
+				print(colored("INFO: Cargando dataset CA", 'red'))
 				training_data_ca = load_data('./Data/Dataset_ca.json')
 				trainer_ca = Trainer(config.load("./config/config_spacy_ca.yml"))
+				print(colored("INFO: Generando características para CA", 'red'))
 				trainer_ca.train(training_data_ca, num_threads=3)
 				model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Tiempo total para entrenar CA: {}".format(colored(time()-now, 'green')))
 			now = time()
 			if not train_list or 'es' in train_list:
 				print(colored("INFO: Entrenando ES NLU model", 'red'))
+				print(colored("INFO: Cargando dataset ES", 'red'))
 				training_data_es = load_data('./Data/Dataset_es.json')
 				trainer_es = Trainer(config.load("./config/config_spacy_es.yml"))
+				print(colored("INFO: Generando características para ES", 'red'))
 				trainer_es.train(training_data_es, num_threads=3)
 				model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Tiempo total para entrenar ES: {}".format(colored(time()-now, 'green')))
 			now = time()
 			if not train_list or 'en' in train_list:
 				print(colored("INFO: Entrenando EN NLU model", 'red'))
+				print(colored("INFO: Cargando dataset EN", 'red'))
 				training_data_en = load_data('./Data/Dataset_en.json')
 				trainer_en = Trainer(config.load("./config/config_spacy_en.yml"))
+				print(colored("INFO: Generando características para EN", 'red'))
 				trainer_en.train(training_data_en, num_threads=3)
 				model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
 				print("Tiempo total para entrenar EN: {}".format(colored(time()-now, 'green')))

@@ -458,3 +458,115 @@ donde puedo encontrar el despacho de joan climent?
 ask_teacher_office
 cuando tendre el examen de vc?
 ask_exams
+javier Bejar
+inform
+maria josefina
+inform
+conrado martinez
+inform
+leandro navarro
+inform
+vc
+inform
+apa
+inform
+mec-mai
+inform
+WSE
+inform
+Luis Belanche
+inform
+joan climent
+inform
+Josep carmona
+inform
+josep sole
+inform
+tc
+inform
+ia
+inform
+montserrat maurseo
+inform
+garcia
+inform
+er
+inform
+leo messi
+inform
+josep sole clotet
+inform
+jordi delgado sanchez
+inform
+m1
+inform
+prop
+inform
+jordi turmo
+inform
+albert
+inform
+PAE
+inform
+pere
+inform
+podrías por favor decirme cual es el correo de jordi turmo?
+ask_teacher_mail
+hola!
+greet
+buenas
+greet
+buenos días
+greet
+buenas tardes
+greet
+buenas noches
+greet
+hola bot
+greet
+hola que tal
+greet
+saludos
+greet
+Hola!!
+greet
+¡Hola!
+greet
+¡Buenas!
+greet
+¡Saludos!
+greet
+Hola que tal
+greet
+hola tio
+greet
+muy buenas
+greet
+gracias
+thank
+te lo agradezco
+thank
+muchas gracias
+thank
+gracias!
+thank
+gracias!!
+thank
+¡Gracias!
+thank
+¡muchas gracias!
+thank
+mil gracias
+thank
+gracias bot
+thank
+gracias fibot
+thank
+gracias tio
+thank
+bien muchas gracias!
+thank
+grácias!
+thank
+grácias
+thank

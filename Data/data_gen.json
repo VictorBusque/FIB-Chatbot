@@ -592,6 +592,8 @@
       "quan és la propera classe?"
     ],
     "intros_exams": [
+      "a quina hora tinc l'examen de {}",
+      "a quina hora tinc examen de {}",
       "quan tinc examens",
       "quins son els seguents examens",
       "quan tinc el seguent examen",
@@ -674,6 +676,7 @@
       "examens de {}?"
     ],
     "intros_pracs": [
+      "a quina hora he d'entregar la practica de {}",
       "quan tinc practiques",
       "quines son les seguents practiques",
       "quan tinc la seguent practica",
@@ -1237,6 +1240,10 @@
       "que clase me toca",
       "clase ahora",
       "que clase tengo",
+      "cuando es mi proxima clase",
+      "donde es mi proxima clase",
+      "cuando es mi siguiente clase",
+      "donde es mi siguiente clase",
       "proxima clase",
       "cual es la proxima clase",
       "donde tengo la proxima clase",
@@ -1264,6 +1271,9 @@
       "cuando es la siguiente clase?"
     ],
     "intros_exams": [
+      "a que hora es el examen de {}",
+      "a que hora tengo el examen de {}",
+      "a que hora tengo examenes",
       "cuando tendre el examen de {}",
       "que examenes me quedan",
       "que examen me queda",
@@ -1349,6 +1359,8 @@
       "exámenes de {}?"
     ],
     "intros_pracs": [
+      "a que hora tengo que entregar la practica de {}",
+      "a que hora hay que entregar la practica de {}",
       "tengo alguna practica pendiente de {}?",
       "tengo alguna práctica pendiente de {}",
       "cuando tengo practicas",
