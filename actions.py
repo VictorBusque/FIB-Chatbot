@@ -49,7 +49,7 @@ class Action_slot_reset(Action):
         return 'Action_slot_reset'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Reseteando todos los slots...\n")
         return[AllSlotsReset()]
 
@@ -60,7 +60,7 @@ class Action_check_subject_existance(Action):
         return 'Action_check_subject_existance'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         subject_acro = tracker.get_slot("subject_acronym")
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
@@ -82,7 +82,7 @@ class Action_check_subject_enrollment(Action):
         return 'Action_check_subject_enrollment'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         subject_acro = tracker.get_slot("subject_acronym").upper()
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
@@ -105,7 +105,7 @@ class Action_check_user_logged(Action):
         return 'Action_check_user_logged'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         chat_id = tracker.sender_id
         user_lang = Chats().get_chat_lite(chat_id)['language']
         access_token = Chats().get_chat_lite(chat_id)['access_token']
@@ -127,7 +127,7 @@ class Action_show_teacher_mail(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         teacher_name = tracker.get_slot("teacher_name")
@@ -154,7 +154,7 @@ class Action_show_teacher_office(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         teacher_name = tracker.get_slot("teacher_name")
@@ -181,7 +181,7 @@ class Action_show_subject_free_spots(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -206,7 +206,7 @@ class Action_show_subject_classroom(Action):
         return 'Action_show_subject_classroom'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -225,7 +225,7 @@ class Action_show_subject_schedule(Action):
         return 'Action_show_subject_schedule'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -245,7 +245,7 @@ class Action_show_subject_teachers_mails(Action):
         return 'Action_show_subject_teachers_mails'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -273,7 +273,7 @@ class Action_show_subject_teachers_offices(Action):
         return 'Action_show_subject_teachers_offices'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -304,7 +304,7 @@ class Action_show_subject_teachers_names(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         subject_acro = tracker.get_slot("subject_acronym").upper()
@@ -327,7 +327,7 @@ class Action_show_next_class(Action):
         return 'Action_show_next_class'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         chat_id = tracker.sender_id
@@ -347,7 +347,7 @@ class Action_show_next_exams(Action):
         return 'Action_show_next_exams'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         chat_id = tracker.sender_id
@@ -377,7 +377,7 @@ class Action_show_next_pracs(Action):
         return True
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         chat_id = tracker.sender_id
@@ -404,7 +404,7 @@ class Action_show_teacher_info(Action):
         return 'Action_show_teacher_info'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         teacher_name = tracker.get_slot("teacher_name")
@@ -427,7 +427,7 @@ class Action_greet(Action):
         return 'Action_greet'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         chat_id = tracker.sender_id
@@ -448,7 +448,7 @@ class Action_no_problem(Action):
         return 'Action_no_problem'
 
     def run(self, dispatcher, tracker, domain):
-        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'blue', attrs=['bold'])))
+        print("\nEjecutando acción:\t{}".format(colored(self.name(), 'yellow', attrs=['bold'])))
         print("Representación de los slots:")
         color_print_slots(tracker)
         chat_id = tracker.sender_id

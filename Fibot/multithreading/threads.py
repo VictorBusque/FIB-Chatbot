@@ -15,7 +15,7 @@ from Fibot.chats import Chats
 
 
 def log(text):
-	print(colored("LOG: {}".format(text), 'blue'))
+	print(colored("LOG: {}".format(text), 'cyan'))
 
 class Refresh_token_thread(object):
 

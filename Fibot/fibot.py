@@ -58,7 +58,7 @@ class Fibot(object):
 		}
 
 	def log(self, text):
-		print(colored("LOG: {}".format(text), 'blue'))
+		print(colored("LOG: {}".format(text), 'cyan'))
 
 	"""
 		Loads the following components:

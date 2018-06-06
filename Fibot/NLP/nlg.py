@@ -51,7 +51,7 @@ class Query_answer_unit(object):
 
 
 	def log(self, text):
-		print(colored("LOG: {}".format(text), 'blue'))
+		print(colored("LOG: {}".format(text), 'cyan'))
 
 	"""
 		Parameters:
@@ -124,7 +124,7 @@ class Query_answer_unit(object):
 	def get_response(self, message, sender_id=UserMessage.DEFAULT_SENDER_ID, language = 'es', debug=True):
 		confidence = self.nlu.get_intent(message, language)['confidence']
 		if debug:
-			print("\n\n\n#######  UN USUARIO HA DICHO: {} #######".format(colored(message, 'cyan')))
+			print("\n\n\n#######  UN USUARIO HA DICHO: {} #######".format(colored(message, 'magenta')))
 			print("\n\nINFORMACIÓN DE MENSAJE:")
 			print("__________________________________________")
 			print("El intérprete ha predecido la siguiente intención:")
@@ -137,9 +137,9 @@ class Query_answer_unit(object):
 			i = 0
 			for entity in entities:
 				print(colored('['+str(i)+']', 'red'))
-				print('Tipo: ' + colored(entity['entity'], 'blue', attrs=['bold']))
-				print('Valor: ' + colored(entity['value'], 'blue', attrs=['bold']))
-				print('Confianza: ' + colored(str(entity['confidence'])[:8], 'blue'))
+				print('Tipo: ' + colored(entity['entity'], 'cyan', attrs=['bold']))
+				print('Valor: ' + colored(entity['value'], 'cyan', attrs=['bold']))
+				print('Confianza: ' + colored(str(entity['confidence'])[:8], 'cyan'))
 				i+=1
 		if confidence < 0.5:
 			with open('./Data/error_responses.json', 'rb') as fp:

@@ -62,7 +62,7 @@ def done(bot, update):
 """
 def start_authentication(bot, update):
 	global Fibot
-	print(colored("LOG: Empezando autenticación", 'blue'))
+	print(colored("LOG: Empezando autenticación", 'cyan'))
 	chat_id = update.message.chat_id
 	user_name = Fibot.chats.get_chat(chat_id)['name']
 	logged = Fibot.chats.get_chat(chat_id)['logged']
@@ -209,11 +209,11 @@ def main():
 	                    help='Whether to log the threads info')
 	args = parser.parse_args()
 
-	if args.thread_log: print(colored("LOG: Thread logging activo", 'blue'))
-	else: print(colored("LOG: Thread logging inactivo", 'blue'))
+	if args.thread_log: print(colored("LOG: Thread logging activo", 'cyan'))
+	else: print(colored("LOG: Thread logging inactivo", 'cyan'))
 
 	Fibot.load_components(thread_logging = bool(args.thread_log))
-	print(colored("LOG: Todo inicializado", 'blue'))
+	print(colored("LOG: Todo inicializado", 'cyan'))
 	# Create the Updater and pass it your bot's token.
 
 	updater = Updater(Fibot.bot_token)

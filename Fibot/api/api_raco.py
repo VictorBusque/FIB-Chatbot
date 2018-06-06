@@ -93,6 +93,7 @@ class API_raco(object):
 		response = requests.get(url, headers = headers)
 		if response.status_code == 200:
 			response_json = response.json().get('results')
+			#return [i['sigles'] for i in response_json]
 			for subject in response_json: yield subject['sigles']
 		return []
 
