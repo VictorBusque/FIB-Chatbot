@@ -46,5 +46,7 @@ def main():
         fibot.process_income_message(CHAT_ID, message)
         message = input('> ')
 
+
+
 if __name__ == '__main__':
     main()
