@@ -1498,6 +1498,10 @@
     ],
     "intros_teacher_mail": [
       "{}'s mail",
+      "whats {}s mail",
+      "tell me {}s mail",
+      "what's {}'s mail",
+      "what's {}s mail",
       "what is {}'s mail",
       "what is {}'s mail",
       "mail of {}",
@@ -1529,6 +1533,10 @@
     ],
     "intros_teacher_desk": [
       "{}'s office",
+      "whats {}s office",
+      "whats {}'s office",
+      "what's {}s office",
+      "what's {}'s office",
       "what is {}'s office",
       "what is {}'s office",
       "office of {}",

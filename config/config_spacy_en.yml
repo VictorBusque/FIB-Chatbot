@@ -5,10 +5,6 @@ pipeline:
 - name: "tokenizer_spacy"
 - name: "intent_entity_featurizer_regex"
 - name: "intent_featurizer_spacy"
-- name: "intent_featurizer_ngrams"
-  # Maximum number of ngrams to use when augmenting
-  # feature vectors with character ngrams
-  max_number_of_ngrams: 10
 - name: "ner_crf"
   BILOU_flag: true
   features:

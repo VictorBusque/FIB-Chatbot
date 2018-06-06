@@ -59,6 +59,7 @@ class Query_answer_unit(object):
 		This function loads the model into the agents, and trains them if necessary
 	"""
 	def load(self, trainNLG=False, trainNLU=False, train_list = None):
+		self.log("Cargando word vectors")
 		self.nlu.load(trainNLU, train_list = train_list)
 		self.log("Modelos NLU cargados")
 		if trainNLG: self.train()

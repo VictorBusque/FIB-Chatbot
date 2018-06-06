@@ -2,7 +2,7 @@
     "language": "en",
     "pipeline": [
         {
-            "model": "es",
+            "model": "es_core_news_md",
             "case_sensitive": false,
             "name": "nlp_spacy",
             "class": "rasa_nlu.utils.spacy_utils.SpacyNLP"
@@ -19,16 +19,6 @@
         {
             "name": "intent_featurizer_spacy",
             "class": "rasa_nlu.featurizers.spacy_featurizer.SpacyFeaturizer"
-        },
-        {
-            "max_number_of_ngrams": 10,
-            "ngram_min_length": 3,
-            "ngram_max_length": 17,
-            "ngram_min_occurrences": 5,
-            "min_intent_examples": 4,
-            "name": "intent_featurizer_ngrams",
-            "featurizer_file": "ngram_featurizer.pkl",
-            "class": "rasa_nlu.featurizers.ngram_featurizer.NGramFeaturizer"
         },
         {
             "BILOU_flag": true,
@@ -85,6 +75,6 @@
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20180604-121239",
+    "trained_at": "20180606-151115",
     "rasa_nlu_version": "0.12.3"
 }

@@ -6,6 +6,7 @@
 import json
 import os.path
 from time import time
+from termcolor import colored
 
 #-- 3rd party imports --#
 from rasa_core.interpreter import RasaNLUInterpreter
@@ -38,32 +39,32 @@ class NLU_unit(object):
 	"""
 	def load(self, train = False, train_list = None):
 		if train:
-			print("Training this languages: {}".format(train_list))
+			print(colored("INFO: Training this languages: {}".format(train_list),'red'))
 			now = time()
 			if not train_list or 'ca' in train_list:
-				print("Training CA NLU model")
+				print(colored("INFO: Entrenando CA NLU model", 'red'))
 				training_data_ca = load_data('./Data/Dataset_ca.json')
 				trainer_ca = Trainer(config.load("./config/config_spacy_ca.yml"))
 				trainer_ca.train(training_data_ca, num_threads=3)
 				model_directory = trainer_ca.persist('models/nlu_ca', fixed_model_name = 'current')  # Returns the directory the model is stored in
-				print("Total elapsed time for CA: {}".format(time()-now))
+				print("Tiempo total para entrenar CA: {}".format(colored(time()-now, 'green')))
 			now = time()
 			if not train_list or 'es' in train_list:
-				print("Training ES NLU model")
+				print(colored("INFO: Entrenando ES NLU model", 'red'))
 				training_data_es = load_data('./Data/Dataset_es.json')
 				trainer_es = Trainer(config.load("./config/config_spacy_es.yml"))
 				trainer_es.train(training_data_es, num_threads=3)
 				model_directory = trainer_es.persist('models/nlu_es', fixed_model_name = 'current')  # Returns the directory the model is stored in
-				print("Total elapsed time for ES: {}".format(time()-now))
+				print("Tiempo total para entrenar ES: {}".format(colored(time()-now, 'green')))
 			now = time()
 			if not train_list or 'en' in train_list:
-				print("Training EN NLU model")
+				print(colored("INFO: Entrenando EN NLU model", 'red'))
 				training_data_en = load_data('./Data/Dataset_en.json')
 				trainer_en = Trainer(config.load("./config/config_spacy_en.yml"))
 				trainer_en.train(training_data_en, num_threads=3)
 				model_directory = trainer_en.persist('models/nlu_en', fixed_model_name = 'current')  # Returns the directory the model is stored in
-				print("Total elapsed time for EN: {}".format(time()-now))
-			print("NLU Training done")
+				print("Tiempo total para entrenar EN: {}".format(colored(time()-now, 'green')))
+			print(colored("INFO: Entrenamiento del NLU terminado", 'red'))
 			# where `model_directory points to the folder the model is persisted in
 		self.interpreter_ca = RasaNLUInterpreter("./models/nlu_ca/default/current")
 		self.interpreter_es = RasaNLUInterpreter("./models/nlu_es/default/current")
