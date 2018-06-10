@@ -218,16 +218,22 @@
   "greet_back": {
     "ca": [
       "Hola!",
-      "Molt bones!"
+      "Hola! Com puc ajudar-te?",
+      "Molt bones!",
+      "Hola! En què et puc ajudar?"
     ],
     "es": [
       "Hola!",
-      "Buenas!"
+      "Hola! ¿En qué te puedo ayudar?",
+      "Buenas!",
+      "Hola, ¿Cómo puedo ayudarte?"
     ],
     "en": [
       "Hi!",
+      "Hey, how can I help you?",
       "Hello!",
-      "Hey!"
+      "Hey!",
+      "Hey! What can I do for you?"
     ]
   },
   "thank": {

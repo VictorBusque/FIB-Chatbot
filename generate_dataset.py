@@ -269,5 +269,5 @@ if __name__ == "__main__":
 			main(int(amount), 'ca')
 			main(int(amount), 'es')
 			main(int(amount), 'en')
-		else:main(int(amount), language)
+		else: main(int(amount), language)
 	else: main(language)

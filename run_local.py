@@ -32,12 +32,12 @@ def main():
 
     fibot = Fibot(local = True, debug = debug)
 
-    if args.thread_log: print(colored("LOG: Thread logging activo", 'blue'))
-    else: print(colored("LOG: Thread logging inactivo", 'blue'))
+    if args.thread_log: print(colored("LOG: Thread logging activo", 'cyan'))
+    else: print(colored("LOG: Thread logging inactivo", 'cyan'))
 
     fibot.load_components(thread_logging = bool(args.thread_log))
 
-    print(colored("LOG: Todo inicializado", 'blue'))
+    print(colored("LOG: Todo inicializado", 'cyan'))
     print(colored("INFO: Simulando conversación como usuario con chat_id {}".format(CHAT_ID), 'red'))
     print(colored("INFO: Escribe 'quit' para terminar conversación", 'red'))
 
