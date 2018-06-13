@@ -18,11 +18,14 @@ class Exam_schedule(object):
         self.language = language
 
 
-    def get_closest_exams(self, range = 14, number = None):
+    def get_closest_exams(self, range = 14, number = None, acro_filter = None):
         if number: return self.exams[:number]
         else:
             for exam in self.exams:
-                if self.get_day_difference(exam) <= range: yield exam
+                if acro_filter:
+                    if acro_filter == exam.subject and self.get_day_difference(exam) <= range: yield exam
+                else:
+                    if self.get_day_difference(exam) <= range: yield exam
 
 
     def get_day_difference(self, exam):

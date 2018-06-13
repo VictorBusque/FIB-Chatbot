@@ -1,0 +1,460 @@
+quin és el correu de javier bejar
+ask_teacher_mail
+quin es el despatx de javier bejar
+ask_teacher_office
+quantes places queden per vc grup 11
+ask_free_spots
+on tinc vc
+ask_subject_classroom
+quan tinc vc
+ask_subject_schedule
+quin es el correu del profe de vc
+ask_subject_teacher_mail
+diga'm el despatx del professor de apa
+ask_subject_teacher_office
+com es diu el profe de apa
+ask_subject_teacher_name
+que em toca ara
+ask_next_class
+quan tinc examen de vc
+ask_exams
+cuando tengo que entregar la practica de wse
+ask_pracs
+a que hora me toca vc
+ask_subject_schedule
+en que aula tengo wse
+ask_subject_classroom
+puedes decirme el mail de javier bejar
+ask_teacher_mail
+donde puedo encontrar el despacho de jordi turmo?
+ask_teacher_office
+a que hora tengo clase de wse
+ask_subject_schedule
+dime el correo del profesor de teoria de apa
+ask_subject_teacher_mail
+a que hora tengo asw
+ask_subject_schedule
+cual es la dirección de correo electrónico de luis belanche
+ask_teacher_mail
+dónde puedo localizar el despacho de jordi delgado
+ask_teacher_office
+en que aula tengo clase de PES
+ask_subject_classroom
+cuando tengo examen de apa
+ask_exams
+proximos examenes
+ask_exams
+proximas practicas
+ask_pracs
+cuando tengo que entregar la practica de PES
+ask_pracs
+cuantos huecos hay libres en prop grupo 22
+ask_free_spots
+cuantas plazas de matricula hay libres en pro1 grupo 11
+ask_free_spots
+cuantas matriculas libres hay en apa grupo 11
+ask_free_spots
+correo electrónico del profesor de apa
+ask_subject_teacher_mail
+cual es el despacho del profesor de caim
+ask_subject_teacher_office
+a que hora me toca vc
+ask_subject_schedule
+cual es el despacho del profesor de caim
+ask_subject_teacher_office
+que me toca
+ask_next_class
+a que hora tengo prop
+ask_subject_schedule
+puedes decirme el correo de Juan Perez
+ask_teacher_mail
+donde puedo encontrar el despacho de alberto alvarez
+ask_teacher_office
+dime cual es el email del profesor de asw
+ask_subject_teacher_mail
+donde esta el despacho del profesor de apa
+ask_subject_teacher_office
+quienes son los profesores de li
+ask_subject_teacher_name
+quien es el profesor de li
+ask_subject_teacher_name
+que clase tengo a continuación
+ask_next_class
+cual es mi siguiente clase
+ask_next_class
+a que hora tengo la siguiente clase
+ask_next_class
+cuando tengo la siguiente clase
+ask_next_class
+cuando tengo el siguiente examen
+ask_exams
+cuando tengo que entregar la practica de asw
+ask_pracs
+nombre del profe de pro2
+ask_subject_teacher_name
+donde tengo clase de er
+ask_subject_classroom
+a que hora me toca PAE
+ask_subject_schedule
+puedes mandarme el correo electronico de lluis belanche
+ask_teacher_mail
+cuando tengo asw?
+ask_subject_schedule
+cuando tengo que entregar la practica de asw
+ask_pracs
+dime el correo de maria jose casañ
+ask_teacher_mail
+cual es el mail del profesor de im?
+ask_teacher_mail
+donde esta el despacho de Xavier Franch
+ask_teacher_office
+cuando tengo examen de asmi
+ask_exams
+cuantas plazas libres quedan de PES grupo 13
+ask_free_spots
+dime el correo del profesor de ASW
+ask_subject_teacher_mail
+donde esta el despacho del profe de asw?
+ask_subject_teacher_office
+como se llama el profesor de im
+ask_subject_teacher_name
+a que hora tengo asmi?
+ask_subject_schedule
+cuando tengo la practica de sim?
+ask_pracs
+donde puedo encontrar el despacho de jorge garcia
+ask_teacher_office
+dime las plazas libres del grupo 11 de PES
+ask_free_spots
+que me toca ahora?
+ask_next_class
+en que clase tengo IM
+ask_subject_classroom
+donde tengo asmi
+ask_subject_classroom
+cuando me toca pes?
+ask_subject_schedule
+cuando tengo M1
+ask_subject_schedule
+cual es el email del profesor de asw
+ask_subject_teacher_mail
+cual es el email de Xavier Franch
+ask_teacher_mail
+que dia tengo el examen de asmi
+ask_exams
+cuando tengo que entregar la practica de SiM?
+ask_pracs
+cual es mi proxima clase?
+ask_next_class
+donde puedo localizar el despacho de Pau Fonesca
+ask_teacher_office
+dime el nombre del profe de sim
+ask_subject_teacher_name
+dime cuando tengo examenes
+ask_exams
+dime donde esta el despacho del profesor de im
+ask_subject_teacher_office
+cual es el mail de jorge garcia
+ask_teacher_mail
+cuantas plazas quedan libres de pes?
+ask_free_spots
+que clase me toca ahora?
+ask_next_class
+dime el mail del profesor de soad
+ask_subject_teacher_mail
+donde puedo encontrar el despacho del profe de par
+ask_subject_teacher_office
+como se llama el profesor de sim?
+ask_subject_teacher_name
+para cuando es la practica de sim?
+ask_pracs
+que dia tengo ASMI?
+ask_subject_schedule
+dime el dia del examen de ASW
+ask_exams
+cual es el mail del profe de im
+ask_subject_teacher_mail
+dime cuantas plazas quedan libres del grupo 11 de ASW
+ask_free_spots
+en que aula tengo SIM?
+ask_subject_classroom
+dime en que aula me toca pes
+ask_subject_classroom
+cual es el nombre del profesor de im
+ask_subject_teacher_name
+dime que asignatura me toca ahora
+ask_next_class
+puedes decirme donde se encuentra el despacho del maestro de im?
+ask_subject_teacher_office
+podrias decirme la localizacion del despacho de maria jose casañ?
+ask_teacher_office
+me puedes decir como es el correo del profe de soad?
+ask_subject_teacher_mail
+me puedes decir en que aula tengo im?
+ask_subject_classroom
+donde podria encontar el despacho del profesor de im
+ask_subject_teacher_office
+donde puedo encontrar el despacho de Xavier Franch
+ask_teacher_office
+por casualidad no sabras cuantas plazas quedan libres de vc?
+ask_free_spots
+Cuando tengo clase
+ask_next_class
+Que tengo ahora?
+ask_next_class
+Que es lo siguiente que tengo que hacer
+ask_next_class
+Cual es la siguiente classe
+ask_next_class
+Cual es la siguiente clase que tengo
+ask_next_class
+Donde tengo mi siguiebte classe
+ask_next_class
+Cual es el aula de mi soguiente clase
+ask_next_class
+A que aula tengo que ir ahora
+ask_next_class
+Donde esta la clase que me toca ahora
+ask_next_class
+A donde tengo que dirigirme ahora?
+ask_next_class
+A que lugar debo dirigirme ahora?
+ask_next_class
+En que aula deberia estar
+ask_next_class
+Hacia que aula tengo que diriguirme ahora?
+ask_next_class
+Cual es la siguente practica que tengo que entregar
+ask_pracs
+Para cuando tengo que entregar la siguiente practica
+ask_pracs
+Para cuando tengo que entregar la practica?
+ask_pracs
+Cuando entrego la practica
+ask_pracs
+Cuando debo de entregar la practica
+ask_pracs
+Que practicas tengo que hacer
+ask_pracs
+Cuando tengo que hacer la práctica de WSE
+ask_pracs
+Para cunado es la practica de WSE
+ask_pracs
+Tengo alguna practica de WSE
+ask_pracs
+Tengo alguna practica pendiente de VC
+ask_pracs
+Cuando tengo que entregar la práctica de VC
+ask_pracs
+Para cuando tengo que entregar la practica de WSE
+ask_pracs
+Cuando debo de entregar l aproxima practica de VC?
+ask_pracs
+Cuando tengo un examen
+ask_exams
+Cual es el proximo examen
+ask_exams
+Que exámenes me quedan por realizar?
+ask_exams
+Que examenes tengo que hacer
+ask_exams
+Que examenes me faltan por hacer
+ask_exams
+Cuando tengo examenes
+ask_exams
+Cuales son mis examenes
+ask_exams
+Cuando tengo examen de VC?
+ask_exams
+Que examen tengo proximamente?
+ask_exams
+Hay algun examen la semana que viene?
+ask_exams
+Cual es el proximo examen de VC
+ask_exams
+Cuantas plazas quedan en VC
+ask_free_spots
+Cuantos sitios quedan en VC
+ask_free_spots
+Cuantas plazas hay en el grupo 22 de VC
+ask_free_spots
+Plazas del grupo 22 de la asignatura de WSE
+ask_free_spots
+Cuantas plazas hay en VC
+ask_free_spots
+Plazas libres de VC
+ask_free_spots
+Plazas libres de WSE del subgrupo 22
+ask_free_spots
+Plazas libres del grupo 22 de VJ
+ask_free_spots
+Hay plazas libres en VJ?
+ask_free_spots
+Cuantas plazas libres hay actualmente en el grupo 22 de VJ
+ask_free_spots
+Hay sitio en VJ subgrupo 22?
+ask_free_spots
+Cual es el correo de Javier Bejar
+ask_teacher_mail
+Correo de Javier Bejar
+ask_teacher_mail
+El correo de Javier Bejar
+ask_teacher_mail
+Me podria usted decir cual es el correo del profesor Javier Bejar por favor?
+ask_teacher_mail
+Puedes decirme el correo de Javier Bejar?
+ask_teacher_mail
+Dime el correo de Javier Bejar
+ask_teacher_mail
+Sabes cual es el correo del profesor Javier Bejar
+ask_teacher_mail
+Sabes el correo de Javier Bejar?
+ask_teacher_mail
+Te sabes el correo de Javier Bejar?
+ask_teacher_mail
+Sabes cual es el correo de Javier Bejar
+ask_teacher_mail
+Conoces el correo de Javier Bejar?
+ask_teacher_mail
+Cual es la oficina del profesor Javier Bejar
+ask_teacher_office
+Cual es el despacho de Javier Bejar
+ask_teacher_office
+Donde puedo encontrar a Javier Bejar
+ask_teacher_office
+Donde esta la oficina de Javier Bejar
+ask_teacher_office
+Donde esta el despacho de Javier Bejar
+ask_teacher_office
+Conoces la oficina de Javier Bejar
+ask_teacher_office
+Conoces el despacho de Javier Bejar
+ask_teacher_office
+Sabes donde esta la oficina de Javier Bejar
+ask_teacher_office
+Sabes donde esta el despacho de Javier Bejar
+ask_teacher_office
+Donde esta Javier Bejar
+ask_teacher_office
+Donde se realiza la clase de WSE
+ask_subject_classroom
+En que aula hay VJ
+ask_subject_classroom
+En que habitacion se enseña VJ?
+ask_subject_classroom
+En que clase se imparte VC
+ask_subject_classroom
+Aula de VC
+ask_subject_classroom
+Donde tengo que ir para hacer VC
+ask_subject_classroom
+Donde se enseña la asignatura de VC
+ask_subject_classroom
+A que aula debería ir para asistir a la asignatura de VJ
+ask_subject_classroom
+A que clase debo dirigirme para realizar VJ
+ask_subject_classroom
+Clase WSE
+ask_subject_classroom
+A donde debo ir para hacer VC
+ask_subject_classroom
+A que hora tengo que ir a la clase de VJ
+ask_subject_schedule
+A que hora tengo VC
+ask_subject_schedule
+En que horas hago WSE?
+ask_subject_schedule
+Sabes a que horas realizo la asignatura de VC
+ask_subject_schedule
+Me puedes decir a que hora hago VJ
+ask_subject_schedule
+Cuando hago WSE
+ask_subject_schedule
+Que dias tengo VC
+ask_subject_schedule
+Conoces mi horario de VC?
+ask_subject_schedule
+Dime mi horario de VJ
+ask_subject_schedule
+En que horas debo de asistir a las clases de VC
+ask_subject_schedule
+Cuando debo asistir a VC
+ask_subject_schedule
+A que horas me toca hacer VC
+ask_subject_schedule
+Quien es el profesor de IA
+ask_subject_teacher_name
+conoces el nombre de mi profe de APA
+ask_subject_teacher_name
+Dime como se llama el profesor de LI
+ask_subject_teacher_name
+Me puedes decir como se llaman los profesores que realizan la asignatura de IA?
+ask_subject_teacher_name
+Cuales son los profesores de APA
+ask_subject_teacher_name
+Conoces a todos los profesores que realizan PRO1?
+ask_subject_teacher_name
+cual es el nombre de VC?
+ask_subject_teacher_name
+Como se llama el pofe de IA?
+ask_subject_teacher_name
+Sabes como se llama el de IA
+ask_subject_teacher_name
+Sabes como debo dirigirme al profesor de LP?
+ask_subject_teacher_name
+que profesores imparte IA?
+ask_subject_teacher_name
+Quien da clase de LI?
+ask_subject_teacher_name
+Que profesores dan LI?
+ask_subject_teacher_name
+Cual es el correo del profesor de IA
+ask_subject_teacher_mail
+Cuales son los correos de los profesores de VJ
+ask_subject_teacher_mail
+correo profesor IA
+ask_subject_teacher_mail
+Dime el mail del profesor que imparte IA
+ask_subject_teacher_mail
+Conoces el correo electrónico del profesor que hace APA?
+ask_subject_teacher_mail
+Me puedes decir el correo de mi profesor de VC?
+ask_subject_teacher_mail
+Tengo que enviar un correo al profesor de IA, sabes cual es su dirección?
+ask_subject_teacher_mail
+conoces el correo del profesor de IA
+ask_subject_teacher_mail
+por casualidad no sabrás cual es el correo de maestro que imparte IA
+ask_subject_teacher_mail
+conoces el profesor de VC?, podrías decirme su correo?
+ask_subject_teacher_mail
+Hablando de APA, conoces el correo del profesor que la imparte?
+ask_subject_teacher_mail
+Cual es la oficina del porfesor de IA
+ask_subject_teacher_office
+Cual es el despacho del profe de APA
+ask_subject_teacher_office
+Cuales son los despachos de los profesores de WSE?
+ask_subject_teacher_office
+Sabes donde estan los despachos de los profesores de VC
+ask_subject_teacher_office
+donde puedo encontrar al profesor de IA
+ask_subject_teacher_office
+conoces el despacho del profesor de IA
+ask_subject_teacher_office
+Me puedes decir donde se encuentra ubicado el despacho de mi profesor de IA?
+ask_subject_teacher_office
+A que lugar debo dirigirme para hablar con el profesor de APA?
+ask_subject_teacher_office
+Sabes donde puede estar el profesor de IA
+ask_subject_teacher_office
+Donde esta el despacho del profesor de VJ
+ask_subject_teacher_office
+Donde tiene el profesor de APA su despacho?
+ask_subject_teacher_office
+en que despacho esta el profesor de IA
+ask_subject_teacher_office
+donde puedo encontrar el despacho de joan climent?
+ask_teacher_office
+cuando tendre el examen de vc?
+ask_exams

@@ -16,7 +16,7 @@
     "{}'s mail is {}.",
     "{} has this mail: {}.",
     "There you go, {}.",
-    "It is {}"
+    "It is {}."
     ]
   },
   "ask_teacher_office": {
@@ -58,7 +58,7 @@
       "{} de {} a {}, tienes clase de {} en el aula {}."
     ],
     "en": [
-      "{} from {} to {}, a {} class at classroom {}."
+      "{} from {} to {}, you have a {} class at classroom {}."
     ]
   },
   "ask_subject_teacher_mail": {
@@ -203,6 +203,51 @@
         "It also has ['{}']({}) as a attached file."
       ]
     }
-
+  },
+  "teacher_info": {
+    "ca": [
+      "{0} és docent del departament de {1}."
+    ],
+    "es": [
+      "{0} es docente del departamento de {1}."
+    ],
+    "en": [
+      "{0} is a teacher from {1}'s department."
+    ]
+  },
+  "greet_back": {
+    "ca": [
+      "Hola!",
+      "Hola! Com puc ajudar-te?",
+      "Molt bones!",
+      "Hola! En què et puc ajudar?"
+    ],
+    "es": [
+      "Hola!",
+      "Hola! ¿En qué te puedo ayudar?",
+      "Buenas!",
+      "Hola, ¿Cómo puedo ayudarte?"
+    ],
+    "en": [
+      "Hi!",
+      "Hey, how can I help you?",
+      "Hello!",
+      "Hey!",
+      "Hey! What can I do for you?"
+    ]
+  },
+  "thank": {
+    "ca": [
+      "Cap problema!",
+      "De res!"
+    ],
+    "es": [
+      "No hay de qué!",
+      "De nada!"
+    ],
+    "en": [
+      "No problem!",
+      "You're welcome"
+    ]
   }
 }

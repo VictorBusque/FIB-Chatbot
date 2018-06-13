@@ -17,11 +17,14 @@ class Practical_schedule(object):
         self.language = language
 
 
-    def get_closest_pracs(self, range = 14, number = None):
+    def get_closest_pracs(self, range = 14, number = None, acro_filter = None):
         if number: return self.pracs[:number]
         else:
             for prac in self.pracs:
-                if self.get_day_difference(prac) <= range: yield prac
+                if acro_filter:
+                    if acro_filter == prac.subject and self.get_day_difference(prac) <= range: yield prac
+                else:
+                    if self.get_day_difference(prac) <= range: yield prac
 
 
     def get_day_difference(self, prac):

@@ -3,6 +3,8 @@
 
 #-- Local imports --#
 from Fibot.fibot import Fibot
+import argparse
+import tensorflow as tf
 
 
 """
@@ -10,16 +12,37 @@ from Fibot.fibot import Fibot
         by hand: trains rapidly the model and allows the user to add new stories interactively
         not by hand: trans both the nlu and dialog model and stores them in the model folder.
 """
-def main(mode):
+def main():
+    parser = argparse.ArgumentParser(description='')
+    parser.add_argument('--nlu',
+                        nargs=1,
+                        required = False,
+                        choices=['es', 'ca', 'en', 'n'],
+                        action = 'append',
+                        help='Language for the interpretation')
+    parser.add_argument('--dialog',
+                        nargs=1,
+                        required = False,
+                        choices=['y','n'],
+                        default = [],
+                        help='File for the interpreter to use')
+    args = parser.parse_args()
+    print(args)
+    trainNLU = False
+    trainNLG = False
+    languages = []
+    if args.nlu:
+        languages = [i[0] for i in args.nlu]
+        trainNLU = True
+    if args.dialog: trainNLG = bool(args.dialog[0] == 'y')
+
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    tf.Session(config=config)
+
     fibot = Fibot()
-    if mode == "train": fibot.qa.load(train=True)
-    if mode == "manual":
-        fibot.qa.load(train=False)
-        fibot.qa.train_manual()
+    fibot.qa.load(trainNLG=trainNLG, trainNLU = trainNLU, train_list = languages)
     return
 
 if __name__ == "__main__":
-    y_s = None
-    while (y_s != "y" and y_s != "n"): y_s = input("Do you wish to input stories by hand? [y/n]\n")
-    if y_s == "y": main("manual")
-    else: main("train")
+    main()

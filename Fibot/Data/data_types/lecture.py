@@ -17,6 +17,7 @@ class Schedule(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['ask_next_class']
+        return
 
 
     def get_next_class(self):
@@ -26,7 +27,8 @@ class Schedule(object):
         ok = []
         for lecture in self.lectures:
             if lecture.day_schedule > checker: ok.append(lecture)
-        return min(ok)
+        if not ok: return []
+        else: return min(ok)
 
     def get_response(self):
         now = datetime.date.today().isoweekday()
@@ -131,6 +133,7 @@ class Lecture(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['ask_subject_schedule']
+        return
 
 
     def __repr__(self):

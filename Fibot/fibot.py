@@ -7,8 +7,8 @@ from os import getenv
 import requests
 import json
 import re
-from pprint import pprint
 from time import time
+from termcolor import colored
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -17,7 +17,7 @@ from telegram import ChatAction
 from Fibot.chats import Chats
 from Fibot.api.oauth import Oauth
 from Fibot.NLP.nlg import Query_answer_unit
-from Fibot.message_handler import Message_handler
+from Fibot.message_handler import Message_handler, Local_Message_handler
 from Fibot.multithreading.threads import Notification_thread, Refresh_token_thread
 
 class Fibot(object):
@@ -26,19 +26,22 @@ class Fibot(object):
 		its users.
 
 	Attributes:
+		local (:obj:`bool`): Indicates if it runs from Telegram or Locally
 		name (:obj:`str`): Unique identifier for the bot
 		bot_token (:obj:`str`): Token to access the bot
 		chats (:class:`Fibot.Chat`): Object that represents the chats
 		oauth (:class:`Fibot.api.Oauth`): Object that does the oauth communication necessary
 		qa (:class:`Fibot.NLP.nlg.Query_answer_unit`): Object that responds to FIB-related queries
-		message_handler(:class:`Fibot.message_handler.Message_handler`): Object that handles messages
-		delay(:obj:`int`): Cantidad de segundos entre escaneos en los threads
-		notification_thread(:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
+		message_handler (:class:`Fibot.message_handler.Message_handler`): Object that handles messages
+		delay (:obj:`int`): Cantidad de segundos entre escaneos en los threads
+		notification_thread (:class:`Fibot.multithreading.threads.Notification_thread`): Object that enables a thread to scan for notifications.
 		refresh_token_thread(:class:`Fibot.multithreading.threads.Refresh_token_thread`): Object that enables a thread to scan for tokens to refresh.
 		messages (:obj:`dict`): Object that contains the Fibot configuration messages
 		state_machine (:obj:`dict`): Object that simplifies the state machine management
 	"""
-	def __init__(self, name = 'Fibot'):
+	def __init__(self, name = 'Fibot', local = False, debug = True):
+		self.local = local
+		self.debug = debug
 		self.name = name
 		self.bot_token = getenv('FibotTOKEN')
 		self.chats = Chats()
@@ -46,38 +49,45 @@ class Fibot(object):
 		self.qa = Query_answer_unit()
 		self.message_handler = None
 		self.delay = 60
+		self.refresh_token_thread = None
 		self.notification_thread = None
-		self.refresh_token_thread = Refresh_token_thread(self.delay)
 		self.messages = {}
 		self.state_machine = {
 			'MessageHandler': '0',
-			'Authorise': '1',
-			'Wait_authorisation': '2',
-			'Erase_user': '3',
-			'Push_notification': '4',
+			'Wait_authorisation': '1'
 		}
+
+	def log(self, text):
+		print(colored("LOG: {}".format(text), 'cyan'))
 
 	"""
 		Loads the following components:
 			chats: Loads the chats information from persistence
 			message_handler: Enables it to send messages to users
 			notification_thread: Starts its activation and defines the polling interval
-			nlu: Loads the trained model
-			nlg: Loads the trained model
+			refresh_token_thread: Starts its activation and defines the polling interval (and the offset)
+			nlu: Loads the trained models
+			qa: Loads the trained models
+			messages: Loads the preset messages to memory
 	"""
-	def load_components(self):
+	def load_components(self, thread_logging = True):
 		self.chats.load()
-		print("Chats loaded")
-		self.message_handler = Message_handler(self.chats)
-		print("Message handler loaded")
-		self.notification_thread = Notification_thread(self.message_handler, self.delay)
-		self.notification_thread.run()
+		self.log("Base de datos de usuarios cargados")
+		if self.local: self.message_handler = Local_Message_handler(self.chats)
+		else: self.message_handler = Message_handler(self.chats)
+
+		self.refresh_token_thread = Refresh_token_thread(self.delay,  thread_logging = thread_logging)
 		self.refresh_token_thread.run(initial_offset = 30)
-		self.qa.load(train=False)
-		print("Query answering model loaded")
+
+		self.notification_thread = Notification_thread(self.message_handler, self.delay,  thread_logging = thread_logging)
+		self.notification_thread.run()
+		self.log("Threads creados")
+
+		self.qa.load()
 		with open('./Data/messages.json', 'r') as fp:
 			self.messages = json.load(fp)
-		print("Preset messages loaded")
+		self.log("Mensajes predefinidos cargados")
+		return
 
 	"""
 		Parameters:
@@ -96,9 +106,10 @@ class Fibot(object):
 			typing (:obj:`bool`): value that defines whether to send typing action or not
 			reply_to (:obj:`int` or None): If defined, it is the message_id of the message
 				that will be replied to, else no message will be replied.
+			parse_mode (:obj:`str`): The parse mode to use (normally Markdown or None)
 
 		This function sends a message to the chat with chat_id with content text,
-		and depending on the rest of the parameters i might do extra functionality.
+		and depending on the rest of the parameters it might do extra functionality.
 	"""
 	def send_message(self, chat_id, message, typing = False, reply_to = None, parse_mode = 'Markdown'):
 		self.message_handler.send_message(chat_id, message, typing, reply_to, parse_mode)
@@ -114,7 +125,6 @@ class Fibot(object):
 		See /Data/messages.json to see the preset messages.
 	"""
 	def send_preset_message(self, chat_id, preset, param = None):
-		print("#### SENDING PRESET MESSAGE: {} #####".format(preset))
 		user_lang = self.chats.get_chat(chat_id)['language']
 		if param:
 			message = self.messages[user_lang][preset].format(param)
@@ -134,10 +144,8 @@ class Fibot(object):
 		for responding the message.
 	"""
 	def process_income_message(self, chat_id, message, message_id = None):
-		print("##### USER SAID: {} #####".format(message))
 		user_language = self.chats.get_chat(chat_id)['language']
-		response = self.qa.get_response(message, sender_id = chat_id, language = user_language)
-		print("##### RESPONSE IS: {} #####".format(response))
-		if message_id:
-			self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)
-		else: self.send_message(chat_id, response, typing=True, parse_mode = None)
+		now = time()
+		response = self.qa.get_response(message, sender_id = chat_id, language = user_language, debug = self.debug)
+		response = [i['text'] for i in response]
+		self.send_message(chat_id, response, typing=True, reply_to = message_id, parse_mode = None)

@@ -4,8 +4,8 @@
 
 #-- General imports --#
 from threading import Timer
+from termcolor import colored
 import datetime
-from pprint import pprint
 
 #-- Local imports --#
 from Fibot.Data.data_types.notification import Notification
@@ -13,6 +13,9 @@ from Fibot.api.api_raco import API_raco
 from Fibot.api.oauth import Oauth
 from Fibot.chats import Chats
 
+
+def log(text):
+	print(colored("LOG: {}".format(text), 'cyan'))
 
 class Refresh_token_thread(object):
 
@@ -27,10 +30,11 @@ class Refresh_token_thread(object):
             thread(:class:`threading.Timer`): Thread that does the scanning.
             polling(:obj:`bool`): Object that indicates if polling has to be done.
     """
-    def __init__(self, delay):
+    def __init__(self, delay, thread_logging = True):
         self.oauth = Oauth()
         self.chats = Chats()
         self.delay = delay
+        self.thread_logging = thread_logging
         self.queue = []
         self.polling = True
         self.thread = None
@@ -54,16 +58,15 @@ class Refresh_token_thread(object):
         Does a scan over all users with expired tokens, and then returns to the activation function
     """
     def poll(self):
-        print("Refresh token thread: Refreshing tokens\n")
+        if self.thread_logging: print("\n")
+        if self.thread_logging: log("R_Thread: Refrescando tokens\n")
         self.update_chats()
         for chat in self.queue:
-            print("Refresh token thread: Refreshing token for {}\n".format(self.chats.get_chat(chat)['name']))
+            if self.thread_logging: log("R_Thread: Refrescando token de {}\n".format(self.chats.get_chat(chat)['name']))
             refresh_token = self.chats.get_chat(chat)['refresh_token']
             callback = self.oauth.refresh_token(refresh_token)
-            if not callback: print ("Something is wrong with this refreshment")
-            print("This is the callback from refreshment {}".format(callback))
             if callback: self.chats.update_chat(chat, data = callback, full_data = False)
-            if callback: print("Refresh token thread: Refreshed token successfully!\n")
+            if callback and self.thread_logging: log("R_Thread: Token refrescado correctamente!\n")
         self.queue = []
         self.run()
 
@@ -95,16 +98,17 @@ class Notification_thread(object):
             polling(:obj:`bool`): Object that indicates if polling has to be done
             last_check(:class:`datetime.datetime`): datetime of the last check for notifications
     """
-    def __init__(self, mh, delay):
+    def __init__(self, mh, delay, thread_logging = True):
         self.api = API_raco()
         self.message_handler = mh
+        self.thread_logging = thread_logging
         self.chats = self.message_handler.chats
         self.delay = delay
         self.thread = None
         self.polling = True
         self.last_check = datetime.datetime.now()
         self.retrieve_timestamp()
-        print("Loaded timestamp: {}".format(self.last_check))
+        log("Marca temporal cargada: {}".format(self.last_check))
 
     """
         Saves the timestamp when the last scan was done
@@ -113,6 +117,7 @@ class Notification_thread(object):
         to_save = str(self.last_check)
         with open('Data/timestamp.txt', 'w') as file:
             file.write(to_save)
+        return
 
     """
         Retrieves and stores the timestamp when the last scan was done
@@ -124,6 +129,7 @@ class Notification_thread(object):
             year, month, day = date.split('-')
             hour, minute, second = time.split(':')
             self.last_check = datetime.datetime(int(year),int(month), int(day), int(hour), int(minute), int(second))
+        return
 
     """
         This function defines the new timer and starts it (effectively allows the scanning)
@@ -138,42 +144,34 @@ class Notification_thread(object):
     """
     def poll(self):
         self.chats.load()
-        print("Notification scanner thread: Last check was done: {}\n".format(datetime.datetime.now()))
-        print("Notification scanner thread: Scanning for notifications\n")
+        if self.thread_logging: log("N_Thread: Última comprobación hecha: {}\n".format(datetime.datetime.now()))
+        if self.thread_logging: log("N_Thread: Escaneando notificaciones...\n")
         last_avis = self.last_check
         for student_id in self.chats.chats.keys():
             student = self.chats.get_chat(student_id)
             if student['notifications']:
-                print("Notification scanner thread: Scanning {}.\n".format(student['name']))
+                if self.thread_logging: log("N_Thread: Escaneando a {}.\n".format(student['name']))
                 access_token = student['access_token']
                 user_lang = student['language']
                 avisos = self.api.get_avisos(access_token)
-                if not avisos:
-                    print("AVISOS IS NOT OKAY, LETS CHECK SEVERAL THINGS:")
-                    print("WADU HEK I AM? {}".format(avisos))
-                    print("DO WE HAVE ACCESS TOKEN? {}".format(access_token))
-                    print("IS IT EXPIRED? {}".format(student['expire_time_end']))
-                    print("IS IT CONSIDERED TO BE EXPIRED? {}".format(self.chats.token_has_expired(student_id)))
-                else:
-                    print("\n -------------- TOTAL NUMBER OF AVISOS OF USER {}: {} -------------\n".format(student['name'], len(avisos)))
+                if avisos:
                     filtered = self.filter(avisos)
-                    print("\n ----- TOTAL NUMBER OF AVISOS AFTER FILTERING OF USER {}: {} ------\n".format(student['name'], len(filtered)))
-                    if filtered: pprint(filtered)
                     for avis in filtered:
                         message = Notification(avis, user_lang).get_notif()
                         self.message_handler.send_message(student_id, message, typing=True)
-                        print("Notification was sent!")
+                        if self.thread_logging: log("N_Thread: Se ha enviado la notificación!")
                         last_avis = max(last_avis, self.get_date(avis))
         self.last_check = last_avis
         self.dump_timestamp()
-        print("Last notification was received {}!".format(self.last_check))
+        if self.thread_logging: log("N_Thread: Última notificación recibida: {}".format(self.last_check))
         self.run()
 
     """
         Parameters:
             avisos(:obj:`list`): List of publications for a user
 
-        This function filters the publications so that they were not sent previously.
+        This function filters the publications so that they were not sent previously,
+        And also the #'d assig notifications.
     """
     def filter(self, avisos):
         result = []
@@ -181,8 +179,9 @@ class Notification_thread(object):
         for avis in avisos:
             if not self.last_check: result.append(avis)
             elif self.get_date(avis) > self.last_check:
-                print("\nThere's a new publication!\t\t {} vs {}\n".format(self.get_date(avis), self.last_check))
-                result.append(avis)
+                if self.thread_logging: log("N_Thread: Hay una nueva publicación!")
+                if '#' in avis['codi_assig']: pass
+                else: result.append(avis)
         return result
 
     """

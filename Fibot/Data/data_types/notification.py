@@ -46,6 +46,7 @@ class Notification(object):
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses = data['notification']
+        return
 
 
     """

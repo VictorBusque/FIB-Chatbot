@@ -4,6 +4,9 @@
 #-- General imports --#
 import re
 import datetime
+import argparse
+from pprint import pprint
+from termcolor import colored
 
 #-- 3rd party imports --#
 from telegram import ChatAction
@@ -25,7 +28,7 @@ Fibot = Fibot()
 """
 	Function that responds to the /start command
 """
-def start(bot, update):
+def start(bot, update, args):
 	global Fibot
 	chat_id = update.message.chat_id
 	if Fibot.chats.user_has_data(chat_id):
@@ -59,12 +62,10 @@ def done(bot, update):
 """
 def start_authentication(bot, update):
 	global Fibot
-	print("Starting authentication")
+	print(colored("LOG: Empezando autenticación", 'cyan'))
 	chat_id = update.message.chat_id
 	user_name = Fibot.chats.get_chat(chat_id)['name']
-	print(user_name)
 	logged = Fibot.chats.get_chat(chat_id)['logged']
-	print(logged)
 	if (not logged):
 		Fibot.send_preset_message(chat_id, "send_oauth_url", Fibot.oauth.get_autho_full_page())
 		Fibot.send_preset_message(chat_id, "inform_oauth_procedure")
@@ -90,6 +91,7 @@ def authenticate(bot, update):
 	auth_code = url.split('=')[1]
 	callback = Fibot.oauth.authenticate(auth_code)
 	if isinstance(callback, dict):
+		callback['notifications'] = True
 		Fibot.chats.update_chat(chat_id, callback, full_data = False)
 		Fibot.send_preset_message(chat_id, "login_done", user_name)
 		Fibot.chats.update_info(chat_id, 'current_state', Fibot.state_machine['MessageHandler'], overwrite = True)
@@ -178,7 +180,7 @@ def ask(bot, update):
 	message_id = update.message.message_id
 	if Fibot.chats.get_chat(chat_id)['logged'] & Fibot.chats.token_has_expired(chat_id):
 		Fibot.chats.load()
-	Fibot.process_income_message(chat_id, text)
+	Fibot.process_income_message(chat_id, text, message_id = message_id)
 	return MESSAGE_INCOME
 
 """
@@ -188,7 +190,6 @@ def state_machine(bot, update):
 	global Fibot
 	chat_id = update.message.chat_id
 	message = update.message.text
-	print (message)
 	current_state = Fibot.chats.get_chat(chat_id)['current_state']
 	if current_state == Fibot.state_machine['MessageHandler']:
 		return ask(bot, update)
@@ -201,9 +202,18 @@ def state_machine(bot, update):
 """
 def main():
 	global Fibot
-	#Fibot = Fibot()
-	Fibot.load_components()
-	print("Everything initialisated")
+
+	parser = argparse.ArgumentParser(description='')
+	parser.add_argument('--thread_log',
+						action = 'store_true',
+	                    help='Whether to log the threads info')
+	args = parser.parse_args()
+
+	if args.thread_log: print(colored("LOG: Thread logging activo", 'cyan'))
+	else: print(colored("LOG: Thread logging inactivo", 'cyan'))
+
+	Fibot.load_components(thread_logging = bool(args.thread_log))
+	print(colored("LOG: Todo inicializado", 'cyan'))
 	# Create the Updater and pass it your bot's token.
 
 	updater = Updater(Fibot.bot_token)
@@ -211,7 +221,7 @@ def main():
 	dp = updater.dispatcher
 
 	conv_handler = ConversationHandler(
-		entry_points=[CommandHandler('start', start), CommandHandler('login', start_authentication),
+		entry_points=[CommandHandler('start', start, pass_args = True), CommandHandler('login', start_authentication),
 					CommandHandler('logout', logout), CommandHandler('updates_on', updates_on),
 					CommandHandler('updates_off', updates_off), CommandHandler('set_lang', set_lang),
 					MessageHandler(filters = Filters.text, callback = state_machine)],

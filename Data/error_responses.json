@@ -6,8 +6,8 @@
                 "Perdona, no t'he entès"
             ],
             "es": [
-                "No he entendido tu pregunta",
-                "No he acabado de entender qué me pediste",
+                "No he entendido tu pregunta :(",
+                "No he acabado de entender qué me pediste :(",
                 "Perdona, no te entiendo"
             ],
             "en": [
@@ -111,5 +111,27 @@
                 "{0} does not have group {1}",
                 "Group {1} does not exist in {0}"
             ]
+        },
+        "not_logged": {
+            "ca": [
+                "No estàs identificat amb el teu usuari del Racó. No puc accedir a la teva informació."
+            ],
+            "es": [
+                "No estás identifcado con tu usuario del Racó. No puedo acceder a la tu información."
+            ],
+            "en": [
+                "You have not logged in with your Racó account. I cannot see your information"
+            ]
+        },
+        "not_enrollment_possible": {
+          "ca": [
+              "{} no està disponible per matricular-se."
+          ],
+          "es": [
+              "{} no está disponible para matricularse."
+          ],
+          "en": [
+              "{} is not available for enrollments."
+          ]
         }
     }

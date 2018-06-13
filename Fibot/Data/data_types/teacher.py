@@ -25,13 +25,17 @@ class Teacher(object):
         self.department = data['department']
         self.office = data['office']
         self.language = language
-        if self.language == 'en': self.office = self.office.replace('Edifici', 'Building').replace('Despatx', 'Office').replace('Planta', 'Floor')
-        if self.language == 'es': self.office = self.office.replace('Edifici', 'Edificio').replace('Despatx', 'Despacho')
+        if self.office and self.language == 'en':
+            self.office = self.office.replace('Edifici', 'Building').replace('Despatx', 'Office').replace('Planta', 'Floor')
+        if self.office and self.language == 'es':
+            self.office = self.office.replace('Edifici', 'Edificio').replace('Despatx', 'Despacho')
         self.responses = {}
         with open('./Data/responses.json', 'rb') as fp:
             data = json.load(fp)
             self.responses['ask_teacher_mail'] = data['ask_teacher_mail']
             self.responses['ask_teacher_office'] = data['ask_teacher_office']
+            self.responses['teacher_info'] = data['teacher_info']
+        return
 
     """
         Returns a string formatted text which explains the mail for the teacher
@@ -75,4 +79,6 @@ class Teacher(object):
         Returns a general description of the teacher
     """
     def __repr__(self):
-        return "{} is a teacher from {}'s department".format(self.name.split(' ')[0].title(), self.department)
+        chosen_response = randint(0, len(self.responses['teacher_info'][self.language])-1)
+        final_response = self.responses['teacher_info'][self.language][chosen_response]
+        return final_response.format(self.name.title(), self.department)

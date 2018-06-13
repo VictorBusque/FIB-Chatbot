@@ -8,6 +8,7 @@ import os
 from datetime import datetime, timedelta
 from pprint import pprint
 from copy import deepcopy as copy
+from termcolor import colored
 import base64
 
 #-- 3rd Party imports --#
@@ -39,7 +40,7 @@ class Chats(object):
 	def __init__(self):
 		self.chats = {}
 		self.encryption_key = os.getenv('encryption_key')
-		
+
 	"""
 		Parameter:
 			chat_id (:obj:`int`): chat_id of the person to get the info of.
@@ -52,7 +53,7 @@ class Chats(object):
 			if (data['access_token']):
 				data['access_token'] = self.decrypt_data(data['access_token'])
 				data['refresh_token'] = self.decrypt_data(data['refresh_token'])
-			return data
+		return data
 
 	"""
 		Loads the data from persistence (if any)
@@ -65,11 +66,12 @@ class Chats(object):
 					if (self.chats[item]['access_token']):
 						self.chats[item]['access_token'] = self.decrypt_data(self.chats[item]['access_token'])
 						self.chats[item]['refresh_token'] = self.decrypt_data(self.chats[item]['refresh_token'])
-
+			return
 		except:
 			print("There is no db file")
 			with open('./Data/chat_status.json', 'w') as fp:
 				json.dump({}, fp, indent = 2)
+			return
 
 	"""
 		Parameters:
@@ -122,8 +124,7 @@ class Chats(object):
 		This function updates persistence with the contents of the dict chats.
 	"""
 	def dump_data(self):
-		print("Dumping data")
-		print(self.chats)
+		print(colored('\nGuardando cambios en base de datos de usuarios...\n', 'blue'))
 		os.remove('./Data/chat_status.json')
 		with open('./Data/chat_status.json', 'w') as fp:
 			cpy = copy(self.chats)
@@ -132,6 +133,7 @@ class Chats(object):
 					cpy[item]['access_token'] = self.encrypt_data(cpy[item]['access_token'])
 					cpy[item]['refresh_token'] = self.encrypt_data(cpy[item]['refresh_token'])
 			json.dump(cpy, fp, indent = 2)
+		return
 
 	"""
 		Parameters:

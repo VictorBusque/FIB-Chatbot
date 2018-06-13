@@ -10,7 +10,9 @@ intents:
   - ask_next_class
   - ask_exams
   - ask_pracs
-
+  - inform
+  - greet
+  - thank
 
 entities:
   - teacher_name
@@ -25,18 +27,30 @@ slots:
   group:
     type: text
   matches:
-    type: list
-
+    type: bool
+  subject_existance:
+    type: bool
+  subject_enrollment:
+    type: bool
+  user_logged:
+    type: bool
 
 actions:
-  - actions.action_show_teacher_mail
-  - actions.action_show_teacher_office
-  - actions.action_show_subject_free_spots
-  - actions.action_show_subject_classroom
-  - actions.action_show_subject_schedule
-  - actions.action_show_subject_teachers_mails
-  - actions.action_show_subject_teachers_offices
-  - actions.action_show_subject_teachers_names
-  - actions.action_show_next_class
-  - actions.action_show_next_exams
-  - actions.action_show_next_pracs
+  - actions.Action_slot_reset
+  - actions.Action_check_subject_existance
+  - actions.Action_check_subject_enrollment
+  - actions.Action_check_user_logged
+  - actions.Action_show_teacher_mail
+  - actions.Action_show_teacher_office
+  - actions.Action_show_subject_free_spots
+  - actions.Action_show_subject_classroom
+  - actions.Action_show_subject_schedule
+  - actions.Action_show_subject_teachers_mails
+  - actions.Action_show_subject_teachers_offices
+  - actions.Action_show_subject_teachers_names
+  - actions.Action_show_next_class
+  - actions.Action_show_next_exams
+  - actions.Action_show_next_pracs
+  - actions.Action_show_teacher_info
+  - actions.Action_greet
+  - actions.Action_no_problem
