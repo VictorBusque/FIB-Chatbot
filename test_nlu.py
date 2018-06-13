@@ -5,6 +5,7 @@ import numpy as np
 import argparse
 
 INTENT_AMOUNT = 14
+SECOND_OKAY = 0
 intent2idx = {
     'ask_teacher_mail': 0,
     'ask_teacher_office': 1,
@@ -204,6 +205,9 @@ if __name__ == '__main__':
                     pred_confidence = nlu.get_intent(message, language)['confidence']
                     avg_confidence_failure += pred_confidence
                     times_failure +=1
+                    ranking = nlu.get_intent_ranking(message, language)
+                    if intent2idx[ranking[1]['name']] == ok_idx:
+                        SECOND_OKAY += 1
                     if error:
                         if not filter_intention:
                             print("\n\n{}: {} -> {} [{}]".format(message, ok_intent, pred_intent, pred_confidence))
@@ -235,6 +239,7 @@ if __name__ == '__main__':
         print("\n\nEl recall por intenciones es la siguiente:")
         pprint(conf2recall(intent_conf_matrix))
         print("\n\nLa precisión global es de: {}".format(get_global_accuracy(intent_conf_matrix)))
+        print("\n\nEn el {} por ciento de los errores, la segunda opción era la válida".format(SECOND_OKAY/times_failure))
 
     if entity:
         print("\n\nEl resultado en entidades es:")
