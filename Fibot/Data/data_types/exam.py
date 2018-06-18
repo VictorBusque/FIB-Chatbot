@@ -31,6 +31,7 @@ class Exam_schedule(object):
     def get_day_difference(self, exam):
         day_now = datetime.datetime.now()
         day_exam = exam.date
+        if day_exam < day_now: return float('inf')
         return (day_exam - day_now).days
 
 
