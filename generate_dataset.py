@@ -147,15 +147,15 @@ def main(amount = 250, language = 'es'):
 	regex_features = [
 		{
 			"name": "group",
-			"pattern": "([0-9]{2}|grupo|group)"
+			"pattern": "([0-9]{2}|grup.|group)"
 		},
 		{
 			"name": "plazas",
-			"pattern": "(sitios|plazas|huecos|spots|places|matricula)"
+			"pattern": "(sitios|plazas|huecos|spots|places|matr.cula)"
 		},
 		{
 			"name": "mail",
-			"pattern": "(mail|correo|correu|email)"
+			"pattern": "(mail|corre.|email)"
 		},
 		{
 			"name": "despacho",
@@ -163,7 +163,7 @@ def main(amount = 250, language = 'es'):
 		},
 		{
 			"name": "hora",
-			"pattern": "(hora|horario)"
+			"pattern": "(hora)"
 		},
 		{
 			"name": "aula",
@@ -171,19 +171,19 @@ def main(amount = 250, language = 'es'):
 		},
 		{
 			"name": "examen",
-			"pattern": "(examen|examens|exams|exàmens|exámenes|exàmen|exámen|test)"
+			"pattern": "(ex.m|test)"
 		},
 		{
 			"name": "practicas",
-			"pattern": "(practica|practicas|practiques|practical|practices|práctica|pràctica|prácticas|pràctiques)"
+			"pattern": "(pr.ct)"
 		},
 		{
 			"name": "saludo",
-			"pattern": "(hola|hello|buenas|hey|hi)"
+			"pattern": "(hola|hello|buen|hey)"
 		},
 		{
 			"name": "gracias",
-			"pattern": "(gràcies|gracias|gracies|grácias|thanks|thank you|ty)"
+			"pattern": "(gr.ci|thank|ty)"
 		}
 	]
 	entity_synonyms = []
