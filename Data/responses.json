@@ -13,10 +13,10 @@
       "Es {}."
     ],
     "en": [
-    "{}'s mail is {}.",
-    "{} has this mail: {}.",
-    "There you go, {}.",
-    "It is {}."
+      "{}'s mail is {}.",
+      "{} has this mail: {}.",
+      "There you go, {}.",
+      "It is {}."
     ]
   },
   "ask_teacher_office": {
