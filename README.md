@@ -12,7 +12,6 @@ It is written using:
 ## Table of contents
   * [Quick start](#quick-start)
   * [Setup](#setup)
-  * [Architecture](#architecture)
 
 ## Quick start
 After getting everything set up (more about how in [Setup](#setup) ...) it is only necessary to run the [run.py](./run.py) script.
@@ -39,5 +38,3 @@ Next, if you have not downloaded the models folder with the pretrained files, it
 
 Also, it is possible to automatically generate the dataset that the rasa_nlu is trained on using the [generate_dataset.py](./generate_dataset.py) python script, that allows to create a dataset for any language of the three of a fixed size randomly (using the data in Data/Professors.txt and Data/Subjects.txt, etc).
 
-## Architecture
-Coming soon...
